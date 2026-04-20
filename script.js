@@ -1,10 +1,12 @@
 let songsData = [];
+let isGridLayout = false; // 默认单列布局
 
 document.addEventListener('DOMContentLoaded', () => {
     loadSongs();
     setupLibrarySearch();
     setupMatchPanel();
-    setupRouting(); // 启动路由监听
+    setupRouting();
+    setupLayoutToggle();
 });
 
 async function loadSongs() {
@@ -16,11 +18,11 @@ async function loadSongs() {
     } catch (error) {
         console.error('加载数据失败:', error);
         document.getElementById('songList').innerHTML =
-            `<p class="placeholder">⚠️ 数据加载失败，请检查 data/songs.json 格式并使用 Live Server。</p>`;
+            `<p class="placeholder">⚠ 数据加载失败，请检查 data/songs.json 格式并使用 Live Server。</p>`;
     }
 }
 
-// 🔹 首页搜索
+// 首页搜索
 function setupLibrarySearch() {
     const input = document.getElementById('searchInput');
     const btn = document.getElementById('searchBtn');
@@ -39,7 +41,7 @@ function setupLibrarySearch() {
     input.addEventListener('keypress', e => e.key === 'Enter' && doSearch());
 }
 
-// 🔹 状态匹配面板
+// 状态匹配面板
 function setupMatchPanel() {
     const openBtn = document.getElementById('openMatchBtn');
     const closeBtn = document.getElementById('closeMatchBtn');
@@ -87,7 +89,7 @@ function matchByState(input) {
     return scored.filter(item => item.score > 0).sort((a, b) => b.score - a.score).map(item => item.song);
 }
 
-// 🔹 核心路由控制（Hash 路由）
+// 核心路由控制（Hash 路由）
 function setupRouting() {
     const handleHash = () => {
         const hash = window.location.hash;
@@ -122,11 +124,11 @@ function showDetailView(song) {
         .map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
 
     const metaHtml = `
-        <span>🎤 ${escapeHtml(song.artist || '未知')}</span>
-        <span>🖋️ 作词：${escapeHtml(song.lyricist || '未知')}</span>
-        <span>🎵 作曲：${escapeHtml(song.composer || '未知')}</span>
-        <span>🎛️ 编曲：${escapeHtml(song.arranger || '未知')}</span>
-        <span>📁 风格：${escapeHtml(song.genre || '未分类')}</span>
+        <span>${escapeHtml(song.artist || '未知')}</span>
+        <span>作词：${escapeHtml(song.lyricist || '未知')}</span>
+        <span>作曲：${escapeHtml(song.composer || '未知')}</span>
+        <span>编曲：${escapeHtml(song.arranger || '未知')}</span>
+        <span>风格：${escapeHtml(song.genre || '未分类')}</span>
     `;
 
     document.getElementById('detailContent').innerHTML = `
@@ -137,13 +139,13 @@ function showDetailView(song) {
         </div>
         ${song.description ? `<div class="detail-desc">${escapeHtml(song.description)}</div>` : ''}
         <div class="detail-lyrics">
-            <h3>📜 歌词</h3>
+            <h3>歌词</h3>
             <div class="lyrics-box">${escapeHtml(song.lyrics || '暂无歌词')}</div>
         </div>
     `;
 }
 
-// 🔹 渲染与组件
+// 渲染与组件
 function renderLibrary(songs) {
     const container = document.getElementById('songList');
     container.innerHTML = songs.length === 0
@@ -154,13 +156,13 @@ function renderLibrary(songs) {
 function createSongCard(song) {
     const tags = [...(song.emotion_tags || []), ...(song.themes || []), ...(song.applicable_scenarios || [])]
         .map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+    
+    const brief = song.description ? escapeHtml(song.description) : (song.artist || '未知');
 
     return `
         <article class="song-item" onclick="window.location.hash='#detail-${song.id}'">
             <div class="song-title">${escapeHtml(song.title)}</div>
-            <div class="song-meta">
-                🎤 ${escapeHtml(song.artist || '未知')} | 🖋️ ${escapeHtml(song.lyricist || '未知')} | 🎵 ${escapeHtml(song.composer || '未知')}
-            </div>
+            <div class="song-brief">${brief}</div>
             ${tags ? `<div style="margin-top:6px">${tags}</div>` : ''}
         </article>
     `;
@@ -170,4 +172,29 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// 布局切换功能
+function setupLayoutToggle() {
+    const toggleBtn = document.getElementById('layoutToggleBtn');
+    toggleBtn.addEventListener('click', () => {
+        isGridLayout = !isGridLayout;
+        updateLayout();
+    });
+}
+
+function updateLayout() {
+    const songList = document.getElementById('songList');
+    const matchResultGrid = document.querySelector('#matchResult .song-grid');
+    const toggleBtn = document.getElementById('layoutToggleBtn');
+    
+    if (isGridLayout) {
+        songList.classList.add('grid-layout');
+        if (matchResultGrid) matchResultGrid.classList.add('grid-layout');
+        toggleBtn.textContent = '列表布局';
+    } else {
+        songList.classList.remove('grid-layout');
+        if (matchResultGrid) matchResultGrid.classList.remove('grid-layout');
+        toggleBtn.textContent = '网格布局';
+    }
 }

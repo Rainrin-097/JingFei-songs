@@ -12,12 +12,15 @@
     <header>
         <div class="header-bar">
             <h1>JingFei' Songs</h1>
-            <div class="compact-search">
-                <input type="text" id="searchInput" placeholder="搜歌名 / 作词 / 风格...">
-                <button id="searchBtn" title="精确搜索">🔍</button>
+            <div class="header-controls">
+                <div class="compact-search">
+                    <input type="text" id="searchInput" placeholder="搜歌名 / 作词 / 风格...">
+                    <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
+                </div>
+                <button id="layoutToggleBtn" class="layout-toggle-btn" title="切换布局">网格布局</button>
             </div>
         </div>
-        <button id="openMatchBtn" class="match-entry-btn">🦋别处回响</button>
+        <button id="openMatchBtn" class="match-entry-btn">别处回响</button>
     </header>
 
     <!-- 首页：歌库列表 -->
@@ -28,7 +31,7 @@
     <!-- 详情页：点击歌曲后显示 -->
     <section id="detailView" class="hidden">
         <div class="detail-container">
-            <button id="backBtn" class="secondary-btn">← 返回歌库</button>
+            <button id="backBtn" class="secondary-btn">返回歌库</button>
             <div id="detailContent"></div>
         </div>
     </section>
