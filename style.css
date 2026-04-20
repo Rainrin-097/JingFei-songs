@@ -41,6 +41,12 @@ header {
     margin: 0 auto;
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 h1 {
     font-size: 1.4rem;
     color: var(--primary);
@@ -73,7 +79,7 @@ h1 {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: opacity 0.2s;
 }
 
@@ -98,6 +104,22 @@ h1 {
     background: var(--tag-bg);
 }
 
+.layout-toggle-btn {
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.layout-toggle-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
 /* 视图容器 */
 .hidden {
     display: none !important;
@@ -111,11 +133,31 @@ h1 {
     padding: 0 24px;
 }
 
-/* 歌库网格 */
+/* 歌库列表 - 默认单列垂直布局 */
 .song-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
+}
+
+/* 网格布局模式 */
+.song-grid.grid-layout {
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* 匹配结果也使用相同布局 */
+#matchResult .song-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#matchResult .song-grid.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
 }
 
 .song-item {
@@ -128,6 +170,12 @@ h1 {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* 网格布局下的歌曲卡片 */
+.song-grid.grid-layout .song-item {
+    display: flex;
+    flex-direction: column;
+}
+
 .song-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -135,9 +183,16 @@ h1 {
 
 .song-title {
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text-main);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+.song-brief {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 .song-meta {
