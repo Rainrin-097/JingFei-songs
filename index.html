@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的歌曲信息库</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>📚 歌曲信息汇总平台</h1>
+    </header>
+
+    <main>
+        <section class="search-panel">
+            <h2>查找歌曲</h2>
+            <input type="text" id="searchInput" placeholder="输入作词人、歌词关键词或风格...">
+            <button id="searchBtn">搜索</button>
+        </section>
+
+        <section class="results-panel">
+            <h2>匹配结果</h2>
+            <div id="songList">
+                <p class="placeholder">暂无数据，请先录入歌曲或点击搜索。</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
