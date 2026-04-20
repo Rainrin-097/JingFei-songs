@@ -4,29 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的歌曲信息库</title>
+    <title>歌曲信息汇总平台</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>📚 歌曲信息汇总平台</h1>
+        <div class="header-bar">
+            <h1>JingFei' Songs</h1>
+            <div class="compact-search">
+                <input type="text" id="searchInput" placeholder="搜歌名 / 作词 / 风格...">
+                <button id="searchBtn" title="精确搜索">🔍</button>
+            </div>
+        </div>
+        <button id="openMatchBtn" class="match-entry-btn">🦋别处回响</button>
     </header>
 
-    <main>
-        <section class="search-panel">
-            <h2>查找歌曲</h2>
-            <input type="text" id="searchInput" placeholder="输入作词人、歌词关键词或风格...">
-            <button id="searchBtn">搜索</button>
-        </section>
-
-        <section class="results-panel">
-            <h2>匹配结果</h2>
-            <div id="songList">
-                <p class="placeholder">暂无数据，请先录入歌曲或点击搜索。</p>
-            </div>
-        </section>
+    <!-- 首页：歌库列表 -->
+    <main id="libraryView">
+        <div id="songList" class="song-grid"></div>
     </main>
+
+    <!-- 详情页：点击歌曲后显示 -->
+    <section id="detailView" class="hidden">
+        <div class="detail-container">
+            <button id="backBtn" class="secondary-btn">← 返回歌库</button>
+            <div id="detailContent"></div>
+        </div>
+    </section>
+
+    <!-- 状态匹配面板：独立功能 -->
+    <section id="matchPanel" class="hidden">
+        <div class="match-container">
+            <h2>echo</h2>
+            <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
+            <div class="match-actions">
+                <button id="matchBtn" class="primary-btn">开始匹配</button>
+                <button id="closeMatchBtn" class="secondary-btn">返回歌库</button>
+            </div>
+            <div id="matchResult" class="result-area"></div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

@@ -1,26 +1,16 @@
-/* 1. 全局变量（已更新为酒红+黑白点缀方案） */
 :root {
     --bg-color: #f8f9fa;
-    /* 极浅灰背景，比纯白更护眼 */
     --card-bg: #ffffff;
-    /* 卡片纯白 */
-    --primary: #800020;
-    /* 主色：经典酒红色 (Burgundy) */
+    --primary: #7c001f;
     --primary-hover: #630019;
-    /* 悬停时更深的酒红 */
     --text-main: #0a0a0a;
-    /* 近黑色：保证正文高可读性 */
     --text-sub: #4a4a4a;
-    /* 深灰：次要信息 */
     --border: #e0e0e0;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     --tag-bg: #f5e6e8;
-    /* 酒红浅色调：标签背景 */
     --tag-text: #800020;
-    /* 酒红文字：标签内容 */
 }
 
-/* 2. 基础重置 */
 * {
     margin: 0;
     padding: 0;
@@ -28,112 +18,131 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
     background: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
-    padding: 24px 20px;
 }
 
-/* 3. 头部 */
 header {
-    text-align: center;
-    margin-bottom: 36px;
+    background: var(--card-bg);
+    padding: 16px 24px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--primary);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-/* 4. 搜索面板 */
-.search-panel {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    max-width: 640px;
-    margin: 0 auto 32px;
+.compact-search {
     display: flex;
-    flex-direction: column;
-    gap: 14px;
+    gap: 6px;
 }
 
-#searchInput {
-    padding: 12px 14px;
-    border: 2px solid var(--border);
-    border-radius: 8px;
-    font-size: 1rem;
+.compact-search input {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    width: 220px;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border 0.2s;
 }
 
-#searchInput:focus {
+.compact-search input:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.15);
 }
 
-#searchBtn {
-    padding: 12px;
+.compact-search button {
+    padding: 8px 12px;
     background: var(--primary);
-    color: #ffffff;
-    /* 白色点缀，确保对比度 */
+    color: #fff;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    font-size: 1rem;
+    transition: opacity 0.2s;
 }
 
-#searchBtn:hover {
-    background: var(--primary-hover);
+.compact-search button:hover {
+    opacity: 0.9;
 }
 
-#searchBtn:active {
-    transform: scale(0.98);
+.match-entry-btn {
+    display: block;
+    margin: 16px auto 0;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px dashed var(--primary);
+    color: var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
 }
 
-/* 5. 结果展示区 */
-.results-panel {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    max-width: 800px;
-    margin: 0 auto;
-    min-height: 200px;
+.match-entry-btn:hover {
+    background: var(--tag-bg);
 }
 
-.placeholder {
-    text-align: center;
-    color: var(--text-sub);
-    padding: 24px;
-    font-size: 0.95rem;
+/* 视图容器 */
+.hidden {
+    display: none !important;
 }
 
-/* 6. 歌曲卡片样式 */
+#libraryView,
+#detailView,
+#matchPanel {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 24px;
+}
+
+/* 歌库网格 */
+.song-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
 .song-item {
-    border-bottom: 1px solid var(--border);
-    padding: 18px 0;
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.song-item:last-child {
-    border-bottom: none;
+.song-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .song-title {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: var(--text-main);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .song-meta {
+    font-size: 0.85rem;
     color: var(--text-sub);
-    font-size: 0.9rem;
-    margin-bottom: 10px;
     line-height: 1.5;
 }
 
@@ -141,10 +150,153 @@ h1 {
     display: inline-block;
     background: var(--tag-bg);
     color: var(--tag-text);
-    padding: 3px 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
+
+.placeholder {
+    text-align: center;
+    color: var(--text-sub);
+    padding: 40px 0;
+    grid-column: 1 / -1;
+}
+
+/* 详情页样式 */
+.detail-container {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.detail-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+}
+
+.detail-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.detail-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    color: var(--text-sub);
+    font-size: 0.9rem;
+}
+
+.detail-tags {
+    margin: 16px 0;
+}
+
+.detail-desc {
+    margin: 16px 0;
+    padding: 14px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+.detail-lyrics {
+    margin-top: 24px;
+}
+
+.detail-lyrics h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.lyrics-box {
+    background: var(--bg-color);
+    padding: 16px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    /* 核心：保留 JSON 中的 \n 换行 */
+    font-family: "PingFang SC", "Microsoft YaHei", serif;
+    line-height: 1.9;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* 状态匹配面板 */
+#matchPanel {
+    max-width: 800px;
+}
+
+.match-container {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.match-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+#matchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    resize: vertical;
+    outline: none;
+    font-family: inherit;
+}
+
+#matchInput:focus {
+    border-color: var(--primary);
+}
+
+.match-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 10px 18px;
     border-radius: 6px;
-    font-size: 0.8rem;
-    margin-right: 8px;
-    margin-bottom: 6px;
-    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+}
+
+.secondary-btn:hover {
+    border-color: var(--text-main);
+}
+
+.result-area {
+    margin-top: 20px;
 }
