@@ -1,5 +1,6 @@
 let songsData = [];
 let isGridLayout = false; // 默认单列布局
+let searchMode = 'title';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadSongs();
@@ -13,7 +14,7 @@ async function loadSongs() {
     try {
         const response = await fetch('data/songs.json');
         if (!response.ok) throw new Error('文件加载失败');
-        songsData = await response.json();
+        songsData = sortByReleaseDate(await response.json());
         renderLibrary(songsData);
     } catch (error) {
         console.error('加载数据失败:', error);
@@ -26,19 +27,55 @@ async function loadSongs() {
 function setupLibrarySearch() {
     const input = document.getElementById('searchInput');
     const btn = document.getElementById('searchBtn');
+    const modeBtn = document.getElementById('searchModeBtn');
+    const modeMenu = document.getElementById('searchModeMenu');
+
     const doSearch = () => {
         const kw = input.value.trim().toLowerCase();
         if (!kw) { renderLibrary(songsData); return; }
+        const field = searchMode === 'lyricist'
+            ? 'lyricist'
+            : (searchMode === 'composer' ? 'composer' : 'title');
         const filtered = songsData.filter(s =>
-            (s.title || '').toLowerCase().includes(kw) ||
-            (s.lyricist || '').toLowerCase().includes(kw) ||
-            (s.composer || '').toLowerCase().includes(kw) ||
-            (s.genre || '').toLowerCase().includes(kw)
+            (s[field] || '').toLowerCase().includes(kw)
         );
         renderLibrary(filtered);
     };
+
+    const setMode = (mode) => {
+        searchMode = mode;
+        const labelMap = {
+            title: '歌名',
+            lyricist: '作词',
+            composer: '作曲'
+        };
+        const placeholderMap = {
+            title: '输入歌名搜索',
+            lyricist: '输入作词人搜索',
+            composer: '输入作曲人搜索'
+        };
+        modeBtn.textContent = labelMap[mode] || '歌名';
+        input.placeholder = placeholderMap[mode] || '输入歌名搜索';
+        modeMenu.classList.add('hidden');
+        if (input.value.trim()) doSearch();
+    };
     btn.addEventListener('click', doSearch);
     input.addEventListener('keypress', e => e.key === 'Enter' && doSearch());
+    input.addEventListener('focus', () => modeMenu.classList.remove('hidden'));
+    modeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modeMenu.classList.toggle('hidden');
+    });
+    modeMenu.addEventListener('click', (e) => {
+        const btnEl = e.target.closest('button[data-mode]');
+        if (!btnEl) return;
+        setMode(btnEl.dataset.mode);
+    });
+    document.addEventListener('click', (e) => {
+        if (!modeMenu.contains(e.target) && e.target !== input && e.target !== modeBtn) {
+            modeMenu.classList.add('hidden');
+        }
+    });
 }
 
 // 状态匹配面板
@@ -122,24 +159,33 @@ function showDetailView(song) {
     hideAllViews();
     document.getElementById('detailView').classList.remove('hidden');
 
-    const tags = [...(song.emotion_tags || []), ...(song.themes || []), ...(song.applicable_scenarios || [])]
-        .map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+    const releaseLine = song.release_date
+        ? `<div class="detail-release">${escapeHtml(formatReleaseDate(song.release_date))}</div>`
+        : '';
 
-    const metaHtml = `
-        <span>${escapeHtml(song.artist || '未知')}</span>
-        <span>作词：${escapeHtml(song.lyricist || '未知')}</span>
-        <span>作曲：${escapeHtml(song.composer || '未知')}</span>
-        <span>编曲：${escapeHtml(song.arranger || '未知')}</span>
-        <span>风格：${escapeHtml(song.genre || '未分类')}</span>
-    `;
+    const originalSinger = (song.original_singer || '').trim();
+    const album = (song.album || '').trim();
+    const originAlbumLine = originalSinger
+        ? `<div class="detail-line">原唱：${escapeHtml(originalSinger)}${album ? ` / 专辑：${escapeHtml(album)}` : ''}</div>`
+        : (album ? `<div class="detail-line">专辑：${escapeHtml(album)}</div>` : '');
+
+    const credits = [
+        `作词：${escapeHtml(song.lyricist || '未知')}`,
+        `作曲：${escapeHtml(song.composer || '未知')}`,
+        `制作人：${escapeHtml(song.producer || '未知')}`,
+        `编曲：${escapeHtml(song.arranger || '未知')}`
+    ].map(text => `<span>${text}</span>`).join('');
 
     document.getElementById('detailContent').innerHTML = `
         <div class="detail-header">
-            <div class="detail-title">${escapeHtml(song.title)}</div>
-            <div class="detail-meta-grid">${metaHtml}</div>
-            ${tags ? `<div class="detail-tags">${tags}</div>` : ''}
+            <div class="detail-title-row">
+                <div class="detail-title">${escapeHtml(song.title)}</div>
+                ${song.keysentence ? `<div class="detail-keysentence">${escapeHtml(song.keysentence)}</div>` : ''}
+            </div>
+            ${releaseLine}
+            ${originAlbumLine}
+            <div class="detail-credits">${credits}</div>
         </div>
-        ${song.description ? `<div class="detail-desc">${escapeHtml(song.description)}</div>` : ''}
         <div class="detail-lyrics">
             <h3>歌词</h3>
             <div class="lyrics-box">${escapeHtml(song.lyrics || '暂无歌词')}</div>
@@ -153,19 +199,19 @@ function renderLibrary(songs) {
     container.innerHTML = songs.length === 0
         ? `<p class="placeholder">暂无记录</p>`
         : songs.map(s => createSongCard(s)).join('');
+    updateLayout();
 }
 
 function createSongCard(song) {
-    const tags = [...(song.emotion_tags || []), ...(song.themes || []), ...(song.applicable_scenarios || [])]
-        .map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
-
-    const brief = song.description ? escapeHtml(song.description) : (song.artist || '未知');
+    const releaseText = song.release_date ? formatReleaseDate(song.release_date) : '未知日期';
 
     return `
         <article class="song-item" onclick="window.location.hash='#detail-${song.id}'">
-            <div class="song-title">${escapeHtml(song.title)}</div>
-            <div class="song-brief">${brief}</div>
-            ${tags ? `<div style="margin-top:6px">${tags}</div>` : ''}
+            <div class="song-header">
+                <div class="song-title">${escapeHtml(song.title)}</div>
+                <div class="song-date">${escapeHtml(releaseText)}</div>
+            </div>
+            <div class="song-keysentence">${escapeHtml(song.keysentence || '')}</div>
         </article>
     `;
 }
@@ -174,6 +220,19 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function sortByReleaseDate(list) {
+    return [...list].sort((a, b) => parseReleaseDate(b.release_date) - parseReleaseDate(a.release_date));
+}
+
+function parseReleaseDate(dateStr) {
+    const ts = Date.parse(dateStr || '');
+    return Number.isNaN(ts) ? 0 : ts;
+}
+
+function formatReleaseDate(dateStr) {
+    return dateStr || '未知日期';
 }
 
 // 布局切换功能

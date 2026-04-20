@@ -14,8 +14,14 @@
             <h1>JingFei' Songs</h1>
             <div class="header-controls">
                 <div class="compact-search">
-                    <input type="text" id="searchInput" placeholder="搜歌名 / 作词 / 风格...">
+                    <button id="searchModeBtn" class="search-mode-btn" type="button">歌名</button>
+                    <input type="text" id="searchInput" placeholder="输入歌名搜索">
                     <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
+                    <div id="searchModeMenu" class="search-mode-menu hidden">
+                        <button type="button" data-mode="title">歌名</button>
+                        <button type="button" data-mode="lyricist">作词</button>
+                        <button type="button" data-mode="composer">作曲</button>
+                    </div>
                 </div>
                 <button id="layoutToggleBtn" class="layout-toggle-btn" title="切换布局">网格布局</button>
             </div>
