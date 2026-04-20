@@ -98,6 +98,8 @@ function setupRouting() {
             const song = songsData.find(s => s.id === id);
             if (song) showDetailView(song);
             else window.location.hash = '';
+        } else {
+            showView('libraryView');
         }
     };
     window.addEventListener('hashchange', handleHash);
@@ -156,7 +158,7 @@ function renderLibrary(songs) {
 function createSongCard(song) {
     const tags = [...(song.emotion_tags || []), ...(song.themes || []), ...(song.applicable_scenarios || [])]
         .map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
-    
+
     const brief = song.description ? escapeHtml(song.description) : (song.artist || '未知');
 
     return `
@@ -187,7 +189,7 @@ function updateLayout() {
     const songList = document.getElementById('songList');
     const matchResultGrid = document.querySelector('#matchResult .song-grid');
     const toggleBtn = document.getElementById('layoutToggleBtn');
-    
+
     if (isGridLayout) {
         songList.classList.add('grid-layout');
         if (matchResultGrid) matchResultGrid.classList.add('grid-layout');

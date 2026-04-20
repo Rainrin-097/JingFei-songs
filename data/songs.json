@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "人间指南",
+        "keysentence": "-给我一本人间指南，让我找回方向感",
         "artist": "陈婧霏",
         "album": "陈婧霏",
         "lyricist": "陈婧霏",
@@ -15,6 +16,7 @@
         "applicable_scenarios": [],
         "play_link": "",
         "audio_file": "audios/life guide.mp3",
+        "video_link": "",
         "source": ""
     }
 ]
