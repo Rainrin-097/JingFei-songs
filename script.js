@@ -1,11 +1,13 @@
 let songsData = [];
 let isGridLayout = false; // 默认单列布局
 let searchMode = 'title';
+let searchIndex = { vocab: new Set(), latinVocab: [] };
 
 document.addEventListener('DOMContentLoaded', () => {
     loadSongs();
     setupLibrarySearch();
     setupMatchPanel();
+    setupMatchResultActions();
     setupRouting();
     setupLayoutToggle();
 });
@@ -15,6 +17,7 @@ async function loadSongs() {
         const response = await fetch('data/songs.json');
         if (!response.ok) throw new Error('文件加载失败');
         songsData = sortByReleaseDate(await response.json());
+        searchIndex = buildSearchIndex(songsData);
         renderLibrary(songsData);
     } catch (error) {
         console.error('加载数据失败:', error);
@@ -116,35 +119,215 @@ function setupMatchPanel() {
     });
     matchBtn.addEventListener('click', () => {
         const text = input.value.trim();
-        if (!text) { resultBox.innerHTML = '<p class="placeholder">请先输入描述</p>'; return; }
-        const matched = matchByState(text);
-        resultBox.innerHTML = `
-            <p style="margin-bottom:12px; color:var(--text-sub); font-size:0.9rem;">
-              基于“${escapeHtml(text)}”匹配到 ${matched.length} 首推荐：
-            </p>
-            <div class="song-grid">${matched.map(s => createSongCard(s)).join('')}</div>
-        `;
+        if (!text) {
+            resultBox.innerHTML = '<p class="placeholder">请先输入描述</p>';
+            return;
+        }
+        showMatchResult(text);
     });
 }
 
+function setupMatchResultActions() {
+    const backToMatchBtn = document.getElementById('backToMatchBtn');
+    const backToLibraryBtn = document.getElementById('backToLibraryBtn');
+    const nextEchoBtn = document.getElementById('nextEchoBtn');
+    const matchInput = document.getElementById('matchInput');
+
+    backToMatchBtn.addEventListener('click', () => {
+        hideAllViews();
+        document.getElementById('matchPanel').classList.remove('hidden');
+        matchInput.focus();
+    });
+
+    backToLibraryBtn.addEventListener('click', () => {
+        showView('libraryView');
+    });
+
+    nextEchoBtn.addEventListener('click', () => {
+        showMatchResult(matchInput.value.trim());
+    });
+}
+
+function showMatchResult(text) {
+    const resultView = document.getElementById('matchResultView');
+    const resultBox = document.getElementById('matchEchoResult');
+    const matched = matchByState(text);
+
+    hideAllViews();
+    resultView.classList.remove('hidden');
+
+    if (matched.length === 0) {
+        resultBox.innerHTML = '<div class="echo-empty">暂时未能发现回响</div>';
+        return;
+    }
+
+    const topMatch = matched[0];
+    const lyric = topMatch.matchLine || '暂时未能发现回响';
+    resultBox.innerHTML = `
+        <div class="echo-result-stack">
+            <div class="echo-lyric">${escapeHtml(lyric)}</div>
+            <div class="echo-title">${escapeHtml(topMatch.song.title || '')}</div>
+        </div>
+    `;
+}
+
 function matchByState(input) {
-    const keywords = input.split(/[\s,，.。!！?？、;；]+/).filter(k => k.length > 1);
+    const keywords = prepareSearchTokens(input);
     if (keywords.length === 0) return [];
     const scored = songsData.map(song => {
-        let score = 0;
-        const tags = [
-            ...(song.emotion_tags || []),
-            ...(song.themes || []),
-            ...(song.applicable_scenarios || [])
-        ].map(t => t.toLowerCase());
+        const lyricResult = getBestLyricLine(song.lyrics, keywords);
+        const description = (song.description || '').toLowerCase();
+        const title = (song.title || '').toLowerCase();
+        let descHits = 0;
         keywords.forEach(word => {
             const w = word.toLowerCase();
-            if (tags.some(t => t.includes(w))) score += 2;
-            if ((song.lyrics || '').toLowerCase().includes(w)) score += 0.5;
+            if (description.includes(w) || title.includes(w)) descHits += 1;
         });
-        return { song, score };
+        const lyricScore = lyricResult.score;
+        const descScore = keywords.length ? descHits / keywords.length : 0;
+        const score = lyricScore * 0.7 + descScore * 0.3;
+        return { song, score, matchLine: lyricResult.line };
     });
-    return scored.filter(item => item.score > 0).sort((a, b) => b.score - a.score).map(item => item.song);
+    return scored
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score);
+}
+
+function getBestLyricLine(lyricsText, keywords) {
+    const lines = (lyricsText || '')
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+    if (lines.length === 0) return { line: '', score: 0 };
+
+    let bestLine = '';
+    let bestScore = 0;
+    lines.forEach(line => {
+        const lowerLine = line.toLowerCase();
+        let hits = 0;
+        keywords.forEach(word => {
+            const w = word.toLowerCase();
+            if (lowerLine.includes(w)) hits += 1;
+        });
+        const lineScore = keywords.length ? hits / keywords.length : 0;
+        if (lineScore > bestScore) {
+            bestScore = lineScore;
+            bestLine = line;
+        }
+    });
+
+    return { line: bestLine || lines[0], score: bestScore };
+}
+
+function prepareSearchTokens(input) {
+    const rawTokens = tokenize(input);
+    if (rawTokens.length === 0) return [];
+    const corrected = rawTokens.map(token => correctToken(token, searchIndex.latinVocab));
+    const expanded = expandTokens(corrected);
+    return Array.from(new Set(expanded));
+}
+
+function tokenize(text) {
+    const tokens = [];
+    const normalized = (text || '').toLowerCase();
+    const latinMatches = normalized.match(/[a-z0-9]+/g) || [];
+    tokens.push(...latinMatches);
+
+    const cjkMatches = normalized.match(/[\u4e00-\u9fff]+/g) || [];
+    cjkMatches.forEach(chunk => {
+        const chars = Array.from(chunk);
+        chars.forEach(char => tokens.push(char));
+        for (let i = 0; i < chars.length - 1; i += 1) {
+            tokens.push(chars[i] + chars[i + 1]);
+        }
+    });
+
+    return tokens.filter(t => t.length > 0);
+}
+
+function buildSearchIndex(list) {
+    const vocab = new Set();
+    list.forEach(song => {
+        const fields = [song.title, song.description, song.lyrics]
+            .filter(Boolean)
+            .join(' ');
+        tokenize(fields).forEach(token => vocab.add(token));
+    });
+    const latinVocab = Array.from(vocab).filter(token => /^[a-z0-9]+$/.test(token));
+    return { vocab, latinVocab };
+}
+
+function correctToken(token, latinVocab) {
+    if (!/^[a-z0-9]+$/.test(token) || token.length < 4) return token;
+    let best = token;
+    let bestDist = 2;
+    latinVocab.forEach(candidate => {
+        if (Math.abs(candidate.length - token.length) > 2) return;
+        const dist = levenshtein(token, candidate, bestDist);
+        if (dist <= bestDist) {
+            bestDist = dist;
+            best = candidate;
+        }
+    });
+    return best;
+}
+
+function levenshtein(a, b, maxDist) {
+    if (a === b) return 0;
+    const aLen = a.length;
+    const bLen = b.length;
+    if (Math.abs(aLen - bLen) > maxDist) return maxDist + 1;
+    const prev = new Array(bLen + 1).fill(0).map((_, i) => i);
+    const curr = new Array(bLen + 1).fill(0);
+    for (let i = 1; i <= aLen; i += 1) {
+        curr[0] = i;
+        let rowBest = curr[0];
+        for (let j = 1; j <= bLen; j += 1) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            curr[j] = Math.min(
+                prev[j] + 1,
+                curr[j - 1] + 1,
+                prev[j - 1] + cost
+            );
+            if (curr[j] < rowBest) rowBest = curr[j];
+        }
+        if (rowBest > maxDist) return maxDist + 1;
+        for (let j = 0; j <= bLen; j += 1) prev[j] = curr[j];
+    }
+    return prev[bLen];
+}
+
+function expandTokens(tokens) {
+    const expanded = [];
+    const synonymMap = {
+        难过: ['伤心', '低落', '悲伤', '心痛'],
+        伤心: ['难过', '低落', '悲伤'],
+        开心: ['快乐', '愉快', '高兴', '甜蜜'],
+        快乐: ['开心', '愉快', '高兴'],
+        失眠: ['睡不着', '睡不着觉', '睡不好'],
+        平静: ['安静', '安宁', '舒缓', '治愈'],
+        孤独: ['寂寞', '落寞', '孤单'],
+        温暖: ['治愈', '安心', '柔软'],
+        治愈: ['温暖', '安心', '平静'],
+        紧张: ['焦虑', '压力', '不安'],
+        sad: ['sad', 'down', 'blue'],
+        happy: ['happy', 'joy', 'glad']
+    };
+    const emotionMap = {
+        焦虑: ['紧张', '不安', '压力', '疲惫'],
+        压力: ['焦虑', '紧张', '疲惫'],
+        失望: ['难过', '低落', '伤心'],
+        甜蜜: ['温暖', '幸福', '快乐'],
+        怀念: ['思念', '回忆', '想念'],
+        孤独: ['寂寞', '落寞', '空虚']
+    };
+
+    tokens.forEach(token => {
+        expanded.push(token);
+        (synonymMap[token] || []).forEach(w => expanded.push(w));
+        (emotionMap[token] || []).forEach(w => expanded.push(w));
+    });
+    return expanded;
 }
 
 // 核心路由控制（Hash 路由）
@@ -168,7 +351,7 @@ function setupRouting() {
 }
 
 function hideAllViews() {
-    ['libraryView', 'detailView', 'matchPanel'].forEach(id =>
+    ['libraryView', 'detailView', 'matchPanel', 'matchResultView'].forEach(id =>
         document.getElementById(id).classList.add('hidden'));
 }
 function showView(id) {

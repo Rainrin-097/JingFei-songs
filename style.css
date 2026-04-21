@@ -195,7 +195,7 @@ h1 {
     padding: 0 24px;
 }
 
-/* 歌库列表 - 默认单列垂直布局 */
+/* 曲库列表 - 默认单列垂直布局 */
 .song-grid {
     display: flex;
     flex-direction: column;
@@ -393,6 +393,14 @@ h1 {
     max-width: 800px;
 }
 
+#matchResultView {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
 .match-container {
     background: var(--card-bg);
     padding: 24px;
@@ -404,10 +412,29 @@ h1 {
     gap: 14px;
 }
 
+#matchResultView .match-container {
+    width: min(920px, 100%);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    gap: 24px;
+}
+
 .match-back-row {
     width: min(560px, 100%);
     display: flex;
     justify-content: flex-start;
+}
+
+.match-result-actions {
+    justify-content: center;
+    gap: 12px;
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: echoRise 0.5s ease forwards;
+    animation-delay: 0.4s;
 }
 
 .match-input-wrap {
@@ -477,4 +504,53 @@ h1 {
 .result-area {
     margin-top: 20px;
     width: 100%;
+}
+
+#matchResultView .result-area {
+    margin-top: 0;
+}
+
+.echo-result-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.echo-lyric {
+    font-size: 32px;
+    color: #8B0000;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: echoRise 0.5s ease forwards;
+    animation-delay: 0s;
+}
+
+.echo-title {
+    font-size: 16px;
+    color: #999;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: echoRise 0.5s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.echo-empty {
+    font-size: 18px;
+    color: var(--text-sub);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: echoRise 0.5s ease forwards;
+}
+
+@keyframes echoRise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

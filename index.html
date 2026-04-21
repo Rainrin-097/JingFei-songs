@@ -17,7 +17,7 @@
                     <button id="searchModeBtn" class="search-mode-btn" type="button">歌名</button>
                     <input type="text" id="searchInput" placeholder="输入歌名搜索">
                     <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
-                    <button id="searchBackBtn" class="search-back-btn hidden" type="button">返回歌库</button>
+                    <button id="searchBackBtn" class="search-back-btn hidden" type="button">返回曲库</button>
                     <div id="searchModeMenu" class="search-mode-menu hidden">
                         <button type="button" data-mode="title">歌名</button>
                         <button type="button" data-mode="lyricist">作词</button>
@@ -30,7 +30,7 @@
         <button id="openMatchBtn" class="match-entry-btn">别处回响</button>
     </header>
 
-    <!-- 首页：歌库列表 -->
+    <!-- 首页：曲库列表 -->
     <main id="libraryView">
         <div id="songList" class="song-grid"></div>
     </main>
@@ -38,7 +38,7 @@
     <!-- 详情页：点击歌曲后显示 -->
     <section id="detailView" class="hidden">
         <div class="detail-container">
-            <button id="backBtn" class="secondary-btn">返回歌库</button>
+            <button id="backBtn" class="secondary-btn">返回曲库</button>
             <div id="detailContent"></div>
         </div>
     </section>
@@ -47,13 +47,25 @@
     <section id="matchPanel" class="hidden">
         <div class="match-container">
             <div class="match-back-row">
-                <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回歌库</button>
+                <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回曲库</button>
             </div>
             <div class="match-input-wrap">
                 <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
             </div>
             <button id="matchBtn" class="primary-btn match-echo-btn">echo</button>
             <div id="matchResult" class="result-area"></div>
+        </div>
+    </section>
+
+    <!-- 回响结果页：匹配结果展示 -->
+    <section id="matchResultView" class="hidden">
+        <div class="match-container">
+            <div id="matchEchoResult" class="result-area"></div>
+            <div class="match-back-row match-result-actions">
+                <button id="backToMatchBtn" class="secondary-btn">返回回响</button>
+                <button id="backToLibraryBtn" class="secondary-btn">返回曲库</button>
+                <button id="nextEchoBtn" class="secondary-btn">重新回响</button>
+            </div>
         </div>
     </section>
 
