@@ -239,8 +239,16 @@ h1 {
 }
 
 .song-item:hover {
+    background: var(--primary);
+    border-color: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.song-item:hover .song-title,
+.song-item:hover .song-date,
+.song-item:hover .song-keysentence {
+    color: #fff;
 }
 
 .song-header {
@@ -390,11 +398,20 @@ h1 {
     padding: 24px;
     border-radius: 12px;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 }
 
-.match-container h2 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+.match-back-row {
+    width: min(560px, 100%);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.match-input-wrap {
+    width: min(560px, 100%);
 }
 
 #matchInput {
@@ -410,6 +427,16 @@ h1 {
 
 #matchInput:focus {
     border-color: var(--primary);
+}
+
+.match-back-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    background: #fff;
+}
+
+.match-echo-btn {
+    min-width: 120px;
 }
 
 .match-actions {
@@ -449,4 +476,5 @@ h1 {
 
 .result-area {
     margin-top: 20px;
+    width: 100%;
 }

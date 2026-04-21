@@ -46,12 +46,13 @@
     <!-- 状态匹配面板：独立功能 -->
     <section id="matchPanel" class="hidden">
         <div class="match-container">
-            <h2>echo</h2>
-            <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
-            <div class="match-actions">
-                <button id="matchBtn" class="primary-btn">开始匹配</button>
-                <button id="closeMatchBtn" class="secondary-btn">返回歌库</button>
+            <div class="match-back-row">
+                <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回歌库</button>
             </div>
+            <div class="match-input-wrap">
+                <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
+            </div>
+            <button id="matchBtn" class="primary-btn match-echo-btn">echo</button>
             <div id="matchResult" class="result-area"></div>
         </div>
     </section>

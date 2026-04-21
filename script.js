@@ -105,10 +105,14 @@ function setupMatchPanel() {
     const resultBox = document.getElementById('matchResult');
 
     openBtn.addEventListener('click', () => {
-        hideAllViews(); panel.classList.remove('hidden'); input.focus();
+        hideAllViews();
+        panel.classList.remove('hidden');
+        input.focus();
     });
     closeBtn.addEventListener('click', () => {
-        panel.classList.add('hidden'); showView('libraryView'); resultBox.innerHTML = '';
+        panel.classList.add('hidden');
+        showView('libraryView');
+        resultBox.innerHTML = '';
     });
     matchBtn.addEventListener('click', () => {
         const text = input.value.trim();
