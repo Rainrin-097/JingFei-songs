@@ -27,12 +27,17 @@ async function loadSongs() {
 function setupLibrarySearch() {
     const input = document.getElementById('searchInput');
     const btn = document.getElementById('searchBtn');
+    const backBtn = document.getElementById('searchBackBtn');
     const modeBtn = document.getElementById('searchModeBtn');
     const modeMenu = document.getElementById('searchModeMenu');
 
     const doSearch = () => {
         const kw = input.value.trim().toLowerCase();
-        if (!kw) { renderLibrary(songsData); return; }
+        if (!kw) {
+            renderLibrary(songsData);
+            backBtn.classList.add('hidden');
+            return;
+        }
         const field = searchMode === 'lyricist'
             ? 'lyricist'
             : (searchMode === 'composer' ? 'composer' : 'title');
@@ -40,6 +45,7 @@ function setupLibrarySearch() {
             (s[field] || '').toLowerCase().includes(kw)
         );
         renderLibrary(filtered);
+        backBtn.classList.remove('hidden');
     };
 
     const setMode = (mode) => {
@@ -61,6 +67,17 @@ function setupLibrarySearch() {
     };
     btn.addEventListener('click', doSearch);
     input.addEventListener('keypress', e => e.key === 'Enter' && doSearch());
+    input.addEventListener('input', () => {
+        if (!input.value.trim()) {
+            renderLibrary(songsData);
+            backBtn.classList.add('hidden');
+        }
+    });
+    backBtn.addEventListener('click', () => {
+        input.value = '';
+        renderLibrary(songsData);
+        backBtn.classList.add('hidden');
+    });
     input.addEventListener('focus', () => modeMenu.classList.remove('hidden'));
     modeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
