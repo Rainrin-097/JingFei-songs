@@ -112,6 +112,7 @@ function setupMatchPanel() {
     openBtn.addEventListener('click', () => {
         hideAllViews();
         panel.classList.remove('hidden');
+        setHeaderEchoMode(true);
         input.focus();
     });
     closeBtn.addEventListener('click', () => {
@@ -138,6 +139,7 @@ function setupMatchResultActions() {
     backToMatchBtn.addEventListener('click', () => {
         hideAllViews();
         document.getElementById('matchPanel').classList.remove('hidden');
+        setHeaderEchoMode(true);
         matchInput.focus();
     });
 
@@ -157,6 +159,7 @@ function showMatchResult(text) {
 
     hideAllViews();
     resultView.classList.remove('hidden');
+    setHeaderEchoMode(true);
 
     if (matched.length === 0) {
         resultBox.innerHTML = '<div class="echo-empty">暂时未能发现回响</div>';
@@ -363,6 +366,11 @@ function hideAllViews() {
 function showView(id) {
     hideAllViews();
     document.getElementById(id).classList.remove('hidden');
+    setHeaderEchoMode(id === 'matchPanel' || id === 'matchResultView');
+}
+
+function setHeaderEchoMode(isEcho) {
+    document.body.classList.toggle('echo-mode', Boolean(isEcho));
 }
 
 function showDetailView(song) {
