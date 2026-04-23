@@ -338,7 +338,7 @@
             "release_date": "2020-09-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-火光里的浪漫是最淋漓的快乐",
             "lyrics": "在这至暗的时刻 适合犯更多的错\n恐吓腐朽的规则 庆祝自由的邪恶\n我知道你需要我 迷人的反派角色\n拨乱模糊的善恶 拯救灵魂的饥渴\n点燃 萤火 连成一片星河\n美得 像不灭传说\n一起 沉没 好过无望看破\n让我 为我们赴汤蹈火\n最危险不过 你心底的冷漠\n施虐受虐的 颠倒了因果\n信念在闪烁 时间已经不多\n火光里的浪漫是最淋漓的快乐\n我知道你需要我 迷人的反派角色\n拨乱模糊的善恶 拯救灵魂的饥渴\n点燃 萤火 连成 一片星河\n美得 像不灭传说\n做梦的人被梦见的人惊醒了\n喜剧替悲剧笑到最后了\n最危险不过 你心底的冷漠\n施虐受虐的 被颠倒了因果\n信念在闪烁 时间已经不多\n火光里 的浪漫 是最淋漓 的快乐\n烧掉这 冒充真理的 鬼扯\n罪恶 摘下面具了"
         },
         "media": {
@@ -352,7 +352,7 @@
             "producer": "陆希文",
             "arranger": "陈婧霏/陆希文",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "这是一个跟传统意义上'给人温暖，光明'完全不一样的'萤火虫'。充满着暗黑气质、漫画感和动作感。是陈婧霏自导自演的一个'迷人的反派角色'。\n这或许是她观察社会上一些现象后想说的话，在保持思考的同时，试着用一种调侃、有趣的方式去讲一件沉重的话题：\n'最危险不过 你心底的冷漠，\n施虐受虐的 颠倒了因果。'\n现实往往魔幻，'喜剧总是替悲剧笑到最后了'。\n希望你和我，都可以是那个在'至暗时刻'点亮周围的'萤火'。\n站台中国当代艺术机构x邱瑞祥x《萤火虫》\n绘画作品由艺术家邱瑞祥创作。作品名称为《萤火虫》。'这件作品对我而言很特别。它从开始就基本上比较明确地知道要画的题材，这对于我来说从未有过，也充满新奇和挑战。从具体的事物（动物）开始，缓慢地随着时间和自身相连接，直到抵达某种融合。萤火虫是我童年生活中的记忆，当然它已然带着一种普遍的共有认知属性。 而此时，我面对画布，它不再是单纯的某种记忆，更不是惯常认知里的动物，它象是一个复杂的综合体，不断地涌动、交融，并生成新的生命感知的过程，便是绘画。 现在来看，它似乎比较准确地表达了我对该'主题'的理解。'"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -368,13 +368,49 @@
     {
         "id": 11,
         "meta": {
+            "title": "我的孤独认出你的孤独",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-Hey 原来春天这么美",
+            "lyrics": "带上面具扮演我自己\n谁在意里面悲喜\n点燃烛火烧断我自己\n敏感不幸的神经\n奔赴着一个个悲剧\n用人定胜天的暴力\n把偶然重复成命运\n又有什么可惜\nHey 你擦身而过的瞬间\n我的孤独认出你的孤独\nHey 原来春天这么美\n幸好没有腐烂在冬天\n偏偏在最好的年纪\n失去爱的能力\n多么爱不释手的游戏\n都感动不了自己\n奔赴着一个个悲剧\n用人定胜天的暴力\n懂了那么多的道理\n还不是输给上帝\nHey 你擦身而过的瞬间\n我的孤独认出你的孤独\nHey 原来春天这么美\n幸好没有腐烂在冬天\nHey 你擦身而过的瞬间\n我的孤独认出你的孤独\nHey 原来春天这么美\n幸好没有腐烂在冬天"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏/赵广为",
+            "producer": "陆希文",
+            "arranger": "陆希文",
+            "original_singer": "",
+            "official_description": ""
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 12,
+        "meta": {
             "title": "夏宫",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2020-12-08",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-在我破碎和荒凉里 你就是奇迹",
             "lyrics": "那是间上世纪的客厅\n是迷惘幽暗的曾经\n是浪漫多情的天性\n令人整晚 心神不宁\n在狂风和暴雨的反复里\n在脆弱与清醒的迷雾里\n在孤独和压抑的深渊里\n我还等待 雨天过去\n在我狂风和暴雨里\n你就是天晴\n在我等待和煎熬里\n你就是氧气\n在我破碎和荒凉里\n你就是奇迹\n是你 是你\n在时代边缘外狂欢\n在平庸虚无中不堪\n远处传来 最终的答案\n身在黑暗 享受黑暗\n在我狂风和暴雨里\n你就是天晴\n在我等待和煎熬里\n你就是氧气\n在我破碎和荒凉里\n你就是奇迹\n是你 是你\n我只想生活的强烈一些\n根本不存在出路\n只存在幻想幻想\n这可怕的东西"
         },
         "media": {
@@ -402,7 +438,7 @@
         "vector_embedding": []
     },
     {
-        "id": 12,
+        "id": 13,
         "meta": {
             "title": "各位请注意请陈婧霏就位",
             "artist": "陈婧霏",
@@ -438,7 +474,7 @@
         "vector_embedding": []
     },
     {
-        "id": 13,
+        "id": 14,
         "meta": {
             "title": "消亡史",
             "artist": "陈婧霏",
@@ -446,44 +482,8 @@
             "release_date": "2020-12-15",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-除了诱惑 我什么都能抵挡",
             "lyrics": "沐浴着仲夏的玫瑰色幻想\n每一抹月光 都把你哼唱\n情欲在金色的麦田里生长\n微风中摇晃 昏黄中流淌\n炙热的呼吸在静脉中伸张\n坦诚而张扬 纯真又放荡\n为你我烧毁了其余的梦想\n清理了过往 埋葬了前方\n带你进入永昼的光芒 赴浪漫的刑场\n美梦太仓皇 等不到天亮\n爱是妒嫉加上欲妄 肉体叹息着时光\n除了诱惑 我什么都能抵挡\n命运是手掌上凹凸不平的光\n预见了疯狂 却欣然前往\n克制和挥霍没什么不一样\n地狱和天堂 同一个地方\n带你进入永昼的光芒 赴浪漫的刑场\n美梦太仓皇 等不到天亮\n爱是妒嫉加上欲妄 肉体叹息着时光\n除了诱惑 我什么都能抵挡\n在宇宙尽头绽放 在你眼中迷航\n石火又电光 深渊里震荡\n大海到日落的中央 纵情燃烧这一场\n除了诱惑 我什么都能抵挡"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏/陆希文",
-            "producer": "陆希文",
-            "arranger": "陆希文",
-            "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 14,
-        "meta": {
-            "title": "晕船记",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2020-12-22",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "黄昏里醒来\n梦境还在徘徊\n树影上窗台\n水草卷进被盖\n浪花 载着 失意 轻轻 摇摆\n海水 推开 情绪 层层 覆盖\n听\n喧嚣都在梦里\n对白落入风里\n狂热和沮丧都留在\n回声里\n黄昏里醒来\n梦境还在徘徊\n月光洒下来\n航离了时代\n过去 未来 都在 此刻 交载\n欲念 走开 迎接 永恒 到来\n沉醉到忘了归路\n误入星河深处\n朝着彼岸驶去寻找\n新诗意\n过去 未来 都在 此刻 交载\n欲念 空白 迎接 永恒 到来\n沉醉到忘了归路\n误入星河深处\n朝着彼岸驶去寻找\n新诗意"
         },
         "media": {
             "audio_file": "",
@@ -512,13 +512,49 @@
     {
         "id": 15,
         "meta": {
+            "title": "晕船记",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2020-12-22",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-过去 未来 都在 此刻 交载",
+            "lyrics": "黄昏里醒来\n梦境还在徘徊\n树影上窗台\n水草卷进被盖\n浪花 载着 失意 轻轻 摇摆\n海水 推开 情绪 层层 覆盖\n听\n喧嚣都在梦里\n对白落入风里\n狂热和沮丧都留在\n回声里\n黄昏里醒来\n梦境还在徘徊\n月光洒下来\n航离了时代\n过去 未来 都在 此刻 交载\n欲念 走开 迎接 永恒 到来\n沉醉到忘了归路\n误入星河深处\n朝着彼岸驶去寻找\n新诗意\n过去 未来 都在 此刻 交载\n欲念 空白 迎接 永恒 到来\n沉醉到忘了归路\n误入星河深处\n朝着彼岸驶去寻找\n新诗意"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏/陆希文",
+            "producer": "陆希文",
+            "arranger": "陆希文",
+            "original_singer": "",
+            "official_description": ""
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 16,
+        "meta": {
             "title": "今晚",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2020-12-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-至少此刻 你还在我的身边",
             "lyrics": "禁不住 一直回头看\n你是否 还走在我身后\n忍住眼泪 就不会让你看见\n忍住眼泪 就不会被你发现\n至少此刻 你还在我的身边\n所以今晚\n能不能不要离开\n所以今晚\n能不能不要离开\n穿过这城市的表面\n海边的婚礼在上演\n看着桥那边疯狂的世界\n感受着未知的感受着未知的\n黄昏 熄灭了地平线\n像昨天 一切都没改变\n忍住眼泪 就不会让你看见\n忍住眼泪 就不会被你发现\n至少此刻 你还在我的身边\n所以今晚\n能不能不要离开\n所以今晚\n能不能不要离开\n穿过这城市的表面\n你的笑容才最安全\n看着桥那边疯狂的世界\n感受你眼中的感受你眼中的无限\n所以今晚\n所以今晚\n至少此刻 你还在我的身边"
         },
         "media": {
@@ -546,7 +582,7 @@
         "vector_embedding": []
     },
     {
-        "id": 16,
+        "id": 17,
         "meta": {
             "title": "深蓝",
             "artist": "陈婧霏",
@@ -554,7 +590,7 @@
             "release_date": "2020-12-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-去永恒的爱和欲望",
             "lyrics": "熄灭蜡烛 夜就涌入\n你深蓝色瞳孔\n熊熊烈火 映在你眼中\n我无力再闪躲\n我用嘴唇眺望\n尘世的梦幻想\n我耗尽了目光\n寻找你的模样\n靠近我 温暖我 完整我\n用你深蓝色的臂窝\n进入我 淹没我 滋润我\n疲惫干涸的躯壳\n攀过你胸前起伏的海浪\n越过自由奢侈的高墙\n去永恒的爱和欲望\n蓝色丝绒开出裂缝\n吞噬我焦灼\n绵绵泡沫 柔柔水波\n我多么地快活\n我用嘴唇眺望\n尘世的梦幻想\n我耗尽了目光\n寻找你的模样\n靠近我 温暖我 完整我\n用你深蓝色的臂窝\n进入我 淹没我 滋润我\n疲惫干涸的躯壳\n攀过你胸前起伏的海浪\n越过自由奢侈的高墙\n去永恒的爱和欲望\n给我彼岸完整的月光\n不要手心破碎的太阳\n要一束光只为我照亮"
         },
         "media": {
@@ -582,7 +618,7 @@
         "vector_embedding": []
     },
     {
-        "id": 17,
+        "id": 18,
         "meta": {
             "title": "In Bloom",
             "artist": "陈婧霏",
@@ -590,7 +626,7 @@
             "release_date": "2020-12-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-Is it safe for us to shine Blossom in the sky",
             "lyrics": "Whisper in the dark\nDancing with my scar\nMy broken heart\nInto stolen stars\nOh river flows\nOh fountain of youth\nIs it safe for us to shine\nBlossom in the sky\nGolden paradise\nRain is falling wild\nChoir in my mind\nSweet love of mine\nSynchronized\nBlossom in the sky\nGolden paradise\nRain is falling wild\nChoir in my mind\nSweet love of mine\nSynchronized"
         },
         "media": {
@@ -618,7 +654,7 @@
         "vector_embedding": []
     },
     {
-        "id": 18,
+        "id": 19,
         "meta": {
             "title": "舞舞舞",
             "artist": "陈婧霏",
@@ -626,7 +662,7 @@
             "release_date": "2020-12-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-跳得多灿烂 纯粹就是性感",
             "lyrics": "敏感 我太敏感\n浪漫 附带着悲观\n只有简单让我心安\n世界有时太暗淡\n闭上眼不去看\n热情熄灭后的凋残\n我不怕孤单 只是有点贪玩\n我好怕孤单 来我们一起玩\n跳得多灿烂 坚硬的都酥软\n尽情地旋转 自由着多迷幻\n漫步 一个人漫步\n思绪 整夜在翻覆\n向前向后 都是迷雾\n脚步 凌乱了脚步\n孤独 成全了孤独\n务虚务实 都难圆满\n我不怕孤单 只是有点贪玩\n我好怕孤单 来我们一起玩\n跳得多灿烂 纯粹就是性感\n尽情地旋转 自由着多迷幻"
         },
         "media": {
@@ -654,7 +690,7 @@
         "vector_embedding": []
     },
     {
-        "id": 19,
+        "id": 20,
         "meta": {
             "title": "人间指南",
             "artist": "陈婧霏",
@@ -662,7 +698,7 @@
             "release_date": "2020-12-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-给我一本 人间指南 让我找回方向感",
             "lyrics": "诗人们都说人生像烟花般灿烂\n抓紧快活 别去琢磨 多自然\n朋友们总叫我别太纠结太敏感\n越是敏感 越是难堪 怎么办\n时间是海\n欲望是船\n哪里才是我彼岸\n给我一本\n人间指南\n让我找回方向感\n这时代有太多选择太少安全感\n美食榜单 精品片单 追不完\n用无聊打发着无聊 麻烦谋杀麻烦\n保持忙碌 保持盲目 多荒诞\n时间是海\n欲望是船\n哪里才是我彼岸\n给我一本\n人间指南\n让我找回方向感\n谁躲得过\n这一路的\n孤独和暗淡\n给我一本\n人间指南\n让我找回方向感\n让我找回方向感"
         },
         "media": {
@@ -690,7 +726,7 @@
         "vector_embedding": []
     },
     {
-        "id": 20,
+        "id": 21,
         "meta": {
             "title": "生活在别处",
             "artist": "陈婧霏",
@@ -698,7 +734,7 @@
             "release_date": "2020-12-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-别处的烟火 不停召唤我",
             "lyrics": "We are not in the world the true life is absent\nThe place in which I'll fit will not exist until I make it\nAn artist of the purest kind\nA poet with no poems\nA musician with no tones\nMy life is my work that I devoted all my love to it\nCuz I believe life imitates art\n故事里的歌 旋律不停飘落\n四周涌起着 一层层巧合\n透过一个吻 感受你来过\n赤着脚淌过 春天的河\n就像是淌过 从前的我\n原来每个梦 都是一首歌\n裸露着的 舞动着的\n被占有的 被忽略的\n都在此刻 还给生活\n别处的烟火 不停召唤我\n渴望着线索 渴望着诱惑\n自由的回声 藏在某个角落\n青春的列车 呼啸而过\n褪色的小说 重新复活\n是谁的景色 是谁的过客\n得到什么 失去什么\n感受什么 期待什么\n都在此刻 交给生活\n燃烧着的 凝固着的\n被熄灭的 被融化的\n都在此刻 还给生活"
         },
         "media": {
@@ -726,7 +762,7 @@
         "vector_embedding": []
     },
     {
-        "id": 21,
+        "id": 22,
         "meta": {
             "title": "漫漫人生路",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -734,7 +770,7 @@
             "release_date": "2021-01-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-就算起起落落只要不枉此生 走在漫漫人生路",
             "lyrics": "秦昊：\n漫漫人生路 谁说生命只有辛苦\n张小厚：\n我的路上有你陪伴左右\n哪怕会有痛楚\n王加一：\n泡一壶茶自得其乐\n焦迈奇：\n喝一杯酒对月当歌\n王加一/焦迈奇：\n生命的流转你我都无法停留\n粒粒/陈粒/张小厚/王加一：\n走在漫漫人生路 点点滴滴都幸福\n为爱勇敢付出失败从不在乎\n哪怕我一生孤独\n陈婧霏/秦昊/焦迈奇：\n回头看看来时路 对与错我都满足\n就算起起落落只要不枉此生\n走在漫漫人生路\n粒粒：\n漫漫人生路 谁说生命只有辛苦\n陈婧霏：\n我的路上有你陪伴左右\n哪怕会有痛楚\n焦迈奇/王加一：\n泡一壶茶自得其乐\n(女生：Ha ......)\n喝一杯酒对月当歌\n(女生：Ha ......)\n好妹妹：\n生命的流转你我都无法停留\n(女生：你我都无法停留)\n全体：\n走在漫漫人生路 点点滴滴都幸福\n为爱勇敢付出失败从不在乎\n哪怕我一生孤独\n(男生：哪怕我一生孤独)\n回头看看来时路\n(男生：回头看看来时路)\n对与错我都满足\n(男生：对与错我都满足)\n就算起起落落只要不枉此生\n(男生：只要不枉此生)\n走在漫漫人生路\n(男生：走在漫漫人生路)\n秦昊/王加一：\n我说人生路\n张小厚/焦迈奇：\n该如何走 自己作主\n秦昊/王加一/陈婧霏：\n结局是笑或泪\n张小厚/焦迈奇/陈粒：\n也都无所谓\n全体：\n让我将梦变成歌\n张小厚：\n走在漫漫人生路\n(陈粒/焦迈奇：走在漫漫人生路)\n王加一：\n点点滴滴都幸福\n(陈婧霏/秦昊：点点滴滴都幸福)\n秦昊：\n为爱勇敢付出失败从不在乎\n(陈婧霏/小厚：失败从不在乎)\n好妹妹：\n哪怕我一生孤独\n(陈粒/王加一：哪怕我一生孤独)\n秦昊：\n回头看看来时路\n(粒粒/焦迈奇：回头看看来时路)\n焦迈奇：\n对与错我都满足\n(陈婧霏/秦昊：对与错我都满足)\n张小厚：\n就算起起落落只要不枉此生\n(陈婧霏/王加一：只要不枉此生)\n焦迈奇/王加一：\n走在漫漫人生路\n(粒粒/张小厚：走在漫漫人生路)\n全体：\n走在漫漫人生路\n(走在漫漫人生路)\n点点滴滴都幸福\n(点点滴滴都幸福)\n为爱勇敢付出失败从不在乎\n(失败从不在乎 哪怕我一生)\n哪怕我一生孤独\n(哪怕我一生孤独)\n回头看看来时路\n(回头看看来时路)\n对与错我都满足\n(对与错我都满足)\n就算起起落落只要不枉此生\n(只要不枉此生)\n走在漫漫人生路\n(走在漫漫人生路)"
         },
         "media": {
@@ -762,7 +798,7 @@
         "vector_embedding": []
     },
     {
-        "id": 22,
+        "id": 23,
         "meta": {
             "title": "Lonely",
             "artist": "Violet Skies/陈婧霏",
@@ -770,7 +806,7 @@
             "release_date": "2021-01-15",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-就让曾经的灿烂 都用寂寞来偿还",
             "lyrics": "Nothing means nothing when nothing\nIs all you give me I'm sitting\nHere wishing praying for something\nSay you wanna be my\nBaby it's all just a mess\nI made when I called to confess\nMy feelings and now I'm upset\nWishing I had just lied\nThere's a lump in the back of throat\nAnd there's just no letting u go\nBut I guess you're letting me go so go on\nScratch my heart straight out of my chest\nBurn my house down it still hurts less\nLeave me stranded out in the cold\nI won't feel it cos what hurts the most is\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nStomach is sinking\nI realize what you're thinking\nI know you've made your decision\nI can't make you love me\nThere's a lump in the back of throat\nAnd there's just no letting u go\nBut I guess you're letting me go so go on\n当炙热的都归于平淡\n当特别的都变得平凡\n就让曾经的灿烂\n都用寂寞来偿还\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\n当炙热的都归于平淡\nBurn my house down it still hurts less\n就让曾经的灿烂\nI won't feel it cos what hurts the most is\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lonely\nWhen I'm lo lo when I'm lo lo\nWhen I'm lo lo when I'm lo lo\nWhen I'm lonely"
         },
         "media": {
@@ -798,7 +834,7 @@
         "vector_embedding": []
     },
     {
-        "id": 23,
+        "id": 24,
         "meta": {
             "title": "自己的海",
             "artist": "陈婧霏",
@@ -806,7 +842,7 @@
             "release_date": "2021-04-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-拥抱不再只是种虚拟 幸福不再是白马过隙",
             "lyrics": "无边际 当过去和未来似平行\n请问\n谁看见 现在身影\n在失去与渴望的距离\n喔\n谁沉溺自己的海\n回旋徘徊\n我多想拥抱 现在\n拥抱不再只是种虚拟\n幸福不再是白马过隙\n谁经过自己的海\n我多想拥抱 现在\n拥抱不再只是种虚拟\n幸福不再是白马过隙\n谁经过自己的海\n我多想拥抱 现在\n喔\n我沉溺在自己的海\n回旋徘徊\n又忍不住想 离开\n喔\n若游出自己的海\n是否可以\n借你的手拥抱现在"
         },
         "media": {
@@ -820,43 +856,7 @@
             "producer": "大猴仔",
             "arranger": "大猴仔",
             "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 24,
-        "meta": {
-            "title": "逝去的海",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2021-06-15",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "黄昏的天空是数不清的梦\n像一扇窗 也像是一盏灯火\n柔柔水波是你最爱哼的歌\n悄悄驯服 狂风暴雨的世界\n太阳从西方悄悄落下\n清晨的东方已默默地\n站在你面前\n逝去的海\n在日暮中向我袭来\n好似一整晚的等待\n那夜鸟的歌声\n那夜雨淅淅沥沥\n沙沙地来到我梦里\n淹没心底最隐秘的失意\n太阳从西方悄悄落下\n清晨的东方已默默地\n站在你面前\n逝去的海\n在日暮中向我袭来\n好似一整晚的等待\n那夜鸟的歌声\n那夜雨淅淅沥沥\n沙沙地来到我梦里\n淹没心底最隐秘的失意\n晚霞对着游鱼说道\n经过你的亲吻\n我不再害怕离去\n靠近也许是伤害\n远离也许才安全\n原始的海\n在记忆最深处澎湃\n好似一整晚的等待\n飞鸟不追问意义\n云朵不自知美丽\n生命的源力就在这里\n无束无拘自由的呼吸"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "赵广为/陈婧霏",
-            "producer": "周冠儒",
-            "arranger": "周冠儒",
-            "original_singer": "",
-            "official_description": ""
+            "official_description": "陈婧霏用迷漫袅袅的嗓音将故事娓娓道来，通过音乐表达了对生命的尊重和敬畏。温柔的嗓音如温煦的阳光，歌曲宛若回旋徘徊在脑海深处的电波，将疾如风，徐如林的生死时刻表现的更加丰富立体。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -872,14 +872,14 @@
     {
         "id": 25,
         "meta": {
-            "title": "躲也躲不了",
+            "title": "逝去的海",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2021-12-27",
+            "release_date": "2021-06-15",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "天在笑啊 花儿在飘\n大自然真奇妙\n人在笑啊 头儿在摇\n那满天花雨躲不了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n天还在笑 花儿在飘\n大自然真奇妙\n心中又想起 你教我的歌\n要躲也躲不了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n是多么美 是多么妙\n我怎么怎么忘得了"
+            "highlight_sentence": "-生命的源力就在这里 无束无拘自由的呼吸",
+            "lyrics": "黄昏的天空是数不清的梦\n像一扇窗 也像是一盏灯火\n柔柔水波是你最爱哼的歌\n悄悄驯服 狂风暴雨的世界\n太阳从西方悄悄落下\n清晨的东方已默默地\n站在你面前\n逝去的海\n在日暮中向我袭来\n好似一整晚的等待\n那夜鸟的歌声\n那夜雨淅淅沥沥\n沙沙地来到我梦里\n淹没心底最隐秘的失意\n太阳从西方悄悄落下\n清晨的东方已默默地\n站在你面前\n逝去的海\n在日暮中向我袭来\n好似一整晚的等待\n那夜鸟的歌声\n那夜雨淅淅沥沥\n沙沙地来到我梦里\n淹没心底最隐秘的失意\n晚霞对着游鱼说道\n经过你的亲吻\n我不再害怕离去\n靠近也许是伤害\n远离也许才安全\n原始的海\n在记忆最深处澎湃\n好似一整晚的等待\n飞鸟不追问意义\n云朵不自知美丽\n生命的源力就在这里\n无束无拘自由的呼吸"
         },
         "media": {
             "audio_file": "",
@@ -887,12 +887,12 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "黄霑",
-            "composer": "黄霑",
+            "lyricist": "陈婧霏",
+            "composer": "赵广为/陈婧霏",
             "producer": "周冠儒",
             "arranger": "周冠儒",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "陈婧霏献声世界海洋日公益曲，\n向海而生，无拘无束一起呼吸。90后唱作人陈婧霏通过音乐激发人们的共识与行动，呼吁大众热爱地球环境、守护美丽海洋。\n在陈婧霏的声音中，可以听见太多的可能和场景，如同海水包裹万物，亲密的和鱼儿一同游玩，如同站在夕阳黄昏中，看海岸线和天空交汇，独自一人走边走边唱。\n请温柔的打开这份礼物，悄悄地，不要惊动睡着的飞鸟，不要让安静的海面呼啸，温柔的，轻盈的，亲吻自然。爱这份馈赠，就像白云千里，不问归期。自由呼吸，就像花儿通过天空潜望，行于时间之潮。\n歌曲封面为AI与人协同画作《水调·银汉曲》，系腾讯音乐娱乐集团携手中国知名加密艺术家宋婷，为WWF创作的国内首个海洋公益音画加密艺术品。腾讯区块链产品'至信链'已为作品进行确权存证。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -908,14 +908,14 @@
     {
         "id": 26,
         "meta": {
-            "title": "梦里水乡",
+            "title": "躲也躲不了",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2021-12-29",
+            "release_date": "2021-12-27",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "春天的黄昏\n请你陪我到 梦中的水乡\n那挥动的手 在薄雾中飘荡\n不要惊醒杨柳岸 那些缠绵的往事\n化作一缕轻烟 已消失在远方\n暖暖的午后\n闪过一片片 粉红的衣裳\n谁也载不走 那扇古老的窗\n玲珑少年在岸上 守候一生的时光\n为何没能做个 你盼望的新娘\n淡淡相思 都写在脸上\n沉沉离别背在肩上\n泪水流过脸庞\n所有的话 现在还是没有讲\n看那青山 荡漾在水上\n看那晚霞吻着夕阳\n我用一生的爱 去寻找那一个家\n今夜你在何方\n转回头 迎着你的笑颜\n心事全都被你发现\n梦里遥远的幸福 它就在我的身旁\n暖暖的午后\n闪过一片片 粉红的衣裳\n谁也载不走 那扇古老的窗\n玲珑少年在岸上 守候一生的时光\n为何没能做个 你盼望的新娘\n淡淡相思 都写在脸上\n沉沉离别背在肩上\n泪水流过脸庞\n所有的话 现在还是没有讲\n看那青山 荡漾在水上\n看那晚霞吻着夕阳\n我用一生的爱 去寻找那一个家\n今夜你在何方\n转回头 迎着你的笑颜\n心事全都被你发现\n梦里遥远的幸福 它就在我的身旁"
+            "highlight_sentence": "-我怎么怎么忘得了",
+            "lyrics": "天在笑啊 花儿在飘\n大自然真奇妙\n人在笑啊 头儿在摇\n那满天花雨躲不了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n天还在笑 花儿在飘\n大自然真奇妙\n心中又想起 你教我的歌\n要躲也躲不了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n风儿在吹啊 那云儿飘\n天边响起歌谣\n花落花飞 云来云去\n要躲也躲不了\n啊 啊\n是多么美 是多么妙\n我怎么怎么忘得了\n是多么美 是多么妙\n我怎么怎么忘得了"
         },
         "media": {
             "audio_file": "",
@@ -923,12 +923,12 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "洛兵",
-            "composer": "周迪",
+            "lyricist": "黄霑",
+            "composer": "黄霑",
             "producer": "周冠儒",
             "arranger": "周冠儒",
-            "original_singer": "陈红",
-            "official_description": ""
+            "original_singer": "",
+            "official_description": "琵琶古声今又闻，初弹如珠后如缕。音绕碧山晚云留，一声两声落花雨。听陈婧霏 以幻入世 诠释武侠旧梦"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -944,13 +944,49 @@
     {
         "id": 27,
         "meta": {
+            "title": "梦里水乡",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2021-12-29",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-梦里遥远的幸福 它就在我的身旁",
+            "lyrics": "春天的黄昏\n请你陪我到 梦中的水乡\n那挥动的手 在薄雾中飘荡\n不要惊醒杨柳岸 那些缠绵的往事\n化作一缕轻烟 已消失在远方\n暖暖的午后\n闪过一片片 粉红的衣裳\n谁也载不走 那扇古老的窗\n玲珑少年在岸上 守候一生的时光\n为何没能做个 你盼望的新娘\n淡淡相思 都写在脸上\n沉沉离别背在肩上\n泪水流过脸庞\n所有的话 现在还是没有讲\n看那青山 荡漾在水上\n看那晚霞吻着夕阳\n我用一生的爱 去寻找那一个家\n今夜你在何方\n转回头 迎着你的笑颜\n心事全都被你发现\n梦里遥远的幸福 它就在我的身旁\n暖暖的午后\n闪过一片片 粉红的衣裳\n谁也载不走 那扇古老的窗\n玲珑少年在岸上 守候一生的时光\n为何没能做个 你盼望的新娘\n淡淡相思 都写在脸上\n沉沉离别背在肩上\n泪水流过脸庞\n所有的话 现在还是没有讲\n看那青山 荡漾在水上\n看那晚霞吻着夕阳\n我用一生的爱 去寻找那一个家\n今夜你在何方\n转回头 迎着你的笑颜\n心事全都被你发现\n梦里遥远的幸福 它就在我的身旁"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "洛兵",
+            "composer": "周迪",
+            "producer": "周冠儒",
+            "arranger": "周冠儒",
+            "original_singer": "陈红",
+            "official_description": "「青春重置计划5请回答1999」第三支曝光单曲是陈婧霏演唱的《梦里水乡》，原曲曾由陈红原唱，再经由江珊的演唱版本，成为大街小巷流传至今的不朽金曲，至今仍在短视频平台有颇高的使用量和播放量。\n陈婧霏'重置'演唱的《梦里水乡》仍由她第一张同名专辑的制作人周冠儒操刀完成编曲和制作，全曲紧扣'梦'的主题，以优雅的圆舞曲版的节奏行进，标志性的笛声音乐穿插其中，勾勒了一出梦回江南的氤氲美梦，怀旧感十足的色调从封面视觉到旋律氛围一脉相承，表达出复古十足的音乐美感。\n有没有那么一首歌会让你重回年少？有没有这样一首歌能令你穿越时空？\n最强翻唱企划「青春重置计划」 第五季'请回答1999'-﹣带你重温千禧情歌\n从1999年12月31日跨年到2000年1月1日的一刹那，好像一切都不一样了，又好像一切都还如常。\n1999年还弥漫着的各种末日遗绪，到2000开始又展开了一个崭新世纪的新鲜和活力，连情歌都有了全新的味道。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 28,
+        "meta": {
             "title": "空空",
             "artist": "王加一/陈婧霏",
             "album": "",
             "release_date": "2022-09-05",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-成长变成了 我和我的隔阂",
             "lyrics": "王加一：\n回忆组成风 欲望组成梦\n一个古老的形容\n凝视着镜中\n怎么越看越普通\n时间变成歌 无言变成我\n身穿厚重的沉默\n掩盖我心里\n很隐秘的啰嗦\n怎么好像前一秒钟\n还在自由放空\n突然就变失落\n成⻓变成了\n我和我的隔阂\n怎么好像有一阵风\n在赶来的途中\n说它懂我的梦\n让我在它的\n怀抱中 彻底放松\n陈婧霏：\n回忆筑成空 欲望凝成洞\n一个无奈的形容\n凝视着镜中\n怎么越看越中庸\n时间变成沙 灵魂说成话\n只剩下沉默无价\n掩盖我心里\n太多余的挣扎\n陈婧霏：\n怎么好像前一秒钟\n还在自由放空\n突然就变失落\n成⻓变成了\n我和我的隔阂\n怎么好像有一阵风\n在赶来的途中\n说它懂我的梦\n让我在它的\n怀抱中 彻底放松\n王加一：\n怎么好像前一秒钟\n还在自由放空\n突然就变失落\n成长变成了\n我和我的隔阂\n怎么好像有一阵风\n在赶来的途中\n说它懂我的梦\n让我在它的\n怀抱中 彻底放松\n王加一：\n回忆组成风 欲望组成梦\n一个古老的形容\n陈婧霏：\n凝视着镜中\n怎么如风也如梦"
         },
         "media": {
@@ -978,7 +1014,7 @@
         "vector_embedding": []
     },
     {
-        "id": 28,
+        "id": 29,
         "meta": {
             "title": "海底一公里",
             "artist": "陈婧霏",
@@ -986,7 +1022,7 @@
             "release_date": "2022-08-12",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-其实也算幸运 曾看过你眼睛",
             "lyrics": "人海里 地铁太拥挤淹没我的背影\n每次叹息 伴随我呼吸疼痛从不缺席\n我的手机 还留着你说离开的讯息\n那一字一句 那点点滴滴\n都很难躲避\n如果我在海底 沉默不语\n而你又在哪里 开不开心\n回忆像是躲不过 却没有人能\n测量的距离\n如果我在想你 还在想你\n想到快要窒息 心跳频率\n其实也算幸运 曾看过你眼睛\n蓝色的你 像我的情绪反射出的光晕\n没有泪滴 或者我周围全部是泪滴\n一点氧气 就足够我继续环绕陆地\n她口中的你 那该死的你\n距离一公里\n如果我在海底 沉默不语\n而你又在哪里 开不开心\n回忆像是躲不过 却没有人能\n测量的距离\n如果我在想你 还在想你\n想到快要窒息 心跳频率\n其实也算幸运 曾看过你眼睛\n如果我在海底 沉默不语\n而你又在哪里 开不开心\n回忆像是躲不过 却没有人能\n测量的距离\n如果我在想你 还在想你\n想到快要窒息 心跳频率\n其实也算幸运 曾看过你眼睛"
         },
         "media": {
@@ -1000,7 +1036,7 @@
             "producer": "汪苏泷",
             "arranger": "金若晨/姜禹",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "以音符为画笔，来自唱作人之间营造的浪漫唯美之境"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1014,7 +1050,7 @@
         "vector_embedding": []
     },
     {
-        "id": 29,
+        "id": 30,
         "meta": {
             "title": "燃烧一场",
             "artist": "陈婧霏",
@@ -1022,7 +1058,7 @@
             "release_date": "2022-10-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-趁 烟未冷 迷离夜未央",
             "lyrics": "抬头望\n漆黑夜如花 在绽放\n零度下\n孤独地飞翔 如流浪\n没方向\n你看着我\n像一只羔羊遍体鳞伤\n我望着你\n像一束烟火闪闪发光\n你用沉默诉说天堂模样\n我假装入迷嘴角上扬\n你走向我\n像泪光中浮现的月光\n我抱住你\n如绝望中实现的愿望\n纵然 飞蛾扑火 又何妨\n趁 烟未冷 迷离夜未央\n燃烧一场\n不敢爱\n把带泪的话 说成谎\n不再怕\n滚烫的诺言 未曾忘\n又成殇\n你看着我\n像一只羔羊 遍体鳞伤\n我望着你\n像一束烟火 闪闪发光\n你用沉默诉说天堂模样\n我假装入迷嘴角上扬\n你走向我\n像泪光中浮现的月光\n我抱住你\n如绝望中实现的愿望\n纵然 飞蛾扑火 又何妨\n趁烟未冷 迷离夜未央\n燃烧一场"
         },
         "media": {
@@ -1050,7 +1086,7 @@
         "vector_embedding": []
     },
     {
-        "id": 30,
+        "id": 31,
         "meta": {
             "title": "冬",
             "artist": "王加一/陈婧霏",
@@ -1058,7 +1094,7 @@
             "release_date": "2022-11-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-春去秋来又一遍",
             "lyrics": "王加一：\n再寒冷一点\n雪花飞舞的冬天\n那年我经过你的门前\n我们一起漫步的那条街\n陈婧霏：\n再遥远一些\n青春朦胧的季节\n你的笑凝结在风里面\n像白雪一样淹没我的眼\n王加一：\n时光流逝多少年\n花落人散两分别\n想问白云的里面\n是否有你相思化作的雨点\n陈婧霏：\n月落乌啼霜满天\n曾经沧海变桑田\n春去秋来又一遍\n曾经的我你可否还会想念\n王加一：\n再遥远一些\n青春朦胧的季节\n陈婧霏：\n你的笑凝结在风里面\n像白雪一样淹没我的眼\n王加一：\n时光流逝多少年\n陈婧霏：\n时光流逝多少年\n王加一：\n花落人散两分别\n陈婧霏：\n花落人散两分别\n王加一：\n想问白云的里面\n合：\n是否有你相思化作的雨点\n陈婧霏：\n月落乌啼霜满天\n王加一：\n月落乌啼霜满天\n陈婧霏：\n曾经沧海变桑田\n王加一：\n曾经沧海变桑田\n陈婧霏：\n春去秋来又一遍\n合：\n曾经的我你可否还会想念\n陈婧霏：\n月落乌啼霜满天\n王加一：\n曾经沧海变桑田\n陈婧霏：\n春去秋来又一遍\n合：\n曾经的我你可否还会想念"
         },
         "media": {
@@ -1086,7 +1122,7 @@
         "vector_embedding": []
     },
     {
-        "id": 31,
+        "id": 32,
         "meta": {
             "title": "如梦",
             "artist": "陈婧霏",
@@ -1094,7 +1130,7 @@
             "release_date": "2022-11-22",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-所谓世界模样 不过是 你授权的幻象",
             "lyrics": "流浪车厢\n灼人阳光\n洒下一地金黄\n吻着雪霜\n枕着幻想\n放肆地梦一场\n甩开时间框架\n不再加鞭快马\n享受无尽的当下\n自由膨胀的变化\n灵魂开出蔷薇 流光多明媚\n执念慢慢粉碎 自由多无畏\n所谓世界模样\n不过是 你授权的幻象\n在念头之外\n直觉地带\n终于遇见 自在\n流浪车厢\n灼人阳光\n洒下一地金黄\n吻着花香\n枕着幻想\n放肆地梦一场\n甩开剧情框架\n不再忧虑害怕\n享受轻盈的当下\n看爱把坚硬融化\n灵魂开出蔷薇 流光多明媚\n执念慢慢粉碎 自由多无畏\n所谓世界模样\n不过是 你授权的幻象\n在念头之外\n直觉地带\n终于遇见 自在\n灵魂开出蔷薇 流光多明媚\n执念慢慢粉碎 自由多无畏\n关于生活的真相\n不过是 你显化的愿望\n在情节之外\n浮空地带\n终于遇见 自在"
         },
         "media": {
@@ -1122,7 +1158,7 @@
         "vector_embedding": []
     },
     {
-        "id": 32,
+        "id": 33,
         "meta": {
             "title": "亲密爱人",
             "artist": "陈婧霏",
@@ -1130,7 +1166,7 @@
             "release_date": "2022-12-08",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-也许我应该好好把你拥有",
             "lyrics": "今夜还吹着风\n想起你好温柔\n有你的日子分外的轻松\n也不是无影踪\n只是想你太浓\n怎么会无时无刻把你梦\n爱的路上有你\n我并不寂寞\n你对我那么的好\n这次真的不同\n也许我应该好好把你拥有\n就像你一直为我守候\n亲爱的人 亲密的爱人\n谢谢你这么长的时间陪着我\n亲爱的人 亲密的爱人\n这是我一生中最兴奋的时分\n爱的路上有你\n我并不寂寞\n你对我那么的好\n这次真的不同\n也许我应该好好把你拥有\n就像你一直为我守候\n亲爱的人 亲密的爱人\n谢谢你这么长的时间陪着我\n亲爱的人 亲密的爱人\n这是我一生中最兴奋的时分\n这是我一生中最兴奋的时分"
         },
         "media": {
@@ -1144,7 +1180,7 @@
             "producer": "周冠儒",
             "arranger": "周冠儒",
             "original_singer": "梅艳芳",
-            "official_description": ""
+            "official_description": "《亲密爱人》由歌手梅艳芳原唱，收录在他1991年发行的同名专辑《亲密爱人》专辑中，这首歌总是让听众误以为是在民国时期大上海的歌曲，原因是其曲调婉转优美，深沉又暧昧，是一首韵味十足的歌曲。因此此次的翻唱歌手选定了陈婧霏，这个在当下浮躁的社会里，少有的复古感实力女声，当第一声吉他出来，随后跟上慵懒又感情的女声，让人仿佛回到了那个年代听磁带的感觉。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1158,7 +1194,7 @@
         "vector_embedding": []
     },
     {
-        "id": 33,
+        "id": 34,
         "meta": {
             "title": "这个世界",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -1166,7 +1202,7 @@
             "release_date": "2023-01-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-我们的世界 并不像你说的真有那么坏",
             "lyrics": "秦昊：\n在这个世界\n有一点希望\n有一点失望\n我时常这么想\n陈粒：\n在这个世界\n有一点欢乐\n有一点悲伤\n谁也无法逃开\n焦迈奇：\n我们的世界\n并不像你说的真有那么坏\n你又何必感慨\n张小厚：\n用你的关怀和所有的爱\n为这个世界\n合：\n添一些美丽色彩\n在这个世界\n在这个世界\n王加一：\n在这个世界\n有一点希望\n有一点失望\n我时常这么想\n陈婧霏：\n在这个世界\n有一点欢乐\n有一点悲伤\n谁也无法逃开\n好妹妹/陈粒：\n我们的世界\n并不像你说的真有那么坏\n你又何必感慨\n焦迈奇/王加一/陈婧霏：\n用你的关怀和所有的爱\n为这个世界\n合：\n添一些美丽色彩\n在这个世界\n在这个世界\n在这个世界\n在这个世界"
         },
         "media": {
@@ -1194,52 +1230,16 @@
         "vector_embedding": []
     },
     {
-        "id": 34,
-        "meta": {
-            "title": "黑色领结 (Nuance)",
-            "artist": "Alec Benjamin/陈婧霏",
-            "album": "",
-            "release_date": "2023-02-28",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "镜子中的男人 有一点陌生\n穿着无趣平整 面容还算有精神\n走过闪烁的路灯 匆匆忙忙的人\n和我擦肩而过\n面无表情 穿过黄昏\n就这样吧 就这样吧\n戴上领结不用害怕\n是黑色领结 带走稚嫩和天真 emm\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da\n镜子中的男人 越来越陌生\n举止无聊烦闷 说话打不起精神\n那些青春旧日美梦 流失在岁月中\n忘不掉的伤痕 让人学会真假不分\n就这样吧 就这样吧\n戴上领结不用害怕\n是黑色领结 带走稚嫩和天真 emm\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da\n我们都 曾经高谈阔论\n要如何度过这一生\n可在成人世界的入口\n只看见一扇灰色的门\n只看见一扇灰色的门\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "",
-            "composer": "",
-            "producer": "",
-            "arranger": "",
-            "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
         "id": 35,
         "meta": {
-            "title": "光芒",
+            "title": "她ELLE",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2023-11-06",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "至暗时刻太漫长 霓虹暗巷 暴力天堂\n数据池塘太病怏 信念饥荒 细菌滋长\n撕破认知幻象 抵达意识边疆\n人间开始摇摇晃晃\n不必在意谁的眼光\n不需要谁的原谅 赴火蹈汤\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒\n迷失公路的中央 旷野的风 划过脸庞\n虚拟结界在震荡 旧梦浮光 沉入海洋\n穿越全息幻象 抵达妖曳风光\n吞下最猩涩的月亮\n不必在意谁的眼光\n不需要谁的怜奖 燃烧一场\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒"
+            "highlight_sentence": "-扮演别人的时间都是浪费",
+            "lyrics": "心有点累\n不分昼夜的追随\n生怕掉了什么队\n思想过分不是罪\n就让我暂时地脱轨\n拥抱真实的不完美\n她 为什么颓废\n她 为什么憔悴\n各有各的原委\n不后悔不惭愧 保持我的原味\n潇洒或狼狈 我为自己陶醉\n不必问不必说 我自己去体会\n扮演别人的时间都是浪费\n生存规则再珍贵\n若弄丢了自己是谁\n前进也成了后退\n若街头到巷尾\n都同一副脸嘴\n该有多么乏味\n不后悔不惭愧 保持我的原味\n潇洒或狼狈 我为自己陶醉\n不必问不必说 我自己去体会\n扮演别人的时间都是浪费\n那么多错与对 谁来鉴定真伪\n那么多花乱坠 都腐烂在肠胃\n反复辗转徘徊 怎么能好好得睡\n不后悔不惭愧 拥抱我的原味\n潇洒或狼狈 我为自己陶醉\n不必问不必说 我自己去体会\n扮演别人的时间都是浪费"
         },
         "media": {
             "audio_file": "",
@@ -1249,10 +1249,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "陆希文",
-            "arranger": "陆希文",
+            "producer": "周冠儒",
+            "arranger": "周冠儒",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "ELLE 携手陈婧霏为其入驻中国三十五周年创作首部音乐单曲，倡导新精神'新女性主义'，为当代女孩谱写颂歌。陈婧霏透过现实的角度，结合梦幻的音乐元素，鼓励女性摆脱常规与束缚，唤醒女性对于生命与生活的独立探索，以及对于自我的挖掘认知。也希望女性能够寻得并且学会热爱最真实的自己，从而自尊自信，不受外界或旁人左右，更从容自由而勇敢无畏地前行。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1268,13 +1268,85 @@
     {
         "id": 36,
         "meta": {
+            "title": "黑色领结 (Nuance)",
+            "artist": "Alec Benjamin/陈婧霏",
+            "album": "",
+            "release_date": "2023-02-28",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-不需要 看太清",
+            "lyrics": "镜子中的男人 有一点陌生\n穿着无趣平整 面容还算有精神\n走过闪烁的路灯 匆匆忙忙的人\n和我擦肩而过\n面无表情 穿过黄昏\n就这样吧 就这样吧\n戴上领结不用害怕\n是黑色领结 带走稚嫩和天真 emm\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da\n镜子中的男人 越来越陌生\n举止无聊烦闷 说话打不起精神\n那些青春旧日美梦 流失在岁月中\n忘不掉的伤痕 让人学会真假不分\n就这样吧 就这样吧\n戴上领结不用害怕\n是黑色领结 带走稚嫩和天真 emm\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da\n我们都 曾经高谈阔论\n要如何度过这一生\n可在成人世界的入口\n只看见一扇灰色的门\n只看见一扇灰色的门\n我的眼睛 曾看得清\n天空阴晴的细微表情\n我的耳朵 曾听得清\n风的心情在高低飞行\n可如今 我不再 是那么肯定\n努力过 的结果 若只是幻影\n该怎么说 这个世界\n它一直都将会转个不停\n不需要 看太清 da da da"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "",
+            "composer": "",
+            "producer": "",
+            "arranger": "",
+            "original_singer": "",
+            "official_description": "《黑色领结》的原曲是Alec Benjamin在2022年发布的《(Un)Commentary》专辑中的《Nuance》，该歌曲伴着轻快的律动，唱出少年在成长过程中的心境变化；这次中文版的《黑色领结》保持了原曲的主旨，并通过'黑色领结'这个意象，作为成人世界的一个象征。\nAlec第四次和中国歌手的跨洋合唱。陈婧霏的加入，也为这首歌带来了一个更丰富的维度，她慵懒而极具辨识度的歌声，更能让听者感受到歌曲中所要表达的，从少年过渡到成年之时感受到的各种微妙情绪。'我觉得她给这首歌带来了很多新的东西，'在被问及对这次和陈婧霏的合作是如何感受时，Alec回答道，'而且她的嗓音也很棒，让这首歌变得更为动人而新颖。'\n'这首歌英文原版听上去是有节奏感的、轻松的，'陈婧霏谈到这次合作时说道，'换成中文之后，其实对我个人风格和演唱习惯来说，其实都有很大的挑战的……所以我觉得也是一个小小的突破吧。'"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 37,
+        "meta": {
+            "title": "光芒",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2023-11-06",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-撕破认知幻象 抵达意识边疆",
+            "lyrics": "至暗时刻太漫长 霓虹暗巷 暴力天堂\n数据池塘太病怏 信念饥荒 细菌滋长\n撕破认知幻象 抵达意识边疆\n人间开始摇摇晃晃\n不必在意谁的眼光\n不需要谁的原谅 赴火蹈汤\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒\n迷失公路的中央 旷野的风 划过脸庞\n虚拟结界在震荡 旧梦浮光 沉入海洋\n穿越全息幻象 抵达妖曳风光\n吞下最猩涩的月亮\n不必在意谁的眼光\n不需要谁的怜奖 燃烧一场\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒\n羞耻都解放\n恐惧丢一旁\n别去阻挡 这波浪\n你身躯滚烫\n我悉心品尝\n无法抵挡 这光芒"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "陆希文",
+            "arranger": "陆希文",
+            "original_singer": "",
+            "official_description": "光芒﹣ 陈婧霏《光芒》x安吉拉·布洛克《心宿二和天秤座》:\n无论是音乐还是视觉影像，仿佛都在传达一种召唤：别抵挡这光芒。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 38,
+        "meta": {
             "title": "分享",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
             "album": "",
             "release_date": "2024-01-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-幸好一路上有你陪我",
             "lyrics": "秦昊：\n时间已作了选择\n什么人叫做朋友\n张小厚：\n偶尔碰头\n心情却能一点就通\n焦迈奇：\n因为我们曾有过\n理想类似的生活\n王加一：\n太多感受\n绝非三言两语能形容\n陈婧霏：\n可能有时我们顾虑太多\n太多决定需要我们去选择\n陈粒：\n担心会犯错\n难免会受挫\n幸好一路上有你陪我\n焦迈奇/王加一/陈婧霏：\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇窗\n能让视野不同\n好妹妹/陈粒/粒粒：\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇门\n让世界开阔\n好妹妹：\n因为我们曾有过\n理想类似的生活\n焦迈奇/王加一：\n太多感受\n绝非三言两语能形容\n陈婧霏：\n可能有时我们顾虑太多\n太多决定需要我们去选择\n陈粒：\n担心会犯错（担心会犯错）\n难免会受挫（难免会受挫）\n合：\n幸好一路上有你陪我\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇窗\n能让视野不同\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇门\n让世界开阔\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇窗\n能让视野不同\n与你分享的快乐\n胜过独自拥有\n至今我仍深深感动\n好友如同一扇门\n让世界变开阔"
         },
         "media": {
@@ -1302,7 +1374,7 @@
         "vector_embedding": []
     },
     {
-        "id": 37,
+        "id": 39,
         "meta": {
             "title": "晒了晒",
             "artist": "好妹妹/陈粒/焦迈奇/王加一/陈婧霏",
@@ -1310,7 +1382,7 @@
             "release_date": "2024-02-04",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-晒到月亮上山岗",
             "lyrics": "秦昊：\n一个伙伴晒太阳 晒得心痒痒\n王加一：\n两个伙伴晒太阳 歌声多嘹亮\n陈婧霏：\n三个伙伴晒太阳 晒得屁股烫\n张小厚：\n四个伙伴晒太阳 船帆追波浪\n陈粒：\n五个伙伴晒太阳 犹梦逐天光\n焦迈奇：\n六个伙伴晒太阳 最美好的时光\n合唱：\n嘿 晒到月亮上山岗\n嘿 喝完这杯睡得香\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n秦昊：\n一个伙伴晒太阳 晒得心痒痒\n王加一：\n两个伙伴晒太阳 歌声多嘹亮\n陈婧霏：\n三个伙伴晒太阳 晒得屁股烫\n张小厚：\n四个伙伴晒太阳 船帆追波浪\n陈粒：\n五个伙伴晒太阳 犹梦逐天光\n焦迈奇：\n六个伙伴晒太阳 最美好的时光\n合唱：\n嘿 晒到月亮上山岗\n嘿 喝完这杯睡得香\n嘿 晒到月亮上山岗\n嘿 喝完这杯睡得香\n样样好\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n噻 噻啰噻啰噻啰 噻噻噻啰噻\n嘿"
         },
         "media": {
@@ -1338,7 +1410,7 @@
         "vector_embedding": []
     },
     {
-        "id": 38,
+        "id": 40,
         "meta": {
             "title": "春色悠悠不及你荡漾",
             "artist": "陈婧霏",
@@ -1346,7 +1418,7 @@
             "release_date": "2024-03-20",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-你就是我 最后一个愿望",
             "lyrics": "给我一个吻\n给我炙热的双唇\n温柔坚定的眼神\n风中缠绵的香气\n说着恋人的絮语\n终于相信 你是我的命运\n你是我沿途最美的风光\n春色悠悠不及你荡漾\n倚在你肩膀 就能实现梦想\n一起流浪到未知远方\n等待大雨过后的晴朗\n你就是我 最后一个愿望\n皎洁的月光\n轻拂温存的麦浪\n勾勒爱情的模样\n一路难免失望\n难免曲折漫长\n让这首歌 为你轻轻地唱\n你是我沿途最美的风光\n春色悠悠不及你荡漾\n倚在你肩膀 就能实现梦想\n一起流浪到未知远方\n等待大雨过后的晴朗\n你就是我 最后一个愿望\n给我一个吻\n给我绚烂的黄昏\n给我漫天的星辰"
         },
         "media": {
@@ -1374,7 +1446,7 @@
         "vector_embedding": []
     },
     {
-        "id": 39,
+        "id": 41,
         "meta": {
             "title": "午夜爱未眠",
             "artist": "陈婧霏",
@@ -1382,7 +1454,7 @@
             "release_date": "2024-03-20",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-地转天旋 注定的沦陷",
             "lyrics": "回忆汹涌的午夜\n往事随着月光蔓延\n思念缠绕的房间\n走不出迷人的幻觉\n一场偶然的遇见\n地转天旋 注定的沦陷\n流星划落瞬间\n你是我的心愿\n轻轻的念 你是否听得见\n这温柔的狂野\n回忆汹涌的午夜\n往事随着月光蔓延\n思念缠绕的房间\n走不出迷人的幻觉\n一段青涩的遥远\n忽明忽灭 炙热的晕眩\n流星划落瞬间\n你是我的心愿\n轻轻的念 你是否听得见\n这温柔的狂野\n流星划落瞬间\n你是我的心愿\n轻轻的念 你是否听得见\n这温柔的狂野"
         },
         "media": {
@@ -1410,7 +1482,7 @@
         "vector_embedding": []
     },
     {
-        "id": 40,
+        "id": 42,
         "meta": {
             "title": "夜空",
             "artist": "陈婧霏",
@@ -1418,7 +1490,7 @@
             "release_date": "2024-03-20",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-等一个美梦",
             "lyrics": "等待一阵缓缓的风 吹过夜空\n等潮水轻轻骚动 伴我入梦\n快要熄灭的篝火 不愿离去的飞虫\n我听见 我的寂寞\n我脱掉了磨脚的鞋 慢慢走着\n软软的绵绵的沙 包围着我\n远处闪烁的灯塔 快要走完的港口\n我拥抱 我的寂寞\n你的姓氏 被海冲淡\n穿过我指尖 有几颗无奈\n我就要离开\n我的心事 被风吹散\n等一个美梦 就足以释怀\n就要忘怀 那夜的海\n我脱掉了磨脚的鞋 慢慢走着\n软软的绵绵的沙 包围着我\n远处闪烁的灯塔 快要走完的港口\n我拥抱 我的寂寞\n你的姓氏 被海冲淡\n穿过我指尖 有几颗无奈\n我就要离开\n我的心事 被风吹散\n等一个美梦 就足以释怀\n就要忘怀 那夜的海"
         },
         "media": {
@@ -1446,7 +1518,7 @@
         "vector_embedding": []
     },
     {
-        "id": 41,
+        "id": 43,
         "meta": {
             "title": "别处的夕阳2024",
             "artist": "陈婧霏",
@@ -1454,7 +1526,7 @@
             "release_date": "2024-03-20",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-你的目光燃烧四方",
             "lyrics": "人来又人往 玫瑰色花香\n已悄悄成为过往\n细雨里的日光 小镇的风光\n早已跌落在时光\n随手采一片月光\n就把夜晚都照亮\n就算错过一整片夕阳\n你的目光燃烧四方\n夜风中的微凉 夏日的松香\n还闻得到那芬芳\n细雨里的日光 小巷的中央\n忽然都失去重量\n随手采一片月光\n撒向你转身的地方\n就算错过一整片夕阳\n你的目光燃烧四方\n人来又人往 玫瑰色花香\n已悄悄成为过往\n细雨里的日光 远处的钟响\n是我对你的守望"
         },
         "media": {
@@ -1482,7 +1554,7 @@
         "vector_embedding": []
     },
     {
-        "id": 42,
+        "id": 44,
         "meta": {
             "title": "自在",
             "artist": "韦唯/陈婧霏",
@@ -1490,7 +1562,7 @@
             "release_date": "2024-04-30",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-就让人间的春风 吹散一切沉重",
             "lyrics": "韦唯：\n暗夜的尽处\n无人空谷\n漫长的旅途\n终于落幕\n穿过喧嚣的孤独\n拨开人性迷雾\n沉入灵魂的深处\n激活全新维度\n合：\n旋转吧 跟上心跳的节拍\n闪耀吧 用最狂野的姿态\n再见吧 自我牺牲的时代\n狂欢吧 享受最当下的自在\n陈婧霏：\n奉献过的爱\n一路慷慨\n故事太精彩\n娓娓道来\n虚幻摇曳的霓虹\n迷乱难解的梦\n就让人间的春风\n吹散一切沉重\n合：\n旋转吧 跟上心跳的节拍\n闪耀吧 用最狂野的姿态\n再见吧 自我牺牲的时代\n狂欢吧 享受最当下的自在\n绽放吧 直到岁月的尽头\n起舞吧 在这命运的河流\n飞驰吧 驶向觉醒的自由\nLight it up light it up"
         },
         "media": {
@@ -1504,79 +1576,7 @@
             "producer": "陈婧霏",
             "arranger": "周冠儒",
             "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 43,
-        "meta": {
-            "title": "她不再幻想",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2024-11-25",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "当你说不愿再幻想\n我悄悄湿了眼眶\n在这座荒诞游乐场\n我们都一样彷徨\n冲破规则的墙\n推开认知的窗\n飞过庸常 抵达月光\n愿你把不安都松绑\n目光永远倔强\n无忧无惧纵情欢畅\n新世界多宽广\n不追逐谁会怜奖\n不祈求谁能体谅\n你是唯一 能照亮自己的光\n这旅途也许依然漫长\n让我为你轻轻地唱\n只有你能爱自己\n像你最渴望那样"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏",
-            "producer": "陆希文",
-            "arranger": "陆希文 & Shao Jean Sim",
-            "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 44,
-        "meta": {
-            "title": "红霞剧场",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2024-11-28",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "反向的列车 碾过时间河\n追逐那一颗 最美的日落\n载上一些必要的邪恶\n飞驰过生活\n黄金的时代 一幕幕醒来\n摇曳的舞台\n你迷人风采\n命运的春风 吹进了胸怀\n繁花都盛开\n阳光下纵情恋和爱\n我红色头发 吹散在天涯\n我记得你说 要带我回家\n摘下夹在光影的回答\n飞驰过盛夏\n我们的时代 终于要到来\n梦中的舞台\n你迷人风采\n觉醒的春风 吹进了胸怀\n灵感被灌溉\n所有感受都被善待"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏",
-            "producer": "陆希文Minstrel Lu",
-            "arranger": "陆希文Minstrel Lu",
-            "original_singer": "",
-            "official_description": ""
+            "official_description": "时尚就是轮回，经典绽放永恒。\n1992年，《编辑部的故事》在电视热播，短短25集的故事，让'《人间指南》编辑部'成为一代人津津乐道的嬉笑与深刻；\n2020年，属于陈婧霏的《人间指南》面世，通过手机传遍大江南北。\n1989年，韦唯《爱的奉献》通过电视与广播成为响彻大江南北的旋律；\n2024年，在电视与广播都已称不上'新媒体'，甚至连'新媒体'这个词都已经不再'新'时，陈婧霏与韦唯联手，用超越时间的《自在》把复古再次推上摩登与时髦的浪尖。\n多有趣，【摩登】和【时髦】这两个词，都有新潮的意思，却又都散发着强烈的年代感。\n陈婧霏全新词曲制作，深挖韦唯的摩登基因，让'大爱女神'也披上霓虹，开始旋转、闪耀、狂欢、绽放、起舞、飞驰，让中气满怀的激昂也搭配了陈婧霏专属的摇曳与风情。\nLight it up！只要《自在》了，跨越世代的联袂奉献，连经典的灵魂都可以是既摩登又时髦的！"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1592,14 +1592,14 @@
     {
         "id": 45,
         "meta": {
-            "title": "北海",
+            "title": "她不再幻想",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2024-11-28",
+            "release_date": "2024-11-25",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "握不住的风\n醒不来的梦\n此刻你是否 过着渴望的人生\n嘴唇吻着阳光\n绿树绕着红墙\n时间是幻象 倒映梦里的水乡\n直觉向天空 拼命划着桨\n是不是划向 最初的信仰\n小船儿轻轻飘荡 人间摇摇晃晃\n左右都为酿\n我逆流而上\n把故事从头讲\n喜悦都耗在 奔向喜悦的路上\n学会了伪装\n幻灭了幻想\n真相是假象 战胜另一个假象\n直觉向天空 拼命划着桨\n是不是划向 最初的信仰\n小船儿轻轻飘荡 人间摇摇晃晃\n左右都为酿\n我看见你 站在水中央\n我看见那 最初的飞扬\n人间剧场走一趟 欢乐终将散场\n绝美的光 早在昨日绽放"
+            "highlight_sentence": "-你是唯一 能照亮自己的光",
+            "lyrics": "当你说不愿再幻想\n我悄悄湿了眼眶\n在这座荒诞游乐场\n我们都一样彷徨\n冲破规则的墙\n推开认知的窗\n飞过庸常 抵达月光\n愿你把不安都松绑\n目光永远倔强\n无忧无惧纵情欢畅\n新世界多宽广\n不追逐谁会怜奖\n不祈求谁能体谅\n你是唯一 能照亮自己的光\n这旅途也许依然漫长\n让我为你轻轻地唱\n只有你能爱自己\n像你最渴望那样"
         },
         "media": {
             "audio_file": "",
@@ -1610,9 +1610,9 @@
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
             "producer": "陆希文",
-            "arranger": "陆希文",
+            "arranger": "陆希文 & Shao Jean Sim",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "愿你把不安都松绑，目光永远倔强\n无忧无惧纵情欢畅，新世界多宽广\n电影《好东西》宣传推广曲《她不再幻想》温情上线。\n电影《好东西》由邵艺辉担任编剧、导演、剪辑指导，宋佳、钟楚曦、曾慕梅领衔主演，章宇领衔主演，赵又廷、周野芒特别出演，任彬、张弛主演，王菊、孔连顺、蒋易友情出演。 讲述了单亲妈妈王铁梅失业之后，带着小孩搬家、和邻居小叶成为好友，三位女性互相陪伴治愈，徘徊于现实与幻想之间，在友情、亲情和爱情中重新找回自我的鲜活故事。\n宣传推广曲《她不再幻想》由陈婧霏作词作曲并演唱，陆希文编曲及制作。\n歌曲从'她'视角出发，透过温暖真挚又不失锋利的文字与美隽永的旋律，展现了新时代女性自我对话、在新鲜情感体验中的成长和勇气，陈婧霏充满故事感的的低吟浅唱，触碰着每个人心底的渴望，将歌曲中冲破束缚、拥抱自我的力量娓娓道来。\n陈婧霏的创作以片中王茉莉的作文《我不再幻想》为切入点，想象着铁梅可能想对女儿说不出口的心里话和复杂情绪：是对女儿受伤的心疼、同为女性的共情理解和对女儿成长的期许。其实也想借铁梅之口，期望身边每一个'茉莉'、'小叶'、每一个'她'，都能更勇敢地创造自己的游戏规则， 成为自己的光，纵情活出内心真正的渴望。'只有你能爱自己，像你最渴望那样。'\n电影《好东西》送给每一位「好」朋友，每一个幻想家，打开人生可能性的想象，冲破常规，勇敢纵情生长！"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1628,14 +1628,14 @@
     {
         "id": 46,
         "meta": {
-            "title": "沙漠一枝花",
+            "title": "红霞剧场",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "骄阳之下 沙漠之大\n开出一朵花\n倾盆雨下 懒得发芽\n一个人呆 坐在沙发\n瘫得多优雅\n披头散发 自说自话\nNa na na na na\n让快乐继续 没什么是必须\n深刻的问题 留给别人在意\n看那酒杯 在落灰 怎能浪费\n就让我好好的醉\n让日子继续 没什么是必需\n时代的情绪 留给别人管理\n看那床被 多暧昧 多么安慰\n就让我好好的睡\nLa la la la la\n骄阳之下 沙漠之大\n开出一朵花\n披头散发 自说自话\n自暴自弃来得比较容易\n除非来段艳遇惊天动地\n没有被讨厌的勇气\n更没有恨人的力气\n惊醒依然家徒四壁\n更羞愧得想哭泣\n转念想想没什么 不能失去\n让快乐继续 没什么是必须\n社会的情趣 留给别人在意\n一场游戏 不可言喻 不言而喻\n就让我好好的醉\n骄阳之下 沙漠之大"
+            "highlight_sentence": "-我们的时代终于要到来",
+            "lyrics": "反向的列车 碾过时间河\n追逐那一颗 最美的日落\n载上一些必要的邪恶\n飞驰过生活\n黄金的时代 一幕幕醒来\n摇曳的舞台\n你迷人风采\n命运的春风 吹进了胸怀\n繁花都盛开\n阳光下纵情恋和爱\n我红色头发 吹散在天涯\n我记得你说 要带我回家\n摘下夹在光影的回答\n飞驰过盛夏\n我们的时代 终于要到来\n梦中的舞台\n你迷人风采\n觉醒的春风 吹进了胸怀\n灵感被灌溉\n所有感受都被善待"
         },
         "media": {
             "audio_file": "",
@@ -1645,10 +1645,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "周冠儒GR Zhou",
-            "arranger": "周冠儒GR Zhou",
+            "producer": "陆希文Minstrel Lu",
+            "arranger": "陆希文Minstrel Lu",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "吉他和旋律吹来前时代的风。\n一个历经春夏、繁花和流浪的歌者，站在远处咏叹理想主义在小时代的摇摆，\n又在绝美的红霞剧场中，重新想象一个充满灵感的乌托邦。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1664,14 +1664,14 @@
     {
         "id": 47,
         "meta": {
-            "title": "春宵苦短，少女快前进！",
+            "title": "北海",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2024-11-13",
+            "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "把人生的空虚 酿一杯白兰地\n把感性的好奇 装进行李 baby\n天空下起 苹果雨\n海底游着 神仙鱼\n掉进蒸汽 的陷阱\n循环这首 狂想曲\n春宵太短暂 少女 快前进\nTa-ta-ta touch me\nWe're young& lonely\nIn the city\nTa-ta-ta touch me\nI feel so pretty\nWhen you with me\nEverything will be easy\n把热带的岛屿 谱成夏日恋曲\n把起伏的四季 串成回忆 baby\n天空下起 苹果雨\n海底游着 神仙鱼\n搭上电气 的滑梯\n坠入奇幻 的梦境\n春宵太短暂 少女 快前进\nTa-ta-ta touch me\nWe're young& lonely\nIn the city\nTa-ta-ta touch me\nI feel so pretty\nWhen you with me\nEverything will be easy"
+            "highlight_sentence": "-人间剧场走一趟 欢乐终将散场",
+            "lyrics": "握不住的风\n醒不来的梦\n此刻你是否 过着渴望的人生\n嘴唇吻着阳光\n绿树绕着红墙\n时间是幻象 倒映梦里的水乡\n直觉向天空 拼命划着桨\n是不是划向 最初的信仰\n小船儿轻轻飘荡 人间摇摇晃晃\n左右都为酿\n我逆流而上\n把故事从头讲\n喜悦都耗在 奔向喜悦的路上\n学会了伪装\n幻灭了幻想\n真相是假象 战胜另一个假象\n直觉向天空 拼命划着桨\n是不是划向 最初的信仰\n小船儿轻轻飘荡 人间摇摇晃晃\n左右都为酿\n我看见你 站在水中央\n我看见那 最初的飞扬\n人间剧场走一趟 欢乐终将散场\n绝美的光 早在昨日绽放"
         },
         "media": {
             "audio_file": "",
@@ -1681,10 +1681,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "周冠儒",
-            "arranger": "周冠儒",
+            "producer": "陆希文",
+            "arranger": "陆希文",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "北海的温柔慰藉失落的梦与幻想，又渐入恢弘的人间剧场，放大远航的声量。\n大提琴忽隐忽现，伤怀时光的水波轻荡，自传式的歌词勾勒出一个成长故事。重回童年的绿树红墙，让不同时期的自己对话：\n'此刻你是否过着渴望的人生？'\n'是不是划向最初的信仰？'\n生活的船摇摇晃晃，我们不断调整节奏从故乡的水湾划向人生的海浪。待你把心中那个小孩哄入甜梦，昨日的风会把你推向四处。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1700,14 +1700,14 @@
     {
         "id": 48,
         "meta": {
-            "title": "禁色宝丽来",
+            "title": "沙漠一枝花",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "天台烛火 映着她轮廓\n一闪而过 他还没把握\n窥探的不安 冲动的骚乱\n崎岖的浪漫 甜蜜的心酸\n要惊心动魄 尽情坠落\n越过那裙下的封锁\n爱欲从缝隙中流过\n什么 诱惑 他不好意思寂寞\n什么 捕捉 她宁愿飞蛾扑火\n琴键柔和 双唇炽热\n光影不断交错\n什么道德 不过你我\n一起走向焰火\n一声轻涩 沦陷了耳朵\n一瞬花火 点着了心魔\n窥探的不安 冲动的骚乱\n崎岖的浪漫 甜蜜的心酸\n要惊心动魄 尽情坠落\n越过那裙下的封锁\n爱欲从缝隙中流过\n碾过银河 打碎日落\n灵感不断交错\n什么枷锁 不过你我\n一起灌溉传说"
+            "highlight_sentence": "-就让我好好的醉",
+            "lyrics": "骄阳之下 沙漠之大\n开出一朵花\n倾盆雨下 懒得发芽\n一个人呆 坐在沙发\n瘫得多优雅\n披头散发 自说自话\nNa na na na na\n让快乐继续 没什么是必须\n深刻的问题 留给别人在意\n看那酒杯 在落灰 怎能浪费\n就让我好好的醉\n让日子继续 没什么是必需\n时代的情绪 留给别人管理\n看那床被 多暧昧 多么安慰\n就让我好好的睡\nLa la la la la\n骄阳之下 沙漠之大\n开出一朵花\n披头散发 自说自话\n自暴自弃来得比较容易\n除非来段艳遇惊天动地\n没有被讨厌的勇气\n更没有恨人的力气\n惊醒依然家徒四壁\n更羞愧得想哭泣\n转念想想没什么 不能失去\n让快乐继续 没什么是必须\n社会的情趣 留给别人在意\n一场游戏 不可言喻 不言而喻\n就让我好好的醉\n骄阳之下 沙漠之大"
         },
         "media": {
             "audio_file": "",
@@ -1717,10 +1717,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "蔡德才",
-            "arranger": "hirsk",
+            "producer": "周冠儒GR Zhou",
+            "arranger": "周冠儒GR Zhou",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "《沙漠一枝花Lonely Bloom in Desert》是一个人的'爱之夏'(Summer of Love)。\n宠辱不惊的陶醉，兀自绽放的热情；\n快乐的旋律和诱惑的字句，让人想倒上一杯酒跳舞。五花八门的规训在此失效，深刻的问题与我无关，只要一场豪饮和一夜好眠。自由纵情的背后捕捉了一种微妙的时代情绪﹣﹣享用当下即清醒。正如 Bob Dylan在爱之夏前夕所写：'You got nothing to lose'。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1736,14 +1736,14 @@
     {
         "id": 49,
         "meta": {
-            "title": "演！演！演！",
+            "title": "春宵苦短，少女快前进！",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2024-11-28",
+            "release_date": "2024-11-13",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "感性的 性感的 都是轮廓\n固执的 暗涌的 都是本色\n去闯祸 去刺破 摩擦后生热\n有悲观垫底 所以表面尽管硬核\n冷与热 对与错 都是外衣\n爱与恨 失与得 都是生活\n去存在 去摸索 点燃那野火\n每一颗 种下的因都结成果\n我睁大了眼睛 凝视镜中的自己\n我打开了耳朵 偷听心底的声音\nHey 继续 往里 走下去\n安顿好自己 别的交给命运\n欲望都值得尊敬 自由是道伪命题\n世界只属于自己 不需要谁的肯定\nHey 管他 意义 不意义\n人生这场戏 要全力演下去\n感性的 性感的 都是轮廓\n固执的 暗涌的 都是本色\n去闯祸 去刺破 摩擦后生热\n有悲观垫底 所以表面尽管硬核\n冷与热 对与错 都是外衣\n爱与恨 失与得 都是生活\n去存在 去摸索 点燃那野火\n每一颗 种下的因都结成果\n我解开了肉皮 对齐墙上的黑影\n我丢掉了逻辑 开启灵感的游戏\nHey 继续 往里 走下去\n安顿好自己 别的交给命运\n欲望都值得尊敬 自由是道伪命题\n世界只出于自己 不需要谁的允许\nHey 管他 意义 不意义\n人生这场戏 要全力演下去"
+            "highlight_sentence": "-When you with me Everything will be easy",
+            "lyrics": "把人生的空虚 酿一杯白兰地\n把感性的好奇 装进行李 baby\n天空下起 苹果雨\n海底游着 神仙鱼\n掉进蒸汽 的陷阱\n循环这首 狂想曲\n春宵太短暂 少女 快前进\nTa-ta-ta touch me\nWe're young& lonely\nIn the city\nTa-ta-ta touch me\nI feel so pretty\nWhen you with me\nEverything will be easy\n把热带的岛屿 谱成夏日恋曲\n把起伏的四季 串成回忆 baby\n天空下起 苹果雨\n海底游着 神仙鱼\n搭上电气 的滑梯\n坠入奇幻 的梦境\n春宵太短暂 少女 快前进\nTa-ta-ta touch me\nWe're young& lonely\nIn the city\nTa-ta-ta touch me\nI feel so pretty\nWhen you with me\nEverything will be easy"
         },
         "media": {
             "audio_file": "",
@@ -1753,10 +1753,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "陆希文Minstrel Lu",
-            "arranger": "陆希文Minstrel Lu",
+            "producer": "周冠儒",
+            "arranger": "周冠儒",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "世上没有苹果雨，\n海底没有神仙鱼。\n玛格丽特笔下冒出粉红泡泡，\n约翰凯奇也能弹出夏日恋曲。\n春宵短暂夜未央，鼓点击碎修罗场，\n不如酿人生的空虚，忘却应许之地，\n痴男怨女别煽情，饮杯醉生梦死快前进。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1772,14 +1772,14 @@
     {
         "id": 50,
         "meta": {
-            "title": "诸多夏日后天鹅之死",
+            "title": "禁色宝丽来",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "上升的烟火有多美丽\n可有光就有阴影\n四周一片寂静\n噪音已冲破头顶\n日子该要如何继续\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场 精心策划的殉情\n上升的烟火有多美丽\n可有光就有阴影\n不正确的情绪\n没人能懂的恐惧\n我只是害怕面对自己\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场精心策划的殉情\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场精心策划的殉情"
+            "highlight_sentence": "-要惊心动魄 尽情坠落",
+            "lyrics": "天台烛火 映着她轮廓\n一闪而过 他还没把握\n窥探的不安 冲动的骚乱\n崎岖的浪漫 甜蜜的心酸\n要惊心动魄 尽情坠落\n越过那裙下的封锁\n爱欲从缝隙中流过\n什么 诱惑 他不好意思寂寞\n什么 捕捉 她宁愿飞蛾扑火\n琴键柔和 双唇炽热\n光影不断交错\n什么道德 不过你我\n一起走向焰火\n一声轻涩 沦陷了耳朵\n一瞬花火 点着了心魔\n窥探的不安 冲动的骚乱\n崎岖的浪漫 甜蜜的心酸\n要惊心动魄 尽情坠落\n越过那裙下的封锁\n爱欲从缝隙中流过\n碾过银河 打碎日落\n灵感不断交错\n什么枷锁 不过你我\n一起灌溉传说"
         },
         "media": {
             "audio_file": "",
@@ -1789,10 +1789,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "陆希文Minstrel Lu",
-            "arranger": "陆希文Minstrel Lu/周冠儒GR Zhou",
+            "producer": "蔡德才",
+            "arranger": "hirsk",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "灯影交错尝禁果，飞蛾扑火写传说。\n炙热鲜红的爱与欲在声音间流转出一段沦陷、试探又不可得的恢弘爱情。\n水月易皱，情深不寿，溢出边界的爱最后只留下一张禁色宝丽来。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1808,14 +1808,14 @@
     {
         "id": 51,
         "meta": {
-            "title": "你是我最爱的褪色的幻想",
+            "title": "演！演！演！",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "请让我沉睡在 紫罗兰色的梦里\n盛夏午后的阳光 把皮肤烤成金黄\n看人们来来又往往 只会感到迷惘\n蒲公英依旧睡得酣畅 享受着热浪\n听 下滑的旋律\n早 预示了别离\n啊 在我所有褪色的幻想里\n原来 最爱的是你\n请让我漂流在 银灰色的海洋里\n潮汐轻摇曳着思绪 柔软着回忆\n看忧郁旋转着欢愉 失焦在光晕\n岛屿依旧躺在沙滩上 享受着月光\n听 下滑的旋律\n早 预示了结局\n啊 在我所有褪色的幻想里\n原来 最爱的是你"
+            "highlight_sentence": "-人生这场戏 要全力演下去",
+            "lyrics": "感性的 性感的 都是轮廓\n固执的 暗涌的 都是本色\n去闯祸 去刺破 摩擦后生热\n有悲观垫底 所以表面尽管硬核\n冷与热 对与错 都是外衣\n爱与恨 失与得 都是生活\n去存在 去摸索 点燃那野火\n每一颗 种下的因都结成果\n我睁大了眼睛 凝视镜中的自己\n我打开了耳朵 偷听心底的声音\nHey 继续 往里 走下去\n安顿好自己 别的交给命运\n欲望都值得尊敬 自由是道伪命题\n世界只属于自己 不需要谁的肯定\nHey 管他 意义 不意义\n人生这场戏 要全力演下去\n感性的 性感的 都是轮廓\n固执的 暗涌的 都是本色\n去闯祸 去刺破 摩擦后生热\n有悲观垫底 所以表面尽管硬核\n冷与热 对与错 都是外衣\n爱与恨 失与得 都是生活\n去存在 去摸索 点燃那野火\n每一颗 种下的因都结成果\n我解开了肉皮 对齐墙上的黑影\n我丢掉了逻辑 开启灵感的游戏\nHey 继续 往里 走下去\n安顿好自己 别的交给命运\n欲望都值得尊敬 自由是道伪命题\n世界只出于自己 不需要谁的允许\nHey 管他 意义 不意义\n人生这场戏 要全力演下去"
         },
         "media": {
             "audio_file": "",
@@ -1828,7 +1828,7 @@
             "producer": "陆希文Minstrel Lu",
             "arranger": "陆希文Minstrel Lu",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "复杂的洪流中谁能免闪躲腾挪，淡本色？以孤身走乱世的决绝，演一出人生舞台剧戴上深谙世事的面具，是非交错中见自己"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1844,14 +1844,14 @@
     {
         "id": 52,
         "meta": {
-            "title": "自恋咒",
+            "title": "诸多夏日后天鹅之死",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "就让我独自爱我\n让我把我留给我\n开心难过 清醒脆弱\n用力活的 每一刻\n喜欢厌恶 的每一刻\n都留给我 只留给我\nLa la la la la la la la la la la\n这一半的我 完整另一半我\nLa la la la la la la la la la la\n这一半的我 完整另一半我\n烛光是我 晚餐也是我\n电影是我 小说也是我\n剧情 对白 角色 都是我\n浴缸是我 床单也是我\n房间是我 梦境也是我\n旋律 节拍 耳朵 都是我\nI am the first and the last\nI am the light and the darkness\nI am the truth and the fiction\nI am knowledge and ignorance\nI am senseless and I am wise\nI am shame and boldness\nI am shameless and I am ashamed\nDo not hate my obedience\nAnd do not love my self-control\nLa la la la la la la la la la la\n这一半的我 完整另一半我\nLa la la la la la\nI am union and dissolution\nLa la la la la\nI am control and uncontrollable\n这一半的我 完整另一半我\nI am compassionate and I am cruel\n皮肤 闪烁 我兴奋着我\nI am the incomprehensible silence and I am the voice of many sounds\n灵魂 软糯 我慵懒着我\nHear me in softness and learn from me in harshness\n美色 美德 我美味着我\nI am the creation of spirits and request of the souls\n偏执 洒脱 纯真 或 脆弱\nI am the power I am the source\n狂热 冷漠 艰涩 或 笨拙\nI am the purpose\n沉静 或飞 都留给我\nJust me and my reflection\nHey can you hear me?\nI am the name of the voice and the voice of the name\nI am the first and the last"
+            "highlight_sentence": "-我闯入自己的命运",
+            "lyrics": "上升的烟火有多美丽\n可有光就有阴影\n四周一片寂静\n噪音已冲破头顶\n日子该要如何继续\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场 精心策划的殉情\n上升的烟火有多美丽\n可有光就有阴影\n不正确的情绪\n没人能懂的恐惧\n我只是害怕面对自己\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场精心策划的殉情\n我闯入自己的命运\n如同跌进万丈深渊\n诸多夏日后天鹅死去\n人们说 这是场精心策划的殉情"
         },
         "media": {
             "audio_file": "",
@@ -1861,10 +1861,10 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "蔡德才",
-            "arranger": "蔡德才",
+            "producer": "陆希文Minstrel Lu",
+            "arranger": "陆希文Minstrel Lu/周冠儒GR Zhou",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "光明阴影轮转，黑夜白昼交替，\n宿命之云的笼罩如死亡般无处逃逸。\n假如生活欺骗了你，请想起阿道司的预言：\n诸多夏日后白羽沉寂，命运将为天鹅奏响终曲。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1880,14 +1880,14 @@
     {
         "id": 53,
         "meta": {
-            "title": "猩红",
+            "title": "你是我最爱的褪色的幻想",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2024-11-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "狂喜的风\n在城市上空\n穿过了云层\n滑过你面容\n炽热的红\n把幻想烧空\n吞噬甜糜的冲动\n沦为欲妄的帮凶\n猩红的夜 翅膀在收拢\n地心或天空 不停反转着时空\n有一束光 降落在花丛\n有一种永恒 在此刻覆雨翻涌\n凝固的风\n融化的霓虹\n歌颂肉体的光荣\n湮没了平庸\n烧焦的洞\n奶油的香浓\n掺着回忆在流动\n中和了疼痛\n谁点火 谁煽风 谁言危\n谁听怂 谁在噩梦中沟通\n谁轻举 谁妄动 谁卑微\n谁惶恐 谁在潮汐中翻涌\n谁插针 谁见缝 谁盲目\n谁跟从 谁在下坠中上升\n谁唤雨 谁呼风 谁幻灭\n谁重生 谁缝合了时空\n尝猩纯的红\nThrive in a garden of weeds\nMy petals are soft my thorns are icy\nSee my blessings feel my essence\nAre you tasting me?\nMy love and fear truth and fiction\nI can't turn off what turns me on a freeway to freedom a vacation to the moon\nRight in the middle of madness the state of ecstasy\n狂喜的风\n在城市上空\n穿过了云层\n滑过你面容"
+            "highlight_sentence": "-请让我沉睡在紫罗兰色的梦里",
+            "lyrics": "请让我沉睡在 紫罗兰色的梦里\n盛夏午后的阳光 把皮肤烤成金黄\n看人们来来又往往 只会感到迷惘\n蒲公英依旧睡得酣畅 享受着热浪\n听 下滑的旋律\n早 预示了别离\n啊 在我所有褪色的幻想里\n原来 最爱的是你\n请让我漂流在 银灰色的海洋里\n潮汐轻摇曳着思绪 柔软着回忆\n看忧郁旋转着欢愉 失焦在光晕\n岛屿依旧躺在沙滩上 享受着月光\n听 下滑的旋律\n早 预示了结局\n啊 在我所有褪色的幻想里\n原来 最爱的是你"
         },
         "media": {
             "audio_file": "",
@@ -1900,7 +1900,7 @@
             "producer": "陆希文Minstrel Lu",
             "arranger": "陆希文Minstrel Lu",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "拾起轻灵的梦，一段无限温柔的记忆﹣-\n星光点点，海浪潺潺，阳光暖暖，万物懒懒，\n徐徐吟唱中重回白衣飘飘。\n这是一首淡紫色忧伤的道别曲，送给过去，送给最爱的你。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -1916,13 +1916,85 @@
     {
         "id": 54,
         "meta": {
+            "title": "自恋咒",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2024-11-28",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-这一半的我 完整另一半我",
+            "lyrics": "就让我独自爱我\n让我把我留给我\n开心难过 清醒脆弱\n用力活的 每一刻\n喜欢厌恶 的每一刻\n都留给我 只留给我\nLa la la la la la la la la la la\n这一半的我 完整另一半我\nLa la la la la la la la la la la\n这一半的我 完整另一半我\n烛光是我 晚餐也是我\n电影是我 小说也是我\n剧情 对白 角色 都是我\n浴缸是我 床单也是我\n房间是我 梦境也是我\n旋律 节拍 耳朵 都是我\nI am the first and the last\nI am the light and the darkness\nI am the truth and the fiction\nI am knowledge and ignorance\nI am senseless and I am wise\nI am shame and boldness\nI am shameless and I am ashamed\nDo not hate my obedience\nAnd do not love my self-control\nLa la la la la la la la la la la\n这一半的我 完整另一半我\nLa la la la la la\nI am union and dissolution\nLa la la la la\nI am control and uncontrollable\n这一半的我 完整另一半我\nI am compassionate and I am cruel\n皮肤 闪烁 我兴奋着我\nI am the incomprehensible silence and I am the voice of many sounds\n灵魂 软糯 我慵懒着我\nHear me in softness and learn from me in harshness\n美色 美德 我美味着我\nI am the creation of spirits and request of the souls\n偏执 洒脱 纯真 或 脆弱\nI am the power I am the source\n狂热 冷漠 艰涩 或 笨拙\nI am the purpose\n沉静 或飞 都留给我\nJust me and my reflection\nHey can you hear me?\nI am the name of the voice and the voice of the name\nI am the first and the last"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "蔡德才",
+            "arranger": "蔡德才",
+            "original_singer": "",
+            "official_description": "记忆碎片拼凑才是我，心情音符流动才像我，\n天空晴雨，潮汐涨落，四季是我，海水也是我。\n不是谁的另一半，不是他者电影的配角，\n要爱这个我，也爱那个我，跟我默念《自恋咒》，每个我都闪烁。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 55,
+        "meta": {
+            "title": "猩红",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2024-11-28",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-Right in the middle of madness the state of ecstasy",
+            "lyrics": "狂喜的风\n在城市上空\n穿过了云层\n滑过你面容\n炽热的红\n把幻想烧空\n吞噬甜糜的冲动\n沦为欲妄的帮凶\n猩红的夜 翅膀在收拢\n地心或天空 不停反转着时空\n有一束光 降落在花丛\n有一种永恒 在此刻覆雨翻涌\n凝固的风\n融化的霓虹\n歌颂肉体的光荣\n湮没了平庸\n烧焦的洞\n奶油的香浓\n掺着回忆在流动\n中和了疼痛\n谁点火 谁煽风 谁言危\n谁听怂 谁在噩梦中沟通\n谁轻举 谁妄动 谁卑微\n谁惶恐 谁在潮汐中翻涌\n谁插针 谁见缝 谁盲目\n谁跟从 谁在下坠中上升\n谁唤雨 谁呼风 谁幻灭\n谁重生 谁缝合了时空\n尝猩纯的红\nThrive in a garden of weeds\nMy petals are soft my thorns are icy\nSee my blessings feel my essence\nAre you tasting me?\nMy love and fear truth and fiction\nI can't turn off what turns me on a freeway to freedom a vacation to the moon\nRight in the middle of madness the state of ecstasy\n狂喜的风\n在城市上空\n穿过了云层\n滑过你面容"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "陆希文Minstrel Lu",
+            "arranger": "陆希文Minstrel Lu",
+            "original_singer": "",
+            "official_description": "席卷而来的诱惑，安静中推倒高楼，\n凌驾于一切的狂喜，无声地染红世界。\n站在欲望的高峰做一场身体礼赞，纵身跃入猩红。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 56,
+        "meta": {
             "title": "盖被",
             "artist": "陈粒/粒粒/焦迈奇/王加一/陈婧霏",
             "album": "",
             "release_date": "2025-01-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-万里晴空任你去遨翔",
             "lyrics": "王加一：\n空白时光有你来填满\n可以是平静或灿烂\n有时浓 有时淡 心胸要宽广\n才能够经得起波浪\n在旅途中风起和云涌\n每个人都会有起落\n有时浮 有时沉 有时没方向\n有时在雾里向前闯\n陈粒：\n一生中难免常会有不如意\n(王加一：呜呜呜)\n道路太平坦会失去了勇气\n就算天塌下来把它当被盖\n我只想好好过现在\n一生中难免常会有不如意\n(王加一：呜呜呜)\n日子太贫乏会失去了意义\n就算天塌下来把它当被盖\n我只想好好过现在\n陈婧霏：\n万里晴空任你去遨翔\n可以是追逐或导航\n有时飞 有时停 有时没星火\n只有你为自己掌舵\n大海之中风起和云涌\n每艘船都会有起落\n有时明 有时暗 有时没方向\n也要在雾里向前闯\n焦迈奇：\n一生中难免常会有不如意\n道路太平坦会失去了勇气\n就算天塌下来把它当被盖\n我只想好好过现在\n一生中难免常会有不如意\n日子太贫乏会失去了意义\n就让天塌下来把它当被盖\n我只想好好过现在\n陈粒：\n一生中难免常会有不如意\n王加一：\n道路太平坦会失去了勇气\n陈婧霏：\n就算天塌下来把它当被盖\n焦迈奇：\n我只想好好过现在\n合：\n一生中难免常会有不如意\n日子太贫乏会失去了意义\n就让天塌下来把它当被盖\n我只想好好过现在\n一生中难免常会有不如意\n道路太平坦会失去了勇气\n就算天塌下来把它当被盖\n我只想好好过现在\n一生中难免常会有不如意\n日子太贫乏会失去了意义\n就让天塌下来把它当被盖\n我只想好好过现在\n陈粒/王加一：\n我只想好好过现在\n陈婧霏/焦迈奇：\n我只想好好过现在"
         },
         "media": {
@@ -1950,7 +2022,7 @@
         "vector_embedding": []
     },
     {
-        "id": 55,
+        "id": 57,
         "meta": {
             "title": "深睡小夜曲",
             "artist": "陈婧霏",
@@ -1958,7 +2030,7 @@
             "release_date": "2025-02-12",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-你回来了 夜晚就开始暖了",
             "lyrics": "不知不觉 车流开始多了\n你回来了 夜晚就开始暖了\n我偷偷地 想着你\n任性一点也没关系 (没关系)\n当房间开始悬浮\n当幸福不再模糊\n我听见你的咕噜\n还有浅浅的呼噜\n不知不觉就睡吧 只要舒服\n愿你内心安详 像花瓣开在脸上\n平凡又灿烂\n在新的一年\n睡吧睡吧睡吧\n睡吧睡吧睡吧"
         },
         "media": {
@@ -1972,79 +2044,7 @@
             "producer": "周晋进",
             "arranger": "吴节/周晋进",
             "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 56,
-        "meta": {
-            "title": "我长期坠入梦乡",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2025-03-03",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "在昏暗的房间里\n我长期坠入了梦乡\n海边的焰火在绽放\n命运在秋千上摇荡\nHA 做梦的人\n被梦见的人惊醒了\nHA 挥之不去\n我所有的记忆\n在奔向你的路上\n我长期坠入了梦乡\n乌鸦在风中歌唱\n口袋的欲望空荡荡\nHA 多想逃离\n被宿命追缠的游戏\nHA 多么着迷\n一场盛大的献祭\n挣脱这绳索\n切断这因果\n纵情坠落 这诱惑\n就快将我淹没\n在清晨的微光里\n我长期坠入了梦乡\n沐浴着粼粼波光\n进入潮湿的太阳"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏",
-            "producer": "陆希文",
-            "arranger": "陆希文、Shao Jean Sim",
-            "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 57,
-        "meta": {
-            "title": "岩中花述",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2025-07-20",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "有一种美丽\n从有形开始\n无形中漫漪\n有一场旅行\n从耳畔开始\n走向了天地\n在他人的故事里\n遇见了自己\n换上柔软的外衣\n悄悄抵达了内心\n岩石上的花\n自深处绽放\n吟唱ha\n任时光流淌\n悠然地生长\n遥望她心中的月光\n有一种诗意\n温柔的锋利\n优雅的叛逆\n这一场相遇\n热烈又清醒\n偶然却笃定\n在他人的故事里\n遇见了自己\n换上柔软的外衣\n通向坚定的内心\n岩石上的花\n自深处绽放\n吟唱 ha\n喷涌的岩浆\n是心的力量\n创造属于她的天堂"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏",
-            "producer": "陈婧霏",
-            "arranger": "周冠儒GR Zhou",
-            "original_singer": "",
-            "official_description": ""
+            "official_description": "新年伊始，万物更新，一切充满新的可能。\n每晚的睡眠也是一次新生，在梦里，我们与昨天告别，迎接新的一天，新的开始。\n2025年新春，亚朵星球邀请陈婧霏特别演绎「深睡小夜曲」，以声音搭建光影浮动的深睡剧场，一个个归家的故事在镜头前慢慢展开。\n在每一天的辞旧迎新里，在每一年的辞旧迎新里，在每一个需要被托起的地方，「深睡小夜曲」愿陪伴每一位聆听者，自然深睡，新年有梦。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -2060,14 +2060,14 @@
     {
         "id": 58,
         "meta": {
-            "title": "与你同在",
+            "title": "我长期坠入梦乡",
             "artist": "陈婧霏",
-            "album": "《樱桃琥珀》电视剧推广曲",
-            "release_date": "2025-07-21",
+            "album": "",
+            "release_date": "2025-03-03",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "Love me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\n或许世界有点坏\n总浇灭期待\n但亲爱的朋友\n我有你就足够\n你是我的火柴\n你总轻声哼着歌\n对着日落\n用力挥挥手\n说明天别忘了\nLove me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\n为你喝彩\nWe can fly\n无限期待\n当我们某天奔向\n各自的未来\n最亲爱的朋友\n我会紧握你手\n你最无可替代\n我们一同跨越过\n群山和大海\n有你在身边\n是最好的安排\nLove me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\nLove me in the eye\n你看时光能倒带\n你名字的由来永远在我心底存在\n驱散了阴霾\n友谊不需要彩排\n因为最熟悉最默契的我与你同在\n与你同在\n不曾离开\n只要你在"
+            "highlight_sentence": "-做梦的人 被梦见的人惊醒了",
+            "lyrics": "在昏暗的房间里\n我长期坠入了梦乡\n海边的焰火在绽放\n命运在秋千上摇荡\nHA 做梦的人\n被梦见的人惊醒了\nHA 挥之不去\n我所有的记忆\n在奔向你的路上\n我长期坠入了梦乡\n乌鸦在风中歌唱\n口袋的欲望空荡荡\nHA 多想逃离\n被宿命追缠的游戏\nHA 多么着迷\n一场盛大的献祭\n挣脱这绳索\n切断这因果\n纵情坠落 这诱惑\n就快将我淹没\n在清晨的微光里\n我长期坠入了梦乡\n沐浴着粼粼波光\n进入潮湿的太阳"
         },
         "media": {
             "audio_file": "",
@@ -2075,12 +2075,12 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "高雪伦/沈秋离",
-            "composer": "田默忱@听见时代/高雪伦",
-            "producer": "田默忱@听见时代",
-            "arranger": "张胤哲/田默忱@听见时代",
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "陆希文",
+            "arranger": "陆希文、Shao Jean Sim",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "电影《想飞的女孩》推广曲《我长期坠入梦乡》，由陈婧霏作词作曲并献唱演绎。歌曲风格展现了她梦幻浓郁的个人风格，勾勒出梦境与现实、困境与自由、甜蜜与残酷的梏、追寻自由的主题。交错诗篇，精准呼应影片中田恬和方笛两姐妹努力挣脱桎\n'海边的烟火在绽放，命运在秋千上摇荡'。陈婧霏黑胶质感般的音色搭配歌词中的温柔刀刃，诉说着在逆境中两姐妹携手勇敢反抗，共赴自由，给予大家打破枷锁、挣脱束缚的力量。\n谨以此曲祝愿所有身处困境的人，都有向上的勇气。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -2096,13 +2096,85 @@
     {
         "id": 59,
         "meta": {
+            "title": "岩中花述",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2025-07-20",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-岩石上的花 自深处绽放",
+            "lyrics": "有一种美丽\n从有形开始\n无形中漫漪\n有一场旅行\n从耳畔开始\n走向了天地\n在他人的故事里\n遇见了自己\n换上柔软的外衣\n悄悄抵达了内心\n岩石上的花\n自深处绽放\n吟唱ha\n任时光流淌\n悠然地生长\n遥望她心中的月光\n有一种诗意\n温柔的锋利\n优雅的叛逆\n这一场相遇\n热烈又清醒\n偶然却笃定\n在他人的故事里\n遇见了自己\n换上柔软的外衣\n通向坚定的内心\n岩石上的花\n自深处绽放\n吟唱 ha\n喷涌的岩浆\n是心的力量\n创造属于她的天堂"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "陈婧霏",
+            "arranger": "周冠儒GR Zhou",
+            "original_singer": "",
+            "official_description": "《岩中花述》陈婧霏 x GIADA\n-﹣艺术流行．哲学诗性．女性独白\n'岩石上的花，自深处绽放，喷涌的岩浆，是心的力量，创造属于她的天堂'\n陈婧霏与意大利女装品牌GIADA联袂呈现的单曲《岩中花述》，以'岩石上的花'为精神图腾，用音乐完成一场'物质与诗意'的对话。歌曲延续了她标志性的'浪漫主义'创作脉络﹣﹣慵懒的声线如丝绒拂过耳廓，歌词则像GIADA的立体剪裁，用温柔的锋利剖开现代女性的精神褶皱，如同岩缝中生长的花朵，寂静却充满生命力。\n在这场旅行中，让我们\n'在他人的故事里，遇见了自己，换上柔软的外衣，通向坚定的内心'。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 60,
+        "meta": {
+            "title": "与你同在",
+            "artist": "陈婧霏",
+            "album": "《樱桃琥珀》电视剧推广曲",
+            "release_date": "2025-07-21",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-友谊不需要彩排",
+            "lyrics": "Love me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\n或许世界有点坏\n总浇灭期待\n但亲爱的朋友\n我有你就足够\n你是我的火柴\n你总轻声哼着歌\n对着日落\n用力挥挥手\n说明天别忘了\nLove me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\n为你喝彩\nWe can fly\n无限期待\n当我们某天奔向\n各自的未来\n最亲爱的朋友\n我会紧握你手\n你最无可替代\n我们一同跨越过\n群山和大海\n有你在身边\n是最好的安排\nLove me in the eye\n你会看到花盛开\n这每一分每一秒我都会与你同在\n飞过那片海\n没有遗憾能阻碍\n这是最珍惜最坚定的我为你喝彩\nLove me in the eye\n你看时光能倒带\n你名字的由来永远在我心底存在\n驱散了阴霾\n友谊不需要彩排\n因为最熟悉最默契的我与你同在\n与你同在\n不曾离开\n只要你在"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "高雪伦/沈秋离",
+            "composer": "田默忱@听见时代/高雪伦",
+            "producer": "田默忱@听见时代",
+            "arranger": "张胤哲/田默忱@听见时代",
+            "original_singer": "",
+            "official_description": "彼此陪伴、相互支持的少年时光。当年的小分队已长大成人，但关于友情、亲情与初恋的记忆仍如琥珀般清澈、透亮，深埋心底"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 61,
+        "meta": {
             "title": "墨绿的夜",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2025-10-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-月亮出来了",
             "lyrics": "月亮出来了\n月亮睁开美丽的眼轻轻的对着我瞧\n好像对我说\n月光是它多情的话语无声无息的说\n鸟儿归去了\n鸟儿乘着夜的翅膀神秘的飞掠过\n仿佛是忧伤\n模模糊糊的美感在我心里回响\n哦 墨绿的夜 隐隐约约\n展露着独特的美\n它带给我们飘渺的思想 无远弗届\n人们都睡了\n人们都在自己的梦里\n悠悠的徘徊寻找\n他们期待明天\n小小的希望和平凡的憧憬\n也许能够实现\n哦 墨绿的夜 隐隐约约\n展露着独特的美\n它带给我们飘渺的思想 无远弗届\n月亮出来了\n月亮睁开美丽的眼轻轻的对着我瞧\n好像对我说\n月光是它多情的话语无声无息的说"
         },
         "media": {
@@ -2130,7 +2202,7 @@
         "vector_embedding": []
     },
     {
-        "id": 60,
+        "id": 62,
         "meta": {
             "title": "我和春天有个约会",
             "artist": "陈婧霏",
@@ -2138,7 +2210,7 @@
             "release_date": "2025-10-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-当听到这一厥幽幽的Saxophone",
             "lyrics": "夜阑人静处\n响起了一厥幽幽的Saxophone\n牵起了 愁怀于深心处\n夜阑人静处\n当听到这一厥幽幽的Saxophone\n想起你 茫然于 漆黑夜半\n在这晚星月迷蒙\n盼再看到你脸容\n在这晚思念无穷\n心中感觉似无法操纵\n想终有日我面对你\n交底我内里情浓\n春风那日会为你跟我重逢吹送\n夜阑人静处 当天际\n星与月渐渐流动\n感触有如潮水般汹涌\n若是情未冻\n请跟我哼这幽幽的Saxophone\n于今晚 柔柔的想我入梦中\n若是情未冻 始终相信\n我俩与春天有个约会\nI have a date with spring\nI have a date with spring"
         },
         "media": {
@@ -2166,7 +2238,7 @@
         "vector_embedding": []
     },
     {
-        "id": 61,
+        "id": 63,
         "meta": {
             "title": "最后一夜",
             "artist": "陈婧霏",
@@ -2174,7 +2246,7 @@
             "release_date": "2025-10-28",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-曲终人散 回头一瞥",
             "lyrics": "踩不完恼人舞步\n喝不尽醉人醇酒\n良夜有谁为我留\n耳边语轻柔\n走不完红男绿女\n看不尽人海沉浮\n往事有谁为我数\n空对华灯愁\n我也曾陶醉在两情相悦\n像飞舞中的彩蝶\n我也曾心碎于黯然离别\n哭倒在露湿台阶\n红灯将灭 酒也醒\n此刻该向它告别\n曲终人散 回头一瞥\n嗯\n最后一夜\n我也曾陶醉在两情相悦\n像飞舞中的彩蝶\n我也曾心碎于黯然离别\n哭倒在露湿台阶\n红灯将灭 酒也醒\n此刻该向它告别\n曲终人散 回头一瞥\n嗯\n最后一夜"
         },
         "media": {
@@ -2202,7 +2274,7 @@
         "vector_embedding": []
     },
     {
-        "id": 62,
+        "id": 64,
         "meta": {
             "title": "原谅我不是你",
             "artist": "陈婧霏/黄少峰",
@@ -2210,7 +2282,7 @@
             "release_date": "2026-02-06",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-因为相爱过所以相信",
             "lyrics": "黄少峰：\n请相信 一生有不多不少的相遇\n老朋友 别因为还没轮到你而灰心\n等错过的都过够了\n就等来了唯一\n道别 从来都是伤筋动骨的事情\n怎能 让我们变得轻易\n把心 都给掏出去\n换来空欢喜\n陈婧霏：\n我想和你跳支舞\n做合理的身体接触\n在心里留片空地\n你自由的来去\n彼此 放行\n好好的爱一次有多不易\n因为相爱过所以相信\n路走的再远 转身也回得去\n说一句 原谅我不是你\n黄少峰：\n道别 从来都是伤筋动骨的事情\n怎能 让我们变得轻易\n把心 都给掏出去\n换来空欢喜\n陈婧霏：\n我想和你跳支舞\n做合理的身体接触\n在心里留片空地\n你自由的来去\n彼此 放行\n好好的爱一次有多不易\n因为相爱过所以相信\n路走的再远 转身也回得去\n说一句 原谅我不是你\n我想和你跳支舞\n做合理的身体接触\n在心里留片空地\n你自由的来去\n彼此 放行\n陈婧霏/黄少峰：\n好好的爱一次有多不易\n因为相爱过所以相信\n路走的再远 转身也回得去\n说一句 原谅我不是你"
         },
         "media": {
@@ -2224,79 +2296,7 @@
             "producer": "火星电台",
             "arranger": "曾宇@火星电台/高文浩",
             "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 63,
-        "meta": {
-            "title": "打扫卫生 (A Favorite Place For U)",
-            "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2026-02-08",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "I will be nothing if you're laughing at me\nI will be something if you cry about me\nSaying no more just do it right\nDear I will be your team for life\nI will be no one if you make fun of me\nI will be someone if you hunt for me\nBuying so much gain no more\nMy dear for you I'd love to take it all\nHere is my favorite place just right next to your heart\nHowever it might be taken I bet my whole life to win\nI will shout out to the world I'll never left you alone\nHeading to wherever to be whoever I've made a favorite place for you\nI will shout out to the world I'll never left you alone\nHeading to wherever to be whoever I've made a favorite place for you"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "黄少峰@火星电台",
-            "composer": "黄少峰@火星电台",
-            "producer": "火星电台",
-            "arranger": "曾宇@火星电台",
-            "original_singer": "",
-            "official_description": ""
-        },
-        "semantic_analysis": {
-            "keywords": [],
-            "scene_tags": [],
-            "mood_tags": [],
-            "hidden_tags": [],
-            "ai_narrative_summary": "",
-            "style_description": ""
-        },
-        "admin_tags": [],
-        "vector_embedding": []
-    },
-    {
-        "id": 64,
-        "meta": {
-            "title": "A name to call (一个可以呼唤的名字)",
-            "artist": "陈婧霏",
-            "album": "《非传统浪漫关系》电影插曲",
-            "release_date": "2026-02-08",
-            "cover_image": "",
-            "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "The sound of tear drops\nThe waves of rainbow's shouts\nI hear you all the time\nYou colored all my minds\nYou're trying all my bloody kind\nAnd here is all about the word unbelievable\nAnd here is no such a bubble to blow\nThere is a piece of mess\nThere is a moment last\nI used to call it brain\nThe rainbow is blacked then gone\nThe world is healing itself alone\nAnd here is all about the word unforgettable\nAnd here is no such a name to call\nA name to call"
-        },
-        "media": {
-            "audio_file": "",
-            "play_link": "",
-            "video_link": ""
-        },
-        "credits": {
-            "lyricist": "黄少峰@火星电台",
-            "composer": "黄少峰@火星电台",
-            "producer": "火星电台",
-            "arranger": "曾宇@火星电台",
-            "original_singer": "",
-            "official_description": ""
+            "official_description": "电影《非传统浪漫关系》片尾曲《原谅我不是你》唱响了当代都市男女在亲密关系中从'迷失'到'找回自我'的清醒与释然。歌曲深度呼应影片'爱己'的核心主旨，精准捕捉了祝君好与龚玺在经历了一场荒诞的'离婚搭子'实验后，终于参透'喜欢与合适是两码事'的情感顿悟。在温柔细腻的旋律中，完成了从'相爱相杀的纠缠'到'活出自己'的心路演变。\n曾经试图在对方身上寻找圆满的两个人，在一次次推拉博弈中终于明白，爱不是削足适履的改变，也不是委曲求全的占有。当所有喧嚣归于平静，心中只剩下一个坚定的信念﹣﹣爱人的前提是爱己，原来我不是你的'理想'，我也只需成为我自己。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -2312,14 +2312,14 @@
     {
         "id": 65,
         "meta": {
-            "title": "睡吧，明天没事",
+            "title": "打扫卫生 (A Favorite Place For U)",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2026-02-11",
+            "release_date": "2026-02-08",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "睡吧小毛 睡吧大象\n睡吧黄浦江 睡吧街巷\n睡吧 天的南边\n睡吧 海的北边\n睡回那个旧旧的夜晚\n不用着急 不用早起\n妈妈等你 猫猫等你\n春天搓着手在等你\n在等你\nLa la la la\nLa la la la\nLa la la la\nLa la la la\nLa la la la\nLa la la la\n醒了会有春天\n会有春天\n会有干干净净的新时间\n睡吧 明天没事"
+            "highlight_sentence": "-Saying no more just do it right",
+            "lyrics": "I will be nothing if you're laughing at me\nI will be something if you cry about me\nSaying no more just do it right\nDear I will be your team for life\nI will be no one if you make fun of me\nI will be someone if you hunt for me\nBuying so much gain no more\nMy dear for you I'd love to take it all\nHere is my favorite place just right next to your heart\nHowever it might be taken I bet my whole life to win\nI will shout out to the world I'll never left you alone\nHeading to wherever to be whoever I've made a favorite place for you\nI will shout out to the world I'll never left you alone\nHeading to wherever to be whoever I've made a favorite place for you"
         },
         "media": {
             "audio_file": "",
@@ -2327,12 +2327,12 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "李盆",
-            "composer": "卢子健",
-            "producer": "卢子健",
-            "arranger": "卢子健",
+            "lyricist": "黄少峰@火星电台",
+            "composer": "黄少峰@火星电台",
+            "producer": "火星电台",
+            "arranger": "曾宇@火星电台",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "电影《非传统浪漫关系》插曲《打扫卫生（A Favorite Place For U)》由陈婧霏演绎，借由'打扫'这一生活化的隐喻，勾勒出都市男女在亲密关系中试图'清理'过往却又陷入更深羁绊的微妙心理。\n歌词中的执着誓言，精准投射出祝君好与龚玺在'离婚搭子'这一荒诞外壳下，依然渴望在对方心底占据一席之地的深情本能。这是一场关于爱的'大扫除'，他们试图理清关系的杂乱，却发现扫得走生活的灰尘，却扫不走那些名为'习惯'与'依赖'的爱意。在轻盈的律动中，唱尽了成年人想爱又怕输的倔强与温柔。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -2348,14 +2348,14 @@
     {
         "id": 66,
         "meta": {
-            "title": "拥抱是最温暖的相遇",
+            "title": "A name to call (一个可以呼唤的名字)",
             "artist": "陈婧霏",
-            "album": "",
-            "release_date": "2026-03-20",
+            "album": "《非传统浪漫关系》电影插曲",
+            "release_date": "2026-02-08",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
-            "lyrics": "拥抱是最温暖的相遇\n接纳遗憾再庆祝胜利\n贴着心跳起伏的潮汐\n倾听柔软的私密\n每个疲惫焦虑的缝隙\n托住无声倦意\n轻轻入怀 这一片云海\n遇见最轻盈的自在\n稳稳的爱 充盈这身脉\n让我们安然地\n把心 敞开 让阳光照进来\n每寸 期待 都好好被善待\n拥抱是最浪漫的相遇\n融化孤寂再分享勇气\n贴着心跳起伏的潮汐\n亲吻纤微的思绪\n穿过无常变幻的四季\n守护心的丰莹\n轻轻入怀 这一片云海\n遇见最轻盈的自在\n稳稳的爱 充盈这身脉\n让我们安然地\n把心 敞开 让阳光照进来\n每寸 期待 都好好被善待\n在清晨第一个拥抱里\n听见心底最动人的旋律"
+            "highlight_sentence": "-I hear you all the time",
+            "lyrics": "The sound of tear drops\nThe waves of rainbow's shouts\nI hear you all the time\nYou colored all my minds\nYou're trying all my bloody kind\nAnd here is all about the word unbelievable\nAnd here is no such a bubble to blow\nThere is a piece of mess\nThere is a moment last\nI used to call it brain\nThe rainbow is blacked then gone\nThe world is healing itself alone\nAnd here is all about the word unforgettable\nAnd here is no such a name to call\nA name to call"
         },
         "media": {
             "audio_file": "",
@@ -2363,12 +2363,12 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "陈婧霏",
-            "composer": "陈婧霏",
-            "producer": "陈婧霏/陆希文 Minstrel Lu",
-            "arranger": "Simon Mongtrison",
+            "lyricist": "黄少峰@火星电台",
+            "composer": "黄少峰@火星电台",
+            "producer": "火星电台",
+            "arranger": "曾宇@火星电台",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "《非传统浪漫关系》插曲《A name to call（一个可以呼唤的名字）》勾勒出一段关于'失语'与'界限'的伤感独白。\n歌词直击影片中亲密关系的核心痛点﹣﹣当婚姻的彩虹褪色、虚幻的泡沫破裂，曾经最亲密的人变成了一个无法忘却又无法唤姓名的模糊存在。歌曲精准捕捉了祝君好和龚玺在关系破碎后的精神迷走，那是从婚姻的确定性坠入'非传统'的失衡时，无处安放的孤独与怅惘。在陈婧霏极具叙事感的吟唱中，观众听到了那是爱意在失序后的回响，也是对过去那个'可以呼唤的名字'最深的致意。"
         },
         "semantic_analysis": {
             "keywords": [],
@@ -2384,13 +2384,85 @@
     {
         "id": 67,
         "meta": {
+            "title": "睡吧，明天没事",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2026-02-11",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-醒了会有春天",
+            "lyrics": "睡吧小毛 睡吧大象\n睡吧黄浦江 睡吧街巷\n睡吧 天的南边\n睡吧 海的北边\n睡回那个旧旧的夜晚\n不用着急 不用早起\n妈妈等你 猫猫等你\n春天搓着手在等你\n在等你\nLa la la la\nLa la la la\nLa la la la\nLa la la la\nLa la la la\nLa la la la\n醒了会有春天\n会有春天\n会有干干净净的新时间\n睡吧 明天没事"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "李盆",
+            "composer": "卢子健",
+            "producer": "卢子健",
+            "arranger": "卢子健",
+            "original_singer": "",
+            "official_description": "地球忙忙碌碌转了一圈，到了每年的'春节'时刻。\n终于，我们可以放下手中的事，说一句：「睡吧，明天没事」。\n深睡是最好的除旧。\n2026年，亚朵星球再次携手陈婧霏，将祝愿谱进歌里。陈婧霏的嗓音温柔响起，将夜色轻抚成梦，愿新年的每个明天，我们都能有干干净净的新睡眠。\n睡吧，明天没事。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 68,
+        "meta": {
+            "title": "拥抱是最温暖的相遇",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2026-03-20",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "-遇见最轻盈的自在",
+            "lyrics": "拥抱是最温暖的相遇\n接纳遗憾再庆祝胜利\n贴着心跳起伏的潮汐\n倾听柔软的私密\n每个疲惫焦虑的缝隙\n托住无声倦意\n轻轻入怀 这一片云海\n遇见最轻盈的自在\n稳稳的爱 充盈这身脉\n让我们安然地\n把心 敞开 让阳光照进来\n每寸 期待 都好好被善待\n拥抱是最浪漫的相遇\n融化孤寂再分享勇气\n贴着心跳起伏的潮汐\n亲吻纤微的思绪\n穿过无常变幻的四季\n守护心的丰莹\n轻轻入怀 这一片云海\n遇见最轻盈的自在\n稳稳的爱 充盈这身脉\n让我们安然地\n把心 敞开 让阳光照进来\n每寸 期待 都好好被善待\n在清晨第一个拥抱里\n听见心底最动人的旋律"
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "陈婧霏",
+            "composer": "陈婧霏",
+            "producer": "陈婧霏/陆希文 Minstrel Lu",
+            "arranger": "Simon Mongtrison",
+            "original_singer": "",
+            "official_description": "《拥抱是最温暖的相遇》陈婧霏 x MANIFORM 曼妮芬身体独白．治愈乐诗·予己之拥\n'贴着心跳起伏的潮汐，倾听柔软的私密，每个疲惫焦虑的缝隙，托住无声倦意'\n由陈婧霏词曲创作，与知名内衣品牌【MANIFORM 曼妮芬】联袂呈现的单曲《拥抱是最温暖的相遇》，以浪漫为线，织就轻盈听觉衣物，让暖意在心间流淌。作品以'拥抱'为内核，诠释拥抱在人生旅程中的万千故事，也象征曼妮芬品牌与千千万万女性用户之间长达三十年的身心陪伴。'贴着心跳起伏的潮汐'，是贴身衣物与肌肤的私语，更是时间与成长的共鸣。\n以轻盈柔韧的旋律，完美贴合女性身体与情绪的曲线。它不仅是一首拥抱的赞美诗，更是一份献给所有被曼妮芬陪伴过的女性的温柔告白，致敬共同成长的过往，也拥抱'轻盈真实'的自己。"
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 69,
+        "meta": {
             "title": "美力场",
             "artist": "陈婧霏",
             "album": "",
             "release_date": "2026-04-15",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "",
+            "highlight_sentence": "-每一步都是主场",
             "lyrics": "这世界陆离光怪\n风向左摇右摆\n明天的色彩\n我自己主宰\n发梢蔓延着渴望\n灵感在颈后发烫\n美是种信仰\n每一刻都是高光\n馥郁流淌\n心花肆意绽放\n声色流光\n都为我荡漾\n美力磁场\n掀动心的巨浪\n天地都宽广\n每一步都是主场\n摇曳的发香\n天使的翅膀\n闪着诱惑光亮\n全世界坠入情网\n妆什么活色生香\n追什么霓虹热浪\n越玩越酣畅\n越美越嚣张\n烦恼通通都甩开\n人生只剩热爱\n一阵风吹来\n万物都盛开\n馥郁流淌\n心花肆意绽放\n声色流光\n都为我荡漾\n美力磁场\n掀动心的巨浪\n天地都宽广\n每一步都是主场\n摇曳的发香\n天使的翅膀\n撩动氤氲幻想\n谁还念念不忘\n尽情地张扬\n从午夜到天亮\n美就是力量\n激活所有想象"
         },
         "media": {
@@ -2404,7 +2476,7 @@
             "producer": "周冠儒GR Zhou",
             "arranger": "周冠儒GR Zhou",
             "original_singer": "",
-            "official_description": ""
+            "official_description": "'馥郁流淌，心花肆意绽放'\n由陈婧霏词曲创作，力士美护发首支品牌概念歌曲《美力场》正式发布。发香与旋律交织共振，以'美力磁场'为灵感原点，描摹每一位力士女孩发丝轻舞间的自信瞬间；每一缕香气都是一次无声的宣告：甩动发丝的那一刻，美与自信自然成场。\n'美力磁场，掀动心的巨浪'\n愿你在音符与香气中，始终敢于绽放，时时刻刻，释放自己的美力磁场。"
         },
         "semantic_analysis": {
             "keywords": [],
