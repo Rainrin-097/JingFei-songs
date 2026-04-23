@@ -266,7 +266,7 @@
             "release_date": "2020-01-01",
             "cover_image": "",
             "duration": "",
-            "highlight_sentence": "-用相知相守换地久天长",
+            "highlight_sentence": "",
             "lyrics": "张小厚：\n我喜欢一回家\n就有暖洋洋的灯光在等待\n我喜欢一起床\n就看到大家微笑的脸庞\n秦昊：\n我喜欢一出门\n就为了家人和自己的理想打拼\n我喜欢一家人\n心朝着同一个方向眺望 哦\n陈粒：\n我喜欢快乐时\n马上就想要和你一起分享\n我喜欢受伤时\n就想起你们温暖的怀抱\n陈婧霏：\n我喜欢生气时\n就想到你们永远包容多么伟大\n我喜欢旅行时\n为你把美好记忆带回家\n焦迈奇：\n因为我们是一家人\n相亲相爱的一家人\n有缘才能相聚\n有心才会珍惜\n何必让满天乌云遮住眼睛\n王加一：\n因为我们是一家人\n相亲相爱的一家人\n有福就该同享\n有难必然同当\n用相知相守换地久天长\n陈粒：\n我喜欢一回家\n就把乱糟糟的心情都忘掉\n我喜欢一起床\n就带给大家微笑的脸庞\n好妹妹：\n我喜欢一出门\n就为了个人和世界的美好打拼\n我喜欢一家人\n梦朝着同一个方向创造 哦\n陈婧霏/焦迈奇：\n当别人快乐时\n好像是自己获得幸福一样\n当别人受伤时\n我愿意敞开最真的怀抱\n王加一/粒粒：\n当别人生气时\n告诉他就算观念不同不必激动\n当别人需要时\n我一定卷起袖子帮助他\n合：\n因为我们是一家人\n相亲相爱的一家人\n好妹妹/陈粒：\n有缘才能相聚\n有心才会珍惜\n何必让满天乌云遮住眼睛\n合：\n因为我们是一家人\n相亲相爱的一家人\n王加一/焦迈奇/陈婧霏：\n有福就该同享\n有难必然同当\n合：\n用相知相守换地久天长\n张小厚：\n处处为你用心\n一直最有默契\n秦昊：\n请你相信这份感情值得感激\n合：\n因为我们是一家人\n相亲相爱的一家人\n有缘才能相聚\n有心才会珍惜\n何必让满天乌云遮住眼睛\n因为我们是一家人\n相亲相爱的一家人\n有福就该同享\n有难必然同当\n用相知相守换地久天长"
         },
         "media": {
@@ -371,7 +371,7 @@
             "title": "我的孤独认出你的孤独",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2020-12-22",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-Hey 原来春天这么美",
@@ -584,6 +584,42 @@
     {
         "id": 17,
         "meta": {
+            "title": "跑了三条街才买到",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2020-12-22",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "",
+            "lyrics": ""
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "",
+            "composer": "",
+            "producer": "",
+            "arranger": "",
+            "original_singer": "",
+            "official_description": ""
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 18,
+        "meta": {
             "title": "深蓝",
             "artist": "陈婧霏",
             "album": "",
@@ -618,7 +654,7 @@
         "vector_embedding": []
     },
     {
-        "id": 18,
+        "id": 19,
         "meta": {
             "title": "In Bloom",
             "artist": "陈婧霏",
@@ -654,7 +690,7 @@
         "vector_embedding": []
     },
     {
-        "id": 19,
+        "id": 20,
         "meta": {
             "title": "舞舞舞",
             "artist": "陈婧霏",
@@ -690,7 +726,43 @@
         "vector_embedding": []
     },
     {
-        "id": 20,
+        "id": 21,
+        "meta": {
+            "title": "现在是12月24号早上5点57分",
+            "artist": "陈婧霏",
+            "album": "",
+            "release_date": "2020-12-22",
+            "cover_image": "",
+            "duration": "",
+            "highlight_sentence": "",
+            "lyrics": ""
+        },
+        "media": {
+            "audio_file": "",
+            "play_link": "",
+            "video_link": ""
+        },
+        "credits": {
+            "lyricist": "",
+            "composer": "",
+            "producer": "",
+            "arranger": "",
+            "original_singer": "",
+            "official_description": ""
+        },
+        "semantic_analysis": {
+            "keywords": [],
+            "scene_tags": [],
+            "mood_tags": [],
+            "hidden_tags": [],
+            "ai_narrative_summary": "",
+            "style_description": ""
+        },
+        "admin_tags": [],
+        "vector_embedding": []
+    },
+    {
+        "id": 22,
         "meta": {
             "title": "人间指南",
             "artist": "陈婧霏",
@@ -726,7 +798,7 @@
         "vector_embedding": []
     },
     {
-        "id": 21,
+        "id": 23,
         "meta": {
             "title": "生活在别处",
             "artist": "陈婧霏",
@@ -762,7 +834,7 @@
         "vector_embedding": []
     },
     {
-        "id": 22,
+        "id": 24,
         "meta": {
             "title": "漫漫人生路",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -798,7 +870,7 @@
         "vector_embedding": []
     },
     {
-        "id": 23,
+        "id": 25,
         "meta": {
             "title": "Lonely",
             "artist": "Violet Skies/陈婧霏",
@@ -834,7 +906,7 @@
         "vector_embedding": []
     },
     {
-        "id": 24,
+        "id": 26,
         "meta": {
             "title": "自己的海",
             "artist": "陈婧霏",
@@ -870,7 +942,7 @@
         "vector_embedding": []
     },
     {
-        "id": 25,
+        "id": 27,
         "meta": {
             "title": "逝去的海",
             "artist": "陈婧霏",
@@ -906,7 +978,7 @@
         "vector_embedding": []
     },
     {
-        "id": 26,
+        "id": 28,
         "meta": {
             "title": "躲也躲不了",
             "artist": "陈婧霏",
@@ -942,7 +1014,7 @@
         "vector_embedding": []
     },
     {
-        "id": 27,
+        "id": 29,
         "meta": {
             "title": "梦里水乡",
             "artist": "陈婧霏",
@@ -978,7 +1050,7 @@
         "vector_embedding": []
     },
     {
-        "id": 28,
+        "id": 30,
         "meta": {
             "title": "空空",
             "artist": "王加一/陈婧霏",
@@ -1014,7 +1086,7 @@
         "vector_embedding": []
     },
     {
-        "id": 29,
+        "id": 31,
         "meta": {
             "title": "海底一公里",
             "artist": "陈婧霏",
@@ -1050,7 +1122,7 @@
         "vector_embedding": []
     },
     {
-        "id": 30,
+        "id": 32,
         "meta": {
             "title": "燃烧一场",
             "artist": "陈婧霏",
@@ -1086,7 +1158,7 @@
         "vector_embedding": []
     },
     {
-        "id": 31,
+        "id": 33,
         "meta": {
             "title": "冬",
             "artist": "王加一/陈婧霏",
@@ -1122,7 +1194,7 @@
         "vector_embedding": []
     },
     {
-        "id": 32,
+        "id": 34,
         "meta": {
             "title": "如梦",
             "artist": "陈婧霏",
@@ -1158,7 +1230,7 @@
         "vector_embedding": []
     },
     {
-        "id": 33,
+        "id": 35,
         "meta": {
             "title": "亲密爱人",
             "artist": "陈婧霏",
@@ -1194,7 +1266,7 @@
         "vector_embedding": []
     },
     {
-        "id": 34,
+        "id": 36,
         "meta": {
             "title": "这个世界",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -1230,12 +1302,12 @@
         "vector_embedding": []
     },
     {
-        "id": 35,
+        "id": 37,
         "meta": {
             "title": "她ELLE",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2023-01-01",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-扮演别人的时间都是浪费",
@@ -1266,7 +1338,7 @@
         "vector_embedding": []
     },
     {
-        "id": 36,
+        "id": 38,
         "meta": {
             "title": "黑色领结 (Nuance)",
             "artist": "Alec Benjamin/陈婧霏",
@@ -1302,7 +1374,7 @@
         "vector_embedding": []
     },
     {
-        "id": 37,
+        "id": 39,
         "meta": {
             "title": "光芒",
             "artist": "陈婧霏",
@@ -1338,7 +1410,7 @@
         "vector_embedding": []
     },
     {
-        "id": 38,
+        "id": 40,
         "meta": {
             "title": "分享",
             "artist": "好妹妹/秦昊/张小厚/陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -1374,7 +1446,7 @@
         "vector_embedding": []
     },
     {
-        "id": 39,
+        "id": 41,
         "meta": {
             "title": "晒了晒",
             "artist": "好妹妹/陈粒/焦迈奇/王加一/陈婧霏",
@@ -1410,7 +1482,7 @@
         "vector_embedding": []
     },
     {
-        "id": 40,
+        "id": 42,
         "meta": {
             "title": "春色悠悠不及你荡漾",
             "artist": "陈婧霏",
@@ -1446,7 +1518,7 @@
         "vector_embedding": []
     },
     {
-        "id": 41,
+        "id": 43,
         "meta": {
             "title": "午夜爱未眠",
             "artist": "陈婧霏",
@@ -1482,7 +1554,7 @@
         "vector_embedding": []
     },
     {
-        "id": 42,
+        "id": 44,
         "meta": {
             "title": "夜空",
             "artist": "陈婧霏",
@@ -1518,7 +1590,7 @@
         "vector_embedding": []
     },
     {
-        "id": 43,
+        "id": 45,
         "meta": {
             "title": "别处的夕阳2024",
             "artist": "陈婧霏",
@@ -1554,7 +1626,7 @@
         "vector_embedding": []
     },
     {
-        "id": 44,
+        "id": 46,
         "meta": {
             "title": "自在",
             "artist": "韦唯/陈婧霏",
@@ -1590,7 +1662,7 @@
         "vector_embedding": []
     },
     {
-        "id": 45,
+        "id": 47,
         "meta": {
             "title": "她不再幻想",
             "artist": "陈婧霏",
@@ -1626,7 +1698,7 @@
         "vector_embedding": []
     },
     {
-        "id": 46,
+        "id": 48,
         "meta": {
             "title": "红霞剧场",
             "artist": "陈婧霏",
@@ -1662,7 +1734,7 @@
         "vector_embedding": []
     },
     {
-        "id": 47,
+        "id": 49,
         "meta": {
             "title": "北海",
             "artist": "陈婧霏",
@@ -1698,7 +1770,7 @@
         "vector_embedding": []
     },
     {
-        "id": 48,
+        "id": 50,
         "meta": {
             "title": "沙漠一枝花",
             "artist": "陈婧霏",
@@ -1734,7 +1806,7 @@
         "vector_embedding": []
     },
     {
-        "id": 49,
+        "id": 51,
         "meta": {
             "title": "春宵苦短，少女快前进！",
             "artist": "陈婧霏",
@@ -1770,7 +1842,7 @@
         "vector_embedding": []
     },
     {
-        "id": 50,
+        "id": 52,
         "meta": {
             "title": "禁色宝丽来",
             "artist": "陈婧霏",
@@ -1806,7 +1878,7 @@
         "vector_embedding": []
     },
     {
-        "id": 51,
+        "id": 53,
         "meta": {
             "title": "演！演！演！",
             "artist": "陈婧霏",
@@ -1842,7 +1914,7 @@
         "vector_embedding": []
     },
     {
-        "id": 52,
+        "id": 54,
         "meta": {
             "title": "诸多夏日后天鹅之死",
             "artist": "陈婧霏",
@@ -1878,7 +1950,7 @@
         "vector_embedding": []
     },
     {
-        "id": 53,
+        "id": 55,
         "meta": {
             "title": "你是我最爱的褪色的幻想",
             "artist": "陈婧霏",
@@ -1914,7 +1986,7 @@
         "vector_embedding": []
     },
     {
-        "id": 54,
+        "id": 56,
         "meta": {
             "title": "自恋咒",
             "artist": "陈婧霏",
@@ -1950,7 +2022,7 @@
         "vector_embedding": []
     },
     {
-        "id": 55,
+        "id": 57,
         "meta": {
             "title": "猩红",
             "artist": "陈婧霏",
@@ -1986,7 +2058,7 @@
         "vector_embedding": []
     },
     {
-        "id": 56,
+        "id": 58,
         "meta": {
             "title": "盖被",
             "artist": "陈粒/粒粒/焦迈奇/王加一/陈婧霏",
@@ -2022,7 +2094,7 @@
         "vector_embedding": []
     },
     {
-        "id": 57,
+        "id": 59,
         "meta": {
             "title": "深睡小夜曲",
             "artist": "陈婧霏",
@@ -2058,7 +2130,7 @@
         "vector_embedding": []
     },
     {
-        "id": 58,
+        "id": 60,
         "meta": {
             "title": "我长期坠入梦乡",
             "artist": "陈婧霏",
@@ -2094,7 +2166,7 @@
         "vector_embedding": []
     },
     {
-        "id": 59,
+        "id": 61,
         "meta": {
             "title": "岩中花述",
             "artist": "陈婧霏",
@@ -2130,7 +2202,7 @@
         "vector_embedding": []
     },
     {
-        "id": 60,
+        "id": 62,
         "meta": {
             "title": "与你同在",
             "artist": "陈婧霏",
@@ -2166,12 +2238,12 @@
         "vector_embedding": []
     },
     {
-        "id": 61,
+        "id": 63,
         "meta": {
             "title": "墨绿的夜",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2025-10-28",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-月亮出来了",
@@ -2202,12 +2274,12 @@
         "vector_embedding": []
     },
     {
-        "id": 62,
+        "id": 64,
         "meta": {
             "title": "我和春天有个约会",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2025-10-28",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-当听到这一厥幽幽的Saxophone",
@@ -2238,12 +2310,12 @@
         "vector_embedding": []
     },
     {
-        "id": 63,
+        "id": 65,
         "meta": {
             "title": "最后一夜",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2025-10-28",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-曲终人散 回头一瞥",
@@ -2274,7 +2346,7 @@
         "vector_embedding": []
     },
     {
-        "id": 64,
+        "id": 66,
         "meta": {
             "title": "原谅我不是你",
             "artist": "陈婧霏/黄少峰",
@@ -2310,7 +2382,7 @@
         "vector_embedding": []
     },
     {
-        "id": 65,
+        "id": 67,
         "meta": {
             "title": "打扫卫生 (A Favorite Place For U)",
             "artist": "陈婧霏",
@@ -2346,7 +2418,7 @@
         "vector_embedding": []
     },
     {
-        "id": 66,
+        "id": 68,
         "meta": {
             "title": "A name to call (一个可以呼唤的名字)",
             "artist": "陈婧霏",
@@ -2382,7 +2454,7 @@
         "vector_embedding": []
     },
     {
-        "id": 67,
+        "id": 69,
         "meta": {
             "title": "睡吧，明天没事",
             "artist": "陈婧霏",
@@ -2418,7 +2490,7 @@
         "vector_embedding": []
     },
     {
-        "id": 68,
+        "id": 70,
         "meta": {
             "title": "拥抱是最温暖的相遇",
             "artist": "陈婧霏",
@@ -2454,12 +2526,12 @@
         "vector_embedding": []
     },
     {
-        "id": 69,
+        "id": 71,
         "meta": {
             "title": "美力场",
             "artist": "陈婧霏",
             "album": "",
-            "release_date": "2026-04-15",
+            "release_date": "",
             "cover_image": "",
             "duration": "",
             "highlight_sentence": "-每一步都是主场",

@@ -24,21 +24,111 @@ body {
     line-height: 1.6;
 }
 
+body.splash-active {
+    overflow: hidden;
+}
+
+#app {
+    transition: filter 0.9s ease;
+}
+
+body.splash-active #app {
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity 0.9s ease, filter 0.9s ease;
+}
+
+.splash-title {
+    font-size: 2.6rem;
+}
+
+.splash-subtitle {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #999;
+    letter-spacing: 0.04em;
+}
+
+.splash-screen.exit {
+    opacity: 0;
+    filter: blur(10px);
+}
+
 header {
     background: var(--card-bg);
-    padding: 16px 24px;
+    padding: 12px 24px 0;
+    /* 调整内边距，底部为0 */
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom: 1px solid var(--border);
+    /* 添加底部边框 */
 }
 
 .header-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 4px;
+    /* 减小主区域和导航栏的间距 */
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-nav {
+    display: flex;
+    align-items: stretch;
+    /* 让 a 元素撑满高度 */
+    font-size: 0.9rem;
+    padding-top: 4px;
+}
+
+.header-nav a {
+    color: var(--text-sub);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px 6px 0 0;
+    /* 圆角只保留顶部 */
+    transition: all 0.2s ease-out;
+    position: relative;
+    bottom: -1px;
+    /* 用于对齐边框 */
+    border: 1px solid transparent;
+    border-bottom: none;
+    /* 默认无下边框 */
+}
+
+.header-nav a:hover {
+    color: var(--primary);
+    background: var(--card-bg);
+    transform: translateY(-4px);
+    /* 向上“突出” */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--border);
+    border-bottom: none;
 }
 
 .header-controls {
@@ -50,6 +140,7 @@ header {
 body.echo-mode .header-controls {
     display: none;
 }
+
 
 h1 {
     font-size: 1.4rem;

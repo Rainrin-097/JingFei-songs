@@ -5,7 +5,9 @@ let searchMode = 'title';
 let searchIndex = { vocab: new Set(), latinVocab: [] };
 
 document.addEventListener('DOMContentLoaded', () => {
+    setupSplash();
     loadSongs();
+    setupNavigation();
     setupLibrarySearch();
     setupMatchPanel();
     setupMatchResultActions();
@@ -13,6 +15,51 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSortToggle();
     setupLayoutToggle();
 });
+
+function setupNavigation() {
+    const navHome = document.getElementById('navHome');
+    const navEcho = document.getElementById('navEcho');
+
+    if (navHome) {
+        navHome.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.hash = '';
+            showView('libraryView');
+        });
+    }
+
+    if (navEcho) {
+        navEcho.addEventListener('click', (event) => {
+            event.preventDefault();
+            hideAllViews();
+            document.getElementById('matchPanel').classList.remove('hidden');
+            setHeaderEchoMode(true);
+            document.getElementById('matchInput').focus();
+        });
+    }
+}
+
+function setupSplash() {
+    const splash = document.getElementById('splashScreen');
+    if (!splash) return;
+    document.body.classList.add('splash-active');
+
+    const closeSplash = () => {
+        splash.classList.add('exit');
+        window.setTimeout(() => {
+            splash.classList.add('hidden');
+            document.body.classList.remove('splash-active');
+        }, 920);
+    };
+
+    splash.addEventListener('click', closeSplash);
+    splash.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            closeSplash();
+        }
+    });
+}
 
 async function loadSongs() {
     try {
@@ -102,19 +149,11 @@ function setupLibrarySearch() {
 
 // 状态匹配面板
 function setupMatchPanel() {
-    const openBtn = document.getElementById('openMatchBtn');
     const closeBtn = document.getElementById('closeMatchBtn');
     const matchBtn = document.getElementById('matchBtn');
     const panel = document.getElementById('matchPanel');
     const input = document.getElementById('matchInput');
     const resultBox = document.getElementById('matchResult');
-
-    openBtn.addEventListener('click', () => {
-        hideAllViews();
-        panel.classList.remove('hidden');
-        setHeaderEchoMode(true);
-        input.focus();
-    });
     closeBtn.addEventListener('click', () => {
         panel.classList.add('hidden');
         showView('libraryView');

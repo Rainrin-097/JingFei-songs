@@ -9,66 +9,80 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-bar">
-            <h1>JingFei's Songs</h1>
-            <div class="header-controls">
-                <div class="compact-search">
-                    <button id="searchModeBtn" class="search-mode-btn" type="button">歌名</button>
-                    <input type="text" id="searchInput" placeholder="输入歌名搜索">
-                    <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
-                    <button id="searchBackBtn" class="search-back-btn hidden" type="button">返回曲库</button>
-                    <div id="searchModeMenu" class="search-mode-menu hidden">
-                        <button type="button" data-mode="title">歌名</button>
-                        <button type="button" data-mode="lyricist">作词</button>
-                        <button type="button" data-mode="composer">作曲</button>
+    <div id="splashScreen" class="splash-screen" role="button" tabindex="0">
+        <div class="splash-title">JingFei's Songs</div>
+        <div class="splash-subtitle">-鼠标点击任意位置进入-</div>
+    </div>
+
+    <div id="app">
+        <header>
+            <div class="header-bar">
+                <div class="header-main">
+                    <h1>JingFei's Songs</h1>
+                    <div class="header-controls">
+                        <div class="compact-search">
+                            <button id="searchModeBtn" class="search-mode-btn" type="button">歌名</button>
+                            <input type="text" id="searchInput" placeholder="输入歌名搜索">
+                            <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
+                            <button id="searchBackBtn" class="search-back-btn hidden" type="button">返回首页</button>
+                            <div id="searchModeMenu" class="search-mode-menu hidden">
+                                <button type="button" data-mode="title">歌名</button>
+                                <button type="button" data-mode="lyricist">作词</button>
+                                <button type="button" data-mode="composer">作曲</button>
+                            </div>
+                        </div>
+                        <button id="sortToggleBtn" class="layout-toggle-btn" title="切换时间排序">时间升序</button>
+                        <button id="layoutToggleBtn" class="layout-toggle-btn" title="切换布局">网格布局</button>
                     </div>
                 </div>
-                <button id="sortToggleBtn" class="layout-toggle-btn" title="切换时间排序">时间升序</button>
-                <button id="layoutToggleBtn" class="layout-toggle-btn" title="切换布局">网格布局</button>
+                <nav class="header-nav" aria-label="主导航">
+                    <a id="navHome" href="#">首页</a>
+                    <a id="navAlbum" href="#">专辑</a>
+                    <a id="navEcho" href="#">别处回响</a>
+                    <a id="navInfo" href="#">更多信息</a>
+                </nav>
             </div>
-        </div>
-        <button id="openMatchBtn" class="match-entry-btn">🦋别处回响</button>
-    </header>
+        </header>
 
-    <!-- 首页：曲库列表 -->
-    <main id="libraryView">
-        <div id="songList" class="song-grid"></div>
-    </main>
+        <!-- 首页：曲库列表 -->
+        <main id="libraryView">
+            <div id="songList" class="song-grid"></div>
+        </main>
 
-    <!-- 详情页：点击歌曲后显示 -->
-    <section id="detailView" class="hidden">
-        <div class="detail-container">
-            <button id="backBtn" class="secondary-btn">返回曲库</button>
-            <div id="detailContent"></div>
-        </div>
-    </section>
-
-    <!-- 状态匹配面板：独立功能 -->
-    <section id="matchPanel" class="hidden">
-        <div class="match-container">
-            <div class="match-back-row">
-                <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回曲库</button>
+        <!-- 详情页：点击歌曲后显示 -->
+        <section id="detailView" class="hidden">
+            <div class="detail-container">
+                <button id="backBtn" class="secondary-btn">返回首页</button>
+                <div id="detailContent"></div>
             </div>
-            <div class="match-input-wrap">
-                <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
-            </div>
-            <button id="matchBtn" class="primary-btn match-echo-btn">echo</button>
-            <div id="matchResult" class="result-area"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 回响结果页：匹配结果展示 -->
-    <section id="matchResultView" class="hidden">
-        <div class="match-container">
-            <div id="matchEchoResult" class="result-area"></div>
-            <div class="match-back-row match-result-actions">
-                <button id="backToMatchBtn" class="secondary-btn">返回回响</button>
-                <button id="backToLibraryBtn" class="secondary-btn">返回曲库</button>
-                <button id="nextEchoBtn" class="secondary-btn">重新回响</button>
+        <!-- 状态匹配面板：独立功能 -->
+        <section id="matchPanel" class="hidden">
+            <div class="match-container">
+                <div class="match-back-row">
+                    <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回首页</button>
+                </div>
+                <div class="match-input-wrap">
+                    <textarea id="matchInput" rows="3" placeholder="例如：最近工作压力大，晚上睡不着，想找点能让人平静下来的歌..."></textarea>
+                </div>
+                <button id="matchBtn" class="primary-btn match-echo-btn">echo</button>
+                <div id="matchResult" class="result-area"></div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 回响结果页：匹配结果展示 -->
+        <section id="matchResultView" class="hidden">
+            <div class="match-container">
+                <div id="matchEchoResult" class="result-area"></div>
+                <div class="match-back-row match-result-actions">
+                    <button id="backToMatchBtn" class="secondary-btn">返回回响</button>
+                    <button id="backToLibraryBtn" class="secondary-btn">返回首页</button>
+                    <button id="nextEchoBtn" class="secondary-btn">重新回响</button>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

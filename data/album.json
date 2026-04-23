@@ -74,8 +74,53 @@
         "tracks": [
             {
                 "track_number": 1,
-                "song_id": 1235,
-                "title": "她ELLE"
+                "song_id": 46,
+                "title": "红霞剧场"
+            },
+            {
+                "track_number": 2,
+                "song_id": 47,
+                "title": "北海"
+            },
+            {
+                "track_number": 3,
+                "song_id": 48,
+                "title": "沙漠一枝花"
+            },
+            {
+                "track_number": 4,
+                "song_id": 49,
+                "title": "春宵苦短，少女快前进！"
+            },
+            {
+                "track_number": 5,
+                "song_id": 50,
+                "title": "禁色宝丽来"
+            },
+            {
+                "track_number": 6,
+                "song_id": 51,
+                "title": "演！演！演！"
+            },
+            {
+                "track_number": 7,
+                "song_id": 52,
+                "title": "诸多夏日后天鹅之死"
+            },
+            {
+                "track_number": 8,
+                "song_id": 53,
+                "title": "你是我最爱的褪色的幻想"
+            },
+            {
+                "track_number": 9,
+                "song_id": 54,
+                "title": "自恋咒"
+            },
+            {
+                "track_number": 10,
+                "song_id": 55,
+                "title": "猩红"
             }
         ]
     }
