@@ -37,6 +37,10 @@ body.splash-active #app {
     pointer-events: none;
 }
 
+#backBtn {
+    margin-bottom: 12px;
+}
+
 .splash-screen {
     position: fixed;
     inset: 0;
@@ -87,7 +91,7 @@ header {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 4px;
+    gap: 16px;
     /* 减小主区域和导航栏的间距 */
 }
 
