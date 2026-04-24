@@ -1,4 +1,5 @@
 let songsData = [];
+let albumsData = [];
 let isGridLayout = false; // 默认单列布局
 let isSortAscending = true; // 默认时间升序
 let searchMode = 'title';
@@ -7,6 +8,7 @@ let searchIndex = { vocab: new Set(), latinVocab: [] };
 document.addEventListener('DOMContentLoaded', () => {
     setupSplash();
     loadSongs();
+    loadAlbums();
     setupNavigation();
     setupLibrarySearch();
     setupMatchPanel();
@@ -14,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setupRouting();
     setupSortToggle();
     setupLayoutToggle();
+    setupAlbumViews();
 });
 
 function setupNavigation() {
     const navHome = document.getElementById('navHome');
+    const navAlbum = document.getElementById('navAlbum');
     const navEcho = document.getElementById('navEcho');
 
     if (navHome) {
@@ -28,6 +32,13 @@ function setupNavigation() {
         });
     }
 
+    if (navAlbum) {
+        navAlbum.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.hash = '#album';
+        });
+    }
+
     if (navEcho) {
         navEcho.addEventListener('click', (event) => {
             event.preventDefault();
@@ -35,6 +46,15 @@ function setupNavigation() {
             document.getElementById('matchPanel').classList.remove('hidden');
             setHeaderEchoMode(true);
             document.getElementById('matchInput').focus();
+        });
+    }
+}
+
+function setupAlbumViews() {
+    const backBtn = document.getElementById('backToAlbumBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            window.location.hash = '#album';
         });
     }
 }
@@ -72,6 +92,22 @@ async function loadSongs() {
         console.error('加载数据失败:', error);
         document.getElementById('songList').innerHTML =
             `<p class="placeholder">⚠ 数据加载失败，请检查 data/songs.json 格式并使用 Live Server。</p>`;
+    }
+}
+
+async function loadAlbums() {
+    try {
+        const response = await fetch('data/album.json');
+        if (!response.ok) throw new Error('文件加载失败');
+        albumsData = await response.json();
+        renderAlbumList(albumsData);
+    } catch (error) {
+        console.error('加载专辑数据失败:', error);
+        const container = document.getElementById('albumList');
+        if (container) {
+            container.innerHTML =
+                `<p class="placeholder">⚠ 专辑数据加载失败，请检查 data/album.json。</p>`;
+        }
     }
 }
 
@@ -147,6 +183,78 @@ function setupLibrarySearch() {
     });
 }
 
+function renderAlbumList(albums) {
+    const container = document.getElementById('albumList');
+    if (!container) return;
+    if (!albums || albums.length === 0) {
+        container.innerHTML = `<p class="placeholder">暂无专辑</p>`;
+        return;
+    }
+    container.innerHTML = albums.map(album => {
+        const cover = getAlbumCover(album);
+        const dateText = album.release_date || '未知日期';
+        return `
+            <article class="album-card" data-album-id="${escapeHtml(String(album.id))}">
+                <button class="album-cover-btn" type="button" data-album-id="${escapeHtml(String(album.id))}">
+                    <img class="album-cover" src="${cover}" alt="${escapeHtml(album.title || '')}">
+                </button>
+                <div class="album-meta">
+                    <div class="album-title">${escapeHtml(album.title || '')}</div>
+                    <div class="album-date">${escapeHtml(dateText)}</div>
+                </div>
+            </article>
+        `;
+    }).join('');
+
+    container.querySelectorAll('.album-cover-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const albumId = btn.getAttribute('data-album-id');
+            if (albumId) window.location.hash = `#album-${albumId}`;
+        });
+    });
+}
+
+function showAlbumDetail(album) {
+    hideAllViews();
+    document.getElementById('albumDetailView').classList.remove('hidden');
+    setHeaderEchoMode(false);
+
+    const cover = getAlbumCover(album);
+    const tracks = (album.tracks || []).map(track => {
+        const song = songsData.find(s => Number(s.id) === Number(track.song_id));
+        const title = song?.meta?.title || track.title || '未知曲目';
+        const clickAttr = song ? `onclick="window.location.hash='#detail-${song.id}'"` : '';
+        return `
+            <article class="song-item album-track-item" ${clickAttr}>
+                <div class="song-title">${escapeHtml(title)}</div>
+            </article>
+        `;
+    }).join('');
+
+    const trackListHtml = tracks || `<p class="placeholder">暂无曲目</p>`;
+
+    document.getElementById('albumDetailContent').innerHTML = `
+        <div class="album-detail-layout">
+            <div>
+                <div class="album-detail-title">${escapeHtml(album.title || '')}</div>
+                <img class="album-cover" src="${cover}" alt="${escapeHtml(album.title || '')}">
+            </div>
+            <div class="album-track-list">
+                ${trackListHtml}
+            </div>
+        </div>
+    `;
+}
+
+function getAlbumCover(album) {
+    if (album?.cover_image) return album.cover_image;
+    const title = (album?.title || '').trim();
+    const coverMap = {
+        '陈婧霏': 'image/陈婧霏.jpg',
+        '猩红': 'image/猩红.png'
+    };
+    return coverMap[title] || 'image/陈婧霏.jpg';
+}
 // 状态匹配面板
 function setupMatchPanel() {
     const closeBtn = document.getElementById('closeMatchBtn');
@@ -387,6 +495,14 @@ function setupRouting() {
             const song = songsData.find(s => s.id === id);
             if (song) showDetailView(song);
             else window.location.hash = '';
+        } else if (hash.startsWith('#album-')) {
+            const id = hash.replace('#album-', '').trim();
+            const album = albumsData.find(item => String(item.id) === String(id));
+            if (album) showAlbumDetail(album);
+            else window.location.hash = '#album';
+        } else if (hash === '#album') {
+            showView('albumListView');
+            renderAlbumList(albumsData);
         } else {
             showView('libraryView');
         }
@@ -399,7 +515,7 @@ function setupRouting() {
 }
 
 function hideAllViews() {
-    ['libraryView', 'detailView', 'matchPanel', 'matchResultView'].forEach(id =>
+    ['libraryView', 'detailView', 'albumListView', 'albumDetailView', 'matchPanel', 'matchResultView'].forEach(id =>
         document.getElementById(id).classList.add('hidden'));
 }
 function showView(id) {
