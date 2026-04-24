@@ -6,6 +6,7 @@ let searchMode = 'title';
 let searchIndex = { vocab: new Set(), latinVocab: [] };
 let detailReturnTarget = 'library';
 let infoData = null;
+let currentMatchedSongId = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSplash();
@@ -151,12 +152,10 @@ function setupLibrarySearch() {
             backBtn.classList.add('hidden');
             return;
         }
-        const field = searchMode === 'lyricist'
-            ? 'lyricist'
-            : (searchMode === 'composer' ? 'composer' : 'title');
-        const filtered = songsData.filter(s =>
-            (s[field] || '').toLowerCase().includes(kw)
-        );
+        const filtered = songsData.filter(song => {
+            const targetText = getSearchTargetText(song, searchMode);
+            return targetText.includes(kw);
+        });
         renderLibrary(filtered);
         backBtn.classList.remove('hidden');
     };
@@ -206,6 +205,24 @@ function setupLibrarySearch() {
             modeMenu.classList.add('hidden');
         }
     });
+}
+
+function getSearchTargetText(song, mode) {
+    const title = song?.meta?.title || '';
+    const lyricist = song?.credits?.lyricist || '';
+    const composer = song?.credits?.composer || '';
+    const description = song?.credits?.official_description || '';
+    const lyrics = song?.meta?.lyrics || '';
+
+    if (mode === 'lyricist') {
+        return `${lyricist} ${description} ${title}`.toLowerCase();
+    }
+
+    if (mode === 'composer') {
+        return `${composer} ${description} ${title}`.toLowerCase();
+    }
+
+    return `${title} ${lyricist} ${composer} ${description} ${lyrics}`.toLowerCase();
 }
 
 function renderAlbumList(albums) {
@@ -305,7 +322,7 @@ function setupMatchPanel() {
 
 function setupMatchResultActions() {
     const backToMatchBtn = document.getElementById('backToMatchBtn');
-    const backToLibraryBtn = document.getElementById('backToLibraryBtn');
+    const goToMatchedDetailBtn = document.getElementById('goToMatchedDetailBtn');
     const nextEchoBtn = document.getElementById('nextEchoBtn');
     const matchInput = document.getElementById('matchInput');
 
@@ -316,8 +333,9 @@ function setupMatchResultActions() {
         matchInput.focus();
     });
 
-    backToLibraryBtn.addEventListener('click', () => {
-        showView('libraryView');
+    goToMatchedDetailBtn.addEventListener('click', () => {
+        if (!currentMatchedSongId) return;
+        window.location.hash = `#detail-${currentMatchedSongId}`;
     });
 
     nextEchoBtn.addEventListener('click', () => {
@@ -330,6 +348,7 @@ function showMatchResult(text) {
     const resultBox = document.getElementById('matchEchoResult');
     const matched = matchByState(text);
 
+    currentMatchedSongId = null;
     hideAllViews();
     resultView.classList.remove('hidden');
     setHeaderEchoMode(true);
@@ -340,6 +359,7 @@ function showMatchResult(text) {
     }
 
     const topMatch = matched[0];
+    currentMatchedSongId = Number(topMatch.song?.id) || null;
     const lyric = topMatch.matchLine || '暂时未能发现回响';
     resultBox.innerHTML = `
         <div class="echo-result-stack">
