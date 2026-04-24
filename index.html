@@ -10,7 +10,7 @@
 
 <body>
     <div id="splashScreen" class="splash-screen" role="button" tabindex="0">
-        <div class="splash-title">JingFei's Songs</div>
+        <div class="splash-title">Hey...Can you hear me？</div>
         <div class="splash-subtitle">-鼠标点击任意位置进入-</div>
     </div>
 
@@ -45,33 +45,45 @@
         </header>
 
         <!-- 首页：曲库列表 -->
-        <main id="libraryView">
+        <main id="libraryView" class="view">
             <div id="songList" class="song-grid"></div>
         </main>
 
         <!-- 专辑列表 -->
-        <section id="albumListView" class="hidden">
+        <section id="albumListView" class="view hidden">
             <div id="albumList" class="album-grid"></div>
         </section>
 
         <!-- 专辑详情页 -->
-        <section id="albumDetailView" class="hidden">
+        <section id="albumDetailView" class="view hidden">
             <div class="album-detail-container">
                 <button id="backToAlbumBtn" class="secondary-btn">返回专辑</button>
                 <div id="albumDetailContent"></div>
             </div>
         </section>
 
+        <!-- 更多信息 -->
+        <section id="infoView" class="view hidden">
+            <div class="info-layout">
+                <aside class="info-menu" aria-label="更多信息导航">
+                    <button type="button" data-section="about">about JingFei's Songs</button>
+                    <button type="button" data-section="contact">contact author</button>
+                    <button type="button" data-section="thanks">thanks to</button>
+                </aside>
+                <div id="infoContent" class="info-panel"></div>
+            </div>
+        </section>
+
         <!-- 详情页：点击歌曲后显示 -->
-        <section id="detailView" class="hidden">
+        <section id="detailView" class="view hidden">
             <div class="detail-container">
-                <button id="backBtn" class="secondary-btn">返回首页</button>
+                <button id="backBtn" class="secondary-btn">返回</button>
                 <div id="detailContent"></div>
             </div>
         </section>
 
         <!-- 状态匹配面板：独立功能 -->
-        <section id="matchPanel" class="hidden">
+        <section id="matchPanel" class="view hidden">
             <div class="match-container">
                 <div class="match-back-row">
                     <button id="closeMatchBtn" class="secondary-btn match-back-btn">返回首页</button>
@@ -85,7 +97,7 @@
         </section>
 
         <!-- 回响结果页：匹配结果展示 -->
-        <section id="matchResultView" class="hidden">
+        <section id="matchResultView" class="view hidden">
             <div class="match-container">
                 <div id="matchEchoResult" class="result-area"></div>
                 <div class="match-back-row match-result-actions">

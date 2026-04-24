@@ -290,6 +290,7 @@ h1 {
 #detailView,
 #albumListView,
 #albumDetailView,
+#infoView,
 #matchPanel {
     max-width: 1200px;
     margin: 24px auto;
@@ -566,6 +567,65 @@ h1 {
 
 .album-track-item .song-title {
     font-size: 1rem;
+}
+
+/* 更多信息 */
+.info-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.info-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-menu button {
+    text-align: left;
+    padding: 6px 4px 6px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    transition: color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.info-menu button:hover {
+    color: #fff;
+    background: var(--primary);
+    border-radius: 6px;
+    transform: translateX(-6px);
+    box-shadow: 0 4px 12px rgba(124, 0, 31, 0.18);
+}
+
+.info-menu button.active {
+    color: #fff;
+    background: var(--primary);
+    border-radius: 6px;
+    transform: translateX(-4px);
+    box-shadow: 0 3px 10px rgba(124, 0, 31, 0.15);
+}
+
+.info-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    min-height: 220px;
+    color: var(--text-main);
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+    .info-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {

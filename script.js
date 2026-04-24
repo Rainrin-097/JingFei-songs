@@ -4,11 +4,14 @@ let isGridLayout = false; // 默认单列布局
 let isSortAscending = true; // 默认时间升序
 let searchMode = 'title';
 let searchIndex = { vocab: new Set(), latinVocab: [] };
+let detailReturnTarget = 'library';
+let infoData = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSplash();
     loadSongs();
     loadAlbums();
+    loadInfo();
     setupNavigation();
     setupLibrarySearch();
     setupMatchPanel();
@@ -17,16 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSortToggle();
     setupLayoutToggle();
     setupAlbumViews();
+    setupInfoView();
 });
 
 function setupNavigation() {
     const navHome = document.getElementById('navHome');
     const navAlbum = document.getElementById('navAlbum');
     const navEcho = document.getElementById('navEcho');
+    const navInfo = document.getElementById('navInfo');
 
     if (navHome) {
         navHome.addEventListener('click', (event) => {
             event.preventDefault();
+            detailReturnTarget = 'library';
             window.location.hash = '';
             showView('libraryView');
         });
@@ -35,6 +41,7 @@ function setupNavigation() {
     if (navAlbum) {
         navAlbum.addEventListener('click', (event) => {
             event.preventDefault();
+            detailReturnTarget = 'albumList';
             window.location.hash = '#album';
         });
     }
@@ -46,6 +53,13 @@ function setupNavigation() {
             document.getElementById('matchPanel').classList.remove('hidden');
             setHeaderEchoMode(true);
             document.getElementById('matchInput').focus();
+        });
+    }
+
+    if (navInfo) {
+        navInfo.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.hash = '#info';
         });
     }
 }
@@ -108,6 +122,17 @@ async function loadAlbums() {
             container.innerHTML =
                 `<p class="placeholder">⚠ 专辑数据加载失败，请检查 data/album.json。</p>`;
         }
+    }
+}
+
+async function loadInfo() {
+    try {
+        const response = await fetch('data/info.json');
+        if (!response.ok) throw new Error('文件加载失败');
+        infoData = await response.json();
+        renderInfoContent('about');
+    } catch (error) {
+        console.error('加载信息数据失败:', error);
     }
 }
 
@@ -218,6 +243,7 @@ function showAlbumDetail(album) {
     hideAllViews();
     document.getElementById('albumDetailView').classList.remove('hidden');
     setHeaderEchoMode(false);
+    detailReturnTarget = `album:${album.id}`;
 
     const cover = getAlbumCover(album);
     const tracks = (album.tracks || []).map(track => {
@@ -503,6 +529,10 @@ function setupRouting() {
         } else if (hash === '#album') {
             showView('albumListView');
             renderAlbumList(albumsData);
+        } else if (hash.startsWith('#info')) {
+            showView('infoView');
+            const key = hash.replace('#info', '').replace('-', '').trim();
+            renderInfoContent(key || 'about');
         } else {
             showView('libraryView');
         }
@@ -515,7 +545,7 @@ function setupRouting() {
 }
 
 function hideAllViews() {
-    ['libraryView', 'detailView', 'albumListView', 'albumDetailView', 'matchPanel', 'matchResultView'].forEach(id =>
+    ['libraryView', 'detailView', 'albumListView', 'albumDetailView', 'infoView', 'matchPanel', 'matchResultView'].forEach(id =>
         document.getElementById(id).classList.add('hidden'));
 }
 function showView(id) {
@@ -526,6 +556,42 @@ function showView(id) {
 
 function setHeaderEchoMode(isEcho) {
     document.body.classList.toggle('echo-mode', Boolean(isEcho));
+}
+
+function setupInfoView() {
+    const menu = document.querySelector('.info-menu');
+    if (!menu) return;
+    menu.addEventListener('click', (event) => {
+        const btn = event.target.closest('button[data-section]');
+        if (!btn) return;
+        const key = btn.dataset.section;
+        window.location.hash = `#info-${key}`;
+    });
+    renderInfoContent('about');
+}
+
+function renderInfoContent(sectionKey) {
+    const content = document.getElementById('infoContent');
+    const menuButtons = document.querySelectorAll('.info-menu button[data-section]');
+    if (!content) return;
+
+    const fallbackMap = {
+        about: `JingFei's Songs 是一个聚合与整理陈婧霏作品的个人页面，
+展示曲库、专辑与歌词内容，并提供快速检索与匹配入口。`,
+        contact: `作者联系方式：
+邮箱：example@email.com
+如需补充信息或纠错，请发送邮件说明。`,
+        thanks: `特别感谢：
+提供灵感与参考的朋友们，以及所有热爱音乐的人。`
+    };
+
+    const infoMap = infoData && typeof infoData === 'object' ? infoData : fallbackMap;
+    const key = infoMap[sectionKey] ? sectionKey : 'about';
+    content.textContent = infoMap[key];
+
+    menuButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.section === key);
+    });
 }
 
 function showDetailView(song) {
