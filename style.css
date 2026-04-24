@@ -288,6 +288,7 @@ h1 {
 
 #libraryView,
 #detailView,
+#searchResultsView,
 #albumListView,
 #albumDetailView,
 #infoView,
@@ -309,6 +310,31 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
+}
+
+.search-results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.search-results-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.search-results-summary {
+    margin-top: 6px;
+    color: var(--text-sub);
+    font-size: 0.9rem;
 }
 
 /* 匹配结果也使用相同布局 */
@@ -378,6 +404,7 @@ h1 {
     line-height: 1.5;
     margin-top: 6px;
     font-style: italic;
+    line-clamp: 2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

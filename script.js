@@ -74,6 +74,18 @@ function setupAlbumViews() {
     }
 }
 
+function setupSearchResultsView() {
+    const backBtn = document.getElementById('backToSearchLibraryBtn');
+    if (!backBtn) return;
+    backBtn.addEventListener('click', () => {
+        const input = document.getElementById('searchInput');
+        const searchBackBtn = document.getElementById('searchBackBtn');
+        if (input) input.value = '';
+        if (searchBackBtn) searchBackBtn.classList.add('hidden');
+        showView('libraryView');
+    });
+}
+
 function setupSplash() {
     const splash = document.getElementById('splashScreen');
     if (!splash) return;
@@ -152,11 +164,16 @@ function setupLibrarySearch() {
             backBtn.classList.add('hidden');
             return;
         }
-        const filtered = songsData.filter(song => {
-            const targetText = getSearchTargetText(song, searchMode);
-            return targetText.includes(kw);
-        });
-        renderLibrary(filtered);
+        const ranked = songsData
+            .map(song => ({ song, score: scoreSearchMatch(song, kw, searchMode) }))
+            .filter(item => item.score > 0)
+            .sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                return parseReleaseDate(b.song?.meta?.release_date) - parseReleaseDate(a.song?.meta?.release_date);
+            })
+            .map(item => item.song);
+
+        showSearchResults(ranked, kw);
         backBtn.classList.remove('hidden');
     };
 
@@ -211,18 +228,38 @@ function getSearchTargetText(song, mode) {
     const title = song?.meta?.title || '';
     const lyricist = song?.credits?.lyricist || '';
     const composer = song?.credits?.composer || '';
-    const description = song?.credits?.official_description || '';
-    const lyrics = song?.meta?.lyrics || '';
 
     if (mode === 'lyricist') {
-        return `${lyricist} ${description} ${title}`.toLowerCase();
+        return lyricist.toLowerCase();
     }
 
     if (mode === 'composer') {
-        return `${composer} ${description} ${title}`.toLowerCase();
+        return composer.toLowerCase();
     }
 
-    return `${title} ${lyricist} ${composer} ${description} ${lyrics}`.toLowerCase();
+    return title.toLowerCase();
+}
+
+function scoreSearchMatch(song, query, mode) {
+    const targetText = getSearchTargetText(song, mode);
+    return targetText.includes(query) ? 1 : 0;
+}
+
+function showSearchResults(songs, query) {
+    const view = document.getElementById('searchResultsView');
+    const list = document.getElementById('searchResultList');
+    const summary = document.getElementById('searchResultsSummary');
+    if (!view || !list || !summary) return;
+
+    hideAllViews();
+    view.classList.remove('hidden');
+    setHeaderEchoMode(false);
+
+    summary.textContent = `关键词：${query} · 共找到 ${songs.length} 首`;
+    list.innerHTML = songs.length === 0
+        ? `<p class="placeholder">没有找到相关歌曲</p>`
+        : songs.map(song => createSongCard(song)).join('');
+    updateLayout();
 }
 
 function renderAlbumList(albums) {
@@ -565,7 +602,7 @@ function setupRouting() {
 }
 
 function hideAllViews() {
-    ['libraryView', 'detailView', 'albumListView', 'albumDetailView', 'infoView', 'matchPanel', 'matchResultView'].forEach(id =>
+    ['libraryView', 'searchResultsView', 'detailView', 'albumListView', 'albumDetailView', 'infoView', 'matchPanel', 'matchResultView'].forEach(id =>
         document.getElementById(id).classList.add('hidden'));
 }
 function showView(id) {
