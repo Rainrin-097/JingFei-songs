@@ -151,12 +151,20 @@ function setupLibrarySearch() {
             backBtn.classList.add('hidden');
             return;
         }
-        const field = searchMode === 'lyricist'
-            ? 'lyricist'
-            : (searchMode === 'composer' ? 'composer' : 'title');
-        const filtered = songsData.filter(s =>
-            (s[field] || '').toLowerCase().includes(kw)
-        );
+        let filtered;
+        if (searchMode === 'lyricist') {
+            filtered = songsData.filter(s =>
+                (s.credits?.lyricist || '').toLowerCase().includes(kw)
+            );
+        } else if (searchMode === 'composer') {
+            filtered = songsData.filter(s =>
+                (s.credits?.composer || '').toLowerCase().includes(kw)
+            );
+        } else {
+            filtered = songsData.filter(s =>
+                (s.meta?.title || '').toLowerCase().includes(kw)
+            );
+        }
         renderLibrary(filtered);
         backBtn.classList.remove('hidden');
     };
