@@ -22,13 +22,15 @@
                     <div class="header-controls">
                         <div class="compact-search">
                             <button id="searchModeBtn" class="search-mode-btn" type="button">歌名</button>
-                            <input type="text" id="searchInput" placeholder="输入歌名搜索">
+                            <input type="text" id="searchInput" placeholder="输入歌名搜索" autocomplete="off"
+                                spellcheck="false">
                             <button id="searchBtn" class="search-btn" title="精确搜索">搜索</button>
                             <button id="searchBackBtn" class="search-back-btn hidden" type="button">返回首页</button>
                             <div id="searchModeMenu" class="search-mode-menu hidden">
                                 <button type="button" data-mode="title">歌名</button>
                                 <button type="button" data-mode="lyricist">作词</button>
                                 <button type="button" data-mode="composer">作曲</button>
+                                <button type="button" data-mode="keyword">关键词</button>
                             </div>
                         </div>
                         <button id="sortToggleBtn" class="layout-toggle-btn" title="切换时间排序">时间升序</button>

@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function clearSearchState() {
+    const input = document.getElementById('searchInput');
+    const backBtn = document.getElementById('searchBackBtn');
+    const modeMenu = document.getElementById('searchModeMenu');
+    if (input) input.value = '';
+    if (backBtn) backBtn.classList.add('hidden');
+    if (modeMenu) modeMenu.classList.add('hidden');
+}
+
 function setupNavigation() {
     const navHome = document.getElementById('navHome');
     const navAlbum = document.getElementById('navAlbum');
@@ -44,6 +53,7 @@ function setupNavigation() {
     if (navHome) {
         navHome.addEventListener('click', (event) => {
             event.preventDefault();
+            clearSearchState();
             detailReturnTarget = 'library';
             window.location.hash = '';
             showView('libraryView');
@@ -53,6 +63,7 @@ function setupNavigation() {
     if (navAlbum) {
         navAlbum.addEventListener('click', (event) => {
             event.preventDefault();
+            clearSearchState();
             detailReturnTarget = 'albumList';
             window.location.hash = '#album';
         });
@@ -61,6 +72,7 @@ function setupNavigation() {
     if (navEcho) {
         navEcho.addEventListener('click', (event) => {
             event.preventDefault();
+            clearSearchState();
             hideAllViews();
             document.getElementById('matchPanel').classList.remove('hidden');
             setHeaderEchoMode(true);
@@ -71,6 +83,7 @@ function setupNavigation() {
     if (navInfo) {
         navInfo.addEventListener('click', (event) => {
             event.preventDefault();
+            clearSearchState();
             window.location.hash = '#info';
         });
     }
@@ -169,22 +182,28 @@ function setupLibrarySearch() {
     const modeMenu = document.getElementById('searchModeMenu');
 
     const doSearch = () => {
-        const kw = input.value.trim().toLowerCase();
-        if (!kw) {
+        const rawQuery = input.value.trim();
+        const normalizedQuery = rawQuery.toLowerCase();
+        if (!normalizedQuery) {
             renderLibrary(songsData);
             backBtn.classList.add('hidden');
             return;
         }
         const ranked = songsData
-            .map(song => ({ song, score: scoreSearchMatch(song, kw, searchMode) }))
+            .map(song => {
+                const matchLine = searchMode === 'keyword' ? findLyricLineByKeyword(song, normalizedQuery) : '';
+                const score = searchMode === 'keyword'
+                    ? (matchLine ? 1 : 0)
+                    : scoreSearchMatch(song, normalizedQuery, searchMode);
+                return { song, score, matchLine };
+            })
             .filter(item => item.score > 0)
             .sort((a, b) => {
                 if (b.score !== a.score) return b.score - a.score;
                 return parseReleaseDate(b.song?.meta?.release_date) - parseReleaseDate(a.song?.meta?.release_date);
-            })
-            .map(item => item.song);
+            });
 
-        showSearchResults(ranked, kw);
+        showSearchResults(ranked, rawQuery, searchMode);
         backBtn.classList.remove('hidden');
     };
 
@@ -193,12 +212,14 @@ function setupLibrarySearch() {
         const labelMap = {
             title: '歌名',
             lyricist: '作词',
-            composer: '作曲'
+            composer: '作曲',
+            keyword: '关键词'
         };
         const placeholderMap = {
             title: '输入歌名搜索',
             lyricist: '输入作词人搜索',
-            composer: '输入作曲人搜索'
+            composer: '输入作曲人搜索',
+            keyword: '输入关键词匹配歌词'
         };
         modeBtn.textContent = labelMap[mode] || '歌名';
         input.placeholder = placeholderMap[mode] || '输入歌名搜索';
@@ -256,7 +277,20 @@ function scoreSearchMatch(song, query, mode) {
     return targetText.includes(query) ? 1 : 0;
 }
 
-function showSearchResults(songs, query) {
+function findLyricLineByKeyword(song, query) {
+    const keyword = String(query || '').trim().toLowerCase();
+    if (!keyword) return '';
+
+    const lines = String(song?.meta?.lyrics || '')
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+
+    const matchedLine = lines.find(line => line.toLowerCase().includes(keyword));
+    return matchedLine || '';
+}
+
+function showSearchResults(resultItems, query, mode = searchMode) {
     const view = document.getElementById('searchResultsView');
     const list = document.getElementById('searchResultList');
     const summary = document.getElementById('searchResultsSummary');
@@ -266,10 +300,10 @@ function showSearchResults(songs, query) {
     view.classList.remove('hidden');
     setHeaderEchoMode(false);
 
-    summary.textContent = `关键词：${query} · 共找到 ${songs.length} 首`;
-    list.innerHTML = songs.length === 0
+    summary.textContent = `关键词：${query} · 共找到 ${resultItems.length} 首`;
+    list.innerHTML = resultItems.length === 0
         ? `<p class="placeholder">没有找到相关歌曲</p>`
-        : songs.map(song => createSongCard(song)).join('');
+        : resultItems.map(item => createSongCard(item.song, item.matchLine, mode === 'keyword' ? query : '')).join('');
     updateLayout();
 }
 
@@ -985,8 +1019,12 @@ function renderLibrary(songs) {
     updateLayout();
 }
 
-function createSongCard(song) {
+function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
     const releaseText = song.meta?.release_date ? formatReleaseDate(song.meta.release_date) : '未知日期';
+    const keySentence = overrideKeySentence || song.meta?.highlight_sentence || '';
+    const keySentenceHtml = highlightKeyword
+        ? highlightKeywordInText(keySentence, highlightKeyword)
+        : escapeHtml(keySentence);
 
     return `
         <article class="song-item" onclick="window.location.hash='#detail-${song.id}'">
@@ -994,9 +1032,32 @@ function createSongCard(song) {
                 <div class="song-title">${escapeHtml(song.meta?.title || '')}</div>
                 <div class="song-date">${escapeHtml(releaseText)}</div>
             </div>
-            <div class="song-keysentence">${escapeHtml(song.meta?.highlight_sentence || '')}</div>
+            <div class="song-keysentence">${keySentenceHtml}</div>
         </article>
     `;
+}
+
+function escapeRegExp(text) {
+    return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlightKeywordInText(text, keyword) {
+    const sourceText = String(text || '');
+    const target = String(keyword || '').trim();
+    if (!sourceText) return '';
+    if (!target) return escapeHtml(sourceText);
+
+    const pattern = new RegExp(`(${escapeRegExp(target)})`, 'ig');
+    return sourceText
+        .split(pattern)
+        .map(part => {
+            if (!part) return '';
+            if (part.toLowerCase() === target.toLowerCase()) {
+                return `<span class="search-keyword-hit">${escapeHtml(part)}</span>`;
+            }
+            return escapeHtml(part);
+        })
+        .join('');
 }
 
 function escapeHtml(text) {

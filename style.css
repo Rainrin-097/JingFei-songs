@@ -411,6 +411,17 @@ h1 {
     overflow: hidden;
 }
 
+.song-keysentence .search-keyword-hit {
+    color: #7c001f;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(124, 0, 31, 0.35);
+}
+
+.song-item:hover .song-keysentence .search-keyword-hit {
+    color: #7c001f;
+    text-shadow: 0 1px 5px rgba(124, 0, 31, 0.45);
+}
+
 .song-grid.grid-layout .song-keysentence {
     min-height: calc(1.5em * 2);
 }
