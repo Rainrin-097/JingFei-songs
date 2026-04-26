@@ -332,13 +332,23 @@ function showAlbumDetail(album) {
 }
 
 function getAlbumCover(album) {
-    if (album?.cover_image) return album.cover_image;
+    if (album?.cover_image) return resolveImagePath(album.cover_image);
     const title = (album?.title || '').trim();
     const coverMap = {
         '陈婧霏': 'image/陈婧霏.jpg',
         '猩红': 'image/猩红.png'
     };
     return coverMap[title] || 'image/陈婧霏.jpg';
+}
+
+function resolveImagePath(imagePath) {
+    const value = String(imagePath || '').trim();
+    if (!value) return '';
+    if (/^(?:https?:)?\/\//i.test(value) || value.startsWith('data:') || value.startsWith('blob:')) {
+        return value;
+    }
+    if (value.startsWith('image/')) return value;
+    return `image/${value}`;
 }
 // 状态匹配面板
 function setupMatchPanel() {
@@ -677,7 +687,7 @@ function showDetailView(song) {
         `编曲：${escapeHtml(song.credits?.arranger || '未知')}`
     ].map(text => `<span>${text}</span>`).join('');
 
-    const coverImage = (song.meta?.cover_image || '').trim();
+    const coverImage = resolveImagePath(song.meta?.cover_image);
     const description = (song.credits?.official_description || '').trim();
     const sidebarDescription = description
         ? `
