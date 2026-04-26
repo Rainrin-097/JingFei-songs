@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLayoutToggle();
     setupAlbumViews();
     setupInfoView();
+    window.addEventListener('resize', () => {
+        if (!document.getElementById('detailView')?.classList.contains('hidden')) {
+            syncDetailSidebarHeight();
+        }
+    });
 });
 
 function setupNavigation() {
@@ -672,21 +677,46 @@ function showDetailView(song) {
         `编曲：${escapeHtml(song.credits?.arranger || '未知')}`
     ].map(text => `<span>${text}</span>`).join('');
 
+    const coverImage = (song.meta?.cover_image || '').trim();
+    const description = (song.credits?.official_description || '').trim();
+    const sidebarDescription = description
+        ? `
+            <details class="detail-description">
+                <summary>歌曲详情</summary>
+                <div class="detail-description-body">${escapeHtml(description)}</div>
+            </details>
+        `
+        : '';
+
     document.getElementById('detailContent').innerHTML = `
-        <div class="detail-header">
-            <div class="detail-title-row">
-                <div class="detail-title">${escapeHtml(song.meta?.title || '')}</div>
-                ${song.meta?.highlight_sentence ? `<div class="detail-keysentence">${escapeHtml(song.meta.highlight_sentence)}</div>` : ''}
+        <div class="detail-layout">
+            <div class="detail-header detail-header-full">
+                <div class="detail-title-row">
+                    <div class="detail-title">${escapeHtml(song.meta?.title || '')}</div>
+                    ${song.meta?.highlight_sentence ? `<div class="detail-keysentence">${escapeHtml(song.meta.highlight_sentence)}</div>` : ''}
+                </div>
+                ${releaseLine}
+                ${originAlbumLine}
+                <div class="detail-credits">${credits}</div>
             </div>
-            ${releaseLine}
-            ${originAlbumLine}
-            <div class="detail-credits">${credits}</div>
-        </div>
-        <div class="detail-lyrics">
-            <h3>歌词</h3>
-            <div class="lyrics-box">${escapeHtml(song.meta?.lyrics || '暂无歌词')}</div>
+            <div class="detail-body">
+                <div class="detail-lyrics">
+                    <h3>歌词</h3>
+                    <div class="lyrics-box">${escapeHtml(song.meta?.lyrics || '暂无歌词')}</div>
+                </div>
+                <aside class="detail-sidebar">
+                    <div class="detail-cover-frame">
+                        ${coverImage
+            ? `<img class="detail-cover" src="${escapeHtml(coverImage)}" alt="${escapeHtml(song.meta?.title || '')}">`
+            : `<div class="detail-cover placeholder-cover">暂无封面</div>`}
+                    </div>
+                    ${sidebarDescription}
+                </aside>
+            </div>
         </div>
     `;
+
+    requestAnimationFrame(() => syncDetailSidebarHeight());
 }
 
 // 渲染与组件
@@ -771,4 +801,20 @@ function updateLayout() {
         if (matchResultGrid) matchResultGrid.classList.remove('grid-layout');
         toggleBtn.textContent = '网格布局';
     }
+}
+
+function syncDetailSidebarHeight() {
+    const lyricsBox = document.querySelector('#detailView .lyrics-box');
+    const sidebar = document.querySelector('#detailView .detail-sidebar');
+    if (!lyricsBox || !sidebar) return;
+
+    const lyricsBoxTop = lyricsBox.getBoundingClientRect().top;
+    const sidebarTop = sidebar.getBoundingClientRect().top;
+    const offset = Math.max(0, Math.round(lyricsBoxTop - sidebarTop));
+
+    sidebar.style.marginTop = `${offset}px`;
+    sidebar.style.height = '';
+    sidebar.style.maxHeight = '';
+    sidebar.style.overflowY = '';
+    sidebar.style.overscrollBehavior = '';
 }
