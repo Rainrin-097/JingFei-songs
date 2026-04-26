@@ -8,10 +8,13 @@ let detailReturnTarget = 'library';
 let infoData = null;
 let currentMatchedSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
+const MAX_RE_ECHO_TIMES = 10;
 let echoSession = {
     input: '',
     candidates: [],
-    shownIds: []
+    shownIds: [],
+    currentItem: null,
+    reEchoCount: 0
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -427,7 +430,6 @@ function setupMatchResultActions() {
     const historyList = document.getElementById('echoHistoryList');
 
     backToMatchBtn.addEventListener('click', () => {
-        resetEchoSession();
         hideAllViews();
         document.getElementById('matchPanel').classList.remove('hidden');
         setHeaderEchoMode(true);
@@ -461,7 +463,9 @@ function resetEchoSession() {
     echoSession = {
         input: '',
         candidates: [],
-        shownIds: []
+        shownIds: [],
+        currentItem: null,
+        reEchoCount: 0
     };
     currentMatchedSongId = null;
     const historyList = document.getElementById('echoHistoryList');
@@ -527,7 +531,7 @@ function renderEchoResultState(currentItem, exhausted = false) {
     resultBox.innerHTML = `
         <div class="echo-result-stack">
             <div class="echo-lyric">${escapeHtml(currentLyric)}</div>
-            <div class="echo-title">${escapeHtml(currentTitle)}</div>
+            <div class="echo-title">-${escapeHtml(`《${currentTitle}》`)}</div>
             ${exhaustedHtml}
         </div>
     `;
@@ -535,6 +539,27 @@ function renderEchoResultState(currentItem, exhausted = false) {
     if (historyList) {
         historyList.innerHTML = historyHtml;
     }
+
+    echoSession.currentItem = currentItem;
+}
+
+function renderEchoLimitReached() {
+    const resultBox = document.getElementById('matchEchoResult');
+    const historyList = document.getElementById('echoHistoryList');
+    if (historyList) {
+        const currentHistory = historyList.innerHTML;
+        if (!currentHistory) {
+            historyList.innerHTML = '';
+        }
+    }
+    if (!resultBox) return;
+
+    currentMatchedSongId = null;
+    resultBox.innerHTML = `
+        <div class="echo-result-stack">
+            <div class="echo-lyric">当前只能捕获十条回响</div>
+        </div>
+    `;
 }
 
 async function showMatchResult(text, options = {}) {
@@ -566,7 +591,9 @@ async function showMatchResult(text, options = {}) {
         echoSession = {
             input: normalizedInput,
             candidates,
-            shownIds: []
+            shownIds: [],
+            currentItem: null,
+            reEchoCount: 0
         };
     }
 
@@ -577,10 +604,25 @@ async function showMatchResult(text, options = {}) {
         return;
     }
 
+    if (!next && echoSession.input === normalizedInput && echoSession.currentItem) {
+        currentMatchedSongId = Number(echoSession.currentItem.song?.id) || null;
+        renderEchoResultState(echoSession.currentItem, echoSession.shownIds.length >= echoSession.candidates.length);
+        return;
+    }
+
+    if (next && echoSession.reEchoCount >= MAX_RE_ECHO_TIMES - 1) {
+        echoSession.reEchoCount = MAX_RE_ECHO_TIMES;
+        renderEchoLimitReached();
+        return;
+    }
+
+    if (next) {
+        echoSession.reEchoCount += 1;
+    }
+
     const topMatch = pickNextEchoCandidate(next);
     if (!topMatch) {
-        const lastId = echoSession.shownIds[echoSession.shownIds.length - 1];
-        const lastItem = echoSession.candidates.find(item => Number(item.song?.id) === Number(lastId)) || echoSession.candidates[0];
+        const lastItem = echoSession.currentItem || echoSession.candidates[0];
         currentMatchedSongId = Number(lastItem.song?.id) || null;
         renderEchoResultState(lastItem, true);
         return;
