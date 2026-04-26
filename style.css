@@ -884,11 +884,13 @@ h1 {
 
 #matchResultView .match-container {
     width: min(920px, 100%);
+    min-height: calc(100vh - 48px);
     background: transparent;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
     gap: 24px;
+    justify-content: center;
 }
 
 .match-back-row {
@@ -977,7 +979,7 @@ h1 {
 }
 
 #matchResultView .result-area {
-    margin-top: -32px;
+    margin-top: 8px;
 }
 
 .echo-result-stack {
@@ -1009,6 +1011,64 @@ h1 {
     animation-delay: 0.2s;
 }
 
+.echo-exhausted {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-sub);
+    text-align: center;
+}
+
+.echo-history-wrap {
+    margin-top: 0;
+    width: min(760px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    max-height: 42vh;
+}
+
+.echo-history-title {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.echo-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 4px;
+}
+
+.echo-history-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.echo-history-lyric {
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+}
+
+.echo-history-song {
+    color: var(--text-sub);
+    text-align: left;
+    font-size: 0.8rem;
+}
+
 .echo-empty {
     font-size: 18px;
     color: var(--text-sub);
@@ -1022,5 +1082,11 @@ h1 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 760px) {
+    .echo-history-wrap {
+        width: 100%;
     }
 }

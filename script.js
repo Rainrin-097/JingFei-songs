@@ -7,6 +7,12 @@ let searchIndex = { vocab: new Set(), latinVocab: [] };
 let detailReturnTarget = 'library';
 let infoData = null;
 let currentMatchedSongId = null;
+const MATCH_API_ENDPOINT = '/api/match';
+let echoSession = {
+    input: '',
+    candidates: [],
+    shownIds: []
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSplash();
@@ -369,13 +375,13 @@ function setupMatchPanel() {
         showView('libraryView');
         resultBox.innerHTML = '';
     });
-    matchBtn.addEventListener('click', () => {
+    matchBtn.addEventListener('click', async () => {
         const text = input.value.trim();
         if (!text) {
             resultBox.innerHTML = '<p class="placeholder">请先输入描述</p>';
             return;
         }
-        showMatchResult(text);
+        await showMatchResult(text);
     });
 }
 
@@ -384,8 +390,10 @@ function setupMatchResultActions() {
     const goToMatchedDetailBtn = document.getElementById('goToMatchedDetailBtn');
     const nextEchoBtn = document.getElementById('nextEchoBtn');
     const matchInput = document.getElementById('matchInput');
+    const historyList = document.getElementById('echoHistoryList');
 
     backToMatchBtn.addEventListener('click', () => {
+        resetEchoSession();
         hideAllViews();
         document.getElementById('matchPanel').classList.remove('hidden');
         setHeaderEchoMode(true);
@@ -394,60 +402,279 @@ function setupMatchResultActions() {
 
     goToMatchedDetailBtn.addEventListener('click', () => {
         if (!currentMatchedSongId) return;
+        detailReturnTarget = 'echoResult';
         window.location.hash = `#detail-${currentMatchedSongId}`;
     });
 
-    nextEchoBtn.addEventListener('click', () => {
-        showMatchResult(matchInput.value.trim());
+    nextEchoBtn.addEventListener('click', async () => {
+        await showMatchResult(matchInput.value.trim(), { next: true });
     });
+
+    if (historyList) {
+        historyList.addEventListener('click', (event) => {
+            const card = event.target.closest('.echo-history-card[data-song-id]');
+            if (!card) return;
+            const songId = Number(card.getAttribute('data-song-id'));
+            if (!Number.isFinite(songId) || songId <= 0) return;
+            currentMatchedSongId = songId;
+            detailReturnTarget = 'echoResult';
+            window.location.hash = `#detail-${songId}`;
+        });
+    }
 }
 
-function showMatchResult(text) {
+function resetEchoSession() {
+    echoSession = {
+        input: '',
+        candidates: [],
+        shownIds: []
+    };
+    currentMatchedSongId = null;
+    const historyList = document.getElementById('echoHistoryList');
+    if (historyList) historyList.innerHTML = '';
+}
+
+async function buildEchoCandidates(input) {
+    const localMatches = matchByStateLocal(input);
+    if (!localMatches.length) return [];
+
+    const aiMatch = await matchByAI(input);
+    if (!aiMatch) return localMatches;
+
+    const aiId = Number(aiMatch.song?.id);
+    const deduped = localMatches.filter(item => Number(item.song?.id) !== aiId);
+    return [aiMatch, ...deduped];
+}
+
+function pickNextEchoCandidate(preferNext = false) {
+    const { candidates, shownIds } = echoSession;
+    if (!Array.isArray(candidates) || candidates.length === 0) return null;
+
+    if (!preferNext) {
+        return candidates[0];
+    }
+
+    const unseen = candidates.find(item => !shownIds.includes(Number(item.song?.id)));
+    return unseen || null;
+}
+
+function renderEchoResultState(currentItem, exhausted = false) {
+    const resultBox = document.getElementById('matchEchoResult');
+    const historyList = document.getElementById('echoHistoryList');
+    if (!resultBox) return;
+
+    const currentId = Number(currentItem.song?.id);
+    const previousItems = echoSession.shownIds
+        .filter(id => id !== currentId)
+        .map(id => echoSession.candidates.find(item => Number(item.song?.id) === id))
+        .filter(Boolean)
+        .reverse();
+
+    const currentLyric = currentItem.matchLine || '暂时未能发现回响';
+    const currentTitle = currentItem.song?.meta?.title || '';
+    const historyHtml = previousItems.length
+        ? `
+            <div class="echo-history-title">已发现的回响</div>
+            <div class="echo-history-list">
+                ${previousItems.map((item) => `
+                    <article class="echo-history-card" data-song-id="${escapeHtml(String(item.song?.id || ''))}" role="button" tabindex="0">
+                        <div class="echo-history-lyric">${escapeHtml(item.matchLine || '暂时未能发现回响')}</div>
+                        <div class="echo-history-song">${escapeHtml(item.song?.meta?.title || '')}</div>
+                    </article>
+                `).join('')}
+            </div>
+        `
+        : '';
+
+    const exhaustedHtml = exhausted
+        ? `<div class="echo-exhausted">已经没有新的回响结果了</div>`
+        : '';
+
+    resultBox.innerHTML = `
+        <div class="echo-result-stack">
+            <div class="echo-lyric">${escapeHtml(currentLyric)}</div>
+            <div class="echo-title">${escapeHtml(currentTitle)}</div>
+            ${exhaustedHtml}
+        </div>
+    `;
+
+    if (historyList) {
+        historyList.innerHTML = historyHtml;
+    }
+}
+
+async function showMatchResult(text, options = {}) {
+    const { next = false } = options;
     const resultView = document.getElementById('matchResultView');
     const resultBox = document.getElementById('matchEchoResult');
-    const matched = matchByState(text);
+    const normalizedInput = String(text || '').trim();
 
     currentMatchedSongId = null;
     hideAllViews();
     resultView.classList.remove('hidden');
     setHeaderEchoMode(true);
 
-    if (matched.length === 0) {
-        resultBox.innerHTML = '<div class="echo-empty">暂时未能发现回响</div>';
+    if (!normalizedInput) {
+        resultBox.innerHTML = '<div class="echo-empty">请先输入描述</div>';
+        const historyList = document.getElementById('echoHistoryList');
+        if (historyList) historyList.innerHTML = '';
         return;
     }
 
-    const topMatch = matched[0];
-    currentMatchedSongId = Number(topMatch.song?.id) || null;
-    const lyric = topMatch.matchLine || '暂时未能发现回响';
-    resultBox.innerHTML = `
-        <div class="echo-result-stack">
-            <div class="echo-lyric">${escapeHtml(lyric)}</div>
-            <div class="echo-title">${escapeHtml(topMatch.song.meta?.title || '')}</div>
-        </div>
-    `;
+    const needRebuildCandidates =
+        echoSession.input !== normalizedInput ||
+        !Array.isArray(echoSession.candidates) ||
+        echoSession.candidates.length === 0;
+
+    if (needRebuildCandidates) {
+        resultBox.innerHTML = '<div class="echo-empty">正在回响中...</div>';
+        const candidates = await buildEchoCandidates(normalizedInput);
+        echoSession = {
+            input: normalizedInput,
+            candidates,
+            shownIds: []
+        };
+    }
+
+    if (!echoSession.candidates.length) {
+        resultBox.innerHTML = '<div class="echo-empty">暂时未能发现回响</div>';
+        const historyList = document.getElementById('echoHistoryList');
+        if (historyList) historyList.innerHTML = '';
+        return;
+    }
+
+    const topMatch = pickNextEchoCandidate(next);
+    if (!topMatch) {
+        const lastId = echoSession.shownIds[echoSession.shownIds.length - 1];
+        const lastItem = echoSession.candidates.find(item => Number(item.song?.id) === Number(lastId)) || echoSession.candidates[0];
+        currentMatchedSongId = Number(lastItem.song?.id) || null;
+        renderEchoResultState(lastItem, true);
+        return;
+    }
+
+    const selectedId = Number(topMatch.song?.id);
+    if (!echoSession.shownIds.includes(selectedId)) {
+        echoSession.shownIds.push(selectedId);
+    }
+
+    currentMatchedSongId = selectedId || null;
+    renderEchoResultState(topMatch, false);
 }
 
-function matchByState(input) {
+async function matchByAI(input) {
+    try {
+        const albumDescriptionMap = buildAlbumDescriptionMap();
+        const candidateSongs = songsData
+            .map(song => ({ song, payload: buildAISongPayload(song, albumDescriptionMap) }))
+            .filter(item => item.payload.frequency > 0);
+
+        if (candidateSongs.length === 0) return null;
+
+        const response = await fetch(MATCH_API_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userInput: input,
+                songs: candidateSongs.map(item => item.payload)
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.warn('AI 匹配请求失败，将回退本地匹配:', errorText);
+            return null;
+        }
+
+        const data = await response.json();
+        const matchedId = Number(data?.matchedSongId);
+        if (!Number.isFinite(matchedId) || matchedId <= 0) return null;
+
+        const matchedSong = songsData.find(song => Number(song.id) === matchedId);
+        if (!matchedSong) return null;
+
+        const keywords = prepareSearchTokens(input);
+        const matchLine = getBestLyricLine(matchedSong.meta?.lyrics, keywords).line;
+        return { song: matchedSong, score: 1, matchLine };
+    } catch (error) {
+        console.warn('AI 匹配异常，将回退本地匹配:', error);
+        return null;
+    }
+}
+
+function normalizeAlbumKey(text) {
+    return String(text || '').replace(/[《》]/g, '').trim();
+}
+
+function buildAlbumDescriptionMap() {
+    const map = new Map();
+    (albumsData || []).forEach(album => {
+        const key = normalizeAlbumKey(album?.title);
+        if (key && !map.has(key)) {
+            map.set(key, String(album?.description || '').trim());
+        }
+    });
+    return map;
+}
+
+function buildAISongPayload(song, albumDescriptionMap) {
+    const albumKey = normalizeAlbumKey(song?.meta?.album);
+    const semantic = song?.semantic_analysis || {};
+    return {
+        id: Number(song?.id),
+        title: String(song?.meta?.title || ''),
+        lyrics: String(song?.meta?.lyrics || ''),
+        official_description: String(song?.credits?.official_description || ''),
+        keywords: Array.isArray(semantic.keywords) ? semantic.keywords : [],
+        scene_tags: Array.isArray(semantic.scene_tags) ? semantic.scene_tags : [],
+        mood_tags: Array.isArray(semantic.mood_tags) ? semantic.mood_tags : [],
+        album_description: albumDescriptionMap.get(albumKey) || '',
+        frequency: Number(semantic.frequency || 0)
+    };
+}
+
+function matchByStateLocal(input) {
     const keywords = prepareSearchTokens(input);
     if (keywords.length === 0) return [];
-    const scored = songsData.map(song => {
-        const lyricResult = getBestLyricLine(song.meta?.lyrics, keywords);
-        const description = (song.credits?.official_description || '').toLowerCase();
-        const title = (song.meta?.title || '').toLowerCase();
-        let descHits = 0;
-        keywords.forEach(word => {
-            const w = word.toLowerCase();
-            if (description.includes(w) || title.includes(w)) descHits += 1;
+    const albumDescriptionMap = buildAlbumDescriptionMap();
+    const scored = songsData
+        .filter(song => Number(song?.semantic_analysis?.frequency || 0) > 0)
+        .map(song => {
+            const lyricResult = getBestLyricLine(song.meta?.lyrics, keywords);
+            const description = (song.credits?.official_description || '').toLowerCase();
+            const semantic = song?.semantic_analysis || {};
+            const tagsText = [
+                ...(Array.isArray(semantic.keywords) ? semantic.keywords : []),
+                ...(Array.isArray(semantic.scene_tags) ? semantic.scene_tags : []),
+                ...(Array.isArray(semantic.mood_tags) ? semantic.mood_tags : [])
+            ].join(' ').toLowerCase();
+            const albumDesc = (albumDescriptionMap.get(normalizeAlbumKey(song?.meta?.album)) || '').toLowerCase();
+            const frequency = Number(semantic.frequency || 0);
+
+            const officialScore = scoreTextByTokens(description, keywords);
+            const tagScore = scoreTextByTokens(tagsText, keywords);
+            const albumScore = scoreTextByTokens(albumDesc, keywords);
+            const lyricScore = lyricResult.score;
+            const frequencyBoost = Math.log1p(Math.max(0, frequency)) * 0.02;
+            const score = lyricScore * 0.5
+                + officialScore * 0.25
+                + tagScore * 0.15
+                + albumScore * 0.10
+                + frequencyBoost;
+            return { song, score, matchLine: lyricResult.line };
         });
-        const lyricScore = lyricResult.score;
-        const descScore = keywords.length ? descHits / keywords.length : 0;
-        const score = lyricScore * 0.7 + descScore * 0.3;
-        return { song, score, matchLine: lyricResult.line };
-    });
     return scored
         .filter(item => item.score > 0)
         .sort((a, b) => b.score - a.score);
+}
+
+function scoreTextByTokens(text, keywords) {
+    if (!text || keywords.length === 0) return 0;
+    let hits = 0;
+    keywords.forEach(word => {
+        const token = String(word || '').toLowerCase();
+        if (token && text.includes(token)) hits += 1;
+    });
+    return hits / keywords.length;
 }
 
 function getBestLyricLine(lyricsText, keywords) {
@@ -618,6 +845,10 @@ function setupRouting() {
     };
     window.addEventListener('hashchange', handleHash);
     document.getElementById('backBtn').addEventListener('click', () => {
+        if (detailReturnTarget === 'echoResult') {
+            showView('matchResultView');
+            return;
+        }
         if (detailReturnTarget.startsWith('album:')) {
             const albumId = detailReturnTarget.split(':')[1];
             window.location.hash = `#album-${albumId}`;
