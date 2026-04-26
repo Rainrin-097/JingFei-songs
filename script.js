@@ -305,6 +305,7 @@ function showAlbumDetail(album) {
     detailReturnTarget = `album:${album.id}`;
 
     const cover = getAlbumCover(album);
+    const intro = (album.description || '').trim();
     const tracks = (album.tracks || []).map(track => {
         const song = songsData.find(s => Number(s.id) === Number(track.song_id));
         const title = song?.meta?.title || track.title || '未知曲目';
@@ -320,9 +321,15 @@ function showAlbumDetail(album) {
 
     document.getElementById('albumDetailContent').innerHTML = `
         <div class="album-detail-layout">
-            <div>
+            <div class="album-detail-left">
                 <div class="album-detail-title">${escapeHtml(album.title || '')}</div>
                 <img class="album-cover" src="${cover}" alt="${escapeHtml(album.title || '')}">
+                ${intro ? `
+                    <details class="album-description-wrap">
+                        <summary class="album-description-title">专辑简介</summary>
+                        <div class="album-description">${escapeHtml(intro)}</div>
+                    </details>
+                ` : ''}
             </div>
             <div class="album-track-list">
                 ${trackListHtml}
@@ -611,6 +618,15 @@ function setupRouting() {
     };
     window.addEventListener('hashchange', handleHash);
     document.getElementById('backBtn').addEventListener('click', () => {
+        if (detailReturnTarget.startsWith('album:')) {
+            const albumId = detailReturnTarget.split(':')[1];
+            window.location.hash = `#album-${albumId}`;
+            return;
+        }
+        if (detailReturnTarget === 'albumList') {
+            window.location.hash = '#album';
+            return;
+        }
         window.location.hash = '';
     });
     handleHash(); // 初始加载检查

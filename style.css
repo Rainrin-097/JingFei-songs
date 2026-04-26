@@ -663,10 +663,17 @@ h1 {
 
 .album-detail-layout {
     display: grid;
-    grid-template-columns: minmax(220px, 320px) 1fr;
-    gap: 24px;
+    grid-template-columns: minmax(340px, 0.95fr) minmax(380px, 1.05fr);
+    gap: 18px;
     align-items: start;
     margin-top: 16px;
+}
+
+.album-detail-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
 }
 
 .album-detail-title {
@@ -676,14 +683,69 @@ h1 {
     margin-bottom: 12px;
 }
 
+.album-detail-left .album-detail-title {
+    margin-bottom: 0;
+}
+
 .album-track-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    max-width: 640px;
+    justify-self: stretch;
 }
 
 .album-track-item .song-title {
     font-size: 1rem;
+    text-align: left;
+}
+
+.album-description {
+    color: var(--text-main);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+}
+
+.album-description-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.album-description-title {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 10px 16px;
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.album-description-title::-webkit-details-marker {
+    display: none;
+}
+
+.album-detail-left .album-cover {
+    width: 340px;
+    height: 340px;
 }
 
 /* 更多信息 */
@@ -751,12 +813,21 @@ h1 {
     }
 
     .album-cover {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .album-detail-left .album-cover {
+        width: 240px;
+        height: 240px;
     }
 
     .album-detail-layout {
         grid-template-columns: 1fr;
+    }
+
+    .album-track-list {
+        justify-self: stretch;
     }
 }
 
