@@ -536,12 +536,17 @@ function renderEchoResultState(currentItem, exhausted = false) {
         ? `<div class="echo-exhausted">已经没有新的回响结果了</div>`
         : '';
 
+    // 使用currentItem中的explanation，并限制在50字内
+    const aiExplanation = (currentItem.explanation || '根据分析，选择了最匹配的歌词片段。');
+    const truncatedExplanation = aiExplanation.length > 50 ? aiExplanation.substring(0, 50) + '...' : aiExplanation;
+
     resultBox.innerHTML = `
         <div class="echo-result-stack">
             <div class="echo-lyric">${formattedLyric}</div>
             <div class="echo-title">-${escapeHtml(`《${currentTitle}》`)}</div>
             ${exhaustedHtml}
         </div>
+        <div class="echo-ai-explanation">${truncatedExplanation}</div>
     `;
 
     if (historyList) {
@@ -692,7 +697,9 @@ async function matchByAI(input, candidateList) {
 
         const keywords = prepareSearchTokens(input);
         const matchLine = getBestLyricLineFromKeyLyrics(matchedSong, keywords).line;
-        return { song: matchedSong, score: 1, matchLine };
+        // 获取AI生成的解释
+        const explanation = data?.explanation || 'AI根据情感基调、描述结构和语言密度分析，选择了最匹配的歌词片段。';
+        return { song: matchedSong, score: 1, matchLine, explanation };
     } catch (error) {
         console.warn('AI 匹配异常，将回退本地匹配:', error);
         return null;
@@ -760,7 +767,9 @@ function matchByStateLocal(input, limit = 0) {
                 + tagScore * 0.15
                 + albumScore * 0.10
                 + frequencyBoost;
-            return { song, score, matchLine: lyricResult.line };
+            // 生成本地匹配的解释
+            const explanation = '根据关键词匹配和情感分析，选择了最符合描述的歌词片段。';
+            return { song, score, matchLine: lyricResult.line, explanation };
         });
     let result = scored
         .filter(item => item.score > 0)

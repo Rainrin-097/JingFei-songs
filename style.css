@@ -1056,6 +1056,16 @@ h1 {
     padding-right: 4px;
 }
 
+.echo-ai-explanation {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    margin: 16px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
 .echo-history-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
