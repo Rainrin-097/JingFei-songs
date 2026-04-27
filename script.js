@@ -473,10 +473,12 @@ function resetEchoSession() {
 }
 
 async function buildEchoCandidates(input) {
-    const localMatches = matchByStateLocal(input);
+    // 先进行本地高精度模糊匹配，召回 20-30 首候选
+    const localMatches = matchByStateLocal(input, 30);
     if (!localMatches.length) return [];
 
-    const aiMatch = await matchByAI(input);
+    // 如果有候选歌曲，尝试使用 AI 进行最终选择
+    const aiMatch = await matchByAI(input, localMatches);
     if (!aiMatch) return localMatches;
 
     const aiId = Number(aiMatch.song?.id);
@@ -508,18 +510,24 @@ function renderEchoResultState(currentItem, exhausted = false) {
         .filter(Boolean)
         .reverse();
 
+    // 将 matchLine 按 key_lyrics 格式处理：每行引号内容作为一句，居中换行显示
     const currentLyric = currentItem.matchLine || '暂时未能发现回响';
+    const formattedLyric = formatKeyLyricsDisplay(currentLyric);
     const currentTitle = currentItem.song?.meta?.title || '';
     const historyHtml = previousItems.length
         ? `
             <div class="echo-history-title">已发现的回响</div>
             <div class="echo-history-list">
-                ${previousItems.map((item) => `
+                ${previousItems.map((item) => {
+                    const itemLyric = item.matchLine || '暂时未能发现回响';
+                    const formattedItemLyric = formatKeyLyricsDisplay(itemLyric);
+                    return `
                     <article class="echo-history-card" data-song-id="${escapeHtml(String(item.song?.id || ''))}" role="button" tabindex="0">
-                        <div class="echo-history-lyric">${escapeHtml(item.matchLine || '暂时未能发现回响')}</div>
+                        <div class="echo-history-lyric">${formattedItemLyric}</div>
                         <div class="echo-history-song">${escapeHtml(item.song?.meta?.title || '')}</div>
                     </article>
-                `).join('')}
+                `;
+                }).join('')}
             </div>
         `
         : '';
@@ -530,7 +538,7 @@ function renderEchoResultState(currentItem, exhausted = false) {
 
     resultBox.innerHTML = `
         <div class="echo-result-stack">
-            <div class="echo-lyric">${escapeHtml(currentLyric)}</div>
+            <div class="echo-lyric">${formattedLyric}</div>
             <div class="echo-title">-${escapeHtml(`《${currentTitle}》`)}</div>
             ${exhaustedHtml}
         </div>
@@ -541,6 +549,15 @@ function renderEchoResultState(currentItem, exhausted = false) {
     }
 
     echoSession.currentItem = currentItem;
+}
+
+// 格式化 key_lyrics 显示：每个引号内的内容作为一句，保持换行，居中排列
+function formatKeyLyricsDisplay(lyricText) {
+    if (!lyricText) return '';
+    // 将文本按换行符分割，每行作为一句
+    const lines = String(lyricText).split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    // 每行用 div 包裹，实现居中换行显示
+    return lines.map(line => `<div class="echo-lyric-line">${escapeHtml(line)}</div>`).join('');
 }
 
 function renderEchoLimitReached() {
@@ -637,11 +654,16 @@ async function showMatchResult(text, options = {}) {
     renderEchoResultState(topMatch, false);
 }
 
-async function matchByAI(input) {
+async function matchByAI(input, candidateList) {
     try {
         const albumDescriptionMap = buildAlbumDescriptionMap();
-        const candidateSongs = songsData
-            .map(song => ({ song, payload: buildAISongPayload(song, albumDescriptionMap) }))
+        // 如果传入了候选列表，只使用这些候选；否则使用全部歌曲
+        const sourceList = candidateList || songsData;
+        const candidateSongs = sourceList
+            .map(item => {
+                const song = item.song || item;
+                return { song, payload: buildAISongPayload(song, albumDescriptionMap) };
+            })
             .filter(item => item.payload.frequency > 0);
 
         if (candidateSongs.length === 0) return null;
@@ -669,7 +691,7 @@ async function matchByAI(input) {
         if (!matchedSong) return null;
 
         const keywords = prepareSearchTokens(input);
-        const matchLine = getBestLyricLine(matchedSong.meta?.lyrics, keywords).line;
+        const matchLine = getBestLyricLineFromKeyLyrics(matchedSong, keywords).line;
         return { song: matchedSong, score: 1, matchLine };
     } catch (error) {
         console.warn('AI 匹配异常，将回退本地匹配:', error);
@@ -708,14 +730,14 @@ function buildAISongPayload(song, albumDescriptionMap) {
     };
 }
 
-function matchByStateLocal(input) {
+function matchByStateLocal(input, limit = 0) {
     const keywords = prepareSearchTokens(input);
     if (keywords.length === 0) return [];
     const albumDescriptionMap = buildAlbumDescriptionMap();
     const scored = songsData
         .filter(song => Number(song?.semantic_analysis?.frequency || 0) > 0)
         .map(song => {
-            const lyricResult = getBestLyricLine(song.meta?.lyrics, keywords);
+            const lyricResult = getBestLyricLineFromKeyLyrics(song, keywords);
             const description = (song.credits?.official_description || '').toLowerCase();
             const semantic = song?.semantic_analysis || {};
             const tagsText = [
@@ -738,9 +760,15 @@ function matchByStateLocal(input) {
                 + frequencyBoost;
             return { song, score, matchLine: lyricResult.line };
         });
-    return scored
+    let result = scored
         .filter(item => item.score > 0)
         .sort((a, b) => b.score - a.score);
+    
+    // 如果指定了限制数量，返回前 N 首
+    if (limit > 0) {
+        result = result.slice(0, limit);
+    }
+    return result;
 }
 
 function scoreTextByTokens(text, keywords) {
@@ -777,6 +805,43 @@ function getBestLyricLine(lyricsText, keywords) {
     });
 
     return { line: bestLine || lines[0], score: bestScore };
+}
+
+// 从 key_lyrics 中选择最佳匹配行，优先使用结构化歌词数据
+function getBestLyricLineFromKeyLyrics(song, keywords) {
+    const keyLyrics = song?.semantic_analysis?.key_lyrics || [];
+    const fallbackLyrics = song?.meta?.lyrics || '';
+    
+    // 优先从 key_lyrics 中匹配
+    if (Array.isArray(keyLyrics) && keyLyrics.length > 0) {
+        let bestLine = '';
+        let bestScore = 0;
+        
+        keyLyrics.forEach(keyLine => {
+            // key_lyrics 中的每一句可能包含换行，需要拆分成单独的行
+            const subLines = String(keyLine || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+            subLines.forEach(line => {
+                const lowerLine = line.toLowerCase();
+                let hits = 0;
+                keywords.forEach(word => {
+                    const w = word.toLowerCase();
+                    if (lowerLine.includes(w)) hits += 1;
+                });
+                const lineScore = keywords.length ? hits / keywords.length : 0;
+                if (lineScore > bestScore) {
+                    bestScore = lineScore;
+                    bestLine = line;
+                }
+            });
+        });
+        
+        if (bestScore > 0) {
+            return { line: bestLine, score: bestScore };
+        }
+    }
+    
+    // 如果 key_lyrics 中没有匹配到，回退到完整歌词
+    return getBestLyricLine(fallbackLyrics, keywords);
 }
 
 function prepareSearchTokens(input) {

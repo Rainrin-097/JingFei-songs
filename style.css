@@ -1012,6 +1012,28 @@ h1 {
     animation-delay: 0s;
 }
 
+.echo-lyric-line {
+    font-size: 32px;
+    color: #8B0000;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    display: block;
+}
+
+.echo-history-lyric {
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+.echo-history-lyric .echo-lyric-line {
+    font-size: 16px;
+    color: #8B0000;
+    font-weight: 700;
+    line-height: 1.4;
+    display: block;
+}
+
 .echo-title {
     font-size: 16px;
     color: #999;
