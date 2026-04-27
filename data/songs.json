@@ -25,6 +25,16 @@
             "official_description": "我看过秋日的夕阳，穿透薄雾的光芒，照在你脸上的模样。那之后很久某一天，我无意中瞥见：夕阳的光，仿佛黄昏的手，正悄悄拨开窗帘的缝隙，伸进我的房间里。那一刻。回忆几乎触手可及。"
         },
         "semantic_analysis": {
+            "key_lyrics": [
+                "人来又人往 玫瑰色花香",
+                "已悄悄成为过往",
+                "细雨里的日光 小镇的风光\n早已跌落在时光",
+                "随手采一片月光 就把夜晚都照亮",
+                "就算错过一整片夕阳 你的目光燃烧四方",
+                "夜风中的微凉 夏日的松香",
+                "细雨中的日光 小巷的中央",
+                "细雨里的日光 远处的钟响\n是我对你的守望"
+            ],
             "keywords": [
                 "夕阳",
                 "月光",
@@ -88,6 +98,31 @@
             "official_description": "九月的夜风吹过发梢， 那些耳语，就算是谎言，也是情话。\nYes, those September nights telling late summer lies."
         },
         "semantic_analysis": {
+            "key_lyrics": [
+                "In the silence of the dark night",
+                "Under the starry skies",
+                "Turn off the light lose your mind",
+                "We can dance for a while",
+                "See those colors in your eyes",
+                "As your gaze turns wide and bright",
+                "I just realized",
+                "Even if the night is all we have left",
+                "I've got no regrets so",
+                "Kiss me till the morning light",
+                "Ready for another lie",
+                "Cruising down the trip into your mind",
+                "Getting lost for a while",
+                "I've got no where to hide",
+                "Your voice is the sweetest lullaby",
+                "Your touch tastes like heaven paradise",
+                "Next time maybe we could just do it one more time",
+                "Till we say goodbye",
+                "Bloody roses upon your chest",
+                "The warmth of your breath",
+                "You'll be on my mind",
+                "Telling summer lies",
+                "Your love makes me certain that I can fly"
+            ],
             "keywords": [
                 "night",
                 "lies",
@@ -183,7 +218,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "那所谓山川风光\n到底是什么模样",
+                "风吹动你的月光\n吹皱我一池春浪",
+                "没什么像 你的手一样\n轻易就 载我驶向远方",
+                "没看过原始的荒凉\n却才刚到过天堂",
+                "你手掌上风光\n该怎么度怎么量",
+                "没为你挡过风浪\n怎么配并肩一场",
+                "用想象 欲盖爱的弥彰",
+                "爱神她一路回望\n春光她一路流淌"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -246,7 +291,32 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "I found out too late",
+                "Those nights belong to me",
+                "路灯 跌落了湖水\n化作今晚水中的月光",
+                "当我 闭上眼\n就看见那段旧时光",
+                "记得 和你相遇\n在近乎透明的蓝色里",
+                "九月 梦幻又温暖",
+                "城市就像一座游乐园",
+                "转眼 过了一年",
+                "我们踏上这片土地",
+                "音乐 一圈一圈\n涟漪般 慢 漫漫 蔓延",
+                "生活偶尔冲淡 我们的对看",
+                "你海底的小船\n载我们到对岸 看看",
+                "We've made our life so sweet",
+                "忧郁加上甜蜜",
+                "就像你爱的艾米丽",
+                "一路那么多风景\n总需要搭配些伴侣",
+                "轻轻旋转这旋律",
+                "就转到最自由的频率",
+                "来 跟我来",
+                "来到那间回忆的卧室",
+                "左边 有一张旋转的大床",
+                "你 在想什么\n在想念什么\n在期待什么",
+                "好了 不要再想了 睡吧"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -309,7 +379,26 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "晚风 吹来多少美梦",
+                "吹来多少轻松",
+                "吹走无数隐痛",
+                "迎着风 近看水影朦胧",
+                "遥望无尽星空",
+                "忘掉那些我不曾",
+                "湖面上闪烁的点点流莹",
+                "夜空中点点的星",
+                "那些花香树影\n随月色染成透明",
+                "晚风轻轻飘荡\n心事都不去想",
+                "那失望也不失望 惆怅也不惆怅\n都在风中飞扬",
+                "随我迎波逐浪",
+                "那欢畅都更欢畅\n幻想更幻想",
+                "就像 你还在身旁",
+                "湖水中鱼儿在缓缓游动\n穿梭在谁的身影",
+                "直到天色微明",
+                "都消失的无踪影"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -371,7 +460,18 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "温软呼吸",
+                "心海里肆意弥漫",
+                "我看着你的眼\n感知沦陷",
+                "有人劝我不要偷尝毒苹果\n可他们不懂以毒攻毒才快乐",
+                "在你的眼中\n我是什么颜色",
+                "若是纯白色就很独特",
+                "我非要撕碎这层层缠绕的壳",
+                "我可以带着你一起缓缓坠落",
+                "手捋过发丝\n抓住时间抓不住的悸动"
+            ]
         },
         "admin_tags": [
             "广播剧"
@@ -439,7 +539,26 @@
             "energy_direction": "混合",
             "energy_agency": "主动",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "天大地大 男孩女孩啊\n还有什么 放不下",
+                "苹果砸了 谁的嘉年华",
+                "自由落体 积极向下",
+                "那失重的牵挂\n会加速蒸发",
+                "我要的不过是别浪费这盛夏",
+                "留下了纯真再长大",
+                "明天不会比今天年轻啊\n畅饮了宿醉再回家",
+                "我一路提问时间不回答",
+                "未来未来 过去难过去啊",
+                "不凋零的花 谁会珍惜吗\n不如趁最美 时刻落下",
+                "执着悲观垫底\n无妨眷恋生命",
+                "记得那日黄昏大桥下",
+                "你那几缕潮湿的头发",
+                "吹啊吹一路风景变化",
+                "像狂欢的火焰 夜雨的缠绵",
+                "像虚构的相片 不羁的遥远",
+                "吞下了遗憾再长大\n畅饮了心碎再出发"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -502,7 +621,32 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "我喜欢一回家\n就有暖洋洋的灯光在等待",
+                "我喜欢一起床\n就看到大家微笑的脸庞",
+                "我喜欢一出门\n就为了家人和自己的理想打拼",
+                "我喜欢一家人\n心朝着同一个方向眺望",
+                "我喜欢快乐时\n马上就想要和你一起分享",
+                "我喜欢受伤时\n就想起你们温暖的怀抱",
+                "我喜欢生气时\n就想到你们永远包容多么伟大",
+                "我喜欢旅行时\n为你把美好记忆带回家",
+                "因为我们是一家人\n相亲相爱的一家人",
+                "有缘才能相聚\n有心才会珍惜",
+                "何必让满天乌云遮住眼睛",
+                "有福就该同享\n有难必然同当",
+                "用相知相守换地久天长",
+                "就把乱糟糟的心情都忘掉",
+                "就带给大家微笑的脸庞",
+                "就为了个人和世界的美好打拼",
+                "梦朝着同一个方向创造",
+                "当别人快乐时\n好像是自己获得幸福一样",
+                "当别人受伤时\n我愿意敞开最真的怀抱",
+                "当别人生气时\n告诉他就算观念不同不必激动",
+                "当别人需要时\n我一定卷起袖子帮助他",
+                "处处为你用心\n一直最有默契",
+                "请你相信这份感情值得感激"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -565,7 +709,31 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "Soaking in the sun",
+                "Stucking in the vine",
+                "Life is like a song but where are you",
+                "I have what you want",
+                "Every taste every breath",
+                "So blue inside out without you",
+                "Like a dream I'm living in",
+                "There's your heart left to win",
+                "Love the way you call my name",
+                "Life taste like you",
+                "You're my blueberry baby",
+                "Baby you sweeter deeper inside",
+                "Sweet for you tonight",
+                "Pick me up and please",
+                "Just cut me free",
+                "There's nothing left to win",
+                "You can make me into a pie milk shakes a juice or wine",
+                "Soak up into my flesh so we can stay fresh",
+                "They say depression and obsession never mix well",
+                "But my sweetness and sourness always mix well",
+                "Cause I am your blueberry babe",
+                "And you are my my destiny"
+            ]
         },
         "admin_tags": [
             "英文",
@@ -630,7 +798,27 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "在这至暗的时刻 适合犯更多的错",
+                "恐吓腐朽的规则 庆祝自由的邪恶",
+                "我知道你需要我 迷人的反派角色",
+                "拨乱模糊的善恶 拯救灵魂的饥渴",
+                "点燃 萤火 连成一片星河",
+                "美得 像不灭传说",
+                "一起 沉没 好过无望看破",
+                "让我 为我们赴汤蹈火",
+                "最危险不过 你心底的冷漠",
+                "施虐受虐的 颠倒了因果",
+                "信念在闪烁 时间已经不多",
+                "火光里的浪漫是最淋漓的快乐",
+                "点燃 萤火 连成 一片星河",
+                "喜剧替悲剧笑到最后了",
+                "施虐受虐的 被颠倒了因果",
+                "火光里 的浪漫 是最淋漓 的快乐",
+                "烧掉这 冒充真理的 鬼扯",
+                "罪恶 摘下面具了"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -695,7 +883,18 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "带上面具扮演我自己\n谁在意里面悲喜",
+                "点燃烛火烧断我自己\n敏感不幸的神经",
+                "奔赴着一个个悲剧\n用人定胜天的暴力",
+                "把偶然重复成命运\n又有什么可惜",
+                "你擦身而过的瞬间\n我的孤独认出你的孤独",
+                "原来春天这么美\n幸好没有腐烂在冬天",
+                "偏偏在最好的年纪\n失去爱的能力",
+                "多么爱不释手的游戏\n都感动不了自己",
+                "懂了那么多的道理\n还不是输给上帝"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -762,7 +961,23 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "那是间上世纪的客厅",
+                "是迷惘幽暗的曾经",
+                "是浪漫多情的天性\n令人整晚 心神不宁",
+                "在狂风和暴雨的反复里",
+                "在脆弱与清醒的迷雾里",
+                "在孤独和压抑的深渊里",
+                "我还等待 雨天过去",
+                "在我狂风和暴雨里\n你就是天晴",
+                "在我等待和煎熬里\n你就是氧气",
+                "在我破碎和荒凉里\n你就是奇迹",
+                "在时代边缘外狂欢",
+                "在平庸虚无中不堪",
+                "远处传来 最终的答案",
+                "身在黑暗 享受黑暗"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -819,7 +1034,8 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": []
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -885,7 +1101,28 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "沐浴着仲夏的玫瑰色幻想",
+                "每一抹月光 都把你哼唱",
+                "情欲在金色的麦田里生长",
+                "微风中摇晃 昏黄中流淌",
+                "炙热的呼吸在静脉中伸张",
+                "坦诚而张扬 纯真又放荡",
+                "为你我烧毁了其余的梦想",
+                "清理了过往 埋葬了前方",
+                "带你进入永昼的光芒 赴浪漫的刑场",
+                "美梦太仓皇 等不到天亮",
+                "爱是妒嫉加上欲妄 肉体叹息着时光",
+                "除了诱惑 我什么都能抵挡",
+                "命运是手掌上凹凸不平的光",
+                "预见了疯狂 却欣然前往",
+                "克制和挥霍没什么不一样",
+                "地狱和天堂 同一个地方",
+                "在宇宙尽头绽放 在你眼中迷航",
+                "石火又电光 深渊里震荡",
+                "大海到日落的中央 纵情燃烧这一场"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -952,7 +1189,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "黄昏里醒来\n梦境还在徘徊",
+                "树影上窗台\n水草卷进被盖",
+                "浪花 载着 失意 轻轻 摇摆\n海水 推开 情绪 层层 覆盖",
+                "听",
+                "喧嚣都在梦里 对白落入风里\n狂热和沮丧都留在\n回声里",
+                "月光洒下来\n航离了时代",
+                "过去 未来 都在 此刻 交载\n欲念 走开 迎接 永恒 到来",
+                "沉醉到忘了归路\n误入星河深处",
+                "朝着彼岸驶去寻找\n新诗意",
+                "过去 未来 都在 此刻 交载\n欲念 空白 迎接 永恒 到来"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1015,7 +1264,18 @@
             "energy_direction": "向外",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "场景描写"
+            "narrative_granularity": "场景描写",
+            "key_lyrics": [
+                "禁不住 一直回头看",
+                "你是否 还走在我身后",
+                "忍住眼泪 就不会让你看见",
+                "忍住眼泪 就不会被你发现",
+                "至少此刻 你还在我的身边",
+                "所以今晚\n能不能不要离开",
+                "黄昏熄灭了地平线\n像昨天 一切都没改变",
+                "穿过这城市的表面\n你的笑容才最安全",
+                "看着桥那边疯狂的世界\n感受你眼中的无限"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1068,7 +1328,8 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": []
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1133,7 +1394,23 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "熄灭蜡烛 夜就涌入",
+                "你深蓝色瞳孔",
+                "熊熊烈火 映在你眼中\n我无力再闪躲",
+                "我用嘴唇眺望\n尘世的梦幻想",
+                "我耗尽了目光\n寻找你的模样",
+                "靠近我 温暖我 完整我",
+                "用你深蓝色的臂窝\n进入我 淹没我 滋润我\n疲惫干涸的躯壳",
+                "攀过你胸前起伏的海浪",
+                "越过自由奢侈的高墙",
+                "去永恒的爱和欲望",
+                "蓝色丝绒开出裂缝\n吞噬我焦灼",
+                "绵绵泡沫 柔柔水波",
+                "我多么地快活",
+                "给我彼岸完整的月光\n不要手心破碎的太阳\n要一束光只为我照亮"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1195,7 +1472,22 @@
             "energy_direction": "向外",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "Whisper in the dark",
+                "Dancing with my scar",
+                "My broken heart",
+                "Into stolen stars",
+                "Oh river flows",
+                "Oh fountain of youth",
+                "Is it safe for us to shine",
+                "Blossom in the sky",
+                "Golden paradise",
+                "Rain is falling wild",
+                "Choir in my mind",
+                "Sweet love of mine",
+                "Synchronized"
+            ]
         },
         "admin_tags": [
             "英文"
@@ -1261,7 +1553,25 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "敏感 我太敏感",
+                "浪漫 附带着悲观",
+                "只有简单让我心安",
+                "世界有时太暗淡\n闭上眼不去看",
+                "热情熄灭后的凋残",
+                "我不怕孤单 只是有点贪玩",
+                "我好怕孤单 来我们一起玩",
+                "跳得多灿烂 坚硬的都酥软",
+                "尽情地旋转 自由着多迷幻",
+                "漫步 一个人漫步",
+                "思绪 整夜在翻覆",
+                "向前向后 都是迷雾",
+                "脚步 凌乱了脚步",
+                "孤独 成全了孤独",
+                "务虚务实 都难圆满",
+                "跳得多灿烂 纯粹就是性感"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1314,7 +1624,8 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": []
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1378,7 +1689,17 @@
             "energy_direction": "向内",
             "energy_agency": "主动",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "诗人们都说人生像烟花般灿烂\n抓紧快活 别去琢磨 多自然",
+                "越是敏感 越是难堪 怎么办",
+                "时间是海 欲望是船\n哪里才是我彼岸",
+                "给我一本 人间指南\n让我找回方向感",
+                "这时代有太多选择太少安全感\n美食榜单 精品片单 追不完",
+                "用无聊打发着无聊 麻烦谋杀麻烦",
+                "保持忙碌 保持盲目 多荒诞",
+                "谁躲得过\n这一路的\n孤独和暗淡"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1444,7 +1765,27 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "完整故事"
+            "narrative_granularity": "完整故事",
+            "key_lyrics": [
+                "We are not in the world the true life is absent",
+                "The place in which I'll fit will not exist until I make it",
+                "Cuz I believe life imitates art",
+                "故事里的歌 旋律不停飘落",
+                "四周涌起着 一层层巧合",
+                "透过一个吻 感受你来过",
+                "赤着脚淌过 春天的河",
+                "就像是淌过 从前的我",
+                "原来每个梦 都是一首歌",
+                "裸露着的 舞动着的 被占有的 被忽略的\n都在此刻 还给生活",
+                "别处的烟火 不停召唤我",
+                "渴望着线索 渴望着诱惑",
+                "自由的回声 藏在某个角落",
+                "青春的列车 呼啸而过",
+                "褪色的小说 重新复活",
+                "是谁的景色 是谁的过客",
+                "得到什么 失去什么 感受什么 期待什么\n都在此刻 交给生活",
+                "燃烧着的 凝固着的 被熄灭的 被融化的\n都在此刻 还给生活"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1507,7 +1848,21 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "漫漫人生路 谁说生命只有辛苦",
+                "我的路上有你陪伴左右\n哪怕会有痛楚",
+                "泡一壶茶自得其乐\n喝一杯酒对月当歌",
+                "生命的流转你我都无法停留",
+                "走在漫漫人生路 点点滴滴都幸福",
+                "为爱勇敢付出失败从不在乎",
+                "回头看看来时路 对与错我都满足",
+                "就算起起落落只要不枉此生\n走在漫漫人生路",
+                "只要不枉此生\n走在漫漫人生路",
+                "我说人生路\n该如何走 自己作主",
+                "结局是笑或泪\n也都无所谓",
+                "让我将梦变成歌"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -1568,7 +1923,18 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "Nothing means nothing when nothing\nIs all you give me I'm sitting",
+                "Baby it's all just a mess",
+                "I made when I called to confess",
+                "There's a lump in the back of throat\nAnd there's just no letting u go",
+                "Burn my house down it still hurts less\nLeave me stranded out in the cold",
+                "I won't feel it cos what hurts the most is\nWhen I'm lo lo when I'm lo lo",
+                "I realize what you're thinking\nI know you've made your decision",
+                "当炙热的都归于平淡\n当特别的都变得平凡",
+                "就让曾经的灿烂\n都用寂寞来偿还"
+            ]
         },
         "admin_tags": [
             "英文",
@@ -1632,7 +1998,16 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "无边际 当过去和未来似平行",
+                "请问\n谁看见 现在身影\n在失去与渴望的距离",
+                "谁沉溺自己的海\n回旋徘徊",
+                "我多想拥抱 现在",
+                "拥抱不再只是种虚拟\n幸福不再是白马过隙",
+                "我沉溺在自己的海\n又忍不住想 离开",
+                "若游出自己的海\n是否可以\n借你的手拥抱现在"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -1698,7 +2073,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "黄昏的天空是数不清的梦",
+                "柔柔水波是你最爱哼的歌\n悄悄驯服 狂风暴雨的世界",
+                "太阳从西方悄悄落下\n清晨的东方已默默地\n站在你面前",
+                "逝去的海\n在日暮中向我袭来\n好似一整晚的等待",
+                "好似一整晚的等待",
+                "晚霞对着游鱼说道\n经过你的亲吻\n我不再害怕离去",
+                "靠近也许是伤害\n远离也许才安全",
+                "飞鸟不追问意义 云朵不自知美丽\n生命的源力就在这里 无束无拘自由的呼吸"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -1759,7 +2144,16 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "大自然真奇妙",
+                "那满天花雨躲不了",
+                "风儿在吹啊 那云儿飘\n天边响起歌谣",
+                "花落花飞 云来云去\n要躲也躲不了",
+                "是多么美 是多么妙\n我怎么怎么忘得了",
+                "天还在笑 花儿在飘",
+                "心中又想起 你教我的歌\n要躲也躲不了"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -1828,7 +2222,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "春天的黄昏\n请你陪我到 梦中的水乡",
+                "不要惊醒杨柳岸 那些缠绵的往事\n化作一缕轻烟 已消失在远方",
+                "谁也载不走 那扇古老的窗",
+                "玲珑少年在岸上 守候一生的时光\n为何没能做个 你盼望的新娘",
+                "淡淡相思 都写在脸上\n沉沉离别背在肩上",
+                "泪水流过脸庞\n所有的话 现在还是没有讲",
+                "看那青山 荡漾在水上\n看那晚霞吻着夕阳",
+                "我用一生的爱 去寻找那一个家\n今夜你在何方",
+                "转回头 迎着你的笑颜\n心事全都被你发现",
+                "梦里遥远的幸福 它就在我的身旁"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -1897,7 +2303,18 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "回忆组成风 欲望组成梦",
+                "时间变成歌 无言变成我",
+                "怎么好像前一秒钟 还在自由放空\n突然就变失落",
+                "成⻓变成了 我和我的隔阂",
+                "怎么好像有一阵风 在赶来的途中\n说它懂我的梦",
+                "让我在它的 怀抱中 彻底放松",
+                "回忆筑成空 欲望凝成洞",
+                "时间变成沙 灵魂说成话",
+                "凝视着镜中\n怎么如风也如梦"
+            ]
         },
         "admin_tags": [
             "合作",
@@ -1962,7 +2379,20 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "人海里 地铁太拥挤淹没我的背影",
+                "每次叹息 伴随我呼吸疼痛从不缺席",
+                "我的手机 还留着你说离开的讯息",
+                "那一字一句 那点点滴滴\n都很难躲避",
+                "如果我在海底 沉默不语\n而你又在哪里 开不开心",
+                "回忆像是躲不过 却没有人能\n测量的距离",
+                "如果我在想你 还在想你",
+                "其实也算幸运 曾看过你眼睛",
+                "蓝色的你 像我的情绪反射出的光晕",
+                "没有泪滴 或者我周围全部是泪滴",
+                "一点氧气 就足够我继续环绕陆地"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -2026,7 +2456,18 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "抬头望\n漆黑夜如花 在绽放",
+                "零度下\n孤独地飞翔 如流浪\n没方向",
+                "你用沉默诉说天堂模样\n我假装入迷嘴角上扬",
+                "你走向我\n像泪光中浮现的月光",
+                "我抱住你\n如绝望中实现的愿望",
+                "纵然 飞蛾扑火 又何妨\n趁 烟未冷 迷离夜未央\n燃烧一场",
+                "把带泪的话 说成谎",
+                "滚烫的诺言 未曾忘",
+                "趁烟未冷 迷离夜未央"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -2092,7 +2533,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "再寒冷一点\n雪花飞舞的冬天",
+                "我们一起漫步的那条街",
+                "再遥远一些\n青春朦胧的季节",
+                "你的笑凝结在风里面\n像白雪一样淹没我的眼",
+                "时光流逝多少年\n花落人散两分别",
+                "想问白云的里面\n是否有你相思化作的雨点",
+                "月落乌啼霜满天\n曾经沧海变桑田",
+                "春去秋来又一遍\n曾经的我你可否还会想念"
+            ]
         },
         "admin_tags": [
             "合作",
@@ -2161,7 +2612,20 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "流浪车厢 灼人阳光\n洒下一地金黄",
+                "吻着雪霜 枕着幻想\n放肆地梦一场",
+                "甩开时间框架 不再加鞭快马\n享受无尽的当下 自由膨胀的变化",
+                "灵魂开出蔷薇 流光多明媚",
+                "执念慢慢粉碎 自由多无畏",
+                "所谓世界模样\n不过是 你授权的幻象",
+                "在念头之外 直觉地带\n终于遇见 自在",
+                "不再忧虑害怕 享受轻盈的当下",
+                "看爱把坚硬融化",
+                "关于生活的真相\n不过是 你显化的愿望",
+                "在情节之外 浮空地带\n终于遇见 自在"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -2222,7 +2686,15 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "今夜还吹着风 想起你好温柔",
+                "有你的日子分外的轻松",
+                "只是想你太浓\n怎么会无时无刻把你梦",
+                "爱的路上有你 我并不寂寞",
+                "也许我应该好好把你拥有",
+                "谢谢你这么长的时间陪着我\n这是我一生中最兴奋的时分"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -2287,7 +2759,13 @@
             "energy_direction": "向外",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "有一点欢乐 有一点悲伤\n谁也无法逃开",
+                "我们的世界\n并不像你说的真有那么坏",
+                "你又何必感慨",
+                "用你的关怀和所有的爱\n为这个世界\n添一些美丽色彩"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -2351,7 +2829,20 @@
             "energy_direction": "向内",
             "energy_agency": "主动",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "思想过分不是罪",
+                "就让我暂时地脱轨 拥抱真实的不完美",
+                "不后悔不惭愧 保持我的原味",
+                "潇洒或狼狈 我为自己陶醉",
+                "不必问不必说 我自己去体会",
+                "扮演别人的时间都是浪费",
+                "生存规则再珍贵\n若弄丢了自己是谁\n前进也成了后退",
+                "若街头到巷尾 都同一副脸嘴\n该有多么乏味",
+                "那么多错与对 谁来鉴定真伪",
+                "那么多花乱坠 都腐烂在肠胃",
+                "反复辗转徘徊 怎么能好好得睡"
+            ]
         },
         "admin_tags": [
             "品牌合作"
@@ -2415,7 +2906,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "走过闪烁的路灯 匆匆忙忙的人\n和我擦肩而过",
+                "是黑色领结 带走稚嫩和天真",
+                "风的心情在高低飞行",
+                "该怎么说 这个世界\n它一直都将会转个不停",
+                "不需要 看太清",
+                "那些青春旧日美梦 流失在岁月中",
+                "忘不掉的伤痕 让人学会真假不分",
+                "我们都 曾经高谈阔论 要如何度过这一生\n可在成人世界的入口\n只看见一扇灰色的门"
+            ]
         },
         "admin_tags": [
             "合作"
@@ -2481,7 +2982,21 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "至暗时刻太漫长 霓虹暗巷 暴力天堂",
+                "数据池塘太病怏 信念饥荒 细菌滋长",
+                "撕破认知幻象 抵达意识边疆",
+                "人间开始摇摇晃晃",
+                "不必在意谁的眼光 不需要谁的原谅\n赴火蹈汤",
+                "羞耻都解放 恐惧丢一旁\n别去阻挡 这波浪",
+                "你身躯滚烫 我悉心品尝\n无法抵挡 这光芒",
+                "迷失公路的中央 旷野的风 划过脸庞",
+                "虚拟结界在震荡 旧梦浮光 沉入海洋",
+                "穿越全息幻象 抵达妖曳风光",
+                "吞下最猩涩的月亮",
+                "不需要谁的怜奖 燃烧一场"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -2544,7 +3059,17 @@
             "energy_direction": "向外",
             "energy_agency": "主动",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "时间已作了选择 什么人叫做朋友",
+                "偶尔碰头 心情却能一点就通",
+                "因为我们曾有过",
+                "担心会犯错 难免会受挫",
+                "幸好一路上有你陪我",
+                "与你分享的快乐 胜过独自拥有\n至今我仍深深感动",
+                "好友如同一扇窗 能让视野不同",
+                "好友如同一扇门 让世界开阔"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -2608,7 +3133,12 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "五个伙伴晒太阳 犹梦逐天光",
+                "六个伙伴晒太阳 最美好的时光",
+                "晒到月亮上山岗"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -2677,7 +3207,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "给我一个吻 给我炙热的双唇\n温柔坚定的眼神",
+                "风中缠绵的香气 说着恋人的絮语\n终于相信 你是我的命运",
+                "终于相信 你是我的命运",
+                "你是我沿途最美的风光\n春色悠悠不及你荡漾",
+                "倚在你肩膀 就能实现梦想",
+                "一起流浪到未知远方\n等待大雨过后的晴朗",
+                "你就是我 最后一个愿望",
+                "皎洁的月光 轻拂温存的麦浪\n勾勒爱情的模样",
+                "一路难免失望 难免曲折漫长\n让这首歌 为你轻轻地唱",
+                "给我一个吻 给我绚烂的黄昏\n给我漫天的星辰"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -2743,7 +3285,14 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "回忆汹涌的午夜\n往事随着月光蔓延",
+                "一场偶然的遇见\n地转天旋 注定的沦陷",
+                "流星划落瞬间 你是我的心愿",
+                "轻轻的念 你是否听得见\n这温柔的狂野",
+                "一段青涩的遥远\n忽明忽灭 炙热的晕眩"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -2808,7 +3357,20 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "等待一阵缓缓的风 吹过夜空",
+                "等潮水轻轻骚动 伴我入梦",
+                "快要熄灭的篝火 不愿离去的飞虫",
+                "我听见 我的寂寞",
+                "我脱掉了磨脚的鞋 慢慢走着",
+                "软软的绵绵的沙 包围着我",
+                "远处闪烁的灯塔 快要走完的港口",
+                "我拥抱 我的寂寞",
+                "你的姓氏 被海冲淡\n穿过我指尖 有几颗无奈",
+                "我的心事 被风吹散",
+                "等一个美梦 就足以释怀\n就要忘怀 那夜的海"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -2873,7 +3435,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "人来又人往 玫瑰色花香",
+                "已悄悄成为过往",
+                "细雨里的日光 小镇的风光\n早已跌落在时光",
+                "随手采一片月光 就把夜晚都照亮",
+                "就算错过一整片夕阳 你的目光燃烧四方",
+                "夜风中的微凉 夏日的松香",
+                "细雨中的日光 小巷的中央",
+                "细雨里的日光 远处的钟响\n是我对你的守望"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -2941,7 +3513,23 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "漫长的旅途 终于落幕",
+                "穿过喧嚣的孤独 拨开人性迷雾\n沉入灵魂的深处 激活全新维度",
+                "旋转吧 跟上心跳的节拍",
+                "闪耀吧 用最狂野的姿态",
+                "再见吧 自我牺牲的时代",
+                "狂欢吧 享受最当下的自在",
+                "奉献过的爱 一路慷慨",
+                "故事太精彩 娓娓道来",
+                "虚幻摇曳的霓虹 迷乱难解的梦",
+                "就让人间的春风 吹散一切沉重",
+                "绽放吧 直到岁月的尽头",
+                "起舞吧 在这命运的河流",
+                "飞驰吧 驶向觉醒的自由",
+                "Light it up light it up"
+            ]
         },
         "admin_tags": [
             "合作"
@@ -3006,7 +3594,19 @@
             "energy_direction": "混合",
             "energy_agency": "主动",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "当你说不愿再幻想 我悄悄湿了眼眶",
+                "在这座荒诞游乐场 我们都一样彷徨",
+                "冲破规则的墙 推开认知的窗",
+                "飞过庸常 抵达月光",
+                "愿你把不安都松绑 目光永远倔强",
+                "无忧无惧纵情欢畅 新世界多宽广",
+                "不追逐谁会怜奖 不祈求谁能体谅",
+                "你是唯一 能照亮自己的光",
+                "这旅途也许依然漫长 让我为你轻轻地唱",
+                "只有你能爱自己 像你最渴望那样"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -3069,7 +3669,20 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "反向的列车 碾过时间河\n追逐那一颗 最美的日落",
+                "黄金的时代 一幕幕醒来",
+                "命运的春风 吹进了胸怀",
+                "繁花都盛开 阳光下纵情恋和爱",
+                "我红色头发 吹散在天涯",
+                "摘下夹在光影的回答 飞驰过盛夏",
+                "我们的时代 终于要到来",
+                "梦中的舞台 你迷人风采",
+                "觉醒的春风 吹进了胸怀",
+                "灵感被灌溉\n所有感受都被善待",
+                "所有感受都被善待"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3133,7 +3746,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "握不住的风 醒不来的梦\n此刻你是否 过着渴望的人生",
+                "嘴唇吻着阳光 绿树绕着红墙\n时间是幻象 倒映梦里的水乡",
+                "直觉向天空 拼命划着桨\n是不是划向 最初的信仰",
+                "小船儿轻轻飘荡 人间摇摇晃晃\n左右都为酿",
+                "我逆流而上 把故事从头讲",
+                "喜悦都耗在 奔向喜悦的路上",
+                "学会了伪装 幻灭了幻想",
+                "真相是假象 战胜另一个假象",
+                "我看见你 站在水中央\n我看见那 最初的飞扬",
+                "人间剧场走一趟 欢乐终将散场\n绝美的光 早在昨日绽放"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3196,7 +3821,24 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "骄阳之下 沙漠之大\n开出一朵花",
+                "倾盆雨下 懒得发芽",
+                "一个人呆 坐在沙发\n瘫得多优雅",
+                "披头散发 自说自话",
+                "让快乐继续 没什么是必须",
+                "深刻的问题 留给别人在意",
+                "看那酒杯 在落灰 怎能浪费\n就让我好好的醉",
+                "让日子继续 没什么是必需",
+                "时代的情绪 留给别人管理",
+                "看那床被 多暧昧 多么安慰\n就让我好好的睡",
+                "自暴自弃来得比较容易\n除非来段艳遇惊天动地",
+                "没有被讨厌的勇气\n更没有恨人的力气",
+                "转念想想没什么 不能失去",
+                "社会的情趣 留给别人在意",
+                "一场游戏 不可言喻 不言而喻"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3260,7 +3902,18 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "把人生的空虚 酿一杯白兰地",
+                "把感性的好奇 装进行李 baby",
+                "天空下起 苹果雨 海底游着 神仙鱼\n掉进蒸汽 的陷阱 循环这首 狂想曲",
+                "春宵太短暂 少女 快前进",
+                "We're young& lonely\nIn the city I feel so pretty",
+                "When you with me\nEverything will be easy",
+                "把热带的岛屿 谱成夏日恋曲",
+                "把起伏的四季 串成回忆 baby",
+                "搭上电气 的滑梯 坠入奇幻 的梦境"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3329,7 +3982,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "窥探的不安 冲动的骚乱",
+                "崎岖的浪漫 甜蜜的心酸",
+                "要惊心动魄 尽情坠落",
+                "越过那裙下的封锁 爱欲从缝隙中流过",
+                "琴键柔和 双唇炽热\n光影不断交错",
+                "什么道德 不过你我\n一起走向焰火",
+                "碾过银河 打碎日落\n灵感不断交错",
+                "什么枷锁 不过你我\n一起灌溉传说"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3393,7 +4056,24 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "感性的 性感的 都是轮廓",
+                "固执的 暗涌的 都是本色",
+                "去闯祸 去刺破 摩擦后生热",
+                "有悲观垫底 所以表面尽管硬核",
+                "冷与热 对与错 都是外衣",
+                "爱与恨 失与得 都是生活",
+                "去存在 去摸索 点燃那野火",
+                "每一颗 种下的因都结成果",
+                "我睁大了眼睛 凝视镜中的自己",
+                "我打开了耳朵 偷听心底的声音",
+                "Hey 继续 往里 走下去\n安顿好自己 别的交给命运",
+                "欲望都值得尊敬 自由是道伪命题\n世界只属于自己 不需要谁的肯定",
+                "Hey 管他 意义 不意义\n人生这场戏 要全力演下去",
+                "我解开了肉皮 对齐墙上的黑影",
+                "我丢掉了逻辑 开启灵感的游戏"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3457,7 +4137,14 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "上升的烟火有多美丽 可有光就有阴影",
+                "四周一片寂静 噪音已冲破头顶\n日子该要如何继续",
+                "我闯入自己的命运 如同跌进万丈深渊",
+                "诸多夏日后天鹅死去\n人们说 这是场精心策划的殉情",
+                "不正确的情绪 没人能懂的恐惧\n我只是害怕面对自己"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3519,7 +4206,20 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "请让我沉睡在 紫罗兰色的梦里",
+                "盛夏午后的阳光 把皮肤烤成金黄",
+                "看人们来来又往往 只会感到迷惘",
+                "蒲公英依旧睡得酣畅 享受着热浪",
+                "听 下滑的旋律\n早 预示了别离",
+                "啊 在我所有褪色的幻想里\n原来 最爱的是你",
+                "请让我漂流在 银灰色的海洋里",
+                "潮汐轻摇曳着思绪 柔软着回忆",
+                "看忧郁旋转着欢愉 失焦在光晕",
+                "岛屿依旧躺在沙滩上 享受着月光",
+                "听 下滑的旋律\n早 预示了结局"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3583,7 +4283,45 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "就让我独自爱我 让我把我留给我",
+                "开心难过 清醒脆弱",
+                "用力活的 每一刻\n喜欢厌恶 的每一刻\n都留给我 只留给我",
+                "这一半的我 完整另一半我",
+                "烛光是我 晚餐也是我",
+                "电影是我 小说也是我",
+                "剧情 对白 角色 都是我",
+                "浴缸是我 床单也是我",
+                "房间是我 梦境也是我",
+                "旋律 节拍 耳朵 都是我",
+                "I am the first and the last",
+                "I am the light and the darkness",
+                "I am the truth and the fiction",
+                "I am knowledge and ignorance",
+                "I am senseless and I am wise",
+                "I am shame and boldness",
+                "I am shameless and I am ashamed",
+                "Do not hate my obedience",
+                "And do not love my self-control",
+                "I am union and dissolution",
+                "I am control and uncontrollable",
+                "I am compassionate and I am cruel",
+                "皮肤 闪烁 我兴奋着我",
+                "I am the incomprehensible silence and I am the voice of many sounds",
+                "灵魂 软糯 我慵懒着我",
+                "Hear me in softness and learn from me in harshness",
+                "美色 美德 我美味着我",
+                "I am the creation of spirits and request of the souls",
+                "偏执 洒脱 纯真 或 脆弱",
+                "I am the power I am the source",
+                "狂热 冷漠 艰涩 或 笨拙",
+                "I am the purpose",
+                "沉静 或飞 都留给我",
+                "Just me and my reflection",
+                "Hey can you hear me?",
+                "I am the name of the voice and the voice of the name"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3645,7 +4383,27 @@
             "energy_direction": "向外",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "狂喜的风 在城市上空\n穿过了云层 滑过你面容",
+                "炽热的红 把幻想烧空",
+                "吞噬甜糜的冲动 沦为欲妄的帮凶",
+                "猩红的夜 翅膀在收拢",
+                "地心或天空 不停反转着时空",
+                "有一束光 降落在花丛",
+                "有一种永恒 在此刻覆雨翻涌",
+                "凝固的风 融化的霓虹",
+                "歌颂肉体的光荣 湮没了平庸",
+                "烧焦的洞 奶油的香浓\n掺着回忆在流动 中和了疼痛",
+                "谁点火 谁煽风 谁言危\n谁听怂 谁在噩梦中沟通",
+                "谁轻举 谁妄动 谁卑微\n谁惶恐 谁在潮汐中翻涌",
+                "谁插针 谁见缝 谁盲目\n谁跟从 谁在下坠中上升",
+                "谁唤雨 谁呼风 谁幻灭\n谁重生 谁缝合了时空",
+                "尝猩纯的红",
+                "My love and fear truth and fiction",
+                "I can't turn off what turns me on\na freeway to freedom a vacation to the moon",
+                "Right in the middle of madness the state of ecstasy"
+            ]
         },
         "admin_tags": [],
         "vector_embedding": []
@@ -3709,7 +4467,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "在旅途中风起和云涌\n每个人都会有起落",
+                "一生中难免常会有不如意",
+                "道路太平坦会失去了勇气",
+                "就算天塌下来把它当被盖\n我只想好好过现在",
+                "日子太贫乏会失去了意义",
+                "万里晴空任你去遨翔",
+                "有时飞 有时停 有时没星火\n只有你为自己掌舵",
+                "大海之中风起和云涌\n每艘船都会有起落",
+                "有时明 有时暗 有时没方向\n也要在雾里向前闯",
+                "就让天塌下来把它当被盖"
+            ]
         },
         "admin_tags": [
             "公司合唱"
@@ -3773,7 +4543,15 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "你回来了 夜晚就开始暖了",
+                "我偷偷地 想着你\n任性一点也没关系 ",
+                "当房间开始悬浮 当幸福不再模糊",
+                "不知不觉就睡吧 只要舒服",
+                "愿你内心安详 像花瓣开在脸上",
+                "平凡又灿烂 在新的一年\n睡吧睡吧睡吧"
+            ]
         },
         "admin_tags": [
             "品牌合作"
@@ -3838,7 +4616,21 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "在昏暗的房间里 我长期坠入了梦乡",
+                "海边的焰火在绽放 命运在秋千上摇荡",
+                "HA 做梦的人 被梦见的人惊醒了",
+                "HA 挥之不去 我所有的记忆",
+                "在奔向你的路上 我长期坠入了梦乡",
+                "乌鸦在风中歌唱 口袋的欲望空荡荡",
+                "HA 多想逃离 被宿命追缠的游戏",
+                "HA 多么着迷 一场盛大的献祭",
+                "挣脱这绳索 切断这因果",
+                "纵情坠落 这诱惑\n就快将我淹没",
+                "在清晨的微光里 我长期坠入了梦乡",
+                "沐浴着粼粼波光 进入潮湿的太阳"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -3904,7 +4696,18 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "有一种美丽 从有形开始 无形中漫漪",
+                "有一场旅行 从耳畔开始 走向了天地",
+                "在他人的故事里 遇见了自己",
+                "岩石上的花 自深处绽放",
+                "任时光流淌 悠然地生长\n遥望她心中的月光",
+                "有一种诗意 温柔的锋利 优雅的叛逆",
+                "这一场相遇 热烈又清醒 偶然却笃定",
+                "换上柔软的外衣\n通向坚定的内心",
+                "喷涌的岩浆 是心的力量\n创造 属于她的天堂"
+            ]
         },
         "admin_tags": [
             "品牌合作"
@@ -3971,7 +4774,22 @@
             "energy_direction": "向外",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "Love me in the eye 你会看到花盛开",
+                "这每一分每一秒我都会与你同在",
+                "飞过那片海 没有遗憾能阻碍",
+                "这是最珍惜最坚定的我为你喝彩",
+                "但亲爱的朋友 我有你就足够",
+                "我会紧握你手 你最无可替代",
+                "我们一同跨越过",
+                "群山和大海",
+                "有你在身边 是最好的安排",
+                "你看时光能倒带",
+                "你名字的由来永远在我心底存在",
+                "友谊不需要彩排\n因为最熟悉最默契的我与你同在",
+                "与你同在 不曾离开 只要你在"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -4036,7 +4854,16 @@
             "energy_direction": "向内",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "月亮出来了\n月亮睁开美丽的眼轻轻的对着我瞧",
+                "鸟儿归去了\n鸟儿乘着夜的翅膀神秘的飞掠过",
+                "模模糊糊的美感在我心里回响",
+                "哦 墨绿的夜 隐隐约约\n展露着独特的美",
+                "它带给我们飘渺的思想 无远弗届",
+                "人们都在自己的梦里 悠悠的徘徊寻找",
+                "他们期待明天\n小小的希望和平凡的憧憬\n也许能够实现"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -4099,7 +4926,19 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "冷",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "夜阑人静处\n响起了一厥幽幽的Saxophone",
+                "当听到这一厥幽幽的Saxophone\n想起你 茫然于 漆黑夜半",
+                "在这晚星月迷蒙 盼再看到你脸容",
+                "在这晚思念无穷 心中感觉似无法操纵",
+                "想终有日我面对你 交底我内里情浓",
+                "春风那日会为你跟我重逢吹送",
+                "若是情未冻\n请跟我哼这幽幽的Saxophone",
+                "于今晚 柔柔的想我入梦中",
+                "若是情未冻 始终相信\n我俩与春天有个约会",
+                "I have a date with spring"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -4163,7 +5002,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "踩不完恼人舞步 喝不尽醉人醇酒",
+                "良夜有谁为我留 耳边语轻柔",
+                "走不完红男绿女 看不尽人海沉浮",
+                "往事有谁为我数 空对华灯愁",
+                "我也曾陶醉在两情相悦\n像飞舞中的彩蝶",
+                "我也曾心碎于黯然离别\n哭倒在露湿台阶",
+                "红灯将灭 酒也醒\n此刻该向它告别",
+                "曲终人散 回头一瞥\n最后一夜"
+            ]
         },
         "admin_tags": [
             "翻唱"
@@ -4226,7 +5075,15 @@
             "energy_direction": "混合",
             "energy_agency": "主动",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "等错过的都过够了 就等来了唯一",
+                "道别 从来都是伤筋动骨的事情",
+                "我想和你跳支舞",
+                "在心里留片空地 你自由的来去\n彼此 放行",
+                "好好的爱一次有多不易\n因为相爱过所以相信",
+                "路走的再远 转身也回得去\n说一句 原谅我不是你"
+            ]
         },
         "admin_tags": [
             "合作",
@@ -4290,7 +5147,16 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "Saying no more just do it right",
+                "Dear I will be your team for life",
+                "I will be someone if you hunt for me",
+                "Here is my favorite place just right next to your heart",
+                "However it might be taken I bet my whole life to win",
+                "I will shout out to the world I'll never left you alone",
+                "Heading to wherever to be whoever\nI've made a favorite place for you"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -4353,7 +5219,15 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "情绪陈述"
+            "narrative_granularity": "情绪陈述",
+            "key_lyrics": [
+                "I hear you all the time",
+                "You colored all my minds",
+                "There is a piece of mess\nThere is a moment last",
+                "The rainbow is blacked then gone",
+                "The world is healing itself alone",
+                "And here is all about the word unforgettable\nAnd here is no such a name to call"
+            ]
         },
         "admin_tags": [
             "影视"
@@ -4416,7 +5290,14 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "睡回那个旧旧的夜晚",
+                "不用着急 不用早起\n妈妈等你 猫猫等你",
+                "春天搓着手在等你",
+                "醒了会有春天\n会有干干净净的新时间",
+                "睡吧 明天没事"
+            ]
         },
         "admin_tags": [
             "品牌合作"
@@ -4480,7 +5361,17 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "热",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "拥抱是最温暖的相遇",
+                "接纳遗憾再庆祝胜利",
+                "贴着心跳起伏的潮汐 倾听柔软的私密",
+                "轻轻入怀 这一片云海\n遇见最轻盈的自在",
+                "稳稳的爱 充盈这身脉",
+                "把心 敞开 让阳光照进来\n每寸 期待 都好好被善待",
+                "融化孤寂再分享勇气",
+                "穿过无常变幻的四季 守护心的丰莹"
+            ]
         },
         "admin_tags": [
             "品牌合作"
@@ -4544,7 +5435,21 @@
             "energy_direction": "混合",
             "energy_agency": "混合",
             "emotion_temperature": "温",
-            "narrative_granularity": "抽象意象"
+            "narrative_granularity": "抽象意象",
+            "key_lyrics": [
+                "这世界陆离光怪 风向左摇右摆",
+                "明天的色彩 我自己主宰",
+                "美是种信仰 每一刻都是高光",
+                "馥郁流淌 心花肆意绽放\n声色流光 都为我荡漾",
+                "美力磁场 掀动心的巨浪",
+                "天地都宽广 每一步都是主场",
+                "妆什么活色生香 追什么霓虹热浪\n越玩越酣畅 越美越嚣张",
+                "烦恼通通都甩开 人生只剩热爱",
+                "一阵风吹来 万物都盛开",
+                "撩动氤氲幻想 谁还念念不忘",
+                "尽情地张扬 从午夜到天亮",
+                "美就是力量 激活所有想象"
+            ]
         },
         "admin_tags": [
             "品牌合作"
