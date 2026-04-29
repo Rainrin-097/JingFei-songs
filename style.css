@@ -575,7 +575,9 @@ h1 {
 
 .detail-lyrics h3 {
     font-size: 1.1rem;
-    margin-bottom: 12px;
+    margin-top: -18px;
+    /* 调整标题与上方内容的间距 */
+    margin-bottom: 4px;
     color: var(--primary);
 }
 
