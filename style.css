@@ -564,6 +564,9 @@ h1 {
 
 .detail-lyrics {
     margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .detail-body .detail-lyrics {
@@ -604,6 +607,65 @@ h1 {
     line-height: 1.8;
     white-space: pre-wrap;
     font-size: 0.95rem;
+}
+
+.detail-related-video {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.detail-related-video summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    color: var(--primary);
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+    user-select: none;
+}
+
+.detail-related-video summary::-webkit-details-marker {
+    display: none;
+}
+
+.detail-related-video-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-video-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-color);
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.detail-video-link:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.detail-video-title {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.detail-video-url {
+    color: var(--text-sub);
+    font-size: 0.82rem;
+    word-break: break-all;
 }
 
 /* 专辑列表与详情 */

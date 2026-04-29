@@ -349,6 +349,7 @@ function showAlbumDetail(album) {
 
     const cover = getAlbumCover(album);
     const intro = (album.description || '').trim();
+    const relatedVideos = buildRelatedVideoSection(album);
     const tracks = (album.tracks || []).map(track => {
         const song = songsData.find(s => Number(s.id) === Number(track.song_id));
         const title = song?.meta?.title || track.title || '未知曲目';
@@ -373,6 +374,7 @@ function showAlbumDetail(album) {
                         <div class="album-description">${escapeHtml(intro)}</div>
                     </details>
                 ` : ''}
+                ${relatedVideos}
             </div>
             <div class="album-track-list">
                 ${trackListHtml}
@@ -1091,6 +1093,7 @@ function showDetailView(song) {
             </details>
         `
         : '';
+    const relatedVideos = buildRelatedVideoSection(song);
 
     document.getElementById('detailContent').innerHTML = `
         <div class="detail-layout">
@@ -1107,6 +1110,7 @@ function showDetailView(song) {
                 <div class="detail-lyrics">
                     <h3>歌词</h3>
                     <div class="lyrics-box">${escapeHtml(song.meta?.lyrics || '暂无歌词')}</div>
+                    ${relatedVideos}
                 </div>
                 <aside class="detail-sidebar">
                     <div class="detail-cover-frame">
@@ -1121,6 +1125,58 @@ function showDetailView(song) {
     `;
 
     requestAnimationFrame(() => syncDetailSidebarHeight());
+}
+
+function buildRelatedVideoSection(song) {
+    const videoLinks = extractVideoLinks(song);
+    if (videoLinks.length === 0) return '';
+
+    const itemsHtml = videoLinks.map((item) => `
+        <a class="detail-video-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+            <span class="detail-video-title">${escapeHtml(item.label)}</span>
+        </a>
+    `).join('');
+
+    return `
+        <details class="detail-related-video">
+            <summary>相关视频</summary>
+            <div class="detail-related-video-body">
+                ${itemsHtml}
+            </div>
+        </details>
+    `;
+}
+
+function extractVideoLinks(song) {
+    const raw = song?.media?.video_link ?? song?.video_link ?? '';
+    const entries = Array.isArray(raw) ? raw : [raw];
+    const links = [];
+
+    entries.forEach((entry) => {
+        if (entry == null) return;
+        if (typeof entry === 'object') {
+            const url = String(entry.url || entry.link || entry.href || '').trim();
+            if (!url) return;
+            const label = String(entry.title || entry.name || entry.label || url).trim() || url;
+            links.push({ url, label });
+            return;
+        }
+
+        String(entry)
+            .split(/\r?\n|\s*,\s*|\s*;\s*/)
+            .map(text => text.trim())
+            .filter(Boolean)
+            .forEach((url) => {
+                links.push({ url, label: url });
+            });
+    });
+
+    const seen = new Set();
+    return links.filter((item) => {
+        if (!item.url || seen.has(item.url)) return false;
+        seen.add(item.url);
+        return true;
+    });
 }
 
 // 渲染与组件

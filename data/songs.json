@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "id": 1,
         "meta": {
@@ -14,7 +14,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "别处的夕阳 （Official DIY Video）",
+                    "url": "https://www.bilibili.com/video/BV1yp411f7sw/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "别处的夕阳（大脸清唱 ep1）",
+                    "url": "https://www.bilibili.com/video/BV1Za411P7hn/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -110,7 +119,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "September Lies（Official DIY Video）",
+                    "url": "https://www.bilibili.com/video/BV1yp411f7bi/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "September Lies（大脸清唱 ep4）",
+                    "url": "https://www.bilibili.com/video/BV1YB4y1J7uU/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -442,7 +460,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "晚风（Official DIY Video）",
+                    "url": "https://www.bilibili.com/video/BV1oJ411v7nR/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "韩洋",
@@ -654,7 +677,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "积极向下 (Official DIY Video)",
+                    "url": "https://www.bilibili.com/video/BV1KE411L72u/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "积极向下(歌词版) (Official Lyric Video)",
+                    "url": "https://www.bilibili.com/video/BV1TE411L7Ph/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025长春哦啦音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1qmjdz1EXU/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -866,7 +902,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "【【陈婧霏 | 文兆杰】Blueberry Baby蓝莓宝宝 (Official DIY Video)】",
+                    "url": "https://www.bilibili.com/video/BV1o54y1m7Pn/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1073,7 +1114,24 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "我的孤独认出你的孤独（Official DIY Visualizer）",
+                    "url": "https://www.bilibili.com/video/BV1yv4y1h7R8/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "「陈婧霏 - 我的孤独认出你的孤独」复古烂漫放映｜homegrown自家种",
+                    "url": "https://www.bilibili.com/video/BV1Hi4y1T7oA/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "我的孤独认出你的孤独  （春日现场Live）",
+                    "url": "https://www.bilibili.com/video/BV1Sv4y1E715/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025沈阳泡泡岛音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1QUYrziELy/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1170,7 +1228,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "夏宫（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1vt4y1r7fq/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1321,7 +1384,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "消亡史（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV188411H7f3/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1424,7 +1492,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "晕船记（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1pf4y1V7qu/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1508,7 +1581,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "今晚（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV18D4y1X7bY/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1648,7 +1726,56 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "深蓝（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1ah411z727/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "深蓝 - DIY竖屏歌词版",
+                    "url": "https://www.bilibili.com/video/BV1iN4y177xZ/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2024红衣教主版《深蓝》清唱",
+                    "url": "https://www.bilibili.com/video/BV1jK421y7oU/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《深蓝》一镜到底「红霞影剧院」巡演 杭州站Live（横屏官摄版本）",
+                    "url": "https://www.bilibili.com/video/BV15PDCBTEGn/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《深蓝》「红霞影剧院」巡演 北京站Live（横屏官摄版本）",
+                    "url": "https://www.bilibili.com/video/BV1ewkWBtEWP/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025沈阳泡泡岛音乐节Live（清唱版）",
+                    "url": "https://www.bilibili.com/video/BV1xza1zKE7P/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2023杭州不止音乐节直拍现场",
+                    "url": "https://www.bilibili.com/video/BV1Wg4y1Q76L/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2024在别处-北京场Live",
+                    "url": "https://www.bilibili.com/video/BV1Ry421q7Mp/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2024贵阳泡泡岛Live ver.",
+                    "url": "https://www.bilibili.com/video/BV1tf421z7cq/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025天津泡泡岛Live ver.",
+                    "url": "https://www.bilibili.com/video/BV1jNERzVExm/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025天津泡泡岛音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1dKG4zjEGV/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025佛山泡泡岛音乐节Live（横屏官摄版本）",
+                    "url": "https://www.bilibili.com/video/BV1FAnUzMEzv/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1742,7 +1869,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "In Bloom（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1NM4y1P7Pv/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1837,7 +1969,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《舞舞舞》2024音乐节Live ver.",
+                    "url": "https://www.bilibili.com/video/BV1QM4m1k7ps/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -1988,7 +2125,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "人间指南（大脸清唱ep2)",
+                    "url": "https://www.bilibili.com/video/BV1et4y1J79x/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -2076,7 +2218,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "生活在别处（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1f64y1x7MW/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "在别处-北京场Live",
+                    "url": "https://www.bilibili.com/video/BV1oS421P7xP/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025芒禾元气森林音乐节Live（横屏官摄 苏州特别版）",
+                    "url": "https://www.bilibili.com/video/BV1nWxUzHEpq/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -3106,7 +3261,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "如梦（Official Visualizer）（别处TV)】",
+                    "url": "https://www.bilibili.com/video/BV1Xu4y167w1/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -3199,7 +3359,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "亲密爱人（放飞Fei版）（DIY Visualizer）",
+                    "url": "https://www.bilibili.com/video/BV1dw411p7rf/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "亲密爱人（沉静chenjing 版）（DIY Visualizer）",
+                    "url": "https://www.bilibili.com/video/BV15g4y197ji/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "亲密爱人（大脸清唱现场版）",
+                    "url": "https://www.bilibili.com/video/BV1zD4y1p7Aj/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "小虫",
@@ -3561,7 +3734,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "2025成都草莓音乐节Live（横屏官摄版本）",
+                    "url": "https://www.bilibili.com/video/BV113JrzREM3/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -3838,7 +4016,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "【卡啦一遍过？OK！】《春色悠悠不及你荡漾》 one take ver.】",
+                    "url": "https://www.bilibili.com/video/BV1dZ421j7oW/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -3932,7 +4115,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "【卡啦一遍过？OK！】《午夜爱未眠》 one take ver.",
+                    "url": "https://www.bilibili.com/video/BV1Zm421K7oH/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4021,7 +4209,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "【【卡啦一遍过？OK！】《夜空》one take ver.",
+                    "url": "https://www.bilibili.com/video/BV1yS411N7KN/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "秦昊",
@@ -4207,7 +4400,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "北京草莓音乐节 Live版",
+                    "url": "https://www.bilibili.com/video/BV18t421T7Tu/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4306,7 +4504,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《她不再幻想》（电影《好东西》宣传推广曲）",
+                    "url": "https://www.bilibili.com/video/BV1nCzAYUEyu/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《她不再幻想》「 暖冬•相拥 」版",
+                    "url": "https://www.bilibili.com/video/BV159B7Y5ERe/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025沈阳泡泡岛音乐节「清唱版」",
+                    "url": "https://www.bilibili.com/video/BV1cKgnzKEBf/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4401,7 +4612,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《红霞剧场》（Official Music Video）（Acoustic Version）",
+                    "url": "https://www.bilibili.com/video/BV1C7y3B1E8R/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《红霞剧场》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1ZQYSziELg/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《红霞剧场》（Album Version)（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV18r2YB4Ej2/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4494,7 +4718,24 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《北海》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1Qkk3YwEdN/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《北海》（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV1UkD5BmEQ6/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "湖边清唱版 🍂",
+                    "url": "https://www.bilibili.com/video/BV1cqnvzqE3b/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2024广州草莓首唱 （横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1jhqYYHEvr/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4589,7 +4830,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《沙漠一枝花》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1zSNaetEr8/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025天津泡泡岛音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1GF76z4ETU/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4685,7 +4935,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《春宵苦短，少女快前进！》Official Music Video】 https://www.bilibili.com/video/BV1XkBQBFEhy/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196",
+                    "url": "https://www.bilibili.com/video/BV1XkBQBFEhy/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《春宵苦短，少女快前进！》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1eGcAexEKD/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "成都草莓音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV19XjgzyE9c/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4776,7 +5039,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《禁色宝丽来》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1HCbVzaEbM/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《禁色宝丽来》（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV13KqoBKEgY/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4870,7 +5142,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《演！演！演！》歌词版（Official Lyric Video）】",
+                    "url": "https://www.bilibili.com/video/BV1pstMzjEKW/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -4975,7 +5252,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《诸多夏日后天鹅之死》 🦢】",
+                    "url": "https://www.bilibili.com/video/BV1VMHDziEop/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《诸多夏日后天鹅之死》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1FrYVzBEVu/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5063,7 +5349,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《你是我最爱的褪色的幻想》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1D659zREUR/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《你是我最爱的褪色的幻想》（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV1jq6CBEE3L/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5158,7 +5453,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《自恋咒》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV118aEz4En2/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5286,7 +5586,20 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《猩红》（Official Music Video）",
+                    "url": "https://www.bilibili.com/video/BV1bN9PYeEWz/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《猩红》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1Vb5KzZEYh/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "2025芒禾元气森林音乐节Live（横屏官摄版）",
+                    "url": "https://www.bilibili.com/video/BV1n34qzREid/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5585,7 +5898,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《我长期坠入梦乡》（电影《想飞的女孩》推广曲）",
+                    "url": "https://www.bilibili.com/video/BV12A9pYmEe3/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5681,7 +5999,16 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《岩中花述》歌词版（Official Lyric Video）",
+                    "url": "https://www.bilibili.com/video/BV1XtbSzEEXy/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                },
+                {
+                    "label": "《岩中花述》（FIRST电影节现场版）",
+                    "url": "https://www.bilibili.com/video/BV14LCEBTEWi/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "陈婧霏",
@@ -5970,7 +6297,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《我和春天有个约会》（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV1CESyBQEUn/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "钟志荣",
@@ -6064,7 +6396,12 @@
         "media": {
             "audio_file": "",
             "play_link": "",
-            "video_link": ""
+            "video_link": [
+                {
+                    "label": "《最后一夜》（The last dance)（Jingfei’s Cut 婧霏手作®）",
+                    "url": "https://www.bilibili.com/video/BV1P4iuBWEsq/?share_source=copy_web&vd_source=e8fbede041c2b51fea8ff03a545bb196"
+                }
+            ]
         },
         "credits": {
             "lyricist": "慎芝",
