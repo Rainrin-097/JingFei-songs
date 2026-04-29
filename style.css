@@ -38,7 +38,67 @@ body.splash-active #app {
 }
 
 #backBtn {
+    margin-bottom: 0;
+}
+
+.detail-top-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     margin-bottom: 12px;
+}
+
+#nextSongBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.back-to-top-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    border: 1px solid rgba(124, 0, 31, 0.18);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    cursor: pointer;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(124, 0, 31, 0.35);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.back-to-top-btn.is-hiding {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(4px) scale(0.94);
+}
+
+.back-to-top-btn span {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        right: 14px;
+        bottom: 14px;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
 }
 
 .splash-screen {

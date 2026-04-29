@@ -7,6 +7,7 @@ let searchIndex = { vocab: new Set(), latinVocab: [] };
 let detailReturnTarget = 'library';
 let infoData = null;
 let currentMatchedSongId = null;
+let currentDetailSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
 const MAX_RE_ECHO_TIMES = 10;
 let echoSession = {
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLayoutToggle();
     setupAlbumViews();
     setupInfoView();
+    setupBackToTopButton();
     window.addEventListener('resize', () => {
         if (!document.getElementById('detailView')?.classList.contains('hidden')) {
             syncDetailSidebarHeight();
@@ -133,6 +135,52 @@ function setupSplash() {
             closeSplash();
         }
     });
+}
+
+function setupBackToTopButton() {
+    const button = document.getElementById('backToTopBtn');
+    if (!button) return;
+
+    const threshold = 420;
+    const hideDelay = 1500;
+    const hideAnimationDuration = 220;
+    let hideTimer = null;
+    let fadeTimer = null;
+
+    const updateVisibility = () => {
+        const shouldShow = window.scrollY > threshold;
+        button.classList.remove('is-hiding');
+        button.classList.toggle('hidden', !shouldShow);
+
+        if (hideTimer) {
+            window.clearTimeout(hideTimer);
+            hideTimer = null;
+        }
+
+        if (fadeTimer) {
+            window.clearTimeout(fadeTimer);
+            fadeTimer = null;
+        }
+
+        if (shouldShow) {
+            hideTimer = window.setTimeout(() => {
+                button.classList.add('is-hiding');
+                fadeTimer = window.setTimeout(() => {
+                    button.classList.add('hidden');
+                    button.classList.remove('is-hiding');
+                    fadeTimer = null;
+                }, hideAnimationDuration);
+                hideTimer = null;
+            }, hideDelay);
+        }
+    };
+
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    updateVisibility();
 }
 
 async function loadSongs() {
@@ -993,7 +1041,10 @@ function setupRouting() {
         }
     };
     window.addEventListener('hashchange', handleHash);
-    document.getElementById('backBtn').addEventListener('click', () => {
+    const backBtn = document.getElementById('backBtn');
+    const nextSongBtn = document.getElementById('nextSongBtn');
+
+    backBtn.addEventListener('click', () => {
         if (detailReturnTarget === 'echoResult') {
             showView('matchResultView');
             return;
@@ -1009,7 +1060,39 @@ function setupRouting() {
         }
         window.location.hash = '';
     });
+
+    if (nextSongBtn) {
+        nextSongBtn.addEventListener('click', () => {
+            const nextSongId = getNextSongIdInHomeOrder(currentDetailSongId);
+            if (!nextSongId) return;
+            window.location.hash = `#detail-${nextSongId}`;
+        });
+    }
+
     handleHash(); // 初始加载检查
+}
+
+function getNextSongIdInHomeOrder(currentSongId) {
+    const currentId = Number(currentSongId);
+    if (!Number.isFinite(currentId) || !Array.isArray(songsData) || songsData.length === 0) {
+        return null;
+    }
+
+    const currentIndex = songsData.findIndex(item => Number(item?.id) === currentId);
+    if (currentIndex < 0 || currentIndex >= songsData.length - 1) return null;
+
+    const nextSong = songsData[currentIndex + 1];
+    const nextId = Number(nextSong?.id);
+    return Number.isFinite(nextId) ? nextId : null;
+}
+
+function updateNextSongButton(currentSongId) {
+    const nextSongBtn = document.getElementById('nextSongBtn');
+    if (!nextSongBtn) return;
+
+    const nextSongId = getNextSongIdInHomeOrder(currentSongId);
+    nextSongBtn.disabled = !nextSongId;
+    nextSongBtn.title = nextSongId ? '按首页顺序查看下一首' : '已经是最后一首';
 }
 
 function hideAllViews() {
@@ -1065,6 +1148,8 @@ function renderInfoContent(sectionKey) {
 function showDetailView(song) {
     hideAllViews();
     document.getElementById('detailView').classList.remove('hidden');
+    currentDetailSongId = Number(song?.id) || null;
+    updateNextSongButton(currentDetailSongId);
 
     const releaseLine = song.meta?.release_date
         ? `<div class="detail-release">${escapeHtml(formatReleaseDate(song.meta.release_date))}</div>`
