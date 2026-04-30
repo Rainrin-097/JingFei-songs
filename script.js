@@ -8,6 +8,8 @@ let detailReturnTarget = 'library';
 let infoData = null;
 let currentMatchedSongId = null;
 let currentDetailSongId = null;
+let currentDetailLyricsRaw = '';
+let currentDetailLyricsScript = 'trad';
 const MATCH_API_ENDPOINT = '/api/match';
 const MAX_RE_ECHO_TIMES = 10;
 let echoSession = {
@@ -1150,6 +1152,8 @@ function showDetailView(song) {
     document.getElementById('detailView').classList.remove('hidden');
     currentDetailSongId = Number(song?.id) || null;
     updateNextSongButton(currentDetailSongId);
+    currentDetailLyricsRaw = String(song?.meta?.lyrics || '暂无歌词');
+    currentDetailLyricsScript = 'trad';
 
     const releaseLine = song.meta?.release_date
         ? `<div class="detail-release">${escapeHtml(formatReleaseDate(song.meta.release_date))}</div>`
@@ -1179,6 +1183,10 @@ function showDetailView(song) {
         `
         : '';
     const relatedVideos = buildRelatedVideoSection(song);
+    const hasChineseLyrics = containsChineseCharacters(currentDetailLyricsRaw);
+    const scriptToggleButton = hasChineseLyrics
+        ? `<button id="lyricsScriptToggleBtn" class="secondary-btn detail-script-toggle" type="button">简体</button>`
+        : '';
 
     document.getElementById('detailContent').innerHTML = `
         <div class="detail-layout">
@@ -1193,8 +1201,9 @@ function showDetailView(song) {
             </div>
             <div class="detail-body">
                 <div class="detail-lyrics">
+                    ${scriptToggleButton}
                     <h3>歌词</h3>
-                    <div class="lyrics-box">${escapeHtml(song.meta?.lyrics || '暂无歌词')}</div>
+                    <div class="lyrics-box"></div>
                     ${relatedVideos}
                 </div>
                 <aside class="detail-sidebar">
@@ -1209,6 +1218,8 @@ function showDetailView(song) {
         </div>
     `;
 
+    renderDetailLyricsText();
+    setupLyricsScriptToggle(hasChineseLyrics);
     requestAnimationFrame(() => syncDetailSidebarHeight());
 }
 
@@ -1230,6 +1241,61 @@ function buildRelatedVideoSection(song) {
             </div>
         </details>
     `;
+}
+
+function setupLyricsScriptToggle(shouldShow) {
+    const button = document.getElementById('lyricsScriptToggleBtn');
+    if (!button) return;
+
+    button.classList.toggle('hidden', !shouldShow);
+    if (!shouldShow) return;
+
+    button.onclick = () => {
+        currentDetailLyricsScript = currentDetailLyricsScript === 'simp' ? 'trad' : 'simp';
+        renderDetailLyricsText();
+        updateLyricsScriptToggleLabel();
+    };
+
+    updateLyricsScriptToggleLabel();
+}
+
+function updateLyricsScriptToggleLabel() {
+    const button = document.getElementById('lyricsScriptToggleBtn');
+    if (!button) return;
+    button.textContent = currentDetailLyricsScript === 'trad' ? '简体' : '繁体';
+}
+
+function renderDetailLyricsText() {
+    const lyricsBox = document.querySelector('#detailView .lyrics-box');
+    if (!lyricsBox) return;
+
+    const rawLyrics = currentDetailLyricsRaw || '暂无歌词';
+    if (rawLyrics === '暂无歌词') {
+        lyricsBox.textContent = rawLyrics;
+        return;
+    }
+
+    lyricsBox.textContent = currentDetailLyricsScript === 'trad'
+        ? convertLyricsToTraditional(rawLyrics)
+        : rawLyrics;
+}
+
+function containsChineseCharacters(text) {
+    return /[\u4e00-\u9fff]/.test(String(text || ''));
+}
+
+function convertLyricsToTraditional(text) {
+    const converter = getSimplifiedToTraditionalConverter();
+    if (!converter) return text;
+    return converter(String(text || ''));
+}
+
+function getSimplifiedToTraditionalConverter() {
+    if (!window.OpenCC || typeof window.OpenCC.Converter !== 'function') return null;
+    if (!window.__lyricsCnToTwConverter) {
+        window.__lyricsCnToTwConverter = window.OpenCC.Converter({ from: 'cn', to: 'tw' });
+    }
+    return window.__lyricsCnToTwConverter;
 }
 
 function extractVideoLinks(song) {
@@ -1290,8 +1356,65 @@ function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
         </article>
     `;
 }
+renderDetailLyricsText();
+setupLyricsScriptToggle(hasChineseLyrics);
 
 function escapeRegExp(text) {
+
+    function setupLyricsScriptToggle(shouldShow) {
+        const button = document.getElementById('lyricsScriptToggleBtn');
+        if (!button) return;
+        button.classList.toggle('hidden', !shouldShow);
+        if (!shouldShow) return;
+
+        button.onclick = () => {
+            currentDetailLyricsScript = currentDetailLyricsScript === 'simp' ? 'trad' : 'simp';
+            renderDetailLyricsText();
+            updateLyricsScriptToggleLabel();
+        };
+
+        updateLyricsScriptToggleLabel();
+    }
+
+    function updateLyricsScriptToggleLabel() {
+        const button = document.getElementById('lyricsScriptToggleBtn');
+        if (!button) return;
+        button.textContent = currentDetailLyricsScript === 'simp' ? '繁体' : '简体';
+    }
+
+    function renderDetailLyricsText() {
+        const lyricsBox = document.querySelector('#detailView .lyrics-box');
+        if (!lyricsBox) return;
+
+        const rawLyrics = currentDetailLyricsRaw || '暂无歌词';
+        if (rawLyrics === '暂无歌词') {
+            lyricsBox.textContent = rawLyrics;
+            return;
+        }
+
+        const converted = currentDetailLyricsScript === 'trad'
+            ? convertLyricsToTraditional(rawLyrics)
+            : rawLyrics;
+        lyricsBox.textContent = converted;
+    }
+
+    function containsChineseCharacters(text) {
+        return /[\u4e00-\u9fff]/.test(String(text || ''));
+    }
+
+    function convertLyricsToTraditional(text) {
+        const converter = getSimplifiedToTraditionalConverter();
+        if (!converter) return text;
+        return converter(String(text || ''));
+    }
+
+    function getSimplifiedToTraditionalConverter() {
+        if (!window.OpenCC || typeof window.OpenCC.Converter !== 'function') return null;
+        if (!window.__lyricsCnToTwConverter) {
+            window.__lyricsCnToTwConverter = window.OpenCC.Converter({ from: 'cn', to: 'tw' });
+        }
+        return window.__lyricsCnToTwConverter;
+    }
     return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 

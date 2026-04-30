@@ -11,6 +11,30 @@
     --tag-text: #800020;
 }
 
+@font-face {
+    font-family: "AaGuDianKeBenSongYouMoBan";
+    src: url("fonts/AaGuDianKeBenSongYouMoBan-2.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Note-Script-SemiBold-2";
+    src: url("fonts/Note-Script-SemiBold-2.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ZhengQingKeNanBeiCiGongPuSongTi-2";
+    src: url("fonts/ZhengQingKeNanBeiCiGongPuSongTi-2.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,10 +42,17 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", sans-serif;
     background: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
 body.splash-active {
@@ -119,6 +150,7 @@ body.splash-active #app {
 
 .splash-title {
     font-size: 2.6rem;
+    font-family: "Note-Script-SemiBold-2", "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .splash-subtitle {
@@ -208,6 +240,7 @@ body.echo-mode .header-controls {
 
 h1 {
     font-size: 1.4rem;
+    font-family: "Note-Script-SemiBold-2", "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", sans-serif;
     color: var(--primary);
     letter-spacing: 0.5px;
 }
@@ -537,6 +570,7 @@ h1 {
 
 .detail-lyrics {
     min-width: 0;
+    position: relative;
 }
 
 .detail-sidebar {
@@ -627,6 +661,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    position: relative;
 }
 
 .detail-body .detail-lyrics {
@@ -639,6 +674,19 @@ h1 {
     /* 调整标题与上方内容的间距 */
     margin-bottom: 4px;
     color: var(--primary);
+}
+
+.detail-script-toggle {
+    position: absolute;
+    top: -24px;
+    right: 0;
+    z-index: 2;
+    min-width: 78px;
+    justify-content: center;
+}
+
+.detail-script-toggle.secondary-btn {
+    box-shadow: var(--shadow);
 }
 
 .detail-description {
@@ -987,7 +1035,7 @@ h1 {
     border-radius: 8px;
     white-space: pre-wrap;
     /* 核心：保留 JSON 中的 \n 换行 */
-    font-family: "PingFang SC", "Microsoft YaHei", serif;
+    font-family: "ZiYueYingYinSong-2", "ZhengQingKeNanBeiCiGongPuSongTi-2", "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", serif;
     line-height: 1.9;
     color: var(--text-main);
     font-size: 0.95rem;
