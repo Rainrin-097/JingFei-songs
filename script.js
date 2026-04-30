@@ -128,6 +128,8 @@ function setupSplash() {
         window.setTimeout(() => {
             splash.classList.add('hidden');
             document.body.classList.remove('splash-active');
+            // show the elsewhere guide modal after splash closes
+            try { showElsewhereGuideModal(); } catch (e) { /* ignore if not ready */ }
         }, 920);
     };
 
@@ -1530,4 +1532,30 @@ function syncDetailSidebarHeight() {
     sidebar.style.maxHeight = '';
     sidebar.style.overflowY = '';
     sidebar.style.overscrollBehavior = '';
+}
+
+// Elsewhere Guide modal handling
+function showElsewhereGuideModal() {
+    const modal = document.getElementById('elsewhereGuideModal');
+    const body = document.getElementById('elsewhereGuideBody');
+    const closeBtn = document.getElementById('elsewhereGuideClose');
+    if (!modal || !body) return;
+
+    const text = (infoData && typeof infoData === 'object') ? String(infoData.guide || '') : '';
+    body.textContent = text || '（别处指南内容为空，稍后请在 data/info.json 的 "guide" 键中填写。）';
+
+    modal.classList.remove('hidden');
+
+    const onClose = () => {
+        modal.classList.add('hidden');
+        closeBtn.removeEventListener('click', onClose);
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', onClose);
+}
+
+function closeElsewhereGuideModal() {
+    const modal = document.getElementById('elsewhereGuideModal');
+    if (!modal) return;
+    modal.classList.add('hidden');
 }
