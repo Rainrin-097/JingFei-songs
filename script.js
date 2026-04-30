@@ -10,6 +10,7 @@ let currentMatchedSongId = null;
 let currentDetailSongId = null;
 let currentDetailLyricsRaw = '';
 let currentDetailLyricsScript = 'trad';
+let pendingCenterSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
 const MAX_RE_ECHO_TIMES = 10;
 let echoSession = {
@@ -1040,6 +1041,7 @@ function setupRouting() {
             renderInfoContent(key || 'about');
         } else {
             showView('libraryView');
+            centerLibrarySongCardIfNeeded();
         }
     };
     window.addEventListener('hashchange', handleHash);
@@ -1060,6 +1062,7 @@ function setupRouting() {
             window.location.hash = '#album';
             return;
         }
+        pendingCenterSongId = currentDetailSongId;
         window.location.hash = '';
     });
 
@@ -1150,6 +1153,7 @@ function renderInfoContent(sectionKey) {
 function showDetailView(song) {
     hideAllViews();
     document.getElementById('detailView').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'auto' });
     currentDetailSongId = Number(song?.id) || null;
     updateNextSongButton(currentDetailSongId);
     currentDetailLyricsRaw = String(song?.meta?.lyrics || '暂无歌词');
@@ -1347,7 +1351,7 @@ function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
         : escapeHtml(keySentence);
 
     return `
-        <article class="song-item" onclick="window.location.hash='#detail-${song.id}'">
+        <article class="song-item" data-song-id="${escapeHtml(String(song.id))}" onclick="window.location.hash='#detail-${song.id}'">
             <div class="song-header">
                 <div class="song-title">${escapeHtml(song.meta?.title || '')}</div>
                 <div class="song-date">${escapeHtml(releaseText)}</div>
@@ -1355,6 +1359,19 @@ function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
             <div class="song-keysentence">${keySentenceHtml}</div>
         </article>
     `;
+}
+
+function centerLibrarySongCardIfNeeded() {
+    const songId = Number(pendingCenterSongId);
+    pendingCenterSongId = null;
+    if (!Number.isFinite(songId) || songId <= 0) return;
+
+    const card = document.querySelector(`#songList .song-item[data-song-id="${songId}"]`);
+    if (!card) return;
+
+    requestAnimationFrame(() => {
+        card.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' });
+    });
 }
 renderDetailLyricsText();
 setupLyricsScriptToggle(hasChineseLyrics);
