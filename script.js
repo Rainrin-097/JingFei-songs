@@ -1165,9 +1165,10 @@ function showDetailView(song) {
 
     const originalSinger = (song.credits?.original_singer || '').trim();
     const album = (song.meta?.album || '').trim();
-    const originAlbumLine = originalSinger
-        ? `<div class="detail-line">原唱：${escapeHtml(originalSinger)}${album ? ` / 专辑：${escapeHtml(album)}` : ''}</div>`
-        : (album ? `<div class="detail-line">专辑：${escapeHtml(album)}</div>` : '');
+    const originAlbumLine = [
+        originalSinger ? `<div class="detail-line">原唱：${escapeHtml(originalSinger)}</div>` : '',
+        album ? `<div class="detail-line">专辑：${escapeHtml(album)}</div>` : ''
+    ].filter(Boolean).join('');
 
     const credits = [
         `作词：${escapeHtml(song.credits?.lyricist || '未知')}`,
