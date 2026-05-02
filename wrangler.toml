@@ -10,7 +10,9 @@ binding = "ASSETS"
 name = "music-echo-proxy"
 main = "src/index.js"
 compatibility_date = "2025-04-25"
-
-[env.production]
 vars = { DEBUG = "false" }
 exclude = [".git/**", "node_modules/**"]
+
+[env.production.assets]
+directory = "."
+binding = "ASSETS"
