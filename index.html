@@ -96,7 +96,10 @@
             <div class="detail-container">
                 <div class="detail-top-actions">
                     <button id="backBtn" class="secondary-btn">返回</button>
-                    <button id="nextSongBtn" class="secondary-btn" type="button">下一首</button>
+                    <div class="detail-song-actions">
+                        <button id="prevSongBtn" class="secondary-btn" type="button">上一首</button>
+                        <button id="nextSongBtn" class="secondary-btn" type="button">下一首</button>
+                    </div>
                 </div>
                 <div id="detailContent"></div>
             </div>
@@ -137,8 +140,10 @@
     <div id="elsewhereGuideModal" class="modal hidden" role="dialog" aria-modal="true"
         aria-labelledby="elsewhereGuideTitle">
         <div class="modal-content">
-            <button class="modal-close" id="elsewhereGuideClose" aria-label="关闭">×</button>
-            <h2 id="elsewhereGuideTitle" class="modal-title">别处指南</h2>
+            <div class="modal-header">
+                <h2 id="elsewhereGuideTitle" class="modal-title">别处指南</h2>
+                <button class="modal-close" id="elsewhereGuideClose" aria-label="关闭">×</button>
+            </div>
             <div id="elsewhereGuideBody" class="modal-body"></div>
         </div>
     </div>

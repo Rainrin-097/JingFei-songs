@@ -12,7 +12,6 @@ let currentDetailLyricsRaw = '';
 let currentDetailLyricsScript = 'trad';
 let pendingCenterSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
-const MAX_RE_ECHO_TIMES = 10;
 let echoSession = {
     input: '',
     candidates: [],
@@ -615,25 +614,6 @@ function formatKeyLyricsDisplay(lyricText) {
     return lines.map(line => `<div class="echo-lyric-line">${escapeHtml(line)}</div>`).join('');
 }
 
-function renderEchoLimitReached() {
-    const resultBox = document.getElementById('matchEchoResult');
-    const historyList = document.getElementById('echoHistoryList');
-    if (historyList) {
-        const currentHistory = historyList.innerHTML;
-        if (!currentHistory) {
-            historyList.innerHTML = '';
-        }
-    }
-    if (!resultBox) return;
-
-    currentMatchedSongId = null;
-    resultBox.innerHTML = `
-        <div class="echo-result-stack">
-            <div class="echo-lyric">当前只能捕获十条回响</div>
-        </div>
-    `;
-}
-
 async function showMatchResult(text, options = {}) {
     const { next = false } = options;
     const resultView = document.getElementById('matchResultView');
@@ -679,12 +659,6 @@ async function showMatchResult(text, options = {}) {
     if (!next && echoSession.input === normalizedInput && echoSession.currentItem) {
         currentMatchedSongId = Number(echoSession.currentItem.song?.id) || null;
         renderEchoResultState(echoSession.currentItem, echoSession.shownIds.length >= echoSession.candidates.length);
-        return;
-    }
-
-    if (next && echoSession.reEchoCount >= MAX_RE_ECHO_TIMES - 1) {
-        echoSession.reEchoCount = MAX_RE_ECHO_TIMES;
-        renderEchoLimitReached();
         return;
     }
 
@@ -1048,6 +1022,7 @@ function setupRouting() {
     };
     window.addEventListener('hashchange', handleHash);
     const backBtn = document.getElementById('backBtn');
+    const prevSongBtn = document.getElementById('prevSongBtn');
     const nextSongBtn = document.getElementById('nextSongBtn');
 
     backBtn.addEventListener('click', () => {
@@ -1076,6 +1051,14 @@ function setupRouting() {
         });
     }
 
+    if (prevSongBtn) {
+        prevSongBtn.addEventListener('click', () => {
+            const prevSongId = getPreviousSongIdInHomeOrder(currentDetailSongId);
+            if (!prevSongId) return;
+            window.location.hash = `#detail-${prevSongId}`;
+        });
+    }
+
     handleHash(); // 初始加载检查
 }
 
@@ -1093,6 +1076,20 @@ function getNextSongIdInHomeOrder(currentSongId) {
     return Number.isFinite(nextId) ? nextId : null;
 }
 
+function getPreviousSongIdInHomeOrder(currentSongId) {
+    const currentId = Number(currentSongId);
+    if (!Number.isFinite(currentId) || !Array.isArray(songsData) || songsData.length === 0) {
+        return null;
+    }
+
+    const currentIndex = songsData.findIndex(item => Number(item?.id) === currentId);
+    if (currentIndex <= 0) return null;
+
+    const previousSong = songsData[currentIndex - 1];
+    const previousId = Number(previousSong?.id);
+    return Number.isFinite(previousId) ? previousId : null;
+}
+
 function updateNextSongButton(currentSongId) {
     const nextSongBtn = document.getElementById('nextSongBtn');
     if (!nextSongBtn) return;
@@ -1100,6 +1097,15 @@ function updateNextSongButton(currentSongId) {
     const nextSongId = getNextSongIdInHomeOrder(currentSongId);
     nextSongBtn.disabled = !nextSongId;
     nextSongBtn.title = nextSongId ? '按首页顺序查看下一首' : '已经是最后一首';
+}
+
+function updatePreviousSongButton(currentSongId) {
+    const prevSongBtn = document.getElementById('prevSongBtn');
+    if (!prevSongBtn) return;
+
+    const prevSongId = getPreviousSongIdInHomeOrder(currentSongId);
+    prevSongBtn.disabled = !prevSongId;
+    prevSongBtn.title = prevSongId ? '按首页顺序查看上一首' : '已经是第一首';
 }
 
 function hideAllViews() {
@@ -1157,6 +1163,7 @@ function showDetailView(song) {
     document.getElementById('detailView').classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'auto' });
     currentDetailSongId = Number(song?.id) || null;
+    updatePreviousSongButton(currentDetailSongId);
     updateNextSongButton(currentDetailSongId);
     currentDetailLyricsRaw = String(song?.meta?.lyrics || '暂无歌词');
     currentDetailLyricsScript = 'trad';
