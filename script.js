@@ -13,6 +13,7 @@ let currentDetailLyricsScript = 'trad';
 let pendingCenterSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
 const ENABLE_AI_MATCH = true;// 控制ai调用
+const ELSEWHERE_GUIDE_SHOWN_KEY = 'jingfei_elsewhere_guide_shown';
 let echoSession = {
     input: '',
     candidates: [],
@@ -128,8 +129,10 @@ function setupSplash() {
         window.setTimeout(() => {
             splash.classList.add('hidden');
             document.body.classList.remove('splash-active');
-            // show the elsewhere guide modal after splash closes
-            try { showElsewhereGuideModal(); } catch (e) { /* ignore if not ready */ }
+            if (!window.localStorage.getItem(ELSEWHERE_GUIDE_SHOWN_KEY)) {
+                try { showElsewhereGuideModal(); } catch (e) { /* ignore if not ready */ }
+                window.localStorage.setItem(ELSEWHERE_GUIDE_SHOWN_KEY, '1');
+            }
         }, 920);
     };
 
