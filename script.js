@@ -12,6 +12,7 @@ let currentDetailLyricsRaw = '';
 let currentDetailLyricsScript = 'trad';
 let pendingCenterSongId = null;
 const MATCH_API_ENDPOINT = '/api/match';
+const ENABLE_AI_MATCH = true;// 控制ai调用
 let echoSession = {
     input: '',
     candidates: [],
@@ -222,7 +223,7 @@ async function loadInfo() {
         const response = await fetch('data/info.json');
         if (!response.ok) throw new Error('文件加载失败');
         infoData = await response.json();
-        renderInfoContent('about');
+        renderInfoContent();
     } catch (error) {
         console.error('加载信息数据失败:', error);
     }
@@ -530,6 +531,10 @@ async function buildEchoCandidates(input) {
     // 先进行本地高精度模糊匹配，召回 20-30 首候选
     const localMatches = matchByStateLocal(input, 30);
     if (!localMatches.length) return [];
+
+    if (!ENABLE_AI_MATCH) {
+        return localMatches;
+    }
 
     // 如果有候选歌曲，尝试使用 AI 进行最终选择
     const aiMatch = await matchByAI(input, localMatches);
@@ -1014,7 +1019,7 @@ function setupRouting() {
         } else if (hash.startsWith('#info')) {
             showView('infoView');
             const key = hash.replace('#info', '').replace('-', '').trim();
-            renderInfoContent(key || 'about');
+            renderInfoContent(key || undefined);
         } else {
             showView('libraryView');
             centerLibrarySongCardIfNeeded();
@@ -1131,7 +1136,7 @@ function setupInfoView() {
         const key = btn.dataset.section;
         window.location.hash = `#info-${key}`;
     });
-    renderInfoContent('about');
+    renderInfoContent();
 }
 
 function renderInfoContent(sectionKey) {
@@ -1150,7 +1155,8 @@ function renderInfoContent(sectionKey) {
     };
 
     const infoMap = infoData && typeof infoData === 'object' ? infoData : fallbackMap;
-    const key = infoMap[sectionKey] ? sectionKey : 'about';
+    const firstKey = menuButtons[0]?.dataset.section || 'guide';
+    const key = infoMap[sectionKey] ? sectionKey : firstKey;
     content.textContent = infoMap[key];
 
     menuButtons.forEach(btn => {
