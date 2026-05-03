@@ -633,6 +633,21 @@ h1 {
     box-shadow: var(--shadow);
 }
 
+.page-disclaimer {
+    margin-top: 14px;
+    color: var(--text-sub);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0.92;
+}
+
+.page-disclaimer-center {
+    width: min(760px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .detail-layout {
     display: flex;
     flex-direction: column;
