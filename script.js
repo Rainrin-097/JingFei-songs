@@ -601,7 +601,7 @@ function renderEchoResultState(currentItem, exhausted = false) {
     resultBox.innerHTML = `
         <div class="echo-result-stack">
             <div class="echo-lyric">${formattedLyric}</div>
-            <div class="echo-title">-${escapeHtml(`《${currentTitle}》`)}</div>
+            <div class="echo-title">—${escapeHtml(`《${currentTitle}》`)}</div>
             ${exhaustedHtml}
         </div>
     `;
@@ -1182,16 +1182,17 @@ function showDetailView(song) {
         : '';
 
     const originalSinger = (song.credits?.original_singer || '').trim();
+    const singer = (song.meta?.artist || '').trim();
     const album = (song.meta?.album || '').trim();
     const originAlbumLine = [
         originalSinger ? `<div class="detail-line">原唱：${escapeHtml(originalSinger)}</div>` : '',
+        singer ? `<div class="detail-line">演唱：${escapeHtml(singer)}</div>` : '',
         album ? `<div class="detail-line">专辑：${escapeHtml(album)}</div>` : ''
     ].filter(Boolean).join('');
 
     const credits = [
         `作词：${escapeHtml(song.credits?.lyricist || '未知')}`,
         `作曲：${escapeHtml(song.credits?.composer || '未知')}`,
-        `制作人：${escapeHtml(song.credits?.producer || '未知')}`,
         `编曲：${escapeHtml(song.credits?.arranger || '未知')}`
     ].map(text => `<span>${text}</span>`).join('');
 

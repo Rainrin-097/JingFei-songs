@@ -1276,8 +1276,10 @@ h1 {
 
 .echo-lyric {
     font-size: 32px;
-    color: #8B0000;
-    font-weight: 700;
+    color: #9c221f;
+    font-weight: 550;
+    font-family: "ZiYueYingYinSong-2", "ZhengQingKeNanBeiCiGongPuSongTi-2", "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", serif;
+    letter-spacing: 0.08em;
     line-height: 1.4;
     white-space: pre-wrap;
     text-align: center;
@@ -1291,6 +1293,8 @@ h1 {
     font-size: 16px;
     color: #999;
     font-style: italic;
+    font-family: "ZiYueYingYinSong-2", "ZhengQingKeNanBeiCiGongPuSongTi-2", "AaGuDianKeBenSongYouMoBan", "PingFang SC", "Microsoft YaHei", serif;
+    letter-spacing: 0.04em;
     text-align: right;
     opacity: 0;
     transform: translateY(12px);
