@@ -1096,7 +1096,9 @@
                 "罪恶 摘下面具了"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "主题企划"
+        ],
         "vector_embedding": []
     },
     {
@@ -2338,7 +2340,7 @@
             "composer": "吴大卫",
             "producer": "蔡德才@人山人海",
             "arranger": "伍敬彬",
-            "original_singer": "",
+            "original_singer": "钟镇涛",
             "official_description": "好妹妹、秦昊、张小厚、陈粒、粒粒、焦迈奇、王加一、陈婧霏年末温情献声有此山年度单曲《漫漫人生路》，并携手有此山全体员工联袂出演MV致敬经典，品往昔煨今朝，爱意永随，楚楚回味。\n\n回望今年，是一个特殊的年份，许多我们习以为常的生活场景都变的弥足珍贵，经历过失去后，我们更加明白当下的可贵与美好。唱作人们在MV中开启全新人生，有的是他们原本的职业，也有的是他们一直想体验的生活。殊途同归，大家都在努力的生活，努力生活的熠熠生辉。\n\n四方食事，不如家宴的一碗人间烟火\n珍馐美馔，对酒当歌歌不散\n食色性也，品活今朝朝咏赞\n五谷杂粮本无味，如人生琐碎\n翻炒烩制填滋味，祝幸福相会\n\n祝大家新年快乐，万事如意\n愿来年，永怀善意清澈明朗\n愿来年，心中有傲骨也有慈悲\n愿来年，每次流泪都是喜极而泣"
         },
         "semantic_analysis": {
@@ -2684,7 +2686,9 @@
                 "飞鸟不追问意义 云朵不自知美丽\n生命的源力就在这里 无束无拘自由的呼吸"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "主题企划"
+        ],
         "vector_embedding": []
     },
     {
@@ -2709,7 +2713,7 @@
             "composer": "黄霑",
             "producer": "周冠儒",
             "arranger": "周冠儒",
-            "original_singer": "",
+            "original_singer": "叶蒨文",
             "official_description": "琵琶古声今又闻，初弹如珠后如缕。\n音绕碧山晚云留，一声两声落花雨。\n听陈婧霏 以幻入世 诠释武侠旧梦"
         },
         "semantic_analysis": {
@@ -2774,7 +2778,8 @@
             ]
         },
         "admin_tags": [
-            "翻唱"
+            "翻唱",
+            "主题企划"
         ],
         "vector_embedding": []
     },
@@ -2869,7 +2874,8 @@
             ]
         },
         "admin_tags": [
-            "翻唱"
+            "翻唱",
+            "主题企划"
         ],
         "vector_embedding": []
     },
@@ -2988,10 +2994,10 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "一刀仙@九号 / 临渡 / 陈婧霏",
-            "composer": "Garrett Borns / Thomas James Schleiter",
-            "producer": "陆希文 & 周冠儒",
-            "arranger": "陆希文 & 周冠儒",
+            "lyricist": "一刀仙@九号/临渡/陈婧霏",
+            "composer": "Garrett Borns/Thomas James Schleiter",
+            "producer": "陆希文&周冠儒",
+            "arranger": "陆希文&周冠儒",
             "original_singer": "BØRNS",
             "official_description": "爱情迷失了信号\n你停在\n哪一个转角？"
         },
@@ -3073,7 +3079,9 @@
                 "Don't wake me I'm not dreaming"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "改编"
+        ],
         "vector_embedding": []
     },
     {
@@ -3172,7 +3180,9 @@
                 "陌生的过客\n请你忘却哀乐\n一起送别天空海阔 也送别那日落"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "主题企划"
+        ],
         "vector_embedding": []
     },
     {
@@ -3945,7 +3955,7 @@
         },
         "credits": {
             "lyricist": "",
-            "composer": "",
+            "composer": "Alec Benjamin/Nolan Lambroza/Sam Roman/Justin Lucas",
             "producer": "",
             "arranger": "",
             "original_singer": "",
@@ -4017,7 +4027,8 @@
             ]
         },
         "admin_tags": [
-            "合作"
+            "合作",
+            "改编"
         ],
         "vector_embedding": []
     },
@@ -4125,7 +4136,9 @@
                 "面对长夜的难测 身影婆娑"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "合作"
+        ],
         "vector_embedding": []
     },
     {
@@ -4230,7 +4243,9 @@
                 "不需要谁的怜奖 燃烧一场"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "主题企划"
+        ],
         "vector_embedding": []
     },
     {
@@ -4892,7 +4907,8 @@
             ]
         },
         "admin_tags": [
-            "影视"
+            "影视",
+            "改编"
         ],
         "vector_embedding": []
     },
@@ -5018,7 +5034,7 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "郑灿夏 / 王吉莎 Githa / 陈雨沾 / 罗嘉辉 / 十一",
+            "lyricist": "郑灿夏/王吉莎 Githa/陈雨沾/罗嘉辉/十一",
             "composer": "郑灿夏",
             "producer": "陈婧霏",
             "arranger": "王子泰",
@@ -5096,7 +5112,9 @@
                 "爱意处处煽动 黄昏也醉倒"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "粤语"
+        ],
         "vector_embedding": []
     },
     {
@@ -5189,7 +5207,9 @@
                 "如果，能一直奔跑\n人生派对刚刚开始希望终点我们依旧骄傲"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "影视"
+        ],
         "vector_embedding": []
     },
     {
@@ -5212,7 +5232,7 @@
         "credits": {
             "lyricist": "Veegee徐若侨",
             "composer": "Veegee徐若侨",
-            "producer": "Veegee徐若侨 / 郑光良Gmo",
+            "producer": "Veegee徐若侨/郑光良Gmo",
             "arranger": "郑光良Gmo",
             "original_singer": "",
             "official_description": "关于Bare Daydream赤裸梦境\n\n暌违两年，本次重新回归的「Bare Daydream（赤裸梦境）」企划由网易云音乐与88rising联合出品，共九首袒露心声的乐曲上线。音乐人们将摒弃复杂的声响，回归简单的和弦，保留原声的自然，释放内在的灵感。一场私密的音乐会在这里上演，为大家带来突破想象的全新内容，请放下杂念，静心感受。\n\n——\n\nBare，意为赤裸的，无遮饰的，既是音乐本身在形式上的简化，又意味着赤诚真挚情感的展露。\nDaydream，是做梦，也是释放。是真实本我的镜像，更是超越了现实的维度，让我们得以放飞内心最深处的蝴蝶。\n\n梦里是安全的，梦里是诚实的。\n在这里，平日坚固的自我开始融化，或变得柔软，或碎得一地，毫无保留。\n在这里唱首歌吧，用最简单真挚的方式。\n音符流淌过的痕迹，是温柔的河床，托举着每一个在此做梦的灵魂。\n这就是Bare Daydream，只有裸露的情感，和流动的音乐。\n\n2024年，88rising概念子厂牌「DAYDREAM」 第二张厂牌合辑重磅回归。这一次，网易音乐人联合DAYDREAM，携手带来「Bare Daydream（赤裸梦境）」企划。我们不仅集结了DAYDREAM厂牌旗下风格各异的年轻艺术家们，还引入了多位才华横溢的厂牌好友艺术家们加盟。他们将以无与伦比的默契两两组合，携手启动全新的「Bare Daydream」音乐企划﹣﹣杨英格 × 魏如萱、KUAN × 8bite、王ok × 李天责Duke Lee、Veegee徐若侨 × 陈婧霏、DEREK DALI × Julia Wu，此次企划也请到了音乐制作人Elio Lee创作了预告片音乐、Intro、Interlude以及Outro。或许是熟悉彼此的旧识，或许是第一次合作的新交，亦或是彼此的soulmate,每一组产生的化学反应既独特又能引起普世共鸣，都代表着音乐世界里人与人之间最挚而纯粹的联结。"
@@ -5293,7 +5313,10 @@
                 "如果你想 如果流浪\n让灵魂在路上\n我和你一样"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "主题企划",
+            "合作"
+        ],
         "vector_embedding": []
     },
     {
@@ -5330,7 +5353,7 @@
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
             "producer": "陆希文",
-            "arranger": "陆希文 & Shao Jean Sim",
+            "arranger": "陆希文&Shao Jean Sim",
             "original_singer": "",
             "official_description": "愿你把不安都松绑，目光永远倔强\n无忧无惧纵情欢畅，新世界多宽广\n\n陈婧霏《她不再幻想》\n——电影《好东西》宣传推广曲\n\n电影《好东西》宣传推广曲《她不再幻想》温情上线。\n\n电影《好东西》由邵艺辉担任编剧、导演、剪辑指导，宋佳、钟楚曦、曾慕梅领衔主演，章宇领衔主演，赵又廷、周野芒特别出演，任彬、张弛主演，王菊、孔连顺、蒋易友情出演。 讲述了单亲妈妈王铁梅失业之后，带着小孩搬家、和邻居小叶成为好友，三位女性互相陪伴治愈，徘徊于现实与幻想之间，在友情、亲情和爱情中重新找回自我的鲜活故事。\n\n宣传推广曲《她不再幻想》由陈婧霏作词作曲并演唱，陆希文编曲及制作。\n歌曲从“她”视角出发，透过温暖真挚又不失锋利的文字与美隽永的旋律，展现了新时代女性自我对话、在新鲜情感体验中的成长和勇气，陈婧霏充满故事感的的低吟浅唱，触碰着每个人心底的渴望，将歌曲中冲破束缚、拥抱自我的力量娓娓道来。\n\n陈婧霏的创作以片中王茉莉的作文《我不再幻想》为切入点，想象着铁梅可能想对女儿说不出口的心里话和复杂情绪：是对女儿受伤的心疼、同为女性的共情理解和对女儿成长的期许。其实也想借铁梅之口，期望身边每一个“茉莉”、“小叶”、每一个“她”，都能更勇敢地创造自己的游戏规则， 成为自己的光，纵情活出内心真正的渴望。“只有你能爱自己，像你最渴望那样。”\n\n电影《好东西》送给每一位「好」朋友，每一个幻想家，打开人生可能性的想象，冲破常规，勇敢纵情生长！"
         },
@@ -6716,7 +6739,7 @@
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
             "producer": "陆希文",
-            "arranger": "陆希文、Shao Jean Sim",
+            "arranger": "陆希文/Shao Jean Sim",
             "original_singer": "",
             "official_description": "电影《想飞的女孩》推广曲《我长期坠入梦乡》，由陈婧霏作词作曲并献唱演绎。歌曲风格展现了她梦幻浓郁的个人风格，勾勒出梦境与现实、困境与自由、甜蜜与残酷的交错诗篇，精准呼应影片中田恬和方笛两姐妹努力挣脱桎梏、追寻自由的主题。\n\n“海边的烟火在绽放，命运在秋千上摇荡”。陈婧霏黑胶质感般的音色搭配歌词中的温柔刀刃，诉说着在逆境中两姐妹携手勇敢反抗，共赴自由，给予大家打破枷锁、挣脱束缚的力量。\n\n谨以此曲祝愿所有身处困境的人，都有向上的勇气。"
         },
@@ -6809,9 +6832,9 @@
             "video_link": ""
         },
         "credits": {
-            "lyricist": "康珍化 / 王胜勃",
+            "lyricist": "康珍化/王胜勃",
             "composer": "米倉良広",
-            "producer": "崔迪 / 黄业圆 / Ryosuke Endo (Columbia Creative)",
+            "producer": "崔迪/黄业圆/Ryosuke Endo (Columbia Creative)",
             "arranger": "Simon Mongtrison",
             "original_singer": "",
             "official_description": "【CITY RETRO】特别企划．首发单曲 \n——都市记忆限时回溯——\n■ 记忆名称：《Cathy 2025》\n■讲述者：陈婧霏x当山瞳\n■年代标识：1980s\n\n『CITY RETRO』\n城市在不断生长，复古从未消亡。「Retro」蜿蜒通向记忆深处，那里有老唱片的咿呀、有旧海报的斑驳，还有老式汽车的嘟嘟作响。或许城市的面貌日新月异，老街旧坊渐被新地标取代，但「City Retro」将牢牢锁住那些曾在城市各个角落奏响的憧憬岁月。就如同一枚硬币的两面，无论是日间的平凡生活，还是夜间的节奏氛围，都是「City Retro」的模样。我们希望通过音乐串联起城市的日与夜，以昼夜交替间的音乐变奏承载城市。\n\n《Cathy 2025》陈婧霏 × 当山瞳\n企划首发单曲《Cathy 2025》是日本City Pop流派经典作品的重磅重置，歌曲中的“Cathy”既是虚构角色，也是80年代日本经济腾飞期都市女性的缩影：她们追求时尚、独立自信，却也在空荡房间中流露孤独与脆弱。此次重置版《Cathy 2025》我们邀请到唱作人陈婧霏，并联合原唱当山瞳共同演绎——两位来自不同年龄层的女性跨越时空和国界展开对话： 一个是陷入恋爱逐渐迷失自我的年轻女性，一个是有阅历且清醒独立的成熟女性，通过对话，她们疗愈彼此，传递温暖，告诫所有人多爱自己，尊重自己才是学习“爱”的第一课。\n\n泡沫时代的蒸汽与当代都市的情感困境隔空重叠，在都市的日与夜之间氤氲弥漫，最终指向同一个答案——在爱与被爱的博弈与挣扎中，唯有守住自我的边界，才能让最真实的灵魂在亲密关系里自由舒展，当旋律消散，余韵里流淌的，是属于每个时代女性的清醒与温柔。\n\n在每一个需要被拥抱的夜晚，Cathy都会陪伴在你身边。"
@@ -6881,7 +6904,10 @@
                 "忘记这一切依然很难\n只是我还需要\n一些些的时间"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "合作",
+            "日语"
+        ],
         "vector_embedding": []
     },
     {
@@ -7174,7 +7200,9 @@
                 "Like a falling star\nIn the dark\nIgnite us"
             ]
         },
-        "admin_tags": [],
+        "admin_tags": [
+            "影视"
+        ],
         "vector_embedding": []
     },
     {
@@ -7286,9 +7314,9 @@
         "credits": {
             "lyricist": "熊天益",
             "composer": "熊天益",
-            "producer": "陆希文 Minstrel Lu",
-            "arranger": "陆希文 Minstrel Lu",
-            "original_singer": "",
+            "producer": "陆希文Minstrel Lu",
+            "arranger": "陆希文Minstrel Lu",
+            "original_singer": "田馥甄",
             "official_description": ""
         },
         "semantic_analysis": {
@@ -7386,7 +7414,7 @@
             "composer": "钟志荣",
             "producer": "周冠儒GR Zhou",
             "arranger": "周冠儒GR Zhou",
-            "original_singer": "",
+            "original_singer": "刘雅丽",
             "official_description": ""
         },
         "semantic_analysis": {
@@ -7454,7 +7482,8 @@
             ]
         },
         "admin_tags": [
-            "翻唱"
+            "翻唱",
+            "粤语"
         ],
         "vector_embedding": []
     },
@@ -7483,9 +7512,9 @@
         "credits": {
             "lyricist": "慎芝",
             "composer": "陈志远",
-            "producer": "陆希文 Minstrel Lu",
-            "arranger": "陆希文 Minstrel Lu",
-            "original_singer": "",
+            "producer": "陆希文Minstrel Lu",
+            "arranger": "陆希文Minstrel Lu",
+            "original_singer": "蔡琴",
             "official_description": ""
         },
         "semantic_analysis": {
@@ -7719,7 +7748,8 @@
             ]
         },
         "admin_tags": [
-            "影视"
+            "影视",
+            "英文"
         ],
         "vector_embedding": []
     },
@@ -7803,7 +7833,8 @@
             ]
         },
         "admin_tags": [
-            "影视"
+            "影视",
+            "英文"
         ],
         "vector_embedding": []
     },
@@ -7914,7 +7945,7 @@
         "credits": {
             "lyricist": "陈婧霏",
             "composer": "陈婧霏",
-            "producer": "陈婧霏/陆希文 Minstrel Lu",
+            "producer": "陈婧霏/陆希文Minstrel Lu",
             "arranger": "Simon Mongtrison",
             "original_singer": "",
             "official_description": "《拥抱是最温暖的相遇》陈婧霏 x MANIFORM 曼妮芬身体独白·治愈乐诗·予己之拥\n\n“贴着心跳起伏的潮汐，倾听柔软的私密，每个疲惫焦虑的缝隙，托住无声倦意”\n\n由陈婧霏词曲创作，与知名内衣品牌【MANIFORM 曼妮芬】联袂呈现的单曲《拥抱是最温暖的相遇》，以浪漫为线，织就轻盈听觉衣物，让暖意在心间流淌。作品以“拥抱”为内核，诠释拥抱在人生旅程中的万千故事，也象征曼妮芬品牌与千千万万女性用户之间长达三十年的身心陪伴。“贴着心跳起伏的潮汐”，是贴身衣物与肌肤的私语，更是时间与成长的共鸣。\n\n以轻盈柔韧的旋律，完美贴合女性身体与情绪的曲线。它不仅是一首拥抱的赞美诗，更是一份献给所有被曼妮芬陪伴过的女性的温柔告白，致敬共同成长的过往，也拥抱“轻盈真实”的自己。"
