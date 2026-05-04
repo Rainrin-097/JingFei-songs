@@ -360,6 +360,7 @@ function showSearchResults(resultItems, query, mode = searchMode) {
     hideAllViews();
     view.classList.remove('hidden');
     setHeaderEchoMode(false);
+    detailReturnTarget = 'searchResults';
 
     // 在搜索结果页隐藏头部和页面内的返回按钮
     const searchBackBtn = document.getElementById('searchBackBtn');
