@@ -245,7 +245,7 @@ function setupLibrarySearch() {
         const normalizedQuery = rawQuery.toLowerCase();
         if (!normalizedQuery) {
             renderLibrary(songsData);
-            backBtn.classList.add('hidden');
+            if (backBtn) backBtn.classList.add('hidden');
             return;
         }
         const ranked = songsData
@@ -259,11 +259,11 @@ function setupLibrarySearch() {
             .filter(item => item.score > 0)
             .sort((a, b) => {
                 if (b.score !== a.score) return b.score - a.score;
-                return parseReleaseDate(b.song?.meta?.release_date) - parseReleaseDate(a.song?.meta?.release_date);
+                return parseReleaseDate(a.song?.meta?.release_date) - parseReleaseDate(b.song?.meta?.release_date);
             });
 
         showSearchResults(ranked, rawQuery, searchMode);
-        backBtn.classList.remove('hidden');
+        if (backBtn) backBtn.classList.remove('hidden');
     };
 
     const setMode = (mode) => {
@@ -290,14 +290,16 @@ function setupLibrarySearch() {
     input.addEventListener('input', () => {
         if (!input.value.trim()) {
             renderLibrary(songsData);
-            backBtn.classList.add('hidden');
+            if (backBtn) backBtn.classList.add('hidden');
         }
     });
-    backBtn.addEventListener('click', () => {
-        input.value = '';
-        renderLibrary(songsData);
-        backBtn.classList.add('hidden');
-    });
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            if (input) input.value = '';
+            renderLibrary(songsData);
+            backBtn.classList.add('hidden');
+        });
+    }
     input.addEventListener('focus', () => modeMenu.classList.remove('hidden'));
     modeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -359,6 +361,12 @@ function showSearchResults(resultItems, query, mode = searchMode) {
     view.classList.remove('hidden');
     setHeaderEchoMode(false);
 
+    // 在搜索结果页隐藏头部和页面内的返回按钮
+    const searchBackBtn = document.getElementById('searchBackBtn');
+    if (searchBackBtn) searchBackBtn.classList.add('hidden');
+    const backToSearchLibraryBtn = document.getElementById('backToSearchLibraryBtn');
+    if (backToSearchLibraryBtn) backToSearchLibraryBtn.classList.add('hidden');
+
     summary.textContent = `关键词：${query} · 共找到 ${resultItems.length} 首`;
     list.innerHTML = resultItems.length === 0
         ? `<p class="placeholder">没有找到相关歌曲</p>`
@@ -409,7 +417,7 @@ function showAlbumDetail(album) {
     const tracks = (album.tracks || []).map(track => {
         const song = songsData.find(s => Number(s.id) === Number(track.song_id));
         const title = song?.meta?.title || track.title || '未知曲目';
-        const clickAttr = song ? `onclick="window.location.hash='#detail-${song.id}'"` : '';
+        const clickAttr = song ? `onclick="handleSongCardClick(${escapeHtml(String(song.id))})"` : '';
         return `
             <article class="song-item album-track-item" ${clickAttr}>
                 <div class="song-title">${escapeHtml(title)}</div>
@@ -1038,6 +1046,10 @@ function setupRouting() {
             showView('matchResultView');
             return;
         }
+        if (detailReturnTarget === 'searchResults') {
+            showView('searchResultsView');
+            return;
+        }
         if (detailReturnTarget.startsWith('album:')) {
             const albumId = detailReturnTarget.split(':')[1];
             window.location.hash = `#album-${albumId}`;
@@ -1371,7 +1383,7 @@ function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
         : escapeHtml(keySentence);
 
     return `
-        <article class="song-item" data-song-id="${escapeHtml(String(song.id))}" onclick="window.location.hash='#detail-${song.id}'">
+        <article class="song-item" data-song-id="${escapeHtml(String(song.id))}" onclick="handleSongCardClick(${escapeHtml(String(song.id))})">
             <div class="song-header">
                 <div class="song-title">${escapeHtml(song.meta?.title || '')}</div>
                 <div class="song-date">${escapeHtml(releaseText)}</div>
@@ -1379,6 +1391,29 @@ function createSongCard(song, overrideKeySentence = '', highlightKeyword = '') {
             <div class="song-keysentence">${keySentenceHtml}</div>
         </article>
     `;
+}
+
+// 点击歌曲卡片的统一处理：根据当前所在视图设置返回目标，然后跳转到详情
+function handleSongCardClick(songId) {
+    try {
+        const searchView = document.getElementById('searchResultsView');
+        const albumDetailView = document.getElementById('albumDetailView');
+        const matchResultView = document.getElementById('matchResultView');
+
+        if (searchView && !searchView.classList.contains('hidden')) {
+            detailReturnTarget = 'searchResults';
+        } else if (albumDetailView && !albumDetailView.classList.contains('hidden')) {
+            // 来自专辑详情，返回到该专辑列表
+            // 保持之前的 detailReturnTarget 以便返回专辑
+        } else if (matchResultView && !matchResultView.classList.contains('hidden')) {
+            detailReturnTarget = 'echoResult';
+        } else {
+            detailReturnTarget = 'library';
+        }
+    } catch (e) {
+        detailReturnTarget = 'library';
+    }
+    window.location.hash = `#detail-${songId}`;
 }
 
 function centerLibrarySongCardIfNeeded() {
