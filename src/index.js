@@ -245,6 +245,12 @@ async function handleMatch(request, env) {
 export default {
     async fetch(request, env) {
         const url = new URL(request.url);
+
+        // Browser auto-requests /favicon.ico; return 204 to avoid noisy 404 logs.
+        if (url.pathname === '/favicon.ico') {
+            return new Response(null, { status: 204 });
+        }
+
         const isMatchApi = url.pathname === '/api/match' || (url.pathname === '/' && request.method === 'POST');
         if (isMatchApi) {
             return handleMatch(request, env);
