@@ -1429,65 +1429,8 @@ function centerLibrarySongCardIfNeeded() {
         card.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' });
     });
 }
-renderDetailLyricsText();
-setupLyricsScriptToggle(hasChineseLyrics);
 
 function escapeRegExp(text) {
-
-    function setupLyricsScriptToggle(shouldShow) {
-        const button = document.getElementById('lyricsScriptToggleBtn');
-        if (!button) return;
-        button.classList.toggle('hidden', !shouldShow);
-        if (!shouldShow) return;
-
-        button.onclick = () => {
-            currentDetailLyricsScript = currentDetailLyricsScript === 'simp' ? 'trad' : 'simp';
-            renderDetailLyricsText();
-            updateLyricsScriptToggleLabel();
-        };
-
-        updateLyricsScriptToggleLabel();
-    }
-
-    function updateLyricsScriptToggleLabel() {
-        const button = document.getElementById('lyricsScriptToggleBtn');
-        if (!button) return;
-        button.textContent = currentDetailLyricsScript === 'simp' ? '繁体' : '简体';
-    }
-
-    function renderDetailLyricsText() {
-        const lyricsBox = document.querySelector('#detailView .lyrics-box');
-        if (!lyricsBox) return;
-
-        const rawLyrics = currentDetailLyricsRaw || '暂无歌词';
-        if (rawLyrics === '暂无歌词') {
-            lyricsBox.textContent = rawLyrics;
-            return;
-        }
-
-        const converted = currentDetailLyricsScript === 'trad'
-            ? convertLyricsToTraditional(rawLyrics)
-            : rawLyrics;
-        lyricsBox.textContent = converted;
-    }
-
-    function containsChineseCharacters(text) {
-        return /[\u4e00-\u9fff]/.test(String(text || ''));
-    }
-
-    function convertLyricsToTraditional(text) {
-        const converter = getSimplifiedToTraditionalConverter();
-        if (!converter) return text;
-        return converter(String(text || ''));
-    }
-
-    function getSimplifiedToTraditionalConverter() {
-        if (!window.OpenCC || typeof window.OpenCC.Converter !== 'function') return null;
-        if (!window.__lyricsCnToTwConverter) {
-            window.__lyricsCnToTwConverter = window.OpenCC.Converter({ from: 'cn', to: 'tw' });
-        }
-        return window.__lyricsCnToTwConverter;
-    }
     return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
