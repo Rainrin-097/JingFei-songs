@@ -46,8 +46,38 @@
         </header>
 
         <!-- 首页：曲库列表 -->
-        <main id="libraryView" class="view">
-            <div id="songList" class="song-grid"></div>
+        <main id="libraryView" class="view editorial-view">
+            <section class="editorial-hero" aria-label="精选推荐">
+                <div class="hero-media">
+                    <div class="hero-image-frame">
+                        <img id="heroImage" src="image/封面/陈婧霏.jpg" alt="Featured cover image">
+                        <img id="heroImageNext" src="image/封面/陈婧霏.jpg" alt="Featured cover image next"
+                            aria-hidden="true">
+                    </div>
+                    <div class="hero-caption">
+                        <span class="eyebrow">JingFei's Songs</span>
+                        <h2 id="heroTitle">JingFei's Songs</h2>
+                        <p id="heroSubtitle">A quiet archive of songs and traces.</p>
+                    </div>
+                    <aside class="hero-aside">
+                        <div class="hero-note">
+                            <span class="eyebrow">Selected record</span>
+                            <div id="heroAlbumName" class="hero-album">Archive</div>
+                            <div id="heroArtistName" class="hero-artist">陈婧霏</div>
+                        </div>
+                        <div class="hero-meta">
+                            <span>Curated</span>
+                            <strong id="heroSongCount">4 covers</strong>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <div class="editorial-library-header">
+                <span class="section-kicker">Archive</span>
+                <h3>Library</h3>
+            </div>
+            <div id="songList" class="song-grid editorial-grid"></div>
             <p class="page-disclaimer page-disclaimer-center">歌词版权归原著作权人所有，本站仅作个人学习与信息检索</p>
         </main>
 

@@ -11,6 +11,7 @@ let currentDetailSongId = null;
 let currentDetailLyricsRaw = '';
 let currentDetailLyricsScript = 'trad';
 let pendingCenterSongId = null;
+let heroSlideTimer = null;
 const MATCH_API_ENDPOINT = '/api/match';
 const ENABLE_AI_MATCH = true;// 控制ai调用
 const ELSEWHERE_GUIDE_SHOWN_KEY = 'jingfei_elsewhere_guide_shown';
@@ -24,6 +25,8 @@ let echoSession = {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSplash();
+    setupEditorialHero();
+    setupScrollState();
     loadSongs();
     loadAlbums();
     loadInfo();
@@ -43,6 +46,93 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function setupScrollState() {
+    const onScroll = () => {
+        document.body.classList.toggle('site-scrolled', window.scrollY > 18);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+function setupEditorialHero() {
+    const heroImage = document.getElementById('heroImage');
+    const heroImageNext = document.getElementById('heroImageNext');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const heroAlbumName = document.getElementById('heroAlbumName');
+    const heroArtistName = document.getElementById('heroArtistName');
+    const heroSongCount = document.getElementById('heroSongCount');
+    if (!heroImage || !heroImageNext || !heroTitle || !heroSubtitle || !heroAlbumName || !heroArtistName || !heroSongCount) return;
+
+    const coverQueue = [
+        'image/封面/陈婧霏.jpg',
+        'image/封面/猩红.png',
+        'image/封面/红霞影剧院（白底）.png',
+        'image/封面/红霞影剧院（黑底）.png'
+    ];
+
+    let coverIndex = 0;
+    let sliding = false;
+
+    const setHeroCopy = () => {
+        heroTitle.textContent = "JingFei's Songs";
+        heroSubtitle.textContent = 'A quiet archive of songs and traces.';
+        heroAlbumName.textContent = 'Archive';
+        heroArtistName.textContent = '陈婧霏';
+        heroSongCount.textContent = `${coverQueue.length} covers`;
+    };
+
+    const normalizeIndex = (index) => index % coverQueue.length;
+
+    const setInitialHero = () => {
+        const firstCover = coverQueue[0];
+        heroImage.src = firstCover;
+        heroImage.alt = 'JingFei cover slide';
+        heroImage.classList.remove('is-leaving');
+        heroImageNext.classList.remove('is-entering');
+        heroImageNext.src = firstCover;
+        setHeroCopy();
+    };
+
+    const slideToIndex = (targetIndex) => {
+        if (sliding) return;
+        sliding = true;
+
+        const nextCover = coverQueue[normalizeIndex(targetIndex)] || coverQueue[0];
+        heroImageNext.src = nextCover;
+        heroImageNext.alt = 'JingFei cover slide';
+
+        heroImage.classList.remove('is-leaving');
+        heroImageNext.classList.remove('is-entering');
+        void heroImage.offsetWidth;
+
+        heroImage.classList.add('is-leaving');
+        heroImageNext.classList.add('is-entering');
+
+        const completeSlide = () => {
+            heroImage.src = nextCover;
+            heroImage.classList.remove('is-leaving');
+            heroImageNext.classList.remove('is-entering');
+            setHeroCopy();
+            sliding = false;
+        };
+
+        heroImageNext.addEventListener('transitionend', completeSlide, { once: true });
+        window.setTimeout(() => {
+            if (sliding) completeSlide();
+        }, 900);
+    };
+
+    setInitialHero();
+    if (heroSlideTimer) {
+        window.clearInterval(heroSlideTimer);
+    }
+    heroSlideTimer = window.setInterval(() => {
+        coverIndex += 1;
+        slideToIndex(coverIndex);
+    }, 4200);
+}
 
 function clearSearchState() {
     const input = document.getElementById('searchInput');
