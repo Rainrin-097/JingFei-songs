@@ -65,11 +65,11 @@ function setupEditorialHero() {
     const heroSongCount = document.getElementById('heroSongCount');
     if (!heroImage || !heroImageNext || !heroTitle || !heroSubtitle || !heroAlbumName || !heroArtistName || !heroSongCount) return;
 
+    // 首页轮播图片：从 image/封面/ 文件夹读取
+    // 后续新增图片只需在此数组中追加路径即可
     const coverQueue = [
-        'image/封面/陈婧霏.jpg',
-        'image/封面/猩红.png',
-        'image/封面/红霞影剧院（白底）.png',
-        'image/封面/红霞影剧院（黑底）.png'
+        'image/封面/805c90e2f3067544ad2a1becb930ab6c.jpg',
+        'image/封面/bcd42964b12dd6e1c049789931cef87c.jpg'
     ];
 
     let coverIndex = 0;
@@ -95,7 +95,7 @@ function setupEditorialHero() {
         setHeroCopy();
     };
 
-    const slideToIndex = (targetIndex) => {
+    const slideToIndex = (targetIndex, direction = 'next') => {
         if (sliding) return;
         sliding = true;
 
@@ -103,17 +103,24 @@ function setupEditorialHero() {
         heroImageNext.src = nextCover;
         heroImageNext.alt = 'JingFei cover slide';
 
-        heroImage.classList.remove('is-leaving');
-        heroImageNext.classList.remove('is-entering');
+        // 根据方向选择滑动类
+        const leavingClass = direction === 'prev' ? 'is-leaving-right' : 'is-leaving';
+        const enteringClass = direction === 'prev' ? 'is-entering-right' : 'is-entering';
+
+        heroImage.classList.remove('is-leaving', 'is-leaving-right');
+        heroImageNext.classList.remove('is-entering', 'is-entering-right');
+        // 反向切换时让下一张图从左侧进入
+        heroImageNext.classList.toggle('prev-mode', direction === 'prev');
         void heroImage.offsetWidth;
 
-        heroImage.classList.add('is-leaving');
-        heroImageNext.classList.add('is-entering');
+        heroImage.classList.add(leavingClass);
+        heroImageNext.classList.add(enteringClass);
 
         const completeSlide = () => {
             heroImage.src = nextCover;
-            heroImage.classList.remove('is-leaving');
-            heroImageNext.classList.remove('is-entering');
+            heroImage.classList.remove('is-leaving', 'is-leaving-right');
+            heroImageNext.classList.remove('is-entering', 'is-entering-right');
+            heroImageNext.classList.remove('prev-mode');
             setHeroCopy();
             sliding = false;
         };
@@ -125,13 +132,48 @@ function setupEditorialHero() {
     };
 
     setInitialHero();
-    if (heroSlideTimer) {
-        window.clearInterval(heroSlideTimer);
+
+    // 自动轮播：鼠标悬停时暂停，移开恢复
+    const startAutoSlide = () => {
+        if (heroSlideTimer) window.clearInterval(heroSlideTimer);
+        heroSlideTimer = window.setInterval(() => {
+            coverIndex += 1;
+            slideToIndex(coverIndex);
+        }, 4200);
+    };
+    const stopAutoSlide = () => {
+        if (heroSlideTimer) {
+            window.clearInterval(heroSlideTimer);
+            heroSlideTimer = null;
+        }
+    };
+    startAutoSlide();
+
+    // 手动切换：点击左右箭头
+    const heroImageFrame = heroImage.parentElement;
+    if (heroImageFrame) {
+        heroImageFrame.addEventListener('click', (event) => {
+            const zone = event.target.closest('.hero-nav-zone');
+            if (!zone) return;
+            const dir = zone.getAttribute('data-dir');
+            if (dir === 'prev') {
+                coverIndex -= 1;
+            } else if (dir === 'next') {
+                coverIndex += 1;
+            } else {
+                return;
+            }
+            // 处理负数索引，保证循环
+            if (coverIndex < 0) coverIndex += coverQueue.length;
+            slideToIndex(coverIndex, dir);
+            // 手动切换后重启定时器，避免立刻又被自动切换
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        // 鼠标进入图片区域暂停轮播
+        heroImageFrame.addEventListener('mouseenter', stopAutoSlide);
+        heroImageFrame.addEventListener('mouseleave', startAutoSlide);
     }
-    heroSlideTimer = window.setInterval(() => {
-        coverIndex += 1;
-        slideToIndex(coverIndex);
-    }, 4200);
 }
 
 function clearSearchState() {
@@ -1328,8 +1370,10 @@ function showDetailView(song) {
             </div>
             <div class="detail-body">
                 <div class="detail-lyrics">
-                    ${scriptToggleButton}
-                    <h3>歌词</h3>
+                    <div class="detail-lyrics-head">
+                        <h3>歌词</h3>
+                        ${scriptToggleButton}
+                    </div>
                     <div class="lyrics-box"></div>
                     ${relatedVideos}
                 </div>
