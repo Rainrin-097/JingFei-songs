@@ -1895,7 +1895,10 @@ function handleDotClick(tourId) {
 
     // FLIP：测量当前位置 → 固定 → transform 平移到目标（仅用 transform 做动画）
     const rect = clickedDot.getBoundingClientRect();
-    const targetTop = headerHeight + 40;
+    // 目标位置：时间轴容器顶部，作为主轴起点
+    const timelineContainer = document.querySelector('[data-footprint-timeline]');
+    const containerRect = timelineContainer ? timelineContainer.getBoundingClientRect() : null;
+    const targetTop = containerRect ? containerRect.top + 20 : headerHeight + 60;
     const targetLeft = window.innerWidth / 2;
     const dx = targetLeft - (rect.left + rect.width / 2);
     const dy = targetTop - rect.top;
@@ -1912,9 +1915,10 @@ function handleDotClick(tourId) {
 
     const arrive = () => {
         // 锁定到目标位置（top/left 瞬时设定，不参与动画）
-        clickedDot.style.top = targetTop + 'px';
-        clickedDot.style.left = (targetLeft - rect.width / 2) + 'px';
-        clickedDot.style.transform = 'translate(0, 0)';
+        clickedDot.style.position = 'absolute';
+        clickedDot.style.top = '0';
+        clickedDot.style.left = '50%';
+        clickedDot.style.transform = 'translateX(-50%)';
         clickedDot.classList.add('anchored');
         // 折叠 intro 画布，让时间轴上移
         if (canvas) canvas.classList.add('collapsed');
@@ -1949,17 +1953,8 @@ function renderFootprintTimeline(tourId) {
     if (!tour || !container) return;
     container.innerHTML = '';
 
-    const headerEl = document.querySelector('header');
-    const headerHeight = headerEl ? headerEl.offsetHeight : 0;
-    // 动态计算主轴起点：紧贴锚定红点底部，确保主轴与红点连为一体
-    const canvas = document.querySelector('[data-footprint-canvas]');
-    const anchoredDot = canvas ? canvas.querySelector('.footprint-dot-btn.anchored') : null;
-    if (anchoredDot) {
-        const dotRect = anchoredDot.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        const paddingTop = Math.max(0, dotRect.bottom - containerRect.top);
-        container.style.paddingTop = paddingTop + 'px';
-    }
+    // 红点已绝对定位于容器顶部，无需额外 padding
+    container.style.paddingTop = '24px';
     container.style.paddingBottom = '80px';
 
     const axis = document.createElement('div');
@@ -2055,6 +2050,18 @@ function handleFootprintReturn() {
         }
         // 重新渲染 intro，清除所有内联样式
         renderFootprintIntro();
+        // 清除红点的 anchored 状态和内联样式
+        if (canvas) {
+            const anchoredDot = canvas.querySelector('.footprint-dot-btn.anchored');
+            if (anchoredDot) {
+                anchoredDot.classList.remove('anchored');
+                anchoredDot.style.position = '';
+                anchoredDot.style.top = '';
+                anchoredDot.style.left = '';
+                anchoredDot.style.transform = '';
+                anchoredDot.style.opacity = '';
+            }
+        }
     };
 
     if (reduce) {
@@ -2079,6 +2086,18 @@ function resetFootprintView() {
         timeline.style.paddingBottom = '';
         timeline.setAttribute('aria-hidden', 'true');
     }
-    if (canvas) canvas.classList.remove('focused', 'collapsed');
+    // 清除红点的 anchored 状态和内联样式
+    if (canvas) {
+        const anchoredDot = canvas.querySelector('.footprint-dot-btn.anchored');
+        if (anchoredDot) {
+            anchoredDot.classList.remove('anchored');
+            anchoredDot.style.position = '';
+            anchoredDot.style.top = '';
+            anchoredDot.style.left = '';
+            anchoredDot.style.transform = '';
+            anchoredDot.style.opacity = '';
+        }
+        canvas.classList.remove('focused', 'collapsed');
+    }
     renderFootprintIntro();
 }
