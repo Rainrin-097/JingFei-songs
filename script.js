@@ -65,12 +65,41 @@ function setupEditorialHero() {
     const heroSongCount = document.getElementById('heroSongCount');
     if (!heroImage || !heroImageNext || !heroTitle || !heroSubtitle || !heroAlbumName || !heroArtistName || !heroSongCount) return;
 
-    // 首页轮播图片：从 image/封面/ 文件夹读取
-    // 后续新增图片只需在此数组中追加路径即可
-    const coverQueue = [
+    // 首页轮播图片：动态从 image/封面/ 文件夹加载
+    // 下方为 fallback，加载失败时使用
+    const FALLBACK_COVERS = [
         'image/封面/805c90e2f3067544ad2a1becb930ab6c.jpg',
         'image/封面/bcd42964b12dd6e1c049789931cef87c.jpg'
     ];
+    let coverQueue = FALLBACK_COVERS.slice();
+
+    // 动态加载封面图：fetch 目录列表，解析 HTML 得到图片文件名
+    const loadCoverQueue = async () => {
+        try {
+            const dirUrl = 'image/封面/';
+            const res = await fetch(dirUrl);
+            if (!res.ok) throw new Error(`目录列表请求失败: ${res.status}`);
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const links = Array.from(doc.querySelectorAll('a'));
+            const files = links
+                .map(a => a.getAttribute('href'))
+                .filter(href => href && !href.endsWith('/') && !href.startsWith('?'))
+                .filter(href => /\.(jpe?g|png|webp|gif)$/i.test(href))
+                .map(href => decodeURIComponent(href));
+            if (files.length === 0) throw new Error('目录中未找到图片');
+            // 按文件名中的数字自然排序（1.jpg, 2.jpg ... 10.jpg, 11.jpg）
+            files.sort((a, b) => {
+                const na = parseInt(String(a).replace(/\D/g, ''), 10) || 0;
+                const nb = parseInt(String(b).replace(/\D/g, ''), 10) || 0;
+                return na - nb;
+            });
+            return files.map(name => `image/封面/${name}`);
+        } catch (err) {
+            console.warn('动态加载封面失败，使用 fallback 列表:', err);
+            return FALLBACK_COVERS.slice();
+        }
+    };
 
     let coverIndex = 0;
     let sliding = false;
@@ -132,6 +161,12 @@ function setupEditorialHero() {
     };
 
     setInitialHero();
+    // 异步加载真实封面列表，成功后替换并重置到第一张
+    loadCoverQueue().then(covers => {
+        coverQueue = covers;
+        coverIndex = 0;
+        setInitialHero();
+    });
 
     // 自动轮播：鼠标悬停时暂停，移开恢复
     const startAutoSlide = () => {
@@ -217,6 +252,7 @@ function setupNavigation() {
             hideAllViews();
             document.getElementById('matchPanel').classList.remove('hidden');
             setHeaderEchoMode(true);
+            document.body.classList.remove('on-home');
             document.getElementById('matchInput').focus();
         });
     }
@@ -432,7 +468,7 @@ function setupLibrarySearch() {
             backBtn.classList.add('hidden');
         });
     }
-    input.addEventListener('focus', () => modeMenu.classList.remove('hidden'));
+    input.addEventListener('focus', () => modeMenu.classList.add('hidden'));
     modeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         modeMenu.classList.toggle('hidden');
@@ -492,6 +528,7 @@ function showSearchResults(resultItems, query, mode = searchMode) {
     hideAllViews();
     view.classList.remove('hidden');
     setHeaderEchoMode(false);
+    document.body.classList.remove('on-home');
     detailReturnTarget = 'searchResults';
 
     // 在搜索结果页隐藏头部和页面内的返回按钮
@@ -1269,6 +1306,7 @@ function showView(id) {
     hideAllViews();
     document.getElementById(id).classList.remove('hidden');
     setHeaderEchoMode(id === 'matchPanel' || id === 'matchResultView');
+    document.body.classList.toggle('on-home', id === 'libraryView');
 }
 
 function setHeaderEchoMode(isEcho) {
@@ -1304,17 +1342,83 @@ function renderInfoContent(sectionKey) {
 
     const infoMap = infoData && typeof infoData === 'object' ? infoData : fallbackMap;
     const firstKey = menuButtons[0]?.dataset.section || 'guide';
-    const key = infoMap[sectionKey] ? sectionKey : firstKey;
-    content.textContent = infoMap[key];
+    const validKeys = Array.from(menuButtons).map(btn => btn.dataset.section);
+    const key = validKeys.includes(sectionKey) ? sectionKey : firstKey;
 
     menuButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.section === key);
     });
+
+    if (key === 'changelog') {
+        renderChangelogList();
+        return;
+    }
+
+    content.textContent = infoMap[key] || '';
+}
+
+// 更新日志：版本列表（从新到旧，按数组顺序展示）
+function renderChangelogList() {
+    const content = document.getElementById('infoContent');
+    if (!content) return;
+
+    const changelog = infoData?.changelog;
+    if (!Array.isArray(changelog) || changelog.length === 0) {
+        content.innerHTML = '<p class="placeholder">暂无更新日志</p>';
+        return;
+    }
+
+    // 过滤掉完全空的条目
+    const items = changelog.filter(item => item && (item.version || item.date || item.content));
+    if (items.length === 0) {
+        content.innerHTML = '<p class="placeholder">暂无更新日志</p>';
+        return;
+    }
+
+    content.innerHTML = `
+        <div class="changelog-list">
+            ${items.map((item) => `
+                <button class="changelog-item" type="button">
+                    <span class="changelog-version">${escapeHtml(item.version || '')}</span>
+                    <span class="changelog-date">${escapeHtml(item.date || '')}</span>
+                </button>
+            `).join('')}
+        </div>
+    `;
+
+    content.querySelectorAll('.changelog-item').forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            renderChangelogDetail(items[index]);
+        });
+    });
+}
+
+// 更新日志：单个版本详情（右上角返回键）
+function renderChangelogDetail(item) {
+    const content = document.getElementById('infoContent');
+    if (!content) return;
+
+    content.innerHTML = `
+        <div class="changelog-detail">
+            <button class="changelog-back-btn" type="button" aria-label="返回更新日志列表">返回</button>
+            <div class="changelog-detail-header">
+                <span class="changelog-version">${escapeHtml(item.version || '')}</span>
+                <span class="changelog-date">${escapeHtml(item.date || '')}</span>
+            </div>
+            <div class="changelog-detail-body">${escapeHtml(item.content || '暂无内容')}</div>
+        </div>
+    `;
+
+    const backBtn = content.querySelector('.changelog-back-btn');
+    if (backBtn) {
+        backBtn.addEventListener('click', renderChangelogList);
+    }
 }
 
 function showDetailView(song) {
     hideAllViews();
     document.getElementById('detailView').classList.remove('hidden');
+    document.body.classList.remove('on-home');
     window.scrollTo({ top: 0, behavior: 'auto' });
     currentDetailSongId = Number(song?.id) || null;
     updatePreviousSongButton(currentDetailSongId);
