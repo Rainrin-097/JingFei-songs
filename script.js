@@ -70,10 +70,19 @@ function setupEditorialHero() {
     if (!heroImage || !heroImageNext || !heroTitle || !heroSubtitle || !heroAlbumName || !heroArtistName || !heroSongCount) return;
 
     // 首页轮播图片：动态从 image/封面/ 文件夹加载
-    // 下方为 fallback，加载失败时使用
+    // 下方为 fallback，加载失败时使用（生产环境 Cloudflare Workers 不支持目录列表，会走此分支）
     const FALLBACK_COVERS = [
-        'image/封面/805c90e2f3067544ad2a1becb930ab6c.jpg',
-        'image/封面/bcd42964b12dd6e1c049789931cef87c.jpg'
+        'image/封面/1.jpg',
+        'image/封面/2.jpg',
+        'image/封面/3.jpg',
+        'image/封面/4.jpg',
+        'image/封面/5.jpg',
+        'image/封面/6.jpg',
+        'image/封面/7.jpg',
+        'image/封面/8.jpg',
+        'image/封面/9.jpg',
+        'image/封面/10.jpg',
+        'image/封面/11.jpg'
     ];
     let coverQueue = FALLBACK_COVERS.slice();
 
@@ -86,11 +95,14 @@ function setupEditorialHero() {
             const html = await res.text();
             const doc = new DOMParser().parseFromString(html, 'text/html');
             const links = Array.from(doc.querySelectorAll('a'));
+            // 目录列表的 href 可能是纯文件名（1.jpg）也可能是相对/绝对路径（image/封面/1.jpg）
+            // 统一只取最后一段作为文件名，再拼接 dirUrl，避免路径重复
             const files = links
                 .map(a => a.getAttribute('href'))
                 .filter(href => href && !href.endsWith('/') && !href.startsWith('?'))
                 .filter(href => /\.(jpe?g|png|webp|gif)$/i.test(href))
-                .map(href => decodeURIComponent(href));
+                .map(href => decodeURIComponent(href.split('/').pop().split('\\').pop()))
+                .filter(name => name && !name.includes('/'));
             if (files.length === 0) throw new Error('目录中未找到图片');
             // 按文件名中的数字自然排序（1.jpg, 2.jpg ... 10.jpg, 11.jpg）
             files.sort((a, b) => {
