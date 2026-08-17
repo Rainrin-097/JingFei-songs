@@ -1892,70 +1892,88 @@ function handleDotClick(tourId) {
     }
 
     const reduce = prefersReducedMotion();
-
-    // FLIP：测量当前位置 → 固定 → transform 平移到目标（仅用 transform 做动画）
-    const rect = clickedDot.getBoundingClientRect();
-    // 目标位置：时间轴容器顶部，作为主轴起点
     const timelineContainer = document.querySelector('[data-footprint-timeline]');
-    const containerRect = timelineContainer ? timelineContainer.getBoundingClientRect() : null;
-    const targetTop = containerRect ? containerRect.top + 20 : headerHeight + 60;
-    const targetLeft = window.innerWidth / 2;
-    const dx = targetLeft - (rect.left + rect.width / 2);
-    const dy = targetTop - rect.top;
 
+    // 记录红点初始屏幕位置
+    const firstRect = clickedDot.getBoundingClientRect();
+
+    // 目标位置：导航栏下方、水平居中（fixed 坐标系）
+    const targetTop = headerHeight + 28;
+    const targetLeft = window.innerWidth / 2;
+
+    // 把红点移到 timeline（避免被 canvas 折叠隐藏），用 fixed 定位脱离文档流
+    timelineContainer.appendChild(clickedDot);
     clickedDot.style.position = 'fixed';
-    clickedDot.style.top = rect.top + 'px';
-    clickedDot.style.left = rect.left + 'px';
+    clickedDot.style.top = firstRect.top + 'px';
+    clickedDot.style.left = firstRect.left + 'px';
     clickedDot.style.margin = '0';
     clickedDot.style.zIndex = '20';
-    clickedDot.style.transition = reduce ? 'none' : 'transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    // 强制回流后施加位移
-    void clickedDot.offsetWidth;
-    clickedDot.style.transform = `translate(${dx}px, ${dy}px)`;
+    clickedDot.style.transition = 'none';
+    clickedDot.style.transform = 'translate(0, 0)';
+
+    // 显示 timeline（此时在 canvas 下方，随后 canvas 折叠后会上移到顶部）
+    timelineContainer.classList.remove('hidden');
+    timelineContainer.setAttribute('aria-hidden', 'false');
+
+    // 延迟折叠 canvas，等另一颗红点淡出完成（0.45s），红点已 fixed 不受影响
+    if (canvas) {
+        if (reduce) {
+            canvas.classList.add('collapsed');
+        } else {
+            window.setTimeout(() => canvas.classList.add('collapsed'), 450);
+        }
+    }
 
     const arrive = () => {
-        // 锁定到目标位置（top/left 瞬时设定，不参与动画）
-        clickedDot.style.position = 'absolute';
-        clickedDot.style.top = '0';
-        clickedDot.style.left = '50%';
-        clickedDot.style.transform = 'translateX(-50%)';
+        // 统一坐标系：红点即 axis 原点。
+        // 1. 生成 axis（含主轴、分支），返回 axis 元素
+        const axis = renderFootprintTimeline(tourId);
+        if (!axis) {
+            footprintAnimating = false;
+            return;
+        }
+        // 2. 把红点 append 到 axis 内部，absolute top:0/left:50%（由 .anchored 类控制）
+        axis.appendChild(clickedDot);
+        // 3. 清除滑动期间的 inline 样式，让 .anchored 的 CSS 生效
+        clickedDot.style.transition = '';
+        clickedDot.style.position = '';
+        clickedDot.style.top = '';
+        clickedDot.style.left = '';
+        clickedDot.style.margin = '';
+        clickedDot.style.zIndex = '';
+        clickedDot.style.transform = '';
         clickedDot.classList.add('anchored');
-        // 折叠 intro 画布，让时间轴上移
-        if (canvas) canvas.classList.add('collapsed');
-        // 场景三：时间轴生长
-        renderFootprintTimeline(tourId);
+        // 4. 动态设置 axis 的 margin-top，使其顶部视口位置 = targetTop（红点滑动终点）
+        //    先重置 margin-top 测量基准位置，再补偿到 targetTop
+        axis.style.marginTop = '0px';
+        const baseTop = axis.getBoundingClientRect().top;
+        axis.style.marginTop = (targetTop - baseTop) + 'px';
         footprintAnimating = false;
     };
 
     if (reduce) {
         arrive();
     } else {
-        const onEnd = (e) => {
-            if (e.propertyName !== 'transform') return;
-            clickedDot.removeEventListener('transitionend', onEnd);
-            arrive();
-        };
-        clickedDot.addEventListener('transitionend', onEnd);
-        // 安全兜底，防止 transitionend 未触发
+        // 滑动到目标位置（仅用 transform）
+        const dx = targetLeft - (firstRect.left + firstRect.width / 2);
+        const dy = targetTop - firstRect.top;
+        void clickedDot.offsetWidth;
+        clickedDot.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        clickedDot.style.transform = `translate(${dx}px, ${dy}px)`;
+        // 用 setTimeout 精确等待动画完成（略大于 1.5s），避免 transitionend 事件冒泡干扰
         window.setTimeout(() => {
-            if (footprintAnimating) {
-                clickedDot.removeEventListener('transitionend', onEnd);
-                arrive();
-            }
-        }, 900);
+            if (footprintAnimating) arrive();
+        }, 1550);
     }
 }
 
-// 场景三：时间轴生长
+// 场景三：时间轴生长。返回 axis 元素供 arrive() 锚定红点。
 function renderFootprintTimeline(tourId) {
     const tour = footprintData.find(t => t.id === tourId);
     const container = document.querySelector('[data-footprint-timeline]');
-    if (!tour || !container) return;
-    container.innerHTML = '';
-
-    // 红点已绝对定位于容器顶部，无需额外 padding
-    container.style.paddingTop = '24px';
-    container.style.paddingBottom = '80px';
+    if (!tour || !container) return null;
+    // 清除旧的 axis（红点在 arrive 中 append 到新 axis）
+    container.querySelectorAll('.footprint-axis').forEach(el => el.remove());
 
     const axis = document.createElement('div');
     axis.className = 'footprint-axis';
@@ -1966,8 +1984,8 @@ function renderFootprintTimeline(tourId) {
 
     const reduce = prefersReducedMotion();
     let branchIndex = 0;
-    let delay = reduce ? 0 : 0.35; // 等主轴生长完成
-    const branchStep = reduce ? 0 : 0.12;
+    let delay = reduce ? 0 : 1; // 等主轴生长完成
+    const branchStep = reduce ? 0 : 0.2;
 
     tour.legs.forEach((leg) => {
         if (leg.label) {
@@ -2003,8 +2021,7 @@ function renderFootprintTimeline(tourId) {
     });
 
     container.appendChild(axis);
-    container.classList.remove('hidden');
-    container.setAttribute('aria-hidden', 'false');
+    return axis;
 }
 
 function formatFootprintDate(dateStr) {
@@ -2029,7 +2046,7 @@ function handleFootprintReturn() {
     };
 
     if (timeline) fadeOut(timeline);
-    const anchoredDot = canvas ? canvas.querySelector('.footprint-dot-btn.anchored') : null;
+    const anchoredDot = timeline ? timeline.querySelector('.footprint-dot-btn.anchored') : null;
     if (anchoredDot) fadeOut(anchoredDot);
     if (backBtn) fadeOut(backBtn);
 

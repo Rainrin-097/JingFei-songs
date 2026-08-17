@@ -1599,7 +1599,7 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     color: var(--primary);
 }
 
-/* 锚定状态：红点作为主轴起点，绝对定位于时间轴顶端 */
+/* 锚定状态：红点作为 axis 的顶部原点，统一坐标系（红点即原点） */
 .footprint-dot-btn.anchored {
     position: absolute;
     top: 0;
@@ -1624,7 +1624,6 @@ body:not(.on-home):not(.echo-mode) .compact-search {
 /* 场景三：时间轴 */
 .footprint-timeline {
     position: relative;
-    padding-top: 24px;
     padding-bottom: 80px;
 }
 
@@ -1632,13 +1631,15 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     position: relative;
     width: min(720px, 92vw);
     margin: 0 auto;
+    /* margin-top 由 JS 动态设置，使 axis 顶部视口位置 = headerHeight + 28（红点滑动终点） */
+    padding-top: 28px;
 }
 
-/* 主轴细线：从顶向下生长，起点紧贴红点底部 */
+/* 主轴细线：从红点中心下方开始向下生长（红点高 14px，中心在 7px，line top:14px 略低于中心确保视觉连接） */
 .footprint-line {
     position: absolute;
     left: 50%;
-    top: 12px;
+    top: 14px;
     bottom: 0;
     width: 1px;
     background: var(--line);
