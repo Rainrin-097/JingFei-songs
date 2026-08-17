@@ -39,6 +39,7 @@
                 <nav class="header-nav" aria-label="主导航">
                     <a id="navHome" href="#">首页</a>
                     <a id="navAlbum" href="#">专辑</a>
+                    <a id="navFootprint" href="#">足迹</a>
                     <a id="navEcho" href="#">别处回响</a>
                     <a id="navInfo" href="#">更多信息</a>
                 </nav>
@@ -126,6 +127,18 @@
                     <button type="button" data-section="thanks">thanks to</button>
                 </aside>
                 <div id="infoContent" class="info-panel"></div>
+            </div>
+        </section>
+
+        <!-- 足迹：巡演时间轴 -->
+        <section id="footprintView" class="view hidden footprint-view">
+            <button id="footprintBackBtn" class="footprint-back-btn hidden" type="button"
+                aria-label="返回足迹首页">返回</button>
+            <div class="footprint-canvas" data-footprint-canvas>
+                <!-- 红点由 script.js 动态渲染 -->
+            </div>
+            <div class="footprint-timeline hidden" data-footprint-timeline aria-hidden="true">
+                <!-- 时间轴由 script.js 动态渲染 -->
             </div>
         </section>
 

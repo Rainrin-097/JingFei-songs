@@ -6,6 +6,8 @@ let searchMode = 'title';
 let searchIndex = { vocab: new Set(), latinVocab: [] };
 let detailReturnTarget = 'library';
 let infoData = null;
+let footprintData = null;
+let footprintAnimating = false;
 let currentMatchedSongId = null;
 let currentDetailSongId = null;
 let currentDetailLyricsRaw = '';
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSongs();
     loadAlbums();
     loadInfo();
+    loadFootprint();
     setupNavigation();
     setupLibrarySearch();
     setupMatchPanel();
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLayoutToggle();
     setupAlbumViews();
     setupInfoView();
+    setupFootprintView();
     setupBackToTopButton();
     window.addEventListener('resize', () => {
         if (!document.getElementById('detailView')?.classList.contains('hidden')) {
@@ -225,6 +229,7 @@ function setupNavigation() {
     const navAlbum = document.getElementById('navAlbum');
     const navEcho = document.getElementById('navEcho');
     const navInfo = document.getElementById('navInfo');
+    const navFootprint = document.getElementById('navFootprint');
 
     if (navHome) {
         navHome.addEventListener('click', (event) => {
@@ -262,6 +267,14 @@ function setupNavigation() {
             event.preventDefault();
             clearSearchState();
             window.location.hash = '#info';
+        });
+    }
+
+    if (navFootprint) {
+        navFootprint.addEventListener('click', (event) => {
+            event.preventDefault();
+            clearSearchState();
+            window.location.hash = '#footprint';
         });
     }
 }
@@ -397,6 +410,17 @@ async function loadInfo() {
         renderInfoContent();
     } catch (error) {
         console.error('加载信息数据失败:', error);
+    }
+}
+
+async function loadFootprint() {
+    try {
+        const response = await fetch('data/footprint.json');
+        if (!response.ok) throw new Error('文件加载失败');
+        footprintData = await response.json();
+        renderFootprintIntro();
+    } catch (error) {
+        console.error('加载足迹数据失败:', error);
     }
 }
 
@@ -1201,6 +1225,8 @@ function setupRouting() {
             showView('infoView');
             const key = hash.replace('#info', '').replace('-', '').trim();
             renderInfoContent(key || undefined);
+        } else if (hash === '#footprint') {
+            showView('footprintView');
         } else {
             showView('libraryView');
             centerLibrarySongCardIfNeeded();
@@ -1299,7 +1325,7 @@ function updatePreviousSongButton(currentSongId) {
 }
 
 function hideAllViews() {
-    ['libraryView', 'searchResultsView', 'detailView', 'albumListView', 'albumDetailView', 'infoView', 'matchPanel', 'matchResultView'].forEach(id =>
+    ['libraryView', 'searchResultsView', 'detailView', 'albumListView', 'albumDetailView', 'infoView', 'footprintView', 'matchPanel', 'matchResultView'].forEach(id =>
         document.getElementById(id).classList.add('hidden'));
 }
 function showView(id) {
@@ -1307,6 +1333,9 @@ function showView(id) {
     document.getElementById(id).classList.remove('hidden');
     setHeaderEchoMode(id === 'matchPanel' || id === 'matchResultView');
     document.body.classList.toggle('on-home', id === 'libraryView');
+    if (id !== 'footprintView') {
+        resetFootprintView();
+    }
 }
 
 function setHeaderEchoMode(isEcho) {
@@ -1792,4 +1821,264 @@ function closeElsewhereGuideModal() {
     const modal = document.getElementById('elsewhereGuideModal');
     if (!modal) return;
     modal.classList.add('hidden');
+}
+
+// ==================== 足迹：巡演时间轴 ====================
+
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function setupFootprintView() {
+    const backBtn = document.getElementById('footprintBackBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', handleFootprintReturn);
+    }
+}
+
+// 场景一：两颗红点
+function renderFootprintIntro() {
+    const canvas = document.querySelector('[data-footprint-canvas]');
+    if (!canvas) return;
+    canvas.innerHTML = '';
+    canvas.classList.remove('focused', 'collapsed');
+    if (!Array.isArray(footprintData) || footprintData.length === 0) return;
+
+    footprintData.forEach((tour) => {
+        const btn = document.createElement('button');
+        btn.className = 'footprint-dot-btn';
+        btn.type = 'button';
+        btn.dataset.tourId = tour.id;
+        btn.setAttribute('aria-label', `查看巡演足迹：${tour.name}`);
+        btn.innerHTML = `
+            <span class="footprint-dot" aria-hidden="true"></span>
+            <span class="footprint-dot-label">${escapeHtml(tour.name)}</span>
+        `;
+        btn.addEventListener('click', () => handleDotClick(tour.id));
+        canvas.appendChild(btn);
+    });
+}
+
+// 场景二：点击聚焦
+function handleDotClick(tourId) {
+    if (footprintAnimating) return;
+    footprintAnimating = true;
+
+    const canvas = document.querySelector('[data-footprint-canvas]');
+    const dots = canvas ? canvas.querySelectorAll('.footprint-dot-btn') : [];
+    const clickedDot = Array.from(dots).find(d => d.dataset.tourId === tourId);
+    const otherDot = Array.from(dots).find(d => d.dataset.tourId !== tourId);
+    if (!clickedDot) {
+        footprintAnimating = false;
+        return;
+    }
+
+    const backBtn = document.getElementById('footprintBackBtn');
+    const headerEl = document.querySelector('header');
+    const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+    if (backBtn) {
+        backBtn.style.top = (headerHeight + 14) + 'px';
+        backBtn.classList.remove('hidden');
+    }
+
+    // 涟漪
+    clickedDot.classList.add('rippling');
+
+    // 另一颗红点淡出
+    if (otherDot) {
+        otherDot.style.transition = 'opacity 0.45s ease';
+        otherDot.style.opacity = '0';
+        otherDot.style.pointerEvents = 'none';
+    }
+
+    const reduce = prefersReducedMotion();
+
+    // FLIP：测量当前位置 → 固定 → transform 平移到目标（仅用 transform 做动画）
+    const rect = clickedDot.getBoundingClientRect();
+    const targetTop = headerHeight + 40;
+    const targetLeft = window.innerWidth / 2;
+    const dx = targetLeft - (rect.left + rect.width / 2);
+    const dy = targetTop - rect.top;
+
+    clickedDot.style.position = 'fixed';
+    clickedDot.style.top = rect.top + 'px';
+    clickedDot.style.left = rect.left + 'px';
+    clickedDot.style.margin = '0';
+    clickedDot.style.zIndex = '20';
+    clickedDot.style.transition = reduce ? 'none' : 'transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    // 强制回流后施加位移
+    void clickedDot.offsetWidth;
+    clickedDot.style.transform = `translate(${dx}px, ${dy}px)`;
+
+    const arrive = () => {
+        // 锁定到目标位置（top/left 瞬时设定，不参与动画）
+        clickedDot.style.top = targetTop + 'px';
+        clickedDot.style.left = (targetLeft - rect.width / 2) + 'px';
+        clickedDot.style.transform = 'translate(0, 0)';
+        clickedDot.classList.add('anchored');
+        // 折叠 intro 画布，让时间轴上移
+        if (canvas) canvas.classList.add('collapsed');
+        // 场景三：时间轴生长
+        renderFootprintTimeline(tourId);
+        footprintAnimating = false;
+    };
+
+    if (reduce) {
+        arrive();
+    } else {
+        const onEnd = (e) => {
+            if (e.propertyName !== 'transform') return;
+            clickedDot.removeEventListener('transitionend', onEnd);
+            arrive();
+        };
+        clickedDot.addEventListener('transitionend', onEnd);
+        // 安全兜底，防止 transitionend 未触发
+        window.setTimeout(() => {
+            if (footprintAnimating) {
+                clickedDot.removeEventListener('transitionend', onEnd);
+                arrive();
+            }
+        }, 900);
+    }
+}
+
+// 场景三：时间轴生长
+function renderFootprintTimeline(tourId) {
+    const tour = footprintData.find(t => t.id === tourId);
+    const container = document.querySelector('[data-footprint-timeline]');
+    if (!tour || !container) return;
+    container.innerHTML = '';
+
+    const headerEl = document.querySelector('header');
+    const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+    // 动态计算主轴起点：紧贴锚定红点底部，确保主轴与红点连为一体
+    const canvas = document.querySelector('[data-footprint-canvas]');
+    const anchoredDot = canvas ? canvas.querySelector('.footprint-dot-btn.anchored') : null;
+    if (anchoredDot) {
+        const dotRect = anchoredDot.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const paddingTop = Math.max(0, dotRect.bottom - containerRect.top);
+        container.style.paddingTop = paddingTop + 'px';
+    }
+    container.style.paddingBottom = '80px';
+
+    const axis = document.createElement('div');
+    axis.className = 'footprint-axis';
+
+    const line = document.createElement('div');
+    line.className = 'footprint-line';
+    axis.appendChild(line);
+
+    const reduce = prefersReducedMotion();
+    let branchIndex = 0;
+    let delay = reduce ? 0 : 0.35; // 等主轴生长完成
+    const branchStep = reduce ? 0 : 0.12;
+
+    tour.legs.forEach((leg) => {
+        if (leg.label) {
+            // 间断标记：主轴上的断点，文字即 label
+            const breakEl = document.createElement('div');
+            breakEl.className = 'footprint-break';
+            breakEl.style.setProperty('--fp-delay', delay + 's');
+            breakEl.innerHTML = `
+                <span class="footprint-break-label">${escapeHtml(leg.label)}</span>
+            `;
+            axis.appendChild(breakEl);
+            delay += branchStep + (reduce ? 0 : 0.15);
+        }
+        (leg.stops || []).forEach((stop) => {
+            const side = branchIndex % 2 === 0 ? 'left' : 'right';
+            const branch = document.createElement('div');
+            branch.className = `footprint-branch ${side}`;
+            branch.style.setProperty('--fp-delay', delay + 's');
+            const dateText = formatFootprintDate(stop.date);
+            branch.innerHTML = `
+                <div class="footprint-branch-content">
+                    <span class="footprint-branch-city">${escapeHtml(stop.city || '')}</span>
+                    <span class="footprint-branch-venue">${escapeHtml(stop.venue || '')}</span>
+                </div>
+                <span class="footprint-branch-date">${escapeHtml(dateText)}</span>
+                <span class="footprint-branch-stem" aria-hidden="true"></span>
+                <span class="footprint-branch-node" aria-hidden="true"></span>
+            `;
+            axis.appendChild(branch);
+            branchIndex++;
+            delay += branchStep;
+        });
+    });
+
+    container.appendChild(axis);
+    container.classList.remove('hidden');
+    container.setAttribute('aria-hidden', 'false');
+}
+
+function formatFootprintDate(dateStr) {
+    if (!dateStr) return '';
+    const parts = String(dateStr).split('-');
+    if (parts.length === 3) return `${parts[0]}.${parts[1]}.${parts[2]}`;
+    return dateStr;
+}
+
+// 场景四：返回
+function handleFootprintReturn() {
+    if (footprintAnimating) return;
+    const canvas = document.querySelector('[data-footprint-canvas]');
+    const timeline = document.querySelector('[data-footprint-timeline]');
+    const backBtn = document.getElementById('footprintBackBtn');
+    const reduce = prefersReducedMotion();
+
+    const fadeOut = (el) => {
+        if (!el) return;
+        el.style.transition = reduce ? 'none' : 'opacity 0.4s ease';
+        el.style.opacity = '0';
+    };
+
+    if (timeline) fadeOut(timeline);
+    const anchoredDot = canvas ? canvas.querySelector('.footprint-dot-btn.anchored') : null;
+    if (anchoredDot) fadeOut(anchoredDot);
+    if (backBtn) fadeOut(backBtn);
+
+    const restore = () => {
+        if (backBtn) {
+            backBtn.classList.add('hidden');
+            backBtn.style.opacity = '';
+            backBtn.style.transition = '';
+        }
+        if (timeline) {
+            timeline.classList.add('hidden');
+            timeline.innerHTML = '';
+            timeline.style.opacity = '';
+            timeline.style.transition = '';
+            timeline.style.paddingTop = '';
+            timeline.style.paddingBottom = '';
+            timeline.setAttribute('aria-hidden', 'true');
+        }
+        // 重新渲染 intro，清除所有内联样式
+        renderFootprintIntro();
+    };
+
+    if (reduce) {
+        restore();
+    } else {
+        window.setTimeout(restore, 420);
+    }
+}
+
+function resetFootprintView() {
+    footprintAnimating = false;
+    const canvas = document.querySelector('[data-footprint-canvas]');
+    const timeline = document.querySelector('[data-footprint-timeline]');
+    const backBtn = document.getElementById('footprintBackBtn');
+    if (backBtn) backBtn.classList.add('hidden');
+    if (timeline) {
+        timeline.classList.add('hidden');
+        timeline.innerHTML = '';
+        timeline.style.opacity = '';
+        timeline.style.transition = '';
+        timeline.style.paddingTop = '';
+        timeline.style.paddingBottom = '';
+        timeline.setAttribute('aria-hidden', 'true');
+    }
+    if (canvas) canvas.classList.remove('focused', 'collapsed');
+    renderFootprintIntro();
 }

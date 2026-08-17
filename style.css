@@ -1452,3 +1452,396 @@ body:not(.on-home):not(.echo-mode) .compact-search {
         align-items: flex-start;
     }
 }
+
+/* ==================== 足迹：巡演时间轴 ==================== */
+
+.footprint-view {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.footprint-back-btn {
+    position: fixed;
+    right: 24px;
+    z-index: 30;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-sub);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.footprint-back-btn:hover,
+.footprint-back-btn:focus-visible {
+    color: var(--primary);
+    border-color: var(--line);
+    outline: none;
+}
+
+/* 场景一：两颗红点 */
+.footprint-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(90px, 22vw, 340px);
+    min-height: calc(100vh - 90px);
+    padding: 60px 24px;
+}
+
+.footprint-canvas.collapsed {
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.footprint-dot-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.footprint-dot-btn:focus-visible {
+    outline: none;
+}
+
+.footprint-dot-btn:focus-visible .footprint-dot {
+    transform: scale(1.15);
+}
+
+.footprint-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--primary);
+    position: relative;
+    box-shadow: 0 0 10px rgba(130, 0, 0, 0.45);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footprint-dot-btn:hover .footprint-dot {
+    transform: scale(1.15);
+}
+
+/* 发亮：缓慢呼吸的光晕（仅用 opacity + transform） */
+.footprint-dot::before {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(130, 0, 0, 0.38) 0%, transparent 70%);
+    animation: footprintGlow 3.4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes footprintGlow {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(1.28);
+    }
+}
+
+/* 涟漪：伪元素 scale + opacity，不用 box-shadow 动画 */
+.footprint-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.footprint-dot-btn.rippling .footprint-dot::after {
+    animation: footprintRipple 0.85s ease-out forwards;
+}
+
+@keyframes footprintRipple {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.footprint-dot-label {
+    font-size: 0.84rem;
+    letter-spacing: 0.12em;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.footprint-dot-btn:hover .footprint-dot-label,
+.footprint-dot-btn:focus-visible .footprint-dot-label {
+    color: var(--primary);
+}
+
+/* 锚定状态：红点固定在导航栏下方居中 */
+.footprint-dot-btn.anchored {
+    pointer-events: none;
+}
+
+.footprint-dot-btn.anchored .footprint-dot-label {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    color: var(--text-sub);
+    opacity: 1;
+}
+
+/* 场景三：时间轴 */
+.footprint-timeline {
+    position: relative;
+}
+
+.footprint-axis {
+    position: relative;
+    width: min(720px, 92vw);
+    margin: 0 auto;
+}
+
+/* 主轴细线：从顶向下生长 */
+.footprint-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+    transform: scaleY(0);
+    transform-origin: top center;
+    animation: footprintLineGrow 0.7s ease forwards;
+    z-index: 1;
+}
+
+@keyframes footprintLineGrow {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* 分支：左、右交替 */
+.footprint-branch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 10px 0;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: footprintBranchAppear 0.5s ease forwards;
+    animation-delay: var(--fp-delay, 0s);
+}
+
+@keyframes footprintBranchAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footprint-branch.left {
+    padding-right: 50%;
+}
+
+.footprint-branch.right {
+    padding-left: 50%;
+    flex-direction: row-reverse;
+}
+
+/* 分支节点：主轴上的分叉点，柔和晕染 */
+.footprint-branch-node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(130, 0, 0, 0.5) 0%, rgba(130, 0, 0, 0) 70%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* 分支连线 */
+.footprint-branch-stem {
+    flex: 1;
+    height: 1px;
+    min-width: 20px;
+    background: var(--line);
+    transform: scaleX(0);
+    animation: footprintStemGrow 0.45s ease forwards;
+    animation-delay: var(--fp-delay, 0s);
+}
+
+.footprint-branch.left .footprint-branch-stem {
+    transform-origin: right center;
+}
+
+.footprint-branch.right .footprint-branch-stem {
+    transform-origin: left center;
+}
+
+@keyframes footprintStemGrow {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.footprint-branch-date {
+    font-size: 0.72rem;
+    color: var(--text-sub);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.footprint-branch-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.footprint-branch.left .footprint-branch-content {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.footprint-branch.right .footprint-branch-content {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.footprint-branch-city {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.footprint-branch-venue {
+    font-size: 0.76rem;
+    color: var(--text-sub);
+    line-height: 1.3;
+}
+
+/* 间断标记：主轴上的断点，主轴在此处断开 */
+.footprint-break {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 30px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: footprintBranchAppear 0.5s ease forwards;
+    animation-delay: var(--fp-delay, 0s);
+    position: relative;
+    background: var(--bg-color);
+    z-index: 2;
+}
+
+.footprint-break::before,
+.footprint-break::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+}
+
+.footprint-break-label {
+    padding: 0 8px;
+    font-size: 1.1rem;
+    color: var(--primary);
+    letter-spacing: 0.16em;
+    position: relative;
+    z-index: 2;
+}
+
+/* 尊重「减少动态效果」 */
+@media (prefers-reduced-motion: reduce) {
+
+    .footprint-dot,
+    .footprint-dot::before,
+    .footprint-dot::after,
+    .footprint-line,
+    .footprint-branch,
+    .footprint-branch-stem,
+    .footprint-break,
+    .footprint-dot-btn,
+    .footprint-back-btn {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .footprint-line {
+        transform: scaleY(1);
+    }
+
+    .footprint-branch {
+        opacity: 1;
+        transform: none;
+    }
+
+    .footprint-branch-stem {
+        transform: scaleX(1);
+    }
+
+    .footprint-break {
+        opacity: 1;
+        transform: none;
+    }
+
+    .footprint-dot::before {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .footprint-canvas {
+        gap: clamp(60px, 30vw, 140px);
+        min-height: calc(100vh - 120px);
+    }
+
+    .footprint-back-btn {
+        right: 16px;
+    }
+
+    .footprint-branch {
+        min-height: 48px;
+    }
+
+    .footprint-branch-city {
+        font-size: 0.92rem;
+    }
+
+    .footprint-branch-venue {
+        font-size: 0.7rem;
+    }
+}

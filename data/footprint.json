@@ -1,0 +1,501 @@
+[
+    {
+        "id": "elsewhere",
+        "name": "在别处",
+        "legs": [
+            {
+                "label": "",
+                "stops": [
+                    {
+                        "date": "2021-07-04",
+                        "city": "长沙",
+                        "venue": "46Livehouse",
+                        "guest": "焦迈奇",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-07-11",
+                        "city": "成都",
+                        "venue": "MAO Livehouse",
+                        "guest": "王加一",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-07-17",
+                        "city": "杭州",
+                        "venue": "MAO Livehouse",
+                        "guest": "陈粒",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-10-21",
+                        "city": "南京",
+                        "venue": "稻香音乐空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-11-14",
+                        "city": "广州",
+                        "venue": "声音共和Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-11-27",
+                        "city": "天津",
+                        "venue": "大麦66Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-12-03",
+                        "city": "济南",
+                        "venue": "99大麦Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-12-05",
+                        "city": "厦门",
+                        "venue": "星巢WOKESHOW",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2021-12-12",
+                        "city": "上海",
+                        "venue": "MODERN SKY LAB",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-04-01",
+                        "city": "苏州",
+                        "venue": "山丘Livehouse（红唐店）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-07-02",
+                        "city": "西安",
+                        "venue": "西演SPACE·塞斯拾陆",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-07-03",
+                        "city": "重庆",
+                        "venue": "寅派动力",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-07-15",
+                        "city": "珠海",
+                        "venue": "乐坊Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-07-30",
+                        "city": "昆明",
+                        "venue": "MODERN SKY LAB",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-08-18",
+                        "city": "郑州",
+                        "venue": "7LIVEHOUSE+",
+                        "guest": "好妹妹",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-08-28",
+                        "city": "武汉",
+                        "venue": "不晚InTime 403店",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-09-04",
+                        "city": "珠海",
+                        "venue": "对白SPACE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-09-10",
+                        "city": "青岛",
+                        "venue": "CaperLand雀跃之地",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-10-05",
+                        "city": "杭州",
+                        "venue": "大麦66Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-10-21",
+                        "city": "福州",
+                        "venue": "MAAQUU x CH8 Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-11-20",
+                        "city": "天津",
+                        "venue": "大麦66Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-12-10",
+                        "city": "广州",
+                        "venue": "声音共和Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2022-12-18",
+                        "city": "苏州",
+                        "venue": "山丘Livehouse（红唐店）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-01-08",
+                        "city": "成都",
+                        "venue": "",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-03-03",
+                        "city": "上海",
+                        "venue": "MODERN SKY LAB",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-03-10",
+                        "city": "宁波",
+                        "venue": "星巢剧场",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-03-24",
+                        "city": "中山",
+                        "venue": "SunLiveSpace",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-03-26",
+                        "city": "深圳",
+                        "venue": "SoFun Live",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-04-07",
+                        "city": "沈阳",
+                        "venue": "原料库Livehouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-04-09",
+                        "city": "青岛",
+                        "venue": "CaperLand雀跃之地",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-04-14",
+                        "city": "长沙",
+                        "venue": "MAO Livehouse（沙湾店）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-04-16",
+                        "city": "石家庄",
+                        "venue": "红糖LIVEHOUSE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-04-28",
+                        "city": "重庆",
+                        "venue": "蜚声LIVEHOUSE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-08-18",
+                        "city": "温州",
+                        "venue": "意空间Meaning Space",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-08-20",
+                        "city": "南昌",
+                        "venue": "黑铁LIVEHOUSE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-08-25",
+                        "city": "常州",
+                        "venue": "迷宫艺术空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-09-01",
+                        "city": "兰州",
+                        "venue": "葵艺术空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-09-03",
+                        "city": "银川",
+                        "venue": "铜管LiveHouse",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-09-15",
+                        "city": "南宁",
+                        "venue": "候朋现场HOPELIVEx脑壳Live",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-09-17",
+                        "city": "贵阳",
+                        "venue": "煎蛋艺术空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-10-13",
+                        "city": "大连",
+                        "venue": "赫兹空间（佳兆业店）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-10-15",
+                        "city": "合肥",
+                        "venue": "奕空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2023-10-28",
+                        "city": "北京",
+                        "venue": "五棵松M空间",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "crimson",
+        "name": "红霞影剧院",
+        "legs": [
+            {
+                "label": "",
+                "stops": [
+                    {
+                        "date": "2025-12-06",
+                        "city": "北京",
+                        "venue": "1919 LIVEHOUSE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2025-12-12",
+                        "city": "上海",
+                        "venue": "回响之地Music Park",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-03-05",
+                        "city": "广州",
+                        "venue": "声音共和LIVEHOUSE",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-03-08",
+                        "city": "深圳",
+                        "venue": "BO LIVE 前海店",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-03-14",
+                        "city": "杭州",
+                        "venue": "LiveShop Uni 由你现场",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-03-21",
+                        "city": "长沙",
+                        "venue": "达丰空间·锦秀拾光店（46Livehouse）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-04-06",
+                        "city": "南京",
+                        "venue": "稻香演艺中心",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-04-11",
+                        "city": "成都",
+                        "venue": "东区超现场（东郊记忆）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    }
+                ]
+            },
+            {
+                "label": "夏日版",
+                "stops": [
+                    {
+                        "date": "2026-07-05",
+                        "city": "郑州",
+                        "venue": "7LIVEHOUSE+",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-07-24",
+                        "city": "温州",
+                        "venue": "SEELAB 意空间见",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-07-26",
+                        "city": "西安",
+                        "venue": "西演SPACE·塞斯拾陆",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-08-14",
+                        "city": "济南",
+                        "venue": "MODERN SKY LAB 济南",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-08-16",
+                        "city": "合肥",
+                        "venue": "OTW × 梵木艺术中心",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-08-30",
+                        "city": "沈阳",
+                        "venue": "原料库 Vast Factory（红梅店）",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-09-11",
+                        "city": "武汉",
+                        "venue": "不晚InTime Live 汉阳造店",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    },
+                    {
+                        "date": "2026-09-13",
+                        "city": "南昌",
+                        "venue": "黑铁现场展演中心",
+                        "guest": "",
+                        "image": "",
+                        "video": ""
+                    }
+                ]
+            }
+        ]
+    }
+]
