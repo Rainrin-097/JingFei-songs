@@ -225,6 +225,57 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     margin-left: auto;
 }
 
+/* 标题栏搜索与切换按钮：字号与导航栏一致，默认无边框线，仅悬停/聚焦显示细框 */
+.header-controls .search-mode-btn,
+.header-controls .search-btn,
+.header-controls .search-back-btn,
+.header-controls .layout-toggle-btn {
+    min-height: 38px;
+    padding: 6px 12px;
+    font-size: 0.92rem;
+    border-color: transparent;
+}
+
+.header-controls .search-mode-btn,
+.header-controls .search-back-btn,
+.header-controls .layout-toggle-btn {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.header-controls .search-mode-btn:hover,
+.header-controls .search-mode-btn:focus-visible,
+.header-controls .search-back-btn:hover,
+.header-controls .search-back-btn:focus-visible,
+.header-controls .layout-toggle-btn:hover,
+.header-controls .layout-toggle-btn:focus-visible,
+.header-controls .search-btn:hover,
+.header-controls .search-btn:focus-visible {
+    border-color: var(--primary);
+    transform: none;
+}
+
+.header-controls .compact-search input {
+    width: 200px;
+    min-height: 38px;
+    padding: 7px 12px;
+    font-size: 0.92rem;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.06);
+    transition: border-color 0.2s ease;
+}
+
+.header-controls .compact-search input:hover,
+.header-controls .compact-search input:focus {
+    border-color: var(--primary);
+    border-left-color: var(--primary);
+    border-bottom-color: var(--primary);
+    outline: none;
+}
+
+.header-controls .compact-search {
+    gap: 8px;
+}
+
 .header-nav {
     display: flex;
     align-items: center;
@@ -238,7 +289,7 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     align-items: center;
     padding: 10px 14px 12px;
     color: var(--text-sub);
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
