@@ -657,10 +657,10 @@ function getAlbumCover(album) {
     if (album?.cover_image) return resolveImagePath(album.cover_image);
     const title = (album?.title || '').trim();
     const coverMap = {
-        '陈婧霏': 'image/陈婧霏.jpg',
-        '猩红': 'image/猩红.png'
+        '陈婧霏': 'image/歌曲/陈婧霏.jpg',
+        '猩红': 'image/歌曲/猩红.png'
     };
-    return coverMap[title] || 'image/陈婧霏.jpg';
+    return coverMap[title] || 'image/歌曲/陈婧霏.jpg';
 }
 
 function resolveImagePath(imagePath) {
@@ -669,8 +669,11 @@ function resolveImagePath(imagePath) {
     if (/^(?:https?:)?\/\//i.test(value) || value.startsWith('data:') || value.startsWith('blob:')) {
         return value;
     }
-    if (value.startsWith('image/')) return value;
-    return `image/${value}`;
+    // 兼容旧 image/ 前缀写法，统一归一到 image/歌曲/ 目录
+    if (value.startsWith('image/')) {
+        return value.replace(/^image\//, 'image/歌曲/');
+    }
+    return `image/歌曲/${value}`;
 }
 // 状态匹配面板
 function setupMatchPanel() {
