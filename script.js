@@ -796,7 +796,7 @@ function renderEchoResultState(currentItem, exhausted = false) {
             <div class="echo-history-list">
                 ${previousItems.map((item) => {
             const itemLyric = item.matchLine || '暂时未能发现回响';
-            const formattedItemLyric = formatKeyLyricsDisplay(itemLyric);
+            const formattedItemLyric = formatKeyLyricsInline(itemLyric);
             return `
                     <article class="echo-history-card" data-song-id="${escapeHtml(String(item.song?.id || ''))}" role="button" tabindex="0">
                         <div class="echo-history-lyric">${formattedItemLyric}</div>
@@ -834,6 +834,13 @@ function formatKeyLyricsDisplay(lyricText) {
     const lines = String(lyricText).split('"').map(l => l.trim()).filter(Boolean);
     // 每行用 div 包裹，实现居中换行显示
     return lines.map(line => `<div class="echo-lyric-line">${escapeHtml(line)}</div>`).join('');
+}
+
+// 历史结果用单行内联显示：去掉引号、用空格连接成一句
+function formatKeyLyricsInline(lyricText) {
+    if (!lyricText) return '';
+    const lines = String(lyricText).split('"').map(l => l.trim()).filter(Boolean);
+    return escapeHtml(lines.join(' '));
 }
 
 async function showMatchResult(text, options = {}) {

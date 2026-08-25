@@ -1251,6 +1251,25 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     max-width: 860px;
 }
 
+#matchResultView {
+    max-width: none;
+    margin: 40px auto 30px;
+    padding: 0 40px;
+}
+
+/* 回响结果页：去掉外层容器框线与背景，直接在页面背景上铺开 */
+#matchResultView .match-container {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+#matchResultView .match-container:hover {
+    border-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
 .match-container {
     padding: 28px 24px;
     border: 1px solid transparent;
@@ -1258,6 +1277,34 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+/* 三个按键居中，并与上方歌词拉开距离 */
+.match-result-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+/* 历史结果区与三个按键再拉开一点 */
+.echo-history-wrap {
+    margin-top: 14px;
+}
+
+.echo-history-title {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+    margin-bottom: 10px;
+}
+
+.echo-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #matchInput {
@@ -1307,19 +1354,99 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     animation: echoRise 0.45s ease forwards 0.1s;
 }
 
+/* 历史回响卡片：参考首页 song-item 的悬停动效（左下双线生长 + 上浮） */
 .echo-history-card {
-    border: 1px solid transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     background: rgba(255, 255, 255, 0.08);
-    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    padding: 14px 16px;
     transition: var(--transition);
+    will-change: transform;
+}
+
+.echo-history-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: var(--primary);
+    opacity: 0;
+    transition: height 0.32s ease, opacity 0.2s ease;
+}
+
+.echo-history-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    opacity: 0;
+    transition: width 0.32s ease, opacity 0.2s ease;
+}
+
+.echo-history-lyric {
+    flex: 1;
+    min-width: 0;
+    color: var(--text-sub);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.25s ease;
+}
+
+/* 歌名放在歌词同一行，最右侧，灰色 */
+.echo-history-song {
+    flex-shrink: 0;
+    max-width: 40%;
+    text-align: right;
+    color: var(--text-sub);
+    font-size: 0.82rem;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .echo-history-card:hover,
 .echo-history-card:focus-visible {
-    transform: translateY(-1px);
-    border-left-color: var(--primary);
-    border-bottom-color: var(--primary);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: transparent;
+    transform: translateY(-2px);
     outline: none;
+}
+
+.echo-history-card:hover::before,
+.echo-history-card:focus-visible::before,
+.echo-history-card:hover::after,
+.echo-history-card:focus-visible::after {
+    opacity: 1;
+}
+
+.echo-history-card:hover::before,
+.echo-history-card:focus-visible::before {
+    height: 100%;
+}
+
+.echo-history-card:hover::after,
+.echo-history-card:focus-visible::after {
+    width: 100%;
+}
+
+.echo-history-card:hover .echo-history-lyric,
+.echo-history-card:focus-visible .echo-history-lyric {
+    color: var(--primary);
 }
 
 #backToTopBtn {
@@ -1460,7 +1587,8 @@ body:not(.on-home):not(.echo-mode) .compact-search {
     #albumListView,
     #albumDetailView,
     #infoView,
-    #matchPanel {
+    #matchPanel,
+    #matchResultView {
         padding-left: 12px;
         padding-right: 12px;
     }
